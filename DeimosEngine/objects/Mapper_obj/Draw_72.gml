@@ -1,6 +1,6 @@
 
 if did==0{
-    wadLoader_preload_textures()
+    DE_preload_textures()
     d3d_set_perspective(true);
     d3d_set_hidden(true);
     d3d_set_culling(true);

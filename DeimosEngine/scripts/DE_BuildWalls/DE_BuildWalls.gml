@@ -1,4 +1,4 @@
-/// @description YYD_GLSS_build_walls(GLSSECT,sector,buffer,color);
+/// @description DE_buildWalls(GLSSECT,sector,buffer,color);
 /// @param GLSSECT
 /// @param sector
 /// @param buffer
@@ -175,13 +175,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                     v1=v0+height;
                     u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
                     
-                    YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     vv+=2;
                 }
                 
@@ -208,13 +208,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                             v1=v0+height/t_h;
                             u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
                                                                 
-                            YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
-                            YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
-                            YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+                            DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
+                            DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                             
-                            YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
-                            YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
-                            YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+                            DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                            DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
+                            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                             vv+=2;
                         }
                     }
@@ -237,13 +237,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                     v1=v0+height/t_h;
                     u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
         
-                    YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     vv+=2;
                 }
             }
@@ -378,13 +378,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                         v1=v0+height;
                         u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
                                                             
-                        YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
-                        YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
-                        YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+                        DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
+                        DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                        DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                         
-                        YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
-                        YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
-                        YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+                        DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                        DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
+                        DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                         vv+=2;
                     }
                 }
@@ -422,13 +422,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                     v1=v0+height;
                     u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
                     
-                    YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     vv+=2;
                 }
                 if tcd[2]!="-"{
@@ -453,13 +453,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                     v1=v0+height;
                     u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
         
-                    YYD_vertex_sides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     
-                    YYD_vertex_sides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
-                    YYD_vertex_sides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     vv+=2;
                 }
             }

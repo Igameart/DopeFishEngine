@@ -1,4 +1,4 @@
-/// @description DE_FindSectorAt(x,y,sector)
+/// @description DE_findSectorAt(x,y,sector)
 
 var sects = ds_map_find_value_fixed(wad_levels,"sectors");
 var secnum;

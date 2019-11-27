@@ -82,16 +82,16 @@ globalvar mapGLNodes; mapGLNodes = noone;
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
 
-DE_ThingTypes();
-DE_InitTables();
+DE_thingTypes();
+DE_initTables();
 
-if wadLoader_getFile(wad)=true{
+if DE_getFile(wad)=true{
 	
-    wadLoader_getHeader();
-    wadLoader_getDirectory();
-    wadLoader_getColorMaps();
-    wadLoader_getPatches();
-    wadLoader_getWallTextures();
-    wadLoader_getFlatTextures();
+    DE_getHeader();
+    DE_getDirectory();
+    DE_getColorMaps();
+    DE_getPatches();
+    DE_getWallTextures();
+    DE_getFlatTextures();
 	
 }

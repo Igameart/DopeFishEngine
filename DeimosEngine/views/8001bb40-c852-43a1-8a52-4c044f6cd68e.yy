@@ -8,7 +8,7 @@
         "dad0d0ba-e48f-4e4b-9045-ba22b3f192f9"
     ],
     "filterType": "GMScript",
-    "folderName": "Level",
+    "folderName": "Map",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -38,7 +38,7 @@ cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
 cam_z=lengthdir_y(1,pitch)
 
 var cMsect;
-cMsect=DE_FindSectorAt(x,y,Msect);
+cMsect=DE_findSectorAt(x,y,Msect);
 
 if cMsect!=Msect{
     if !is_undefined(cMsect){

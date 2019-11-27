@@ -1,7 +1,7 @@
 /// @description 
 
 var cMsect;
-cMsect=DE_FindSectorAt(x,y,Msect);
+cMsect=DE_findSectorAt(x,y,Msect);
 
 trace(Msect,cMsect);
 

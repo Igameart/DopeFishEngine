@@ -1,4 +1,4 @@
-/// @description DE_GetSectorFromSSect(GLSSECT)
+/// @description DE_getSectorFromSSect(GLSSECT)
 /// @param GLSSECT
 var gllines = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
 var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");

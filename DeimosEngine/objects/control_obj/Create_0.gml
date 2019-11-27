@@ -12,7 +12,7 @@ DeimosEngineInit(WAD,Mapper_obj);
 
 MAP=get_string("Enter Map Name:","E1M1");
 
-DE_LoadMap(MAP);
+DE_loadMap(MAP);
 
 
 
