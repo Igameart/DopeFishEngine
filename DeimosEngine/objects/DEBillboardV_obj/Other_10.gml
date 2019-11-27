@@ -2,7 +2,7 @@
 
 thing = DEThingType[thingType];
 
-var name = thing[?"Description"];
+var name = thing[ DEThingDef.Description ];
 
 name = string_replace(name," ","\n");
 

@@ -20,6 +20,5 @@ draw_text(4,h-4+1,(_str));
 draw_set_color(c_white);
 draw_text(4,h-4,(_str));
 
-//draw_set_halign(fa_right);
-//draw_text(w-4,h-4,("Current GL_SSECT: "+string(global.cssect)));
+
 

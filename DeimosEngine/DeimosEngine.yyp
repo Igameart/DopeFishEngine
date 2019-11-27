@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "8b26718e-532d-4689-9641-95a14a2dccdb",
+            "Value": {
+                "id": "d2bfc258-88dd-4c93-ae9a-3b49f0f74772",
+                "resourcePath": "scripts\\DE_thingTypesHexen\\DE_thingTypesHexen.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8b359adb-3459-4691-97f1-b4ccfba9b5b0",
             "Value": {
                 "id": "42c545b5-b1c2-4fd9-976f-80a909208b7f",
@@ -1778,6 +1786,7 @@
         "ae5c21f4-1129-4289-8714-4988320e917b",
         "a5c7f52f-7f1b-4c8a-805e-548a8e165802",
         "dbf07d42-f4ec-49bb-b105-b549378349ea",
+        "8b26718e-532d-4689-9641-95a14a2dccdb",
         "82d91296-6e1e-434d-8ec4-ea17c5b28a4b",
         "338fad6e-28b4-4723-a4f3-a5ebdd9c5e7f",
         "d744b354-be0e-476e-bdc5-cea5c0142441",
