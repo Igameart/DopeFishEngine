@@ -10,7 +10,8 @@
         "d96d0861-f531-423e-8d38-d16180131e57",
         "fee8ee81-9f6f-4a2d-8240-2ad08d406d58",
         "ffbbc921-b1bd-49ec-a1b8-6bda0ad588cc",
-        "5406d437-3ff4-4d0c-996e-64e642a0ee48"
+        "5406d437-3ff4-4d0c-996e-64e642a0ee48",
+        "3475b3aa-b421-448f-9963-cf004f1d3917"
     ],
     "filterType": "GMScript",
     "folderName": "Deimos Engine",
