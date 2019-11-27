@@ -8,11 +8,11 @@ DE_getLinedefs(_map,LEV+LINEDEFOFS);
 DE_getVertexes(_map,LEV+VERTEXESOFS);
 DE_getSidedefs(_map,LEV+SIDEDEFOFS);
 DE_getSectors(_map,LEV+SECTORSOFS);
-DE_getThings(_map,LEV+THINGSOFS);
 DE_getGLVerts(_map,LEV+GL_VERTOFS);
 DE_getGLSegs(_map,LEV+GL_SEGSOFS);
 DE_getGLSSect(_map,LEV+GL_SSECTOFS);
 DE_getGLNodes(_map,LEV+GL_NODESOFS);
+DE_getThings(_map,LEV+THINGSOFS);
 
 DE_preload_flats();
 DE_preload_patches();

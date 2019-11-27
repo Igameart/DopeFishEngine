@@ -95,3 +95,6 @@ if DE_getFile(wad)=true{
     DE_getFlatTextures();
 	
 }
+
+draw_set_font(fnt_d4);
+

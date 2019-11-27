@@ -9,8 +9,6 @@ fcol=__background_get_colour( );
 f_far=mean(1024,2048);
 f_near=64;
 
-draw_set_font(fnt_d4);
-
 global.cssect=0;
 
 xx=1;

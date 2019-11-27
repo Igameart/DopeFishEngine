@@ -30,6 +30,16 @@
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 10,
+            "eventtype": 7,
+            "m_owner": "6fce3512-7fa0-4bf5-8e9a-c0758194aa7b"
+        },
+        {
+            "id": "ced8a67f-a4dc-4170-957c-24aa243d767d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 2,
             "m_owner": "6fce3512-7fa0-4bf5-8e9a-c0758194aa7b"

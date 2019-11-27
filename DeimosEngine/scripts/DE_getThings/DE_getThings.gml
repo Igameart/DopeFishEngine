@@ -80,6 +80,7 @@ while(buffer_tell(wadbuff)<len){
 	
 	with _3Dspr{
 		thingType = TYPE;
+		event_user(0);
 	}
 
 	ds_map_replace(thing,"flags",flagmap);
