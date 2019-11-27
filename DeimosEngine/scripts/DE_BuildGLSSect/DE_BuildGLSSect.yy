@@ -1,8 +1,8 @@
 {
-    "id": "ffbbc921-b1bd-49ec-a1b8-6bda0ad588cc",
+    "id": "b72cd921-7158-4768-bb66-9b47d193e904",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "YYD_get_sector",
+    "name": "DE_BuildGLSSect",
     "IsCompatibility": false,
     "IsDnD": false
 }

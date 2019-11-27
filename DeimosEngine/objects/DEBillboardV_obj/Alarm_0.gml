@@ -1,7 +1,7 @@
 /// @description 
 
 var cMsect;
-cMsect=YYD_get_sector(x,y,Msect);
+cMsect=DE_FindSectorAt(x,y,Msect);
 
 trace(Msect,cMsect);
 

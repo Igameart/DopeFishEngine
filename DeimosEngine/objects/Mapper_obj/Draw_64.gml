@@ -7,7 +7,7 @@ var w,h;
 w = surface_get_width(application_surface);
 h = surface_get_height(application_surface);
 
-var _str = wad +": " + control_obj.MAP + "\nLoading time: "+string(time_taken/1000)+"s.";
+var _str = wad +": " + control_obj.MAP + "\nLoading time: "+string(time_taken)+"s.";
 
 draw_set_alpha(1);
 draw_set_halign(fa_left);

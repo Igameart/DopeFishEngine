@@ -21,7 +21,7 @@ pitch=min(89,max(-89,pitch));
 
 //z+=zspeed;
 var cMsect;
-cMsect=YYD_get_sector(x,y,Msect);
+cMsect=DE_FindSectorAt(x,y,Msect);
 
 if cMsect!=Msect{
     if !is_undefined(cMsect){

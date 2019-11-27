@@ -1,11 +1,11 @@
-/// @description YYD_get_sector(current sector)
-/// @param current sector
+/// @description DE_FindSectorAt(x,y,sector)
+
 var sects = ds_map_find_value_fixed(wad_levels,"sectors");
 var secnum;
 if argument2!=-1{
     secnum=argument2;
-    sect=ds_list_find_value_fixed(sects,secnum);
-    colmap=ds_map_find_value(sect,"colmap");
+    var sect=ds_list_find_value_fixed(sects,secnum);
+    var colmap=ds_map_find_value(sect,"colmap");
     
     for (var i=0;i<ds_list_size(colmap);i+=6){
         var x0,y0,x1,y1,x2,y2;
@@ -24,8 +24,8 @@ if argument2!=-1{
     
 }else{
     for (secnum=0;secnum<ds_list_size(sects);secnum++){
-        sect=ds_list_find_value_fixed(sects,secnum);
-        colmap=ds_map_find_value(sect,"colmap");
+        var sect=ds_list_find_value_fixed(sects,secnum);
+        var colmap=ds_map_find_value(sect,"colmap");
         
         for (var i=0;i<ds_list_size(colmap);i+=6){
             var x0,y0,x1,y1,x2,y2;

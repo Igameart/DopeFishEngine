@@ -1,8 +1,8 @@
 {
-    "id": "fee8ee81-9f6f-4a2d-8240-2ad08d406d58",
+    "id": "5f309eab-8899-4e0f-817c-7ff95cfdfa38",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "YYD_GLSS_get_sector",
+    "name": "DE_BuildWalls",
     "IsCompatibility": false,
     "IsDnD": false
 }

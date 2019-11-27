@@ -1,6 +1,7 @@
 var level=argument0,lump=argument1;
 
 var sidedefs=ds_list_build();
+mapSidedefs = sidedefs;
 
 ds_map_add(wad_levels,"sidedefs",sidedefs);
 

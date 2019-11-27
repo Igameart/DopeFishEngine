@@ -1,5 +1,6 @@
 var level=argument0,lump=argument1;
 var linedefs=ds_list_build();
+mapLinedefs = linedefs;
 globalvar doors;
 doors=ds_list_build();
 
@@ -26,7 +27,7 @@ while(buffer_tell(wadbuff)<len){
     type=buffer_read(wadbuff,buffer_s16);
     ssect=buffer_read(wadbuff,buffer_s16);
     
-    if YYD_ldType_is_door(type)==true{
+    if DE_ldTypeIsDoor(type)==true{
 		trace("Created Door Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
         door=instance_create(0,0,door_control_obj);
         door.line=line;

@@ -522,7 +522,7 @@
             "Key": "5406d437-3ff4-4d0c-996e-64e642a0ee48",
             "Value": {
                 "id": "a5ca72cf-d724-4874-9b27-c15c055031d6",
-                "resourcePath": "scripts\\YYD_ldType_is_door\\YYD_ldType_is_door.yy",
+                "resourcePath": "scripts\\DE_ldTypeIsDoor\\DE_ldTypeIsDoor.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -610,7 +610,7 @@
             "Key": "5f309eab-8899-4e0f-817c-7ff95cfdfa38",
             "Value": {
                 "id": "619b55bf-0a87-40a1-a85e-7f727b735280",
-                "resourcePath": "scripts\\YYD_GLSS_build_walls\\YYD_GLSS_build_walls.yy",
+                "resourcePath": "scripts\\DE_BuildWalls\\DE_BuildWalls.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1258,7 +1258,7 @@
             "Key": "b72cd921-7158-4768-bb66-9b47d193e904",
             "Value": {
                 "id": "7cb8be82-945d-4ee2-8150-be7826d07b9b",
-                "resourcePath": "scripts\\YYD_Build_GLSS\\YYD_Build_GLSS.yy",
+                "resourcePath": "scripts\\DE_BuildGLSSect\\DE_BuildGLSSect.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1722,7 +1722,7 @@
             "Key": "fee8ee81-9f6f-4a2d-8240-2ad08d406d58",
             "Value": {
                 "id": "581bb558-c4bb-4596-8f38-967c71302c8b",
-                "resourcePath": "scripts\\YYD_GLSS_get_sector\\YYD_GLSS_get_sector.yy",
+                "resourcePath": "scripts\\DE_GetSectorFromSSect\\DE_GetSectorFromSSect.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1730,7 +1730,7 @@
             "Key": "ffbbc921-b1bd-49ec-a1b8-6bda0ad588cc",
             "Value": {
                 "id": "79118434-466e-4ac2-92cd-a0c67e20094b",
-                "resourcePath": "scripts\\YYD_get_sector\\YYD_get_sector.yy",
+                "resourcePath": "scripts\\DE_FindSectorAt\\DE_FindSectorAt.yy",
                 "resourceType": "GMScript"
             }
         }

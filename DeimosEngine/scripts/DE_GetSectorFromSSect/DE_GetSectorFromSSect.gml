@@ -1,11 +1,11 @@
-/// @description YYD_GLSS_get_sector(GLSSECT)
+/// @description DE_GetSectorFromSSect(GLSSECT)
 /// @param GLSSECT
-var gllines = ds_map_find_value_fixed(wad_levels,"glsegs");
-var lines = ds_map_find_value_fixed(wad_levels,"linedefs");
-var sides = ds_map_find_value_fixed(wad_levels,"sidedefs");
-var gssect = ds_map_find_value_fixed(wad_levels,"glssects");
+var gllines = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
+var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
+var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+var gssect = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");
 
-polygon = ds_list_find_value_fixed(gssect,argument0);
+var polygon = ds_list_find_value_fixed(gssect,argument0);
 
 var count,start,sector;
 count=ds_map_find_value_fixed(polygon,"count");
@@ -28,7 +28,7 @@ repeat (count) {
         }else{
             side = ds_map_find_value_fixed(mline,"left");
         }
-        //show_debug_message("GLSeg Side: "+string(side));
+        
         side = ds_list_find_value_fixed(sides,side);
         sector = ds_map_find_value_fixed(side,"sector");
         return sector;

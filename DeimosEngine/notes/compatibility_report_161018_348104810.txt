@@ -170,14 +170,14 @@ Converted description /// @description YYD_vertex_sides(buffer, x, y, z, nx, ny,
 /// @param  middle
 /// @param  top
 
-Converting GML script: ${project_dir}\scripts\YYD_GLSS_get_sector\YYD_GLSS_get_sector.gml
-Converted description /// @description YYD_GLSS_get_sector(GLSSECT)/// @param GLSSECT
+Converting GML script: ${project_dir}\scripts\DE_GetSectorFromSSect\DE_GetSectorFromSSect.gml
+Converted description /// @description DE_GetSectorFromSSect(GLSSECT)/// @param GLSSECT
 
-Converting GML script: ${project_dir}\scripts\YYD_get_sector\YYD_get_sector.gml
-Converted description /// @description YYD_get_sector(current sector)/// @param current sector
+Converting GML script: ${project_dir}\scripts\DE_FindSectorAt\DE_FindSectorAt.gml
+Converted description /// @description DE_FindSectorAt(current sector)/// @param current sector
 
-Converting GML script: ${project_dir}\scripts\YYD_ldType_is_door\YYD_ldType_is_door.gml
-Converted description /// @description YYD_ldType_is_door(type number);/// @param type number
+Converting GML script: ${project_dir}\scripts\DE_ldTypeIsDoor\DE_ldTypeIsDoor.gml
+Converted description /// @description DE_ldTypeIsDoor(type number);/// @param type number
 
 Converting GML script: ${project_dir}\scripts\is_clockwise\is_clockwise.gml
 Converted description /// @description is_clockwise(x0, y0, x1, y1, x2, y2)/// @param x0

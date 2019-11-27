@@ -1,8 +1,8 @@
 {
-    "id": "b72cd921-7158-4768-bb66-9b47d193e904",
+    "id": "5406d437-3ff4-4d0c-996e-64e642a0ee48",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "YYD_Build_GLSS",
+    "name": "DE_ldTypeIsDoor",
     "IsCompatibility": false,
     "IsDnD": false
 }

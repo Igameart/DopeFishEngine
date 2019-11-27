@@ -50,7 +50,7 @@ var gverts = ds_map_find_value_fixed(wad_levels,"glverts");
 var gssect = ds_map_find_value_fixed(wad_levels,"glssects");
 
 polygon = ds_list_find_value_fixed(gssect,argument0);
-sect=YYD_GLSS_get_sector(argument0);
+sect=DE_GetSectorFromSSect(argument0);
 ds_map_replace(polygon,"sector",sect);
 show_debug_message("ADDING Sector: "+string(ds_map_find_value(polygon,"sector")));
 sect=ds_list_find_value_fixed(sects,sect);

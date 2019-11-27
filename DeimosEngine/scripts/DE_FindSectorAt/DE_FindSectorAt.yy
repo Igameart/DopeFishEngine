@@ -1,8 +1,8 @@
 {
-    "id": "5406d437-3ff4-4d0c-996e-64e642a0ee48",
+    "id": "ffbbc921-b1bd-49ec-a1b8-6bda0ad588cc",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "YYD_ldType_is_door",
+    "name": "DE_FindSectorAt",
     "IsCompatibility": false,
     "IsDnD": false
 }
