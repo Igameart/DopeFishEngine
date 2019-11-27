@@ -1,6 +1,7 @@
 var level=argument0,lump=argument1+(WAD_FORMAT=="DOOM"?0:1);
 
 var glverts=ds_list_build();
+mapGLVerts = glverts;
 ds_map_add(wad_levels,"glverts",glverts);
 
 

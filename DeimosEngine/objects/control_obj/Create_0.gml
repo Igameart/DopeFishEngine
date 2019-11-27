@@ -1,6 +1,4 @@
 did=0;
-globalvar bgspr;
-globalvar flat1;
 
 //display_reset(4,1);
 
@@ -9,6 +7,20 @@ test_surf=surface_create(1,1);
 ds_data_init();
 
 var WAD = get_open_filename("GL IWAD|*.wad", "GLDOOM.wad");
+
+DeimosEngineInit(WAD,Mapper_obj);
+
+MAP=get_string("Enter Map Name:","E1M1");
+
+var start_time=current_time;
+
+DE_LoadMap(MAP);
+
+var end_time=current_time;
+
+globalvar time_taken; time_taken=(end_time-start_time);
+
+/*var WAD = get_open_filename("GL IWAD|*.wad", "GLDOOM.wad");
 
 flat1=0;
 
@@ -42,7 +54,7 @@ var end_time=current_time;
 
 buffer_delete(wadbuff);
 
-globalvar time_taken; time_taken=(end_time-start_time);
+globalvar time_taken; time_taken=(end_time-start_time);*/
 
 YYD_vbuffer_format_define();
 

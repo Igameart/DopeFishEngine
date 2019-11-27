@@ -2,18 +2,6 @@
 
 d3d_set_projection_ext(x,y,z+eyes,x+cam_x,y+cam_y,z+eyes+cam_z, 0,0,1, 65,__view_get( e__VW.WView, 0 )/__view_get( e__VW.HView, 0 ),0.2,f_far);
 
-
-//var spr=ds_map_find_value_fixed(ds_map_find_value_fixed(wadPatches,"WALL03_7"),"data");
-//draw_sprite_tiled_ext(spr,0,view_xview[0],view_yview[0],scale,scale,c_white,1);
-//draw_background_stretched(back_bck,view_xview[0],view_yview[0],view_wview[0],view_hview[0]);
-
-//draw_sprite_stretched_ext(bgspr,0,view_xview[0],view_yview[0],view_wview[0],view_hview[0],c_gray,0.75);
-
-/// Draw selected GL_SSECT
-//var lines = ds_map_find_value_fixed(wad_levels,"glsegs");
-//var verts = ds_map_find_value_fixed(wad_levels,"vertexes");
-//var gverts = ds_map_find_value_fixed(wad_levels,"glverts");
-
 window_set_caption(string(fps_real));
 
 texture_set_repeat(true);
