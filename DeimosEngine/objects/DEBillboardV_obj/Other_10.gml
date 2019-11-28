@@ -2,7 +2,52 @@
 
 thing = DEThingType[thingType];
 
-var name = thing[ DEThingDef.Description ];
+name = thing[ DEThingDef.Description ];
+
+sprPrefix = thing[ DEThingDef.Sprite ];
+sprSequence = thing[ DEThingDef.Sequence ];
+
+var num = 0;
+do{
+	
+	sprName = sprPrefix + string_char_at(sprSequence,1) + string(num);
+
+	//trace("Thing building sprite for "+name,sprName);
+
+	var spriteDat = wadSprites[? sprName ];
+	
+	num++;
+
+}until spriteDat != undefined || num> 8;
+
+if spriteDat == undefined{
+	num = 0;
+do{
+	
+	sprName = sprPrefix + string_char_at(sprSequence,1) + string(num);
+
+	trace("Thing building sprite for "+name,sprName);
+
+	var spriteDat = wadSprites[? sprName ];
+	
+	num++;
+
+}until spriteDat != undefined || num> 8;
+}
+
+if spriteDat != undefined{
+	
+	if DESprites[?sprName] == undefined{
+		DESprite = DE_buildPatch(spriteDat);
+		DESprites[?sprName] = DESprite;
+	}else DESprite = DESprites[?sprName];
+
+	TexW = spriteDat[?"width"];
+	TexH = spriteDat[?"height"];
+	xOff = spriteDat[?"o_left"];
+	yOff = spriteDat[?"o_top"];
+	
+}
 
 name = string_replace(name," ","\n");
 

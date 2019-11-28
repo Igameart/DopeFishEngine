@@ -17,4 +17,6 @@ Msect=-1;
 thingType = -1;
 thing = -1;
 
+DESprite = noone;
+
 alarm[0] = 1;

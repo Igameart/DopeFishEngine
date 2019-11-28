@@ -3,14 +3,15 @@
 /// @param sector
 /// @param buffer
 /// @param color
-var verts = ds_map_find_value_fixed(wad_levels,"vertexes");
-var lines = ds_map_find_value_fixed(wad_levels,"linedefs");
-var sides = ds_map_find_value_fixed(wad_levels,"sidedefs");
-var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+
+var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
+var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
+var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
 
 for (k=0;k<ds_list_size(lines);k++) {
 
-    linedef = ds_list_find_value_fixed(lines,k);
+    var linedef = ds_list_find_value_fixed(lines,k);
     
     var flags=ds_map_find_value_fixed(linedef,"flags");
     var u_peg=ds_map_find_value_fixed(flags,"peg_upper");
@@ -23,6 +24,8 @@ for (k=0;k<ds_list_size(lines);k++) {
     left=ds_map_find_value_fixed(linedef,"left");
     right=ds_map_find_value_fixed(linedef,"right");
     
+	
+	//Do Colllision
     if sld or !dub{
     
         var startv=ds_map_find_value_fixed(linedef,"start");
@@ -43,6 +46,7 @@ for (k=0;k<ds_list_size(lines);k++) {
         with cLine event_user(0);
     
     }
+	
     
     //Now lets do front and back sides if there are any
     if left!=-1 or right!=-1{
@@ -65,7 +69,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             ex = ds_map_find_value_fixed(vert,"x");
             ey = ds_map_find_value_fixed(vert,"y");
             
-            show_debug_message("building Left: "+string(front));
+            show_debug_message("building Front: "+string(front));
             
             var buffer = vertex_create_buffer();
             vertex_begin(buffer,YYD_vbformat);
@@ -89,8 +93,8 @@ for (k=0;k<ds_list_size(lines);k++) {
             ds_map_replace(bside,"linedef",k);
             
             
-            var us=ds_map_find_value_fixed(side,"X_");
-            var ys=ds_map_find_value_fixed(side,"Y_");
+            var us=ds_map_find_value(side,"X_");
+            var ys=ds_map_find_value(side,"Y_");
             
             var colval = ds_map_find_value_fixed(sect,"lightlevel");
             var col2=make_colour_hsv(255,0,colval);
@@ -170,16 +174,35 @@ for (k=0;k<ds_list_size(lines);k++) {
                     t_h=ds_map_find_value_fixed(tt,"height");
                     
                     var height=abs(top-bot)/t_h;
-                    v0=(ys)/t_h;
-                    if l_peg v0+=(height*l_peg)/t_h;
-                    v1=v0+height;
-                    u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
                     
-                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    //v0 = (ys)/t_h;
+					
+					//v0 += (abs(_ceiling - top) / (t_h)) * l_peg;
+					
+					v0 = 0;
+					
+					repeat abs(ys){
+						v0 += sign(ys);
+					}
+					
+					v0 = v0/t_h + (abs(_ceiling - top) / t_h) * l_peg;
+					
+                    v1=v0+height;
+					
+					u0 = 0;
+					
+					repeat abs(us){
+						u0 += sign(us);
+					}
+					
+					u0 = u0/t_w;
+                    u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
+                    
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     vv+=2;
@@ -196,23 +219,44 @@ for (k=0;k<ds_list_size(lines);k++) {
                             var bot, top;
                             top = ds_map_find_value_fixed(sect,"ceiling");
                             bot = ds_map_find_value_fixed(bsect,"ceiling");
-                            var height=abs(top-bot);
+                            var height=abs(top-bot)/t_h;
                                     
                             var tt,t_w,t_h;
                             tt=ds_map_find_value_fixed(textures,tcd[1]);
                             t_w=ds_map_find_value_fixed(tt,"width");
                             t_h=ds_map_find_value_fixed(tt,"height");
                             
-                            v0=(ys)/t_h-height/t_h;
-                            if u_peg==0 v0+=abs(height*t_h-t_h)/t_h;
-                            v1=v0+height/t_h;
-                            u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
+                            //v0 = ys/t_h;
+						
+							//v0 += height*!u_peg;
+							
+	                        v0 = 0;
+					
+							repeat abs(ys){
+								v0 += sign(ys);
+							}
+					
+							v0 = v0/t_h;
+						
+							v0 -= (abs(_ceiling - bot) / t_h) * !u_peg;
+							
+                            v1=v0+height;
+					
+							u0 = 0;
+					
+							repeat abs(us){
+								u0 += sign(us);
+							}
+					
+							u0 = u0/t_w;
+							
+                            u1=( u0+point_distance(sx,sy,ex,ey)/t_w);
                                                                 
-                            DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
-                            DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                            DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,1,0,0);
+                            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
                             DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                             
-                            DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
                             DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
                             DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                             vv+=2;
@@ -233,15 +277,26 @@ for (k=0;k<ds_list_size(lines);k++) {
                     t_w=ds_map_find_value_fixed(tt,"width");
                     t_h=ds_map_find_value_fixed(tt,"height");
                     
-                    v0=(ys/t_h)-(sheight/t_h*l_peg);
+                    v0 = 0;					
+					repeat abs(ys){
+						v0 += sign(ys);
+					}
+				
+					v0 = v0/t_h;
+					
+					if !dub && l_peg{
+						//trace("Wall is One Sided and pegged",t_h-height,tcd[2]);
+						v0 += (t_h-height*t_h)/t_h;//(abs(_ceiling - top) / t_h)
+					}
+					
                     v1=v0+height/t_h;
-                    u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
+                    u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
         
-                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     vv+=2;
@@ -269,7 +324,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             ex = ds_map_find_value_fixed(vert,"x");
             ey = ds_map_find_value_fixed(vert,"y");
             
-            show_debug_message("building Left: "+string(front));
+            show_debug_message("building Back: "+string(front));
             
             var buffer = vertex_create_buffer();
             vertex_begin(buffer,YYD_vbformat);
@@ -289,9 +344,15 @@ for (k=0;k<ds_list_size(lines);k++) {
             ds_map_replace(side,"bsect",bsect);
             ds_map_replace(linedef,"bsect",bsect);
             bsect = ds_list_find_value_fixed(sects,bsect);
+			
+			var _ceiling = ds_map_find_value_fixed(sect,"ceiling");
+			//var _floor = ds_map_find_value_fixed(sect,"floor");
+			//var sHeight = ( _ceiling - _floor );
             
             var us=ds_map_find_value(side,"X_");
             var ys=ds_map_find_value(side,"Y_");
+			
+			trace("Line Offsets:",us,ys);
             
             var colval = ds_map_find_value_fixed(sect,"lightlevel");
             var col2=make_colour_hsv(255,0,colval);
@@ -304,22 +365,23 @@ for (k=0;k<ds_list_size(lines);k++) {
              
             if (ds_map_find_value_fixed(side,"tex_l")!="-"){
                 tcd[0]=ds_map_find_value_fixed(side,"tex_l");
-                //show_debug_message("Lower texture: "+string(tcd[0]));
+				trace("Lower Texture",tcd[0]);
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_u")!="-"){
                 tcd[1]=ds_map_find_value_fixed(side,"tex_u");
-                //show_debug_message("Upper texture: "+string(tcd[1]));
+				trace("Top Texture",tcd[1]);
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_m")!="-"){
                 tcd[2]=ds_map_find_value_fixed(side,"tex_m");
-                //show_debug_message("Middle texture: "+string(tcd[2]));
+				trace("Middle Texture",tcd[2]);
                 tc++;
             }
             
+			//Create collisions
             if tcd[0]!="-" or tcd[1]!="-" and !sld{
             
                 var bot, top;
@@ -352,10 +414,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                 var sheight=abs(top-bot);
                 
                 if tcd[1]!="-" and right!=-1{
+					
                     show_debug_message("Upper wall:"+tcd[1]);
+					
 					var _s,_b;
 					_s = ds_map_find_value_fixed(sect,"tex_c");
 					_b = ds_map_find_value_fixed(bsect,"tex_c");
+					
                     if not (_s="F_SKY1" and _s!="F_SKY" and _s!="F_SKY001" and _b="F_SKY1" and _b!="F_SKY" and _b!="F_SKY001"){
                         var bot, top;
                         top = ds_map_find_value_fixed(sect,"ceiling");
@@ -368,21 +433,39 @@ for (k=0;k<ds_list_size(lines);k++) {
                         
                         var height=(abs(top-bot))/t_h;
                         
-                        v0=ys/t_h;
-                        if u_peg==0 v0+=abs(height*t_h-t_h)/t_h;
+                        v0 = 0;
+					
+						repeat abs(ys){
+							v0 += sign(ys);
+						}
+					
+						v0 = v0/t_h;
+						
+						v0 -= (abs(_ceiling - bot) / t_h) * !u_peg;
+						
+                        //if u_peg==0 v0+=abs(height*t_h-t_h)/t_h;
                         
                         if u_peg and !l_peg{
                             u_add=sy;//abs(height*t_h-t_h);
                         }
                         
                         v1=v0+height;
-                        u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
+					
+						u0 = 0;
+					
+						repeat abs(us){
+							u0 += sign(us);
+						}
+					
+						u0 = u0/t_w;
+						
+                        u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
                                                             
-                        DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,1,0,0);
-                        DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                        DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,1,0,0);
+                        DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
                         DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                         
-                        DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,1,0,1);
+                        DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
                         DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
                         DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
                         vv+=2;
@@ -413,24 +496,37 @@ for (k=0;k<ds_list_size(lines);k++) {
                     t_h=ds_map_find_value_fixed(tt,"height");
                     var height=abs(top-bot)/t_h;
                     
-                    v0=(ys)/t_h;
-                    if !l_peg{
-                        v0+=(height*l_peg);
-                    }else
-                        v0+=abs(ds_map_find_value_fixed(sect,"ceiling")-top)/t_h;
-                    
+					//trace("Creating Lower Wall with Offset",tcd[0],ys);
+					
+					v0 = 0;
+					
+					repeat abs(ys){
+						v0 += sign(ys);
+					}
+					
+					v0 = v0/t_h + (abs(_ceiling - top) / t_h) * l_peg;
+					                    
                     v1=v0+height;
-                    u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
+					
+					u0 = 0;
+					
+					repeat abs(us){
+						u0 += sign(us);
+					}
+					
+					u0 = u0/t_w;
+                    u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
                     
-                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,0,0,0);
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,0,0,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,0,0,1);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
                     vv+=2;
                 }
+				
                 if tcd[2]!="-"{
                     show_debug_message("building middle wall:"+tcd[2]);
                     var bot, top;
@@ -449,15 +545,38 @@ for (k=0;k<ds_list_size(lines);k++) {
                     
                     var height=abs(top-bot)/t_h;
                     
-                    v0=ys/t_h-(height*l_peg);
+                    //v0=ys/t_h-(height*l_peg);
+					
+					v0 = 0;
+					
+					repeat abs(ys){
+						v0 += sign(ys);
+					}
+					
+					v0 /= t_h;
+					
+					if !dub && l_peg{
+						//trace("Wall is One Sided and pegged",t_h-height,tcd[2]);
+						v0 += (t_h-height*t_h)/t_h;//(abs(_ceiling - top) / t_h)
+					}
+					
                     v1=v0+height;
-                    u1=(us/t_w+point_distance(sx,sy,ex,ey)/t_w);
+					
+					u0 = 0;
+					
+					repeat abs(us){
+						u0 += sign(us);
+					}
+					
+					u0 = u0/t_w;
+					
+                    u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
         
-                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,us/t_w,v1,col2,1,-2,1,0);
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,-2,1,0);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     
-                    DE_vertexSides(buffer,sx,sy,top,0,0,0,us/t_w,v0,col2,1,-2,1,1);
+                    DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
                     DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
                     vv+=2;

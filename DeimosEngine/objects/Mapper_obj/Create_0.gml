@@ -1,15 +1,20 @@
 
-scale=1;
-did=0;
 num=0;
 
 application_surface_draw_enable(false);
 
+display_reset(4,1);
+d3d_set_perspective(true);
+d3d_set_hidden(true);
+d3d_set_culling(true);
+texture_set_repeat(true);	
+d3d_start();///Start 3d drawing
+draw_set_alpha_test(true);
+draw_set_alpha_test_ref_value(128);
+
 fcol=__background_get_colour( );
 f_far=mean(1024,2048);
 f_near=64;
-
-global.cssect=0;
 
 xx=1;
 yy=0;
@@ -25,7 +30,6 @@ x=ds_map_find_value(things,"x");
 y=ds_map_find_value(things,"z");
 z=0;
 
-height=56;
 eyes=mean(56,32);
 
 yaw=ds_map_find_value(things,"angle");
@@ -60,6 +64,9 @@ mouse_free=0;
 shd_ctex=shader_get_sampler_index(shd_GLSSect,"tex_C");
 shd_ltex=shader_get_sampler_index(shd_Sidedef,"tex_L");
 shd_utex=shader_get_sampler_index(shd_Sidedef,"tex_U");
+shd_uLuv=shader_get_uniform(shd_Sidedef,"u_Luv");
+shd_uUuv=shader_get_uniform(shd_Sidedef,"u_Uuv");
+shd_uMuv=shader_get_uniform(shd_Sidedef,"u_Muv");
 
 u_fogColorS=shader_get_uniform(shd_Sidedef,"u_fogColor");
 u_fogMinDistS=shader_get_uniform(shd_Sidedef,"u_fogMinDist");
@@ -92,10 +99,10 @@ time=0;
 
 
 dtex=sprite_get_texture(RFXbayerdith_spr,0);
-RFX_init(2,dtex,128,false);
+RFX_init(2,dtex,256,false);
 //ptex=sprite_get_texture(RFXpalettes_spr,3);
 //RFX_set_palswap(ptex);
-RFX_set_coldepth(24);
+RFX_set_coldepth(28);
 
 surface_resize(application_surface,display_get_gui_width()/RFXscale,display_get_gui_height()/RFXscale);
 

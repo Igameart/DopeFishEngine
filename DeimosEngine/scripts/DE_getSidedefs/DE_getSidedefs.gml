@@ -18,8 +18,8 @@ l=0;
 while(buffer_tell(wadbuff)<len){
 var side=ds_map_build();
 var xx,yy;
-xx=buffer_read(wadbuff,buffer_u16);
-yy=buffer_read(wadbuff,buffer_u16);
+xx=buffer_read(wadbuff,buffer_s16);
+yy=buffer_read(wadbuff,buffer_s16);
 
 ds_map_add(side,"X_",xx);
 ds_map_add(side,"Y_",yy);

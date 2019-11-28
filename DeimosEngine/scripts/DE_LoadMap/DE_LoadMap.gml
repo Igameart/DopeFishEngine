@@ -23,6 +23,9 @@ var end_time=current_time;
 
 globalvar time_taken; time_taken=(end_time-start_time)/1000;
 
+globalvar pload_tex;
+pload_tex=ds_map_build();
+
 DE_vbufferFormatDefine();
 
 ///Generate the vbuffers for each sub sector
@@ -38,4 +41,7 @@ if !is_undefined(gssects){
     }
     
 	DE_buildWalls();
+	
+	DE_preload_textures();
+	
 }

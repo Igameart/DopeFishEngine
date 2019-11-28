@@ -10,6 +10,11 @@ varying vec4 v_vPosition;
 
 uniform sampler2D tex_L;
 uniform sampler2D tex_U;
+
+uniform vec2 u_Luv;
+uniform vec2 u_Uuv;
+uniform vec2 u_Muv;
+
 uniform vec4 u_fogColor;
 uniform float u_fogMaxDist;
 uniform float u_fogMinDist;
@@ -37,13 +42,12 @@ void main()
     
     //gl_FragColor = vec4(0.0,0.0,0.0,1.0);
     
-    
     if (v_vMiddle==0.0)
     {
-        if (v_vTIndex==0.0) col = texture2D( tex_L, v_vTexcoord );
-        else col = texture2D( tex_U, v_vTexcoord );
+        if (v_vTIndex==0.0) col = texture2D( tex_L, mod(v_vTexcoord*u_Luv,u_Luv) );
+        else col = texture2D( tex_U, mod(v_vTexcoord*u_Uuv,u_Uuv) );
     }else
-     col = texture2D( gm_BaseTexture, v_vTexcoord );
+     col = texture2D( gm_BaseTexture, mod(v_vTexcoord*u_Muv,u_Muv) );
 
     fogger = floor(fogger*16.0+0.5)/16.0; 
     

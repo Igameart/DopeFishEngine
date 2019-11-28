@@ -2,6 +2,7 @@
 var l,len,curl,tcount,texture;
 var offsets=ds_list_build();
 var offsets2=ds_list_build();
+
 globalvar textures;
 textures=ds_map_build();
 

@@ -112,32 +112,55 @@ for (j = 0; j<ds_list_size(sides); j++ ){
     
     if tex_l!="-" or tex_u!="-" or tex_m!="-"{
         
-        tex_l=ds_map_find_value(pload_tex,tex_l);
-        tex_u=ds_map_find_value(pload_tex,tex_u);
-        tex_m=ds_map_find_value(pload_tex,tex_m);
+        var vtex_l=ds_map_find_value(pload_tex,tex_l);
+        var vtex_u=ds_map_find_value(pload_tex,tex_u);
+        var vtex_m=ds_map_find_value(pload_tex,tex_m);
         
-        if is_undefined(tex_m){
-            tex_m=-1;
+        if is_undefined(vtex_m){
+            vtex_m = [0,0,0];
         }else{
-            shader_set_uniform_f(u_TexHM,surface_get_height(tex_m));
+            shader_set_uniform_f(u_TexHM,sprite_get_height(vtex_m[0]));
         }
         
-        if !is_undefined(tex_l){
-            if surface_exists(tex_l){
-                shader_set_uniform_f(u_TexHL,surface_get_height(tex_l));
-                texture_set_stage(shd_ltex,surface_get_texture(tex_l));
+        if !is_undefined(vtex_l){
+			
+			//trace("Rendering Lower Texture: "+tex_l,vtex_l);
+			
+            if sprite_exists(vtex_l[0]){
+								
+                shader_set_uniform_f(u_TexHL,sprite_get_height(vtex_l[0]));
+				
+				shader_set_uniform_f(shd_uLuv,vtex_l[1],vtex_l[2]);
+				
+                texture_set_stage(shd_ltex,sprite_get_texture(vtex_l[0],0));
+				
             }
+			
         }else texture_set_stage(shd_ltex,0);
         
-        if !is_undefined(tex_u){
-            if surface_exists(tex_u){
-                shader_set_uniform_f(u_TexHU,surface_get_height(tex_u));
-                texture_set_stage(shd_utex,surface_get_texture(tex_u));
+        if !is_undefined(vtex_u){
+			
+			//trace("Rendering Upper Texture: "+tex_u,vtex_u);
+			
+            if sprite_exists(vtex_u[0]){
+								
+                shader_set_uniform_f(u_TexHU,sprite_get_height(vtex_u[0]));
+				
+				shader_set_uniform_f(shd_uUuv,vtex_u[1],vtex_u[2]);
+				
+                texture_set_stage(shd_utex,sprite_get_texture(vtex_u[0],0));
+				
             }
             
         }else texture_set_stage(shd_utex,0);
         
-        vertex_submit(vbuffer,pr_trianglelist,surface_get_texture(tex_m));
+		//if sprite_exists(vtex_m[0]){
+			
+			shader_set_uniform_f(shd_uMuv,vtex_m[1],vtex_m[2]);
+			
+			vertex_submit(vbuffer,pr_trianglelist,sprite_get_texture(vtex_m[0],0));
+			
+		//}
     }
 
 }

@@ -22,7 +22,7 @@ thing[@ DEThingDef.Version ] =		"S"
 thing[@ DEThingDef.Radius ] =		"16"         
 thing[@ DEThingDef.Height ] =		"68"         
 thing[@ DEThingDef.Sprite ] =		"WZRD"         
-thing[@ DEThingDef.Sequence ] =	"AB+"         
+thing[@ DEThingDef.Sequence ] =		"AB+"         
 thing[@ DEThingDef.Class ] =		"MO*^"         
 thing[@ DEThingDef.Description ] = "Disciple of D'Sparil"         
                                                                               

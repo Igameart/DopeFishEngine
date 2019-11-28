@@ -10,6 +10,12 @@ enum DEThingDef{
 	Description
 }
 
-DE_thingTypesDOOM();
-DE_thingTypesHeretic();
-DE_thingTypesHexen();
+if WAD_FORMAT=="DOOM"{
+	if string_count("heretic",wad)>0{
+		DE_thingTypesHeretic();
+	}else{
+		DE_thingTypesDOOM();
+	}
+}else{
+	DE_thingTypesHexen();
+}

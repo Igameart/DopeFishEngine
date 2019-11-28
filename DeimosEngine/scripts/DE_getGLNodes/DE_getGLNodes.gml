@@ -57,8 +57,8 @@ while(buffer_tell(wadbuff)<len){
 	glnode[?"c_r"] = (C_R);
 	glnode[?"c_l"] = (C_L);
 	
-	trace("GL NODE:",glnode);
-	ds_map_print(glnode);
+	//trace("GL NODE:",glnode);
+	//ds_map_print(glnode);
 
 	ds_list_add(mapGLNodes,glnode);
 

@@ -60,6 +60,10 @@ enum BBOX
     BOXLEFT,
     BOXRIGHT
 }
+enum TexUVS{
+	Left = 2,
+	Top
+}
 
 globalvar wadHeader; wadHeader = noone;
 globalvar wadDirectory; wadDirectory = noone;
@@ -82,7 +86,6 @@ globalvar mapGLNodes; mapGLNodes = noone;
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
 
-DE_thingTypes();
 DE_initTables();
 
 if DE_getFile(wad)=true{
@@ -93,8 +96,11 @@ if DE_getFile(wad)=true{
     DE_getPatches();
     DE_getWallTextures();
     DE_getFlatTextures();
+	DE_getSprites();
 	
 }
+
+DE_thingTypes();
 
 draw_set_font(fnt_d4);
 

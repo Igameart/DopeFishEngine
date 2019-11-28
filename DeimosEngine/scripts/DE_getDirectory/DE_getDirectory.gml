@@ -13,7 +13,7 @@ for(l=0;l<ds_map_find_value_fixed(wadHeader,"numlumps");l+=1){
         ds_map_add(_directory,"size",buffer_read(wadbuff,buffer_u32) );
 		var name = string_upper(buffer_read_string(wadbuff,8));
 		
-		trace( "Discovered Lump " + name );
+		//trace( "Discovered Lump " + name );
 		
 		if name == "BEHAVIOR"{
 			trace("Hexen Formatted Level!");
