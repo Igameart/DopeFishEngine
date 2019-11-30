@@ -1,5 +1,7 @@
 var _map = argument[0];
 
+DEMap = _map;
+
 var start_time=current_time;
 
 DE_getLevel(_map);

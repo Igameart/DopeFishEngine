@@ -15,9 +15,9 @@ ds_map_add(wadHeader,"infotableofs",infotableofs);
 
 show_debug_message("NOTICE: Got Header: "+ds_map_write(wadHeader));
 if(ds_map_find_value_fixed(wadHeader,"id")!="IWAD")
-show_debug_message("Unsupported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));
+	show_debug_message("Unsupported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));
 else{
-show_debug_message("Supported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));
-show_debug_message("Numberof Lumps in WAD: "+string(ds_map_find_value_fixed(wadHeader,"numlumps")));
-show_debug_message("Info Table Offset in WAD: "+string(ds_map_find_value_fixed(wadHeader,"infotableofs")));
+	show_debug_message("Supported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));
+	show_debug_message("Numberof Lumps in WAD: "+string(ds_map_find_value_fixed(wadHeader,"numlumps")));
+	show_debug_message("Info Table Offset in WAD: "+string(ds_map_find_value_fixed(wadHeader,"infotableofs")));
 }

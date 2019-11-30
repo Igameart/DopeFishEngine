@@ -285,8 +285,7 @@ for (k=0;k<ds_list_size(lines);k++) {
 					v0 = v0/t_h;
 					
 					if !dub && l_peg{
-						//trace("Wall is One Sided and pegged",t_h-height,tcd[2]);
-						v0 += (t_h-height*t_h)/t_h;//(abs(_ceiling - top) / t_h)
+						v0 += (t_h-height*t_h)/t_h;
 					}
 					
                     v1=v0+height/t_h;

@@ -5,7 +5,7 @@ wadColorMaps=ds_grid_create(maps,256);
 wadPlaypal=ds_list_build();
 tmp=ds_list_build();
 
-buffer_seek(wadbuff,buffer_seek_start,DE_getLumpOfs("COLORMAP"));
+DE_bufferSeekLump(("COLORMAP"));
 
 show_debug_message("NOTICE: Found COLORMAP at: "+string(buffer_tell(wadbuff)));
 

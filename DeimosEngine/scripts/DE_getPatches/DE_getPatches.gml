@@ -5,9 +5,7 @@ wadPatches=ds_map_build();
 
 wadPNames=ds_list_build();
 
-poff=DE_getLumpOfs("PNAMES");
-
-buffer_seek(wadbuff,buffer_seek_start,poff);
+DE_bufferSeekLump("PNAMES");
 
 pcount=buffer_read(wadbuff,buffer_u32);
 

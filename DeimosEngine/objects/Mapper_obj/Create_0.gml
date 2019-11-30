@@ -3,6 +3,10 @@ num=0;
 
 application_surface_draw_enable(false);
 
+DE_loadMap(DEMap);
+
+window_set_cursor(cr_none);
+
 display_reset(4,1);
 d3d_set_perspective(true);
 d3d_set_hidden(true);

@@ -1,10 +1,10 @@
 var e=argument0;
 var file=e;//working_directory+"\"+e;
 var filename=e;
-globalvar wad;wad=filename;
-repeat 30
+
+repeat string_count("\\",wad)
     wad = string_lower(split(wad,"\\"));
-//show_message("wad name: "+wad);
+	
 globalvar wadbuff;
 
 // Some WAD defines

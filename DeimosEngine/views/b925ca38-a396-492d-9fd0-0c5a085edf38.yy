@@ -8,7 +8,8 @@
         "ae5c21f4-1129-4289-8714-4988320e917b",
         "a5c7f52f-7f1b-4c8a-805e-548a8e165802",
         "dbf07d42-f4ec-49bb-b105-b549378349ea",
-        "8b26718e-532d-4689-9641-95a14a2dccdb"
+        "8b26718e-532d-4689-9641-95a14a2dccdb",
+        "b8d06399-d0f4-447e-806e-45f7c81025da"
     ],
     "filterType": "GMScript",
     "folderName": "Data Management",

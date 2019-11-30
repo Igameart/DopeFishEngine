@@ -1,11 +1,10 @@
 /// @description DeimosEngineInit( WAD, Camera );
 
-globalvar wad;
-wad=argument[0];
-
-globalvar DEcam; DEcam = argument[1];
+globalvar DEcam; DEcam = argument[0];
 
 globalvar wadbuff;
+
+ds_data_init();
 
 // Macros
 #macro ANG45 0x20000000
@@ -32,6 +31,9 @@ globalvar wadbuff;
 #macro FRACUNIT (1<<FRACBITS)
 #macro NF_SUBSECTOR 0x8000
 
+// Some Logic defines
+globalvar DESkillLevel;	DESkillLevel = 0;
+globalvar DENetPlay;	DENetPlay = 0;
 
 // Some WAD defines
 globalvar MAP_SCALE; MAP_SCALE = 1.0;
@@ -53,20 +55,10 @@ globalvar skyflatnum;
 globalvar skytexture;
 globalvar skytexturemid;
 
-enum BBOX
-{
-    BOXTOP,
-    BOXBOTTOM,
-    BOXLEFT,
-    BOXRIGHT
-}
-enum TexUVS{
-	Left = 2,
-	Top
-}
-
+globalvar wad; wad = "";
 globalvar wadHeader; wadHeader = noone;
 globalvar wadDirectory; wadDirectory = noone;
+globalvar wadDirectoryOfs; wadDirectoryOfs = noone;
 globalvar wadColorMaps; wadColorMaps = noone;
 globalvar wadPlaypal; wadPlaypal = noone;
 globalvar wadPatches; wadPatches = noone;
@@ -74,6 +66,7 @@ globalvar wadPNames; wadPNames = noone;
 globalvar wadWallTextures; wadWallTextures = noone;
 globalvar wadFlatTextures; wadFlatTextures = noone;
 
+globalvar DEMap;DEMap = "E1M1";
 globalvar mapLinedefs; mapLinedefs = noone;
 globalvar mapVertexes; mapVertexes = noone;
 globalvar mapSidedefs; mapSidedefs = noone;
@@ -86,21 +79,24 @@ globalvar mapGLNodes; mapGLNodes = noone;
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
 
-DE_initTables();
 
-if DE_getFile(wad)=true{
-	
-    DE_getHeader();
-    DE_getDirectory();
-    DE_getColorMaps();
-    DE_getPatches();
-    DE_getWallTextures();
-    DE_getFlatTextures();
-	DE_getSprites();
-	
+
+enum BBOX
+{
+    BOXTOP,
+    BOXBOTTOM,
+    BOXLEFT,
+    BOXRIGHT
+}
+enum TexUVS{
+	Left = 2,
+	Top
+}
+enum DEGameTypes{
+	DOOM,
+	HERETIC,
+	HEXEN,
+	STRIFE
 }
 
-DE_thingTypes();
-
-draw_set_font(fnt_d4);
-
+DE_initTables();

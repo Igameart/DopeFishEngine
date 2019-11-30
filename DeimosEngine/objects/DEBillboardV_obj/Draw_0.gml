@@ -1,5 +1,6 @@
 /// @description  Draw the right surface
 if DESprite!=noone{
+	draw_set_color(c_white);
 	
 	//d3d_set_zwriteenable(false);
 	d3d_transform_add_translation(-xOff,0,0);
