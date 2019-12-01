@@ -1,27 +1,40 @@
 
-var sects=ds_map_find_value_fixed(wad_levels,"sectors");
-
-if line!=-1{
-    var lines=ds_map_find_value_fixed(wad_levels,"linedefs");
-    var linedef=ds_list_find_value(lines,line);
-    var sector=ds_map_find_value_fixed(linedef,"sector");
-    
-    if sector==0{
-        sector=ds_map_find_value(linedef,"bsect");
-    }
-    
-    if beg==0{
-    beg=1;
-    if (ds_list_find_index(doors,sector)==-1){
-        ds_list_add(doors,sector)
-    }else instance_destroy();
-    }
-
+if keyboard_check_pressed(ord("F")){
+	switch state{
+		case "CLOSED":
+			state = "OPEN";
+		break;
+		//case "OPENED":
+		//	state = "CLOSE";
+		//break;
+	}
 }
-time++;
 
-var sec=ds_list_find_value(sects,sector);
+switch state{	
+	case "OPEN":
+	
+		doorPos -= doorSpeed;
+		doorPos = clamp(doorPos,doorHeight,4);
+		
+		if doorPos == 4{
+			state = "WAIT";
+		}
+		
+	break;
+	case "CLOSE":
+		doorPos += doorSpeed;
+		doorPos = clamp(doorPos,doorHeight,4);
+	break;
+	case "WAIT":
+		if wait!= -1{
+			time ++;
+			if time>=wait{
+				time = 0;
+				state = "CLOSE";
+			}
+		}else state = "OPENED";
+	break;
+}
 
-if sec!=undefined
-	ds_map_replace(sec,"crush",-(32*sin(time/64)-32));
+sector[?"crush"]=-doorPos;
 

@@ -1,48 +1,54 @@
 /// @description DE_ldTypeIsDoor(type number);
 /// @param type number
 var T=real(argument0);
-if T==1 or
-T==28 or
-T==27 or
-T==26 or
-T==31 or
-T==32 or
-T==33 or
-T==34 or
-T==117 or
-T==118 or
-T==29 or
-T==63 or
-T==4 or
-T==90 or
-T==103 or
-T==61 or
-T==2 or
-T==86 or
-T==50 or
-T==42 or
-T==3 or
-T==75 or
-T==16 or
-T==76 or
-T==46 or
-T==111 or
-T==114 or
-T==108 or
-T==105 or
-T==112 or
-T==115 or
-T==109 or
-T==106 or
-T==113 or
-T==116 or
-T==110 or
-T==107 or
-T==135 or
-T==134 or
-T==133 or
-T==99 or
-T==137 or
-T==136 return true;
+if T == 1	
+|| T == 117	
+|| T == 63	
+|| T == 114	
+|| T == 29	
+|| T == 111	
+|| T == 90	
+|| T == 105	
+|| T == 4	
+|| T == 108	
+|| T == 31	
+|| T == 118	
+|| T == 61	
+|| T == 115	
+|| T == 103	
+|| T == 112	
+|| T == 86	
+|| T == 106	
+|| T == 2	
+|| T == 109	
+|| T == 46	
+|| T == 42	
+|| T == 116	
+|| T == 50	
+|| T == 113	
+|| T == 75	
+|| T == 107	
+|| T == 3	
+|| T == 110	
+|| T == 196	
+|| T == 175	
+|| T == 76	
+|| T == 16	
+|| T == 26	
+|| T == 28	
+|| T == 27	
+|| T == 32	
+|| T == 33	
+|| T == 34	
+|| T == 99	
+|| T == 134	
+|| T == 136	
+|| T == 133	
+|| T == 135	
+|| T == 137
+|| T == $3c00
+|| T == $3800
+|| T == $4000 return true;
+
 return false;
 

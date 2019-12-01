@@ -15,7 +15,6 @@ l=0;
 while(buffer_tell(wadbuff)<len){
 var ssector =ds_map_build();
 var count=buffer_read(wadbuff,buffer_u16);
-show_debug_message("Polycount: "+string(count));
 ds_map_add(ssector,"count",count);
 ds_map_add(ssector,"start",buffer_read(wadbuff,buffer_u16));
 

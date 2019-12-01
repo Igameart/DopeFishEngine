@@ -14,7 +14,8 @@
         "5e820788-461d-418e-abdd-ff32590a7bfc",
         "4900838f-fa0f-4953-b82d-f98b1353cb07",
         "68cd9b14-1dd2-4736-a078-86b68d94c915",
-        "1f1808a2-f748-4b85-9965-9622f62fddad"
+        "1f1808a2-f748-4b85-9965-9622f62fddad",
+        "669a2a89-f94c-4782-84d4-5fcc3313613b"
     ],
     "filterType": "GMScript",
     "folderName": "Load",

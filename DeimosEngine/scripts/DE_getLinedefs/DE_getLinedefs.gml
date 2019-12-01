@@ -22,19 +22,27 @@ while(buffer_tell(wadbuff)<len){
     ds_map_add(ldef,"flags",buffer_read(wadbuff,buffer_s16));
     
     if WAD_FORMAT == "DOOM"{
-    var type,ssect;
+	    var type,ssect;
     
-    type=buffer_read(wadbuff,buffer_s16);
-    ssect=buffer_read(wadbuff,buffer_s16);
+	    type=buffer_read(wadbuff,buffer_s16);
+	    ssect=buffer_read(wadbuff,buffer_s16);
+		
+		//if ssect!=0{
+			mapSectTags[|ssect] = type;
+		//}
     
-    if DE_ldTypeIsDoor(type)==true{
-		trace("Created Door Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
-        door=instance_create(0,0,door_control_obj);
-        door.line=line;
-    }
+	    if DE_ldTypeIsDoor(type)==true{
+			trace("Created Door Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
+	        
+			door=instance_create_depth(0,0,0,door_control_obj);
+			door.line = line;
+			door.type = type;
+			door.tag = ssect;
+			
+	    }
     
-    ds_map_add(ldef,"type",type);
-    ds_map_add(ldef,"sector",ssect);
+	    ds_map_add(ldef,"type",type);
+	    ds_map_add(ldef,"sector",ssect);
     
     }else{
         var type,arg;
@@ -97,6 +105,4 @@ while(buffer_tell(wadbuff)<len){
 
 ds_map_add(wad_levels,"linedefs",linedefs);
 
-//if(wadLoader.debug)
 show_debug_message("NOTICE: ["+level+"] LINEDEFS "+string( ds_list_size(ds_map_find_value_fixed(wad_levels,"linedefs")) ));
-//};

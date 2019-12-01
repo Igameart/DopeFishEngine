@@ -2,6 +2,8 @@
 
 thing = DEThingType[thingType];
 
+trace("Loading Thing Type:",thing);
+
 name = thing[ DEThingDef.Description ];
 
 sprPrefix = thing[ DEThingDef.Sprite ];

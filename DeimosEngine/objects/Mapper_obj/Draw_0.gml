@@ -74,7 +74,7 @@ for (j = 0; j<ds_list_size(sides); j++ ){
     var b=ds_map_find_value(side,"bsect");
     s = ds_list_find_value(sects,s);
     b = ds_list_find_value(sects,b);
-    var zadd = ds_map_find_value_fixed(s,"lift");
+    var zadd = ds_map_find_value(s,"lift");
     
     shader_set_uniform_f(u_midBotOff,zadd);
     var crushing = ds_map_find_value(b,"crush");
@@ -82,7 +82,7 @@ for (j = 0; j<ds_list_size(sides); j++ ){
     shader_set_uniform_f(u_lowBotOff,zadd);
     shader_set_uniform_f(u_upBotOff,crushing);
     
-    zadd = ds_map_find_value_fixed(b,"lift");
+    zadd = ds_map_find_value(b,"lift");
     shader_set_uniform_f(u_lowTopOff,zadd);
         
     crushing = ds_map_find_value(s,"crush");

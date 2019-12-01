@@ -1,5 +1,14 @@
 /// @description 
 
+for (var b = 0; b<array_length_1d(buttons);b++){
+	
+	var btn = buttons[b];
+	
+	if instance_exists(btn)
+		btn.clicked = false;
+		
+}
+
 blinker = false;
 
 mTyping = false;
@@ -59,6 +68,9 @@ if mp_button.clicked == true{
 }
 else
 if launch_button.clicked == true{
+	
+	DEGameType = selMode;
+	DE_thingTypes();
 	
 	loading = true;
 	alarm[2]=2;

@@ -82,8 +82,6 @@ for (k=0;k<ds_list_size(lines);k++) {
             
             ds_map_replace(side,"back",back);
             
-            show_debug_message("Front Sector: "+string(sect));
-            
             sect = ds_list_find_value_fixed(sects,sect);
             var bsect=ds_map_find_value_fixed(bside,"sector");
             ds_map_replace(side,"bsect",bsect);
@@ -91,7 +89,6 @@ for (k=0;k<ds_list_size(lines);k++) {
             bsect = ds_list_find_value_fixed(sects,bsect);
             ds_map_replace(side,"linedef",k);
             ds_map_replace(bside,"linedef",k);
-            
             
             var us=ds_map_find_value(side,"X_");
             var ys=ds_map_find_value(side,"Y_");

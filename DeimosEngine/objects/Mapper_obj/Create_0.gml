@@ -27,16 +27,16 @@ zspeed=0;
 Msect=-1;
 secZ=0;
 
-var things=ds_map_find_value_fixed(wad_levels,"things");
-things=ds_list_find_value(things,0);
+//var things=ds_map_find_value_fixed(wad_levels,"things");
+//things=ds_list_find_value(things,0);
 
-x=ds_map_find_value(things,"x");
-y=ds_map_find_value(things,"z");
+//x=ds_map_find_value(things,"x");
+//y=ds_map_find_value(things,"z");
 z=0;
 
 eyes=mean(56,32);
 
-yaw=ds_map_find_value(things,"angle");
+//yaw=ds_map_find_value(things,"angle");
 direction=yaw;
 pitch=0;
 cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw)

@@ -1,5 +1,23 @@
 /// @description DeimosEngineInit( WAD, Camera );
 
+enum BBOX
+{
+    BOXTOP,
+    BOXBOTTOM,
+    BOXLEFT,
+    BOXRIGHT
+}
+enum TexUVS{
+	Left = 2,
+	Top
+}
+enum DEGameTypes{
+	DOOM,
+	HERETIC,
+	HEXEN,
+	STRIFE
+}
+
 globalvar DEcam; DEcam = argument[0];
 
 globalvar wadbuff;
@@ -34,6 +52,7 @@ ds_data_init();
 // Some Logic defines
 globalvar DESkillLevel;	DESkillLevel = 0;
 globalvar DENetPlay;	DENetPlay = 0;
+globalvar DEGameType; DEGameType = DEGameTypes.DOOM;
 
 // Some WAD defines
 globalvar MAP_SCALE; MAP_SCALE = 1.0;
@@ -76,27 +95,8 @@ globalvar mapGLVerts; mapGLVerts = noone;
 globalvar mapGLSegs; mapGLSegs = noone;
 globalvar mapGLSSects; mapGLSSects = noone;
 globalvar mapGLNodes; mapGLNodes = noone;
+globalvar mapSectTags; mapSectTags = ds_list_create();
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
-
-
-
-enum BBOX
-{
-    BOXTOP,
-    BOXBOTTOM,
-    BOXLEFT,
-    BOXRIGHT
-}
-enum TexUVS{
-	Left = 2,
-	Top
-}
-enum DEGameTypes{
-	DOOM,
-	HERETIC,
-	HEXEN,
-	STRIFE
-}
 
 DE_initTables();

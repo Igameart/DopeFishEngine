@@ -16,6 +16,8 @@ DE_getGLSSect(_map,LEV+GL_SSECTOFS);
 DE_getGLNodes(_map,LEV+GL_NODESOFS);
 DE_getThings(_map,LEV+THINGSOFS);
 
+DE_prepDoors();
+
 DE_preload_flats();
 DE_preload_patches();
 
