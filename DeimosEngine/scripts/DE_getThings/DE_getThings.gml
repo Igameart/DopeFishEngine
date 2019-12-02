@@ -97,8 +97,7 @@ while(buffer_tell(wadbuff)<len){
 	if (skill1_2 && (DESkillLevel>=0)) addThing = true;
 	if (skill3 && DESkillLevel>=2) addThing = true;
 	if (skill4_5 && DESkillLevel>=3) addThing = true;
-	
-	if mponly && !DENetPlay addThing = false;
+	if (mponly && !DENetPlay) addThing = false;
 	
 	if addThing == true{
 		var _3Dspr = instance_create_depth(X,Z,0,DEBillboardV_obj);

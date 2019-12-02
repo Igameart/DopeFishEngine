@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "53b7c0e4-1d2d-46e2-864c-d1ec798681c8",
+            "Value": {
+                "id": "aa352c27-a9b6-4d64-89e5-99374c054fe4",
+                "resourcePath": "sprites\\spr_Pixel\\spr_Pixel.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "53c74f1c-318e-4b15-ab1a-dbd36786e954",
             "Value": {
                 "id": "7c2120cd-1f2c-46ae-9981-0a3df5d26e88",
@@ -634,7 +642,7 @@
             "Key": "5406d437-3ff4-4d0c-996e-64e642a0ee48",
             "Value": {
                 "id": "a5ca72cf-d724-4874-9b27-c15c055031d6",
-                "resourcePath": "scripts\\DE_ldTypeIsDoor\\DE_ldTypeIsDoor.yy",
+                "resourcePath": "scripts\\DE_IdTypeIsDoor\\DE_IdTypeIsDoor.yy",
                 "resourceType": "GMScript"
             }
         },

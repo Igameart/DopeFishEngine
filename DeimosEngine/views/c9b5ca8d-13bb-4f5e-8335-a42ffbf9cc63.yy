@@ -5,7 +5,8 @@
     "name": "c9b5ca8d-13bb-4f5e-8335-a42ffbf9cc63",
     "children": [
         "8eac1d96-d81b-42e4-86b1-0ccadf8e3efb",
-        "7c61cb8f-df9f-4958-a777-2a2346499925"
+        "7c61cb8f-df9f-4958-a777-2a2346499925",
+        "53b7c0e4-1d2d-46e2-864c-d1ec798681c8"
     ],
     "filterType": "GMSprite",
     "folderName": "Deimos Engine",

@@ -6,10 +6,10 @@ var start_time=current_time;
 
 DE_getLevel(_map);
 var LEV = DE_getLumpNum(_map)
+DE_getSectors(_map,LEV+SECTORSOFS);
 DE_getLinedefs(_map,LEV+LINEDEFOFS);
 DE_getVertexes(_map,LEV+VERTEXESOFS);
 DE_getSidedefs(_map,LEV+SIDEDEFOFS);
-DE_getSectors(_map,LEV+SECTORSOFS);
 DE_getGLVerts(_map,LEV+GL_VERTOFS);
 DE_getGLSegs(_map,LEV+GL_SEGSOFS);
 DE_getGLSSect(_map,LEV+GL_SSECTOFS);
@@ -21,7 +21,7 @@ DE_prepDoors();
 DE_preload_flats();
 DE_preload_patches();
 
-buffer_delete(wadbuff);
+//buffer_delete(wadbuff);
 
 var end_time=current_time;
 

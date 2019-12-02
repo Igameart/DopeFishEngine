@@ -22,7 +22,6 @@ while(buffer_tell(wadbuff)<len){
 	ds_map_add(sector,"floor",_floor);
 	ds_map_add(sector,"ceiling",_ceiling);
 	ds_map_add(sector,"height",_ceiling-_floor);
-	ds_map_add(sector,"door height",-1);
 
 	ds_map_add(sector,"tex_f",string_upper(buffer_read_string(wadbuff,8)));
 	ds_map_add(sector,"tex_c",string_upper(buffer_read_string(wadbuff,8)));

@@ -4,7 +4,6 @@ line = -1
 type = -1;
 alarm[0]=2;
 time=random(360);
-beg=0;
 
 alarm[0] = 1;
 
@@ -12,13 +11,13 @@ image_alpha = 0;
 
 state = "CLOSED";
 
-wait = -1;
+wait = 4;
 time = 0;
 
-doorType = "LOCAL";
-
-doorSpeed = 1;
+doorSpeed = 16;
 
 doorHeight = 0;
 
 doorPos = 0;
+
+ot = delta_time;

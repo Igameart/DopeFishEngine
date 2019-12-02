@@ -1,4 +1,4 @@
-/// @description DE_ldTypeIsDoor(type number);
+/// @description DE_IdTypeIsDoor(type number);
 /// @param type number
 var T=real(argument0);
 if T == 1	

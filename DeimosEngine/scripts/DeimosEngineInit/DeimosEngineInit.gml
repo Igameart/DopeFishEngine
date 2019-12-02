@@ -96,6 +96,7 @@ globalvar mapGLSegs; mapGLSegs = noone;
 globalvar mapGLSSects; mapGLSSects = noone;
 globalvar mapGLNodes; mapGLNodes = noone;
 globalvar mapSectTags; mapSectTags = ds_list_create();
+globalvar mapDoors; mapDoors = ds_list_create();
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
 

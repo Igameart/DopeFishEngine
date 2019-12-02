@@ -15,10 +15,17 @@ if line!=-1{	//Let's define our collision info
 		y1 = sVert[?"y"];
 		x2 = eVert[?"x"];
 		y2 = eVert[?"y"];
-		
+				
 		x = x1; y = y1;
-		image_yscale = point_distance(x1,y1,x2,y2) / 8;
-		image_angle = point_direction(x1,y1,x2,y2);		
+		image_xscale = point_distance(x1,y1,x2,y2) / 8;
+		image_yscale = 6;
+		image_angle = point_direction(x1,y1,x2,y2);
+		
+		sprite_index = sprite_duplicate(sprite_index);
+		
+		sprite_set_offset(sprite_index,0,0);
+		
+		trace("Door Placed At:",x1,y1,x2,y2,image_angle);
 		
 }
 
@@ -42,6 +49,8 @@ if DE_IdTypeIsLocalDoor(type){
 	sector=secs[|Sec];
 }
 
+//if mapDoors[|sector] == undefined mapDoors[|sector] = id; else instance_destroy();
+
 doorHeight = sector[?"door height"] - sector[?"floor"];
 
-doorPos = doorHeight;
+doorPos = 0;//doorHeight;

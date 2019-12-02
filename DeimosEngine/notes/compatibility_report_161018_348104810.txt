@@ -176,8 +176,8 @@ Converted description /// @description DE_getSectorFromSSect(GLSSECT)/// @param
 Converting GML script: ${project_dir}\scripts\DE_findSectorAt\DE_findSectorAt.gml
 Converted description /// @description DE_findSectorAt(current sector)/// @param current sector
 
-Converting GML script: ${project_dir}\scripts\DE_ldTypeIsDoor\DE_ldTypeIsDoor.gml
-Converted description /// @description DE_ldTypeIsDoor(type number);/// @param type number
+Converting GML script: ${project_dir}\scripts\DE_IdTypeIsDoor\DE_IdTypeIsDoor.gml
+Converted description /// @description DE_IdTypeIsDoor(type number);/// @param type number
 
 Converting GML script: ${project_dir}\scripts\is_clockwise\is_clockwise.gml
 Converted description /// @description is_clockwise(x0, y0, x1, y1, x2, y2)/// @param x0

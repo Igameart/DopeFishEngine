@@ -31,7 +31,7 @@ while(buffer_tell(wadbuff)<len){
 			mapSectTags[|ssect] = type;
 		//}
     
-	    if DE_ldTypeIsDoor(type)==true{
+	    if DE_IdTypeIsDoor(type)==true{
 			trace("Created Door Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
 	        
 			door=instance_create_depth(0,0,0,door_control_obj);

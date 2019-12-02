@@ -101,7 +101,6 @@ u_TexHM=shader_get_uniform(shd_Sidedef,"u_TexHM");
 
 time=0;
 
-
 dtex=sprite_get_texture(RFXbayerdith_spr,0);
 RFX_init(2,dtex,256,false);
 //ptex=sprite_get_texture(RFXpalettes_spr,3);
