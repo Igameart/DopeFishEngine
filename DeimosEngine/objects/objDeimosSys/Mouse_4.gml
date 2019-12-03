@@ -70,7 +70,7 @@ else
 if launch_button.clicked == true{
 	
 	DEGameType = selMode;
-	DE_thingTypes();
+	DE_gameData();
 	
 	loading = true;
 	alarm[2]=2;

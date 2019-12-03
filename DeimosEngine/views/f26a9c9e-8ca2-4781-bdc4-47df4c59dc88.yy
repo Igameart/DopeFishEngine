@@ -10,7 +10,8 @@
         "a9c06c0a-fdf2-4814-9917-83b64dbcf3bd",
         "d556e435-bd6c-4846-aa5c-13521a239e8c",
         "02ba6d0e-fb00-458b-a134-f4666af04e35",
-        "d2edeba1-4a79-4017-883f-82bf186578eb"
+        "d2edeba1-4a79-4017-883f-82bf186578eb",
+        "9cc05b3e-5f95-4174-b9ed-ab43d65c57c1"
     ],
     "filterType": "GMScript",
     "folderName": "ds_data management",

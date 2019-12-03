@@ -11,8 +11,7 @@ alarm[0] = 1;
 
 image_alpha = 0;
 
-state = "CLOSED";
-
+sOnTime = 2;
 wait = 4;
 time = 0;
 
@@ -29,3 +28,9 @@ sndPlaying = noone;
 routine = noone;
 
 triggerType = DETriggers.MANUAL;
+
+switchIndex = undefined;
+
+switchTex = undefined;
+
+state = 0

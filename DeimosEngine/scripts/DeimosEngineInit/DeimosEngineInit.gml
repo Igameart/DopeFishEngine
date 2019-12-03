@@ -93,6 +93,7 @@ globalvar wadPatches; wadPatches = noone;
 globalvar wadPNames; wadPNames = noone;
 globalvar wadWallTextures; wadWallTextures = noone;
 globalvar wadFlatTextures; wadFlatTextures = noone;
+globalvar wadSwitchTextures; wadSwitchTextures = noone;
 
 globalvar DEMap;DEMap = "E1M1";
 globalvar mapLinedefs; mapLinedefs = noone;

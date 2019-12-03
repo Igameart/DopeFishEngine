@@ -1,8 +1,8 @@
 {
-    "id": "ae5c21f4-1129-4289-8714-4988320e917b",
+    "id": "8b76906b-37ea-479b-8032-55b740c96d76",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "DE_thingTypes",
+    "name": "DE_prepSwitch",
     "IsCompatibility": false,
     "IsDnD": false
 }

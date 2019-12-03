@@ -51,7 +51,7 @@ if DE_IdTypeIsDoor(type){
 					trace("Created Door For Sector:",S);
 				
 					ds_list_add(doorSectors,door);
-				
+					door.wait = wait;
 					door.sector = Sect;
 					with door event_user(0);
 				
@@ -82,6 +82,7 @@ if DE_IdTypeIsDoor(type){
 			var door = instance_create_depth(0,0,0,door_sector_obj);
 			trace("Created Door For Sector:",secNum);
 			ds_list_add(doorSectors,door);
+			door.wait = wait;
 			door.sector = Sect;
 			with door event_user(0);
 			mapDoors[|secNum] = door;

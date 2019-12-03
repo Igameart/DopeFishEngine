@@ -31,16 +31,6 @@ while(buffer_tell(wadbuff)<len){
 			mapSectTags[|ssect] = type;
 		//}
     
-	    if type != 0{
-			trace("Created Switch Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
-	        
-			var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
-			DE_switch.line = line;
-			DE_switch.type = type;
-			DE_switch.tag = ssect;
-			
-	    }
-    
 	    ds_map_add(ldef,"type",type);
 	    ds_map_add(ldef,"sector",ssect);
     
@@ -71,8 +61,25 @@ while(buffer_tell(wadbuff)<len){
         ds_map_add(ldef,"arg4",arg[4]);
     }
     
-    ds_map_add(ldef,"right",buffer_read(wadbuff,buffer_s16));
-    ds_map_add(ldef,"left",buffer_read(wadbuff,buffer_s16));
+	var front,back;
+	front = buffer_read(wadbuff,buffer_s16);
+	back = buffer_read(wadbuff,buffer_s16);
+	
+    ds_map_add(ldef,"right",front);
+    ds_map_add(ldef,"left",back);	
+    
+	if type != 0{
+		
+		trace("Created Switch Type "+string(type)+" with Tag "+string(ssect)+" From Linedef "+string(line));
+	        
+		var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
+		DE_switch.line = line;
+		DE_switch.type = type;
+		DE_switch.tag = ssect;
+		DE_switch.side = mapSidedefs[|front];
+		with DE_switch DE_prepSwitch();
+			
+	}
     
     //};
     

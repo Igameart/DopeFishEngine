@@ -1,68 +1,49 @@
-/*data=argument0;
-tname=argument1;
+var t_name = argument[0];
 
-var tc=0,tw=0,th=0,maxh=0,maxw=0;
-data_textures=ds_map_find_value_fixed(data,"textures");
+var tdat = ds_map_find_value(pload_tex,t_name);
 
-
-if(!ds_map_find_value_fixed(textures,tname)){
-    show_debug_message("WARNING: Missing or invalid Texture: "+tname);
-    
-    
-    show_debug_message("NOTICE: Found Texture:"+tname);
-    tt=ds_map_find_value_fixed(textures,tname);
-    t_width=ds_map_find_value_fixed(tt,"width");
-    t_height=ds_map_find_value_fixed(tt,"height");
-    
-    var texture=ds_grid_build(t_width,t_height);
-    ds_grid_clear(texture,-1);
-    var t_patches=ds_map_find_value_fixed(tt,"patchc");
-    var patchdat=ds_map_find_value_fixed(tt,"wadPatches");
-        show_debug_message("NOTICE: Found "+string(ds_list_size(patchdat))+" Patches in texture "+tname);
-    
-    for(var p=0; p<t_patches;p+=1){
-        var pdat=ds_list_find_value_fixed(patchdat,p);
-        var pname=ds_map_find_value_fixed(pdat,"patch");
-        show_debug_message("NOTICE: Found Patch:"+(pname));
-        if(!pdat){
-            continue;
-        }
-        
-        var patch=ds_map_find_value_fixed(wadPatches,pname);
-        
-        patch_width=ds_map_find_value_fixed(patch,"width");
-        patch_height=ds_map_find_value_fixed(patch,"height");
-        
-        var w=0,h=0;
-        var ofy=ds_map_find_value_fixed(pdat,"oy");
-        var ofx=ds_map_find_value_fixed(pdat,"ox");
-        
-        //if(ofy<0)ofy=0;
-        //if(ofx<0)ofx=0;
-        
-        for(var oy=ofy;oy<patch_height+ofy;oy+=1){
-            if(oy>=t_height)
-                break;
-            w=0;
-            for(var ox=ofx;ox<patch_width+ofx;ox+=1){
-                if(ox>=t_width)
-                break;
-                dat=ds_grid_get(ds_map_find_value_fixed(patch,"data"),w,h);
-                w+=1;
-                if dat>=0
-                    ds_grid_set(texture,ox,oy,dat);
-            }
-            h+=1;
-        }
-    }
-    
-    tex=DE_buildPatch(texture,t_width,t_height);
-    
-    //ds_grid_destroy(texture);
-    
-    ds_list_replace(data_textures,t,tex);
-
-}else return 0;
-
-//he3d.log("DEBUG","Total Unique Textures",tc+" ["+tw+"x"+th+"]");
-//he3d.log("DEBUG","Max Tex Size",maxw+"x"+maxh);
+if tdat == undefined{
+	if !is_undefined(ds_map_find_value(textures,t_name)){
+				
+	    show_debug_message("NOTICE: Found Texture:"+t_name);
+				
+	    var tt,t_w,t_h,t_ps;
+	    tt=ds_map_find_value_fixed(textures,t_name);
+	    t_w=ds_map_find_value_fixed(tt,"width");
+	    t_h=ds_map_find_value_fixed(tt,"height");
+	    t_ps=ds_map_find_value_fixed(tt,"wadPatches");
+            
+	    var surf=surface_create(t_w,t_h);
+	    surface_set_target(surf)
+	        draw_clear_alpha(0,0);
+	        for(var p=0;p<ds_list_size(t_ps);p+=1){
+	            var patch=ds_list_find_value(t_ps,p);
+	            var ox=ds_map_find_value_fixed(patch,"ox");
+	            var oy=ds_map_find_value_fixed(patch,"oy");
+	            var pname=ds_map_find_value_fixed(patch,"patch");
+                    
+				var spr_ = ds_map_find_value(pload_pat,pname);
+					
+	            if !is_undefined(spr_){
+					var pdat = wadPatches[?pname];
+					var oX,oY;
+					oX = pdat[?"o_left"];
+					oY = pdat[?"o_top"];
+	                draw_sprite_ext(spr_,0,ox+oX,oy+oY,1,1,0,c_white,1);
+						
+	            }
+                    
+	        }
+                
+	    surface_reset_target();
+			
+		var spr = sprite_create_from_surface(surf,0,0,t_w,t_h,false,false,0,0);
+				
+		var sprDat = sprite_get_uvs(spr,0);
+		var tdat = [spr,sprDat[TexUVS.Left],sprDat[TexUVS.Top]];
+				
+	    ds_map_replace(pload_tex,t_name,tdat);
+		surface_free(surf);
+            
+	}
+}
