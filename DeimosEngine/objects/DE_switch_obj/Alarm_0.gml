@@ -21,7 +21,7 @@ if line!=-1{	//Let's define our collision info
 		image_yscale = 0.25;
 		image_angle = point_direction(x1,y1,x2,y2);
 		
-		if routine == DERoutines.DOOR{
+		if triggerType == DETriggers.MANUAL{
 			
 			sprite_index = sprite_duplicate(sprite_index);
 			image_yscale = 4;		

@@ -27,3 +27,5 @@ ot = delta_time;
 sndPlaying = noone;
 
 routine = noone;
+
+triggerType = DETriggers.MANUAL;

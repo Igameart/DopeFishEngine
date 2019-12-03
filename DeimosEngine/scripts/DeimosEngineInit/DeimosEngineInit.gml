@@ -20,6 +20,12 @@ enum DEGameTypes{
 enum DERoutines{
 	DOOR
 }
+enum DETriggers{
+	MANUAL,
+	WALKOVER,
+	SWITCHED,
+	GUN
+}
 
 globalvar DEcam; DEcam = argument[0];
 
