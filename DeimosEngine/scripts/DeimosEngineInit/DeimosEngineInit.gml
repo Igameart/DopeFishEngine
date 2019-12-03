@@ -17,6 +17,9 @@ enum DEGameTypes{
 	HEXEN,
 	STRIFE
 }
+enum DERoutines{
+	DOOR
+}
 
 globalvar DEcam; DEcam = argument[0];
 

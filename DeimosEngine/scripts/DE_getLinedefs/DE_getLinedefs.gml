@@ -31,13 +31,13 @@ while(buffer_tell(wadbuff)<len){
 			mapSectTags[|ssect] = type;
 		//}
     
-	    if DE_IdTypeIsDoor(type)==true{
-			trace("Created Door Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
+	    if type != 0{
+			trace("Created Switch Type "+string(type)+" on Sector "+string(ssect)+" From Linedef "+string(line));
 	        
-			door=instance_create_depth(0,0,0,door_control_obj);
-			door.line = line;
-			door.type = type;
-			door.tag = ssect;
+			var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
+			DE_switch.line = line;
+			DE_switch.type = type;
+			DE_switch.tag = ssect;
 			
 	    }
     

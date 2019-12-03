@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "25bd926b-145c-4579-acd3-7b90004f4efc",
+            "Value": {
+                "id": "d4e001b1-2719-46be-baf8-eec759d3cf61",
+                "resourcePath": "objects\\door_sector_obj\\door_sector_obj.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "25cc336c-a277-4d8e-8f62-dc7b725f8516",
             "Value": {
                 "id": "0c47c26d-e72d-4b5d-b140-e58fe47ae31e",
@@ -442,7 +450,7 @@
             "Key": "441bc98c-354d-44cf-895a-addeefe2b24a",
             "Value": {
                 "id": "6d7563a1-7c33-493b-b6df-c2e47b7b1e80",
-                "resourcePath": "objects\\door_control_obj\\door_control_obj.yy",
+                "resourcePath": "objects\\DE_switch_obj\\DE_switch_obj.yy",
                 "resourceType": "GMObject"
             }
         },

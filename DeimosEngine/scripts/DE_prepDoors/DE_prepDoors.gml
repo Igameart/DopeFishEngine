@@ -1,4 +1,3 @@
-
 var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
 var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
 var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
@@ -39,18 +38,6 @@ for (var L = 0; L < lSize; L++){
 			
 			if DE_IdTypeIsDoor(dTag)
 			{
-				/*if mapDoors[|DoorSec] == undefined{
-					trace("Created Door Type "+string(dTag)+" on Sector "+string(back[?"sector"])+" From Linedef "+string(L));
-	        
-					var door=instance_create_depth(0,0,0,door_control_obj);
-					
-					door.line = L;
-					door.type = dTag;
-					door.ssect = back[?"sector"];
-					//door.sector = DoorSec;
-					
-					mapDoors[|DoorSec] = door;
-				}*/
 				
 				var front = line[?"right"];
 		

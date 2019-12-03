@@ -1,6 +1,6 @@
 /// @description DE_IdTypeIsDoor(type number);
 /// @param type number
-var T=real(argument0);
+var T=(argument0);
 if T == 1	
 || T == 117	
 || T == 63	
