@@ -14,7 +14,6 @@ shader_set_uniform_f(u_fogMinDistG,f_near);
 var gssects = ds_map_find_value_fixed(wad_levels,"glssects");
 var sects=ds_map_find_value_fixed(wad_levels,"sectors");
 
-var str="";
 for (j = 0; j<ds_list_size(gssects); j++ ){
     
     gssect = ds_list_find_value_fixed(gssects,j);

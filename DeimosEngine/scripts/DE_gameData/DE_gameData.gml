@@ -1,29 +1,17 @@
-globalvar DEThingType;
+trace("Game Type:",DENAMESPACE);
 
-enum DEThingDef{
-	Version,
-	Radius,
-	Height,
-	Sprite,
-	Sequence,
-	Class,
-	Description
-}
-
-trace("Game Type:",DEGameType);
-
-switch DEGameType{
-	case DEGameTypes.DOOM:
+switch DENAMESPACE{
+	case DEnameSpaces.DOOM:
 		DE_thingTypesDOOM();
 		DE_switchTypesDoom();
 	break;
-	case DEGameTypes.HERETIC:
+	case DEnameSpaces.HERETIC:
 		DE_thingTypesHeretic();
 	break;
-	case DEGameTypes.HEXEN:
+	case DEnameSpaces.HEXEN:
 		DE_thingTypesHexen();
 	break;
-	case DEGameTypes.STRIFE:
+	case DEnameSpaces.STRIFE:
 		DE_thingTypesStrife();
 	break;
 }

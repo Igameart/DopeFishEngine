@@ -1250,7 +1250,7 @@
             "Key": "8eac1d96-d81b-42e4-86b1-0ccadf8e3efb",
             "Value": {
                 "id": "938a6a97-bfe8-4994-ae7e-1b34add7429f",
-                "resourcePath": "sprites\\spr_DeimosLogo\\spr_DeimosLogo.yy",
+                "resourcePath": "sprites\\spr_DopeFishLogo\\spr_DopeFishLogo.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1986,7 +1986,7 @@
             "Key": "e856710b-f4d5-4a7d-ab35-c349e05ea577",
             "Value": {
                 "id": "67bf360f-359f-4e74-ba42-a2c109e69c4d",
-                "resourcePath": "scripts\\DeimosEngineInit\\DeimosEngineInit.yy",
+                "resourcePath": "scripts\\DopeFishEngineInit\\DopeFishEngineInit.yy",
                 "resourceType": "GMScript"
             }
         },

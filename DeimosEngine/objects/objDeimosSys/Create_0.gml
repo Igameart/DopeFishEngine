@@ -2,7 +2,7 @@
 
 image_speed = 0;
 
-DeimosEngineInit(Mapper_obj);
+DopeFishEngineInit(Mapper_obj);
 
 selMode = 0;
 _GameTitles = [spr_DoomTitle,spr_HereticTitle,spr_HexenTitle];//,spr_StrifeTitle];

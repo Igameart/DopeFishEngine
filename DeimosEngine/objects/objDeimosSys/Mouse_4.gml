@@ -69,7 +69,7 @@ if mp_button.clicked == true{
 else
 if launch_button.clicked == true{
 	
-	DEGameType = selMode;
+	DENAMESPACE = selMode;
 	DE_gameData();
 	
 	loading = true;

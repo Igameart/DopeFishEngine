@@ -9,7 +9,7 @@
         "53b7c0e4-1d2d-46e2-864c-d1ec798681c8"
     ],
     "filterType": "GMSprite",
-    "folderName": "Deimos Engine",
+    "folderName": "DopeFish Engine",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -1,6 +1,6 @@
 RFX_draw_surface(application_surface,0,0);
 
-draw_sprite_ext(spr_DeimosLogo,0,0,0,1/RFXscale,1/RFXscale,0,c_white,1);
+
 
 var w,h;
 
@@ -16,3 +16,6 @@ draw_text(4,h-4,string_lower(_str));
 
 
 
+gpu_set_tex_filter(true);
+draw_sprite_ext(spr_DopeFishLogo,0,0,0,0.25,0.25,0,c_white,1);
+gpu_set_tex_filter(false);

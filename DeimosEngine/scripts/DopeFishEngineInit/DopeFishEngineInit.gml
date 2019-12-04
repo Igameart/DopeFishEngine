@@ -1,4 +1,4 @@
-/// @description DeimosEngineInit( WAD, Camera );
+/// @description DopeFishEngineInit( WAD, Camera );
 
 enum BBOX
 {
@@ -11,7 +11,7 @@ enum TexUVS{
 	Left = 2,
 	Top
 }
-enum DEGameTypes{
+enum DEnameSpaces{
 	DOOM,
 	HERETIC,
 	HEXEN,
@@ -25,6 +25,16 @@ enum DETriggers{
 	WALKOVER,
 	SWITCHED,
 	GUN
+}
+
+enum DEThingDef{
+	Version,
+	Radius,
+	Height,
+	Sprite,
+	Sequence,
+	Class,
+	Description
 }
 
 globalvar DEcam; DEcam = argument[0];
@@ -58,10 +68,17 @@ ds_data_init();
 #macro FRACUNIT (1<<FRACBITS)
 #macro NF_SUBSECTOR 0x8000
 
+#macro NSDOOM = "doom",
+#macro NSHERETIC = "heretic",
+#macro NSHEXEN = "hexen",
+#macro NSSTRIFE = "strife"
+
+globalvar DEThingType;
+
 // Some Logic defines
 globalvar DESkillLevel;	DESkillLevel = 0;
 globalvar DENetPlay;	DENetPlay = 0;
-globalvar DEGameType; DEGameType = DEGameTypes.DOOM;
+globalvar DENAMESPACE; DENAMESPACE = DEnameSpaces.DOOM;
 
 // Some WAD defines
 globalvar MAP_SCALE; MAP_SCALE = 1.0;
