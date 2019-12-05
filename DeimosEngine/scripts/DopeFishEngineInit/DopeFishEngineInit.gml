@@ -18,7 +18,8 @@ enum DEnameSpaces{
 	STRIFE
 }
 enum DERoutines{
-	DOOR
+	DOOR,
+	FLOOR
 }
 enum DETriggers{
 	MANUAL,

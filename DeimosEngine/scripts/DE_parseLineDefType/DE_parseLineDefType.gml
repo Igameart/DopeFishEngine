@@ -12,6 +12,8 @@ DE_prepDoors();
 
 	//If this Linedef triggers a door, set routine
 if DE_IdTypeIsDoor(type) routine = DERoutines.DOOR;
+else
+if DE_IdTypeIsFloor(type) routine = DERoutines.FLOOR;
 
 switch type{
 		//Regular and extended door types:
@@ -62,16 +64,85 @@ switch type{
 	case	135	: CLASS = Reg;	TRIG = ["S","1"];	LOCK = Red;		SPEED = Fast;	WAIT = -1;	MONST = No; FUNC = [Open];break;
 	case	137	: CLASS = Reg;	TRIG = ["S","1"];	LOCK = Yell;	SPEED = Fast;	WAIT = -1;	MONST = No; FUNC = [Open];break;
 	
+		//Regular and extended floor types
+	case	60	: CLASS = Reg; TRIG =["S","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	23	: CLASS = Reg; TRIG =["S","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	82	: CLASS = Reg; TRIG =["W","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	38	: CLASS = Reg; TRIG =["W","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	177	: CLASS = Ext; TRIG =["S","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	159	: CLASS = Ext; TRIG =["S","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	84	: CLASS = Reg; TRIG =["W","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	37	: CLASS = Reg; TRIG =["W","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Floor";break;
+	case	69	: CLASS = Reg; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	18	: CLASS = Reg; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	128	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	119	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	132	: CLASS = Reg; TRIG =["S","R"];	DIR = "Up"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	131	: CLASS = Reg; TRIG =["S","1"];	DIR = "Up"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	129	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	130	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	222	: CLASS = Ext; TRIG =["S","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	221	: CLASS = Ext; TRIG =["S","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	220	: CLASS = Ext; TRIG =["W","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	219	: CLASS = Ext; TRIG =["W","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Next Neighbor Floor";break;
+	case	64	: CLASS = Reg; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Ceiling";break;
+	case	101	: CLASS = Reg; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Ceiling";break;
+	case	91	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Ceiling";break;
+	case	5	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Ceiling";break;
+	case	24	: CLASS = Reg; TRIG =["G","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Lowest Neighbor Ceiling";break;
+	case	65	: CLASS = Reg; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = Yes;	TARGET = "Lowest Neighbor Ceiling - 8";break;
+	case	55	: CLASS = Reg; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = Yes;	TARGET = "Lowest Neighbor Ceiling - 8";break;
+	case	94	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = Yes;	TARGET = "Lowest Neighbor Ceiling - 8";break;
+	case	56	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = Yes;	TARGET = "Lowest Neighbor Ceiling - 8";break;
+	case	45	: CLASS = Reg; TRIG =["S","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor";break;
+	case	102	: CLASS = Reg; TRIG =["S","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor";break;
+	case	83	: CLASS = Reg; TRIG =["W","R"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor";break;
+	case	19	: CLASS = Reg; TRIG =["W","1"];	DIR = "Dn"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor";break;
+	case	70	: CLASS = Reg; TRIG =["S","R"];	DIR = "Dn"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor + 8";break;
+	case	71	: CLASS = Reg; TRIG =["S","1"];	DIR = "Dn"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor + 8";break;
+	case	98	: CLASS = Reg; TRIG =["W","R"];	DIR = "Dn"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor + 8";break;
+	case	36	: CLASS = Reg; TRIG =["W","1"];	DIR = "Dn"; SPEED = Fast; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Highest Neighbor Floor + 8";break;
+	case	180	: CLASS = Ext; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	161	: CLASS = Ext; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	92	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	58	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	179	: CLASS = Ext; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	160	: CLASS = Ext; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	93	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	59	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "Absolute 24";break;
+	case	176	: CLASS = Ext; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Abs Shortest Lower Texture";break;
+	case	158	: CLASS = Ext; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Abs Shortest Lower Texture";break;
+	case	96	: CLASS = Reg; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Abs Shortest Lower Texture";break;
+	case	30	: CLASS = Reg; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Abs Shortest Lower Texture";break;
+	case	178	: CLASS = Ext; TRIG =["S","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 512";break;
+	case	140	: CLASS = Reg; TRIG =["S","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 512";break;
+	case	147	: CLASS = Ext; TRIG =["W","R"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 512";break;
+	case	142	: CLASS = Ext; TRIG =["W","1"];	DIR = "Up"; SPEED = Slow; CHANGE = "None"; MODEL = "--" ; MONST= No; CRUSH = No;	TARGET = "Absolute 512";break;
+	case	190	: CLASS = Ext; TRIG =["S","R"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	189	: CLASS = Ext; TRIG =["S","1"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	154	: CLASS = Ext; TRIG =["W","R"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	153	: CLASS = Ext; TRIG =["W","1"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Trg"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	78	: CLASS = Ext; TRIG =["S","R"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	241	: CLASS = Ext; TRIG =["S","1"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	240	: CLASS = Ext; TRIG =["W","R"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "None";break;
+	case	239	: CLASS = Ext; TRIG =["W","1"];	DIR = "--"; SPEED = "--"; CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "None";break;
 
 }
 
 	//Let's designate our collision type based on trigger info!
 DE_lineDefDefineCollision();
 
-if routine == DERoutines.DOOR{
-	trace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
-	DE_switchRetrieveDoorSectors();
+switch routine {
+	case DERoutines.DOOR:
+		trace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+		DE_switchRetrieveDoorSectors();
+	break;
+	case DERoutines.FLOOR:
+		trace("Floor Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+		//DE_switchRetrieveDoorSectors();
+	break;
 }
+
 
 if TRIG[0] == "S"	//This is a switch
 	DE_prepSwitch();
