@@ -1,8 +1,6 @@
 var level=argument0,lump=argument1;
 var linedefs=ds_list_build();
 mapLinedefs = linedefs;
-globalvar doors;
-doors=ds_list_build();
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 
@@ -77,7 +75,6 @@ while(buffer_tell(wadbuff)<len){
 		DE_switch.type = type;
 		DE_switch.tag = ssect;
 		DE_switch.side = mapSidedefs[|front];
-		with DE_switch DE_prepSwitch();
 			
 	}
     
@@ -100,16 +97,26 @@ while(buffer_tell(wadbuff)<len){
     ds_map_replace(ldef,"flags",flagmap);
     
     line+=1;
+	
+	var bside=ds_list_find_value_fixed(mapSidedefs,back);
+    var bsect=ds_map_find_value_fixed(bside,"sector");
+	var side = ds_list_find_value_fixed(mapSidedefs,back);
+	
+    ds_map_replace(side,"bsect",bsect);
+    ds_map_replace(ldef,"bsect",bsect);
     
-    var sides=ds_list_build();
-    ds_list_add(sides,ds_map_find_value_fixed(ldef,"right"));
-    ds_list_add(sides,ds_map_find_value_fixed(ldef,"left"));
+    var lSides=ds_list_build();
+    ds_list_add(lSides,front);
+    ds_list_add(lSides,back);
     
-    ds_map_add(ldef,"sides",sides);
+    ds_map_add(ldef,"sides",lSides);
     ds_list_add(linedefs,ldef);
     //show_debug_message("NOTICE: ["+level+'] LINEDEFS '+string( ds_list_size(linedefs) ));
 }
 
 ds_map_add(wad_levels,"linedefs",linedefs);
+
+	//Now that all linedef data is loaded, parse any switches (linedefs with actions)			
+with DE_switch_obj DE_parseLineDefType();
 
 show_debug_message("NOTICE: ["+level+"] LINEDEFS "+string( ds_list_size(ds_map_find_value_fixed(wad_levels,"linedefs")) ));

@@ -1,5 +1,6 @@
-doorSectors = ds_list_create();
-doorNum = 0;
+taggedSectors = ds_list_create();
+taggedSectNum = 0;
+sectsComplete = -1;
 
 tag = -1;
 line = -1
@@ -11,7 +12,7 @@ alarm[0] = 1;
 
 image_alpha = 0;
 
-sOnTime = 2;
+//sOnTime = 2;
 wait = 4;
 time = 0;
 
@@ -27,10 +28,19 @@ sndPlaying = noone;
 
 routine = noone;
 
-triggerType = DETriggers.MANUAL;
+switched = false;
 
 switchIndex = undefined;
 
 switchTex = undefined;
 
 state = 0
+
+CLASS = "Regular";
+TRIG = ["P","R"];
+LOCK = false;
+SPEED = 16;
+WAIT =	150;
+MONST =	false;
+FUNC = ["Open"];
+funcPos = 0;

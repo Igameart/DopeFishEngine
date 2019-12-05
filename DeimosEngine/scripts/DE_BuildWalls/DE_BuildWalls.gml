@@ -84,8 +84,8 @@ for (k=0;k<ds_list_size(lines);k++) {
             
             sect = ds_list_find_value_fixed(sects,sect);
             var bsect=ds_map_find_value_fixed(bside,"sector");
-            ds_map_replace(side,"bsect",bsect);
-            ds_map_replace(linedef,"bsect",bsect);
+            //ds_map_replace(side,"bsect",bsect);
+            //ds_map_replace(linedef,"bsect",bsect);
             bsect = ds_list_find_value_fixed(sects,bsect);
             ds_map_replace(side,"linedef",k);
             ds_map_replace(bside,"linedef",k);

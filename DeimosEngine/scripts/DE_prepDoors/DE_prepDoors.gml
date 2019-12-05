@@ -64,3 +64,6 @@ for (var L = 0; L < lSize; L++){
 		}
 	}
 }
+
+//Now that we've defined all door sector's height, we can set the height for door objects
+with door_sector_obj event_user(0);

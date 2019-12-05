@@ -3,12 +3,6 @@
 
 //DT = 1/translate(fps,0,60,0,35);
 
-if sndPlaying != noone && audio_exists(sndPlaying){
-	if !audio_is_playing(sndPlaying){
-		audio_free_buffer_sound(sndPlaying);
-		sndPlaying = noone;
-	}
-}
 
 /*
 switch state{	

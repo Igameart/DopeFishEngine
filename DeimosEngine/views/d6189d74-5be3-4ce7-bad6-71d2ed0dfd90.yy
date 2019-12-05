@@ -8,7 +8,7 @@
         "fbee89ba-8fa7-4d53-ada4-34fb6651b495"
     ],
     "filterType": "GMScript",
-    "folderName": "Deimos Engine",
+    "folderName": "DopeFish",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

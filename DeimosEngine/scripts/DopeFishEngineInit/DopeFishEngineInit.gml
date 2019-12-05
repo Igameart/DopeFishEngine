@@ -37,12 +37,6 @@ enum DEThingDef{
 	Description
 }
 
-globalvar DEcam; DEcam = argument[0];
-
-globalvar wadbuff;
-
-ds_data_init();
-
 // Macros
 #macro ANG45 0x20000000
 #macro ANG90 0x40000000
@@ -68,10 +62,59 @@ ds_data_init();
 #macro FRACUNIT (1<<FRACBITS)
 #macro NF_SUBSECTOR 0x8000
 
-#macro NSDOOM = "doom",
-#macro NSHERETIC = "heretic",
-#macro NSHEXEN = "hexen",
-#macro NSSTRIFE = "strife"
+#macro NSDOOM "doom"
+#macro NSHERETIC "heretic"
+#macro NSHEXEN "hexen"
+#macro NSSTRIFE "strife"
+
+//Ceiling and crusher speed
+#macro C_SLOW	 8
+#macro C_NORMAL	 16
+#macro C_FAST	 32
+#macro C_TURBO	 64
+
+//Floor speed
+#macro F_SLOW	 8
+#macro F_NORMAL	 16
+#macro F_FAST	 32
+#macro F_TURBO	 64
+
+//Door speed
+#macro D_SLOW	 16
+#macro D_NORMAL	 32
+#macro D_FAST	 64
+#macro D_TURBO	 128
+
+#macro VDOORSPEED	FRACUNIT*2;
+
+#macro VDOORWAIT 150
+
+//Stair building speed
+#macro ST_SLOW	 2
+#macro ST_NORMAL 4
+#macro ST_FAST	 16
+#macro ST_TURBO	 32
+
+//Platform/lift speed
+#macro P_SLOW	 8
+#macro P_NORMAL	 16
+#macro P_FAST	 32
+#macro P_TURBO	 64
+#macro PLATWAIT	 105
+#macro ELEVATORSPEED 32
+
+//Donut/pillar speed
+#macro DORATE	 4
+
+//exture scrollers
+#macro SCROLL_UNIT	64
+
+
+globalvar DEcam; DEcam = argument[0];
+
+globalvar wadbuff;
+
+ds_data_init();
 
 globalvar DEThingType;
 
@@ -111,6 +154,7 @@ globalvar wadPNames; wadPNames = noone;
 globalvar wadWallTextures; wadWallTextures = noone;
 globalvar wadFlatTextures; wadFlatTextures = noone;
 globalvar wadSwitchTextures; wadSwitchTextures = noone;
+globalvar wadSounds; wadSounds = ds_map_create();
 
 globalvar DEMap;DEMap = "E1M1";
 globalvar mapLinedefs; mapLinedefs = noone;

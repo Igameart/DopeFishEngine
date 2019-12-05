@@ -9,35 +9,27 @@ if sPos!=undefined{
 	
 }*/
 
-if state == 0{
+if switched == false{
+	
+	switched = true;
 
-	state = !state;
+	if TRIG[0] == "S"{
 
-	if switchIndex!=undefined{
-		side[?switchIndex] = switchTex[state];
+		if switchIndex!=undefined{
+			side[?switchIndex] = switchTex[switched];
+		}
+		
 	}
 	
-	alarm[1] = sOnTime*room_speed;
+	/*
+	if TRIG[1] == "R"{	//Action is repeatable so reset the switch after a moment
+		alarm[1] = sOnTime*room_speed;
+	}*/
 
 	switch routine{
-		
 		case DERoutines.DOOR:
-	
-			for (var Door = 0; Door<doorNum; Door++){
-	
-				with doorSectors[|Door]
-				switch state{
-		
-					case "CLOSED":
-						state = "OPEN";
-						sndPlaying = DE_getSound("DSDOROPN");
-						audio_play_sound(sndPlaying,random(16),false);
-					break;
-				
-				}
-			}
-		
+			DE_switchSetDoorState( FUNC[0] );
 		break;
-		
 	}
+	
 }

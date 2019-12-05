@@ -1,47 +1,90 @@
 
 var DT = (2/35)*((room_speed/fps));//translate(0,0,35,0,0);
 
+var stateChange = false;
+
 switch state{
 	
-	case "OPEN":
+	case "Open":
 	
 		doorPos += doorSpeed*DT;
-		doorPos = clamp(doorPos,0,doorHeight);
+		//doorPos = clamp(doorPos,0,doorHeight);
+		
 		sector[?"crush"]=doorPos;
 		
-		if doorPos == doorHeight{
-			state = "WAIT";
+		if doorPos > doorHeight{
+			
+			sector[?"crush"] = doorHeight;
+			stateChange = true;
+			
 		}
 		
 	break;
 	
-	case "CLOSE":
+	case "Close":
 		doorPos -= doorSpeed*DT;
 		doorPos = clamp(doorPos,0,doorHeight);
 		sector[?"crush"]=doorPos;
 		
 		if doorPos == 0{
-			state = "CLOSED";
+			stateChange = true;
 		}
 		
 	break;
 	
-	case "WAIT":
+	case "Wait":
 		if wait!= -1{
 			time += 1;
+			
 			if time>=wait*room_speed{
 				time = 0;
-				state = "CLOSE";
-				sndPlaying = DE_getSound("DSDORCLS");
-				audio_play_sound(sndPlaying,random(16),false);
+				stateChange = true;
 			}
-		}else state = "OPENED";
+			
+		}else state = "IDLE"
 	break;
 }
 
-if sndPlaying != noone && audio_exists(sndPlaying){
-	if !audio_is_playing(sndPlaying){
-		audio_free_buffer_sound(sndPlaying);
-		sndPlaying = noone;
+if stateChange == true{
+	
+	funcPos++;
+				
+	if funcPos == array_length_1d(FUNC){
+		trace(FUNC);
+		state = "IDLE";
+		
+		//If this is a repeatable action, make sure owner switch resets
+		if repeatable == true{
+			funcPos = 0;
+			if instance_exists(owner){
+				with owner{
+					sectsComplete++;
+						//But only if all linked sectors have completed actions (add 1 to account for the required negative value of sectsComplete)
+					if sectsComplete+1 == ds_list_size(taggedSectors){
+						trace("All Tagged Sectors Have Completed Their Actions");
+						event_user(1);
+						
+					}
+				}
+			}
+			
+			
+		}
+		
+	}else{
+		
+		state = FUNC[funcPos];
+		switch state{
+			case "Close":
+				audio_play_sound(DE_getSound("DSDORCLS"),random(16),false);				
+			break;
+			case "Open":
+				audio_play_sound(DE_getSound("DSDORCLS"),random(16),false);
+			break;			
+		}
+		
 	}
+	
+	trace("Door State Changed To:",state);
+	trace(current_time);
 }

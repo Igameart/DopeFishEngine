@@ -18,3 +18,11 @@ doorPos = 0;
 ot = delta_time;
 
 sndPlaying = noone;
+
+funcs = [];
+
+funcPos = 0;
+
+repeatable = true;
+
+owner = noone;
