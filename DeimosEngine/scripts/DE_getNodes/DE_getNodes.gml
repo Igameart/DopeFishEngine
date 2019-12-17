@@ -1,7 +1,6 @@
 var level=argument0,lump=argument1;
 
-var nodes=ds_list_build();
-ds_map_add(wad_levels,"nodes",nodes);
+var nodes=mapGLNodes;//ds_list_build();
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

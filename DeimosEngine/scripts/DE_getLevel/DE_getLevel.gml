@@ -1,10 +1,5 @@
 var level = (argument0);
 var l,curl = 0,gotlevel=false;
-globalvar wad_levels;
-wad_levels=ds_map_build();
-
-globalvar pload_flats;
-pload_flats=ds_map_build();
 
 for(l=0;l<ds_list_size(wadDirectory);l+=1){
     if(ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l),"name")=level){

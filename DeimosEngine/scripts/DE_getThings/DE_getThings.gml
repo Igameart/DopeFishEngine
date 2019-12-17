@@ -1,9 +1,5 @@
 var level=argument0,lump=argument1;
 
-mapThings=ds_list_build();
-
-ds_map_add(wad_levels,"things",mapThings);
-
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 
 var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
@@ -17,7 +13,7 @@ var len=pos+size;
 l=0;
 while(buffer_tell(wadbuff)<len){
 	
-	//var thing =ds_map_build();
+	var thing =ds_map_build();
 	
 	var ID,X,Y,Z,ANGLE,TYPE,FLAGS,ACTION,ARG1,ARG2,ARG3,ARG4,ARG5;
 		ID = 0;
@@ -50,20 +46,20 @@ while(buffer_tell(wadbuff)<len){
 		ARG5 = buffer_read(wadbuff,buffer_u8)
 	}
 	
-	//ds_map_add(thing,"ID",ID)
-	//ds_map_add(thing,"x",X)
-	//ds_map_add(thing,"y",Y)
-	//ds_map_add(thing,"z",Z)
-	//ds_map_add(thing,"angle",ANGLE)
-	//ds_map_add(thing,"type",TYPE)
-	//ds_map_add(thing,"flags",FLAGS)
-	//ds_map_add(thing,"action special",ACTION)
-	//ds_map_add(thing,"action argument 1",ARG1)
-	//ds_map_add(thing,"action argument 2",ARG2)
-	//ds_map_add(thing,"action argument 3",ARG3)
-	//ds_map_add(thing,"action argument 4",ARG4)
-	//ds_map_add(thing,"action argument 5",ARG5)
-	//ds_list_add(mapThings,thing);
+	ds_map_add(thing,"ID",ID)
+	ds_map_add(thing,"x",X)
+	ds_map_add(thing,"y",Y)
+	ds_map_add(thing,"z",Z)
+	ds_map_add(thing,"angle",ANGLE)
+	ds_map_add(thing,"type",TYPE)
+	ds_map_add(thing,"flags",FLAGS)
+	ds_map_add(thing,"action special",ACTION)
+	ds_map_add(thing,"action argument 1",ARG1)
+	ds_map_add(thing,"action argument 2",ARG2)
+	ds_map_add(thing,"action argument 3",ARG3)
+	ds_map_add(thing,"action argument 4",ARG4)
+	ds_map_add(thing,"action argument 5",ARG5)
+	ds_list_add(mapThings,thing);
 
 	// Bit Shift flags
 	//var flags=ds_map_find_value_fixed(thing,"flags");

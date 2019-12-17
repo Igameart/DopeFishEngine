@@ -1,8 +1,7 @@
 var level=argument0,lump=argument1;
 //return -1; // XXX This is no doubt wrong, but is optional
 
-var segs=ds_list_build();
-ds_map_add(wad_levels,"segs",segs);
+var segs=mapSegs;
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

@@ -1,8 +1,5 @@
 var level=argument0,lump=argument1+(WAD_FORMAT=="DOOM"?0:1);
 
-mapGLNodes=ds_list_build();
-ds_map_add(wad_levels,"glnodes",mapGLNodes);
-
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 
 var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");

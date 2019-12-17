@@ -57,7 +57,7 @@ for (var L = 0; L < lSize; L++){
 				
 				trace("Linedef is on Door:",L,"Door Tag is:",DoorSec[?"tag"]);
 				trace("Sector Number:",back[?"sector"]);
-				ds_map_print(DoorSec);
+				//ds_map_print(DoorSec);
 				
 			}
 			

@@ -111,6 +111,7 @@ enum DEThingDef{
 #macro SCROLL_UNIT	64
 
 
+
 globalvar DEcam; DEcam = argument[0];
 
 globalvar wadbuff;
@@ -118,6 +119,9 @@ globalvar wadbuff;
 ds_data_init();
 
 globalvar DEThingType;
+
+// Some System defines
+//globalvar DE_SysReadout; DE_SysReadout = ds_list_create();
 
 // Some Logic defines
 globalvar DESkillLevel;	DESkillLevel = 0;
@@ -144,32 +148,74 @@ globalvar skyflatnum;
 globalvar skytexture;
 globalvar skytexturemid;
 
+// Some WAD defines
 globalvar wad; wad = "";
-globalvar wadHeader; wadHeader = noone;
+globalvar wadHeader; wadHeader = ds_map_build();
 globalvar wadDirectory; wadDirectory = noone;
 globalvar wadDirectoryOfs; wadDirectoryOfs = noone;
 globalvar wadColorMaps; wadColorMaps = noone;
 globalvar wadPlaypal; wadPlaypal = noone;
-globalvar wadPatches; wadPatches = noone;
-globalvar wadPNames; wadPNames = noone;
+globalvar wadPatches; wadPatches = ds_map_build();
+globalvar wadPNames; wadPNames = ds_list_build();
 globalvar wadWallTextures; wadWallTextures = noone;
 globalvar wadFlatTextures; wadFlatTextures = noone;
 globalvar wadSwitchTextures; wadSwitchTextures = noone;
 globalvar wadSounds; wadSounds = ds_map_create();
 
-globalvar DEMap;DEMap = "E1M1";
-globalvar mapLinedefs; mapLinedefs = noone;
-globalvar mapVertexes; mapVertexes = noone;
-globalvar mapSidedefs; mapSidedefs = noone;
-globalvar mapSectors; mapSectors = noone;
-globalvar mapThings; mapThings = noone;
-globalvar mapGLVerts; mapGLVerts = noone;
-globalvar mapGLSegs; mapGLSegs = noone;
-globalvar mapGLSSects; mapGLSSects = noone;
-globalvar mapGLNodes; mapGLNodes = noone;
-globalvar mapSectTags; mapSectTags = ds_list_create();
-globalvar mapDoors; mapDoors = ds_list_create();
+globalvar wad_levels;wad_levels=ds_map_build();
+globalvar flats_;flats_=ds_map_build();
+globalvar pload_flats;pload_flats=ds_map_build();
 globalvar numGLNodes;
 globalvar clipangle; //clipangle = xtoviewangle[0];
+
+// Some Map defines
+globalvar DEMap;DEMap = "E1M1";
+globalvar mapLinedefs; mapLinedefs = ds_list_build();
+globalvar mapVertexes; mapVertexes = ds_list_build();
+globalvar mapSidedefs; mapSidedefs = ds_list_build();
+globalvar mapSectors; mapSectors = ds_list_build();
+globalvar mapThings; mapThings = ds_list_build();
+globalvar mapGLVerts; mapGLVerts = ds_list_build();
+globalvar mapGLSegs; mapGLSegs = ds_list_build();
+globalvar mapSegs; mapSegs = ds_list_build();
+globalvar mapGLSSects; mapGLSSects = ds_list_build();
+globalvar mapGLNodes; mapGLNodes = ds_list_build();
+globalvar mapSegs;mapSegs = ds_list_build();
+globalvar mapSSectors;mapSSectors=ds_list_build();
+globalvar mapSectTags; mapSectTags = ds_list_build();
+globalvar mapDoors; mapDoors = ds_list_build();
+
+
+ds_map_add(wad_levels,"glnodes",mapGLNodes);
+ds_map_add(wad_levels,"glsegs",mapGLSegs);
+ds_map_add(wad_levels,"glverts",mapGLVerts);
+ds_map_add(wad_levels,"things",mapThings);
+ds_map_add(wad_levels,"ssectors",mapSSectors);
+ds_map_add(wad_levels,"glssects",mapGLSSects);
+ds_map_add(wad_levels,"vertexes",mapVertexes);
+ds_map_add(wad_levels,"nodes",mapGLNodes);
+ds_map_add(wad_levels,"sidedefs",mapSidedefs);
+ds_map_add(wad_levels,"segs",mapSegs);
+ds_map_add(wad_levels,"sectors",mapSectors);
+
+globalvar wadbuff;
+globalvar pwadbuff;
+
+// Some WAD defines
+globalvar MAP_SCALE; MAP_SCALE = 1.0;
+globalvar MAX_THINGS; MAX_THINGS = 137;
+globalvar NOINDEX; NOINDEX = 65536;
+globalvar SUBSECTOR; SUBSECTOR = (1<<15);
+globalvar VERT_IS_GL;// VERT_IS_GL = (1<<15);
+globalvar ANIM_FPS; ANIM_FPS = 35.0;
+globalvar FF_FRAMEMASK; FF_FRAMEMASK = $7fff;
+globalvar FF_FULLBRIGHT; FF_FULLBRIGHT = $8000;
+globalvar PLAYER_HEIGHT; PLAYER_HEIGHT = 40;
+globalvar NOGROUND; NOGROUND = -9999;
+globalvar ANGLE_MASK; ANGLE_MASK = $FFFFFFFF;
+globalvar WAD_FORMAT; WAD_FORMAT = "DOOM";
+globalvar glversion; glversion = -1;
+
+//globalvar null; null=NOINDEX;
 
 DE_initTables();

@@ -32,9 +32,9 @@ for(l=0;l<ds_map_find_value_fixed(wadHeader,"numlumps");l+=1){
 }
 
 
-//show_debug_message("NOTICE: Got Directory: "+string(ds_list_size(wadDirectory))+" Entries");
+if WAD_FORMAT == "HEXEN"
+	show_message("Hexen formatted maps will load, but you may experience issues with map interactions.\n(Hexen format integration is incomplete)");
 
-//show_debug_message("Directory Name in WAD: "+string(ds_map_find_value_fixed(wadDirectory[l],"name")));
 
 if(ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l-1),"name")!="F_END"){
 //show_debug_message("Unexpected end of Directory Marker: "+ ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l-1),"name"))

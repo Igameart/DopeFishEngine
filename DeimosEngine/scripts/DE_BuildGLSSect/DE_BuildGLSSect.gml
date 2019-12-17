@@ -40,6 +40,7 @@
 **  copyright (c) 2006, John Leffingwell
 **  www.planetxot.com
 */
+
 var polygon, polygonSize, triangles, points, polyX, polyY, good, col, sect, colmap;
 var i, j, n, p, A, B, C, x0, y0, x1, y1, x2, y2, x3, y3, x4, y4;
 
@@ -62,7 +63,7 @@ show_debug_message("BUILDING Sector: "+string(argument0));
 
 
 var colval = ds_map_find_value_fixed(sect,"lightlevel");
-col=make_colour_hsv(255,0,colval);
+col=make_colour_hsv(random(255),128*0,colval);//make_colour_hsv(255,0,colval);
 var fheight = ds_map_find_value_fixed(sect,"floor");
 var cheight = ds_map_find_value_fixed(sect,"ceiling");
 var ftex = ds_map_find_value_fixed(sect,"tex_f");
@@ -90,7 +91,7 @@ if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" a
     polyX = ds_list_create();
     polyY = ds_list_create();
     
-    show_debug_message("STILL BUILDING Sector, Polygon size: "+string(polygonSize));
+    //show_debug_message("STILL BUILDING Sector, Polygon size: "+string(polygonSize));
     
     var k = 0;
     repeat (count) {
@@ -202,3 +203,4 @@ if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" a
     vertex_end(vbuffer);
     ds_map_add(polygon,"vbuffer",vbuffer);
 }
+trace("Done Building Sector");

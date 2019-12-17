@@ -1,9 +1,8 @@
 var level=argument0,lump=argument1;
 
-var sectors=ds_list_build();
-mapSectors = sectors;
+var sectors=mapSectors;//ds_list_build();
+//mapSectors = sectors;
 
-ds_map_add(wad_levels,"sectors",sectors);
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

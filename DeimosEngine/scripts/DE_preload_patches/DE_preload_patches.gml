@@ -18,7 +18,9 @@ for (k=0;k<ds_list_size(sides);k++) {
             for(var p=0;p<ds_list_size(t_ps);p+=1){
                 var patch=ds_list_find_value_fixed(t_ps,p);
                 var pname=ds_map_find_value_fixed(patch,"patch");
+				
                 if is_undefined(ds_map_find_value(pload_pat,pname)){
+					
                     var patch=DE_getPatch(pname);
                     ds_map_replace(pload_pat,pname,patch);
                 }

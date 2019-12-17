@@ -1,9 +1,6 @@
 var level=argument0,lump=argument1;
 
-var sidedefs=ds_list_build();
-mapSidedefs = sidedefs;
-
-ds_map_add(wad_levels,"sidedefs",sidedefs);
+var sidedefs=mapSidedefs;//ds_list_build();
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

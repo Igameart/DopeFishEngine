@@ -1,24 +1,44 @@
 
 num=0;
 
-application_surface_draw_enable(false);
+//application_surface_draw_enable(false);
+
+dtex=sprite_get_texture(RFXbayerdith_spr,0);
+RFX_init(2,dtex,256,false);
+//ptex=sprite_get_texture(RFXpalettes_spr,3);
+//RFX_set_palswap(ptex);
+RFX_set_coldepth(32);
+RFXenabled = false;
+
+//surface_resize(application_surface,display_get_gui_width()/RFXscale,display_get_gui_height()/RFXscale);
+
+view_wport[0] = display_get_gui_width()/RFXscale;
+view_hport[0] = display_get_gui_height()/RFXscale;
+
 
 DE_loadMap(DEMap);
 
-window_set_cursor(cr_none);
+//window_set_cursor(cr_none);
 
 display_reset(4,1);
-d3d_set_perspective(true);
-d3d_set_hidden(true);
 d3d_set_culling(true);
 texture_set_repeat(true);	
-d3d_start();///Start 3d drawing
+gpu_set_ztestenable(true);
+gpu_set_zwriteenable(true);
+
 draw_set_alpha_test(true);
 draw_set_alpha_test_ref_value(128);
 
+//gpu_set_tex_mip_enable(mip_on);
+//gpu_set_tex_mip_bias(-0.5);
+//gpu_set_tex_max_mip(8);
+//gpu_set_tex_max_aniso(16);
+
+
+
 fcol=__background_get_colour( );
-f_far=mean(1024,2048);
-f_near=64;
+f_far=(2048)*1.5;
+f_near=16;
 
 xx=1;
 yy=0;
@@ -100,14 +120,3 @@ u_TexHL=shader_get_uniform(shd_Sidedef,"u_TexHL");
 u_TexHM=shader_get_uniform(shd_Sidedef,"u_TexHM");
 
 time=0;
-
-dtex=sprite_get_texture(RFXbayerdith_spr,0);
-RFX_init(2,dtex,256,false);
-//ptex=sprite_get_texture(RFXpalettes_spr,3);
-//RFX_set_palswap(ptex);
-RFX_set_coldepth(28);
-
-surface_resize(application_surface,display_get_gui_width()/RFXscale,display_get_gui_height()/RFXscale);
-
-view_wport[0] = display_get_gui_width()/RFXscale;
-view_hport[0] = display_get_gui_height()/RFXscale;

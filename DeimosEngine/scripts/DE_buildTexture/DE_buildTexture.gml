@@ -4,8 +4,7 @@ var tdat = ds_map_find_value(pload_tex,t_name);
 
 if tdat == undefined{
 	if !is_undefined(ds_map_find_value(textures,t_name)){
-				
-	    show_debug_message("NOTICE: Found Texture:"+t_name);
+
 				
 	    var tt,t_w,t_h,t_ps;
 	    tt=ds_map_find_value_fixed(textures,t_name);
@@ -16,12 +15,13 @@ if tdat == undefined{
 	    var surf=surface_create(t_w,t_h);
 	    surface_set_target(surf)
 	        draw_clear_alpha(0,0);
-	        for(var p=0;p<ds_list_size(t_ps);p+=1){
+			
+	        for(var p=0;p<ds_list_size(t_ps);p++){
 	            var patch=ds_list_find_value(t_ps,p);
 	            var ox=ds_map_find_value_fixed(patch,"ox");
 	            var oy=ds_map_find_value_fixed(patch,"oy");
 	            var pname=ds_map_find_value_fixed(patch,"patch");
-                    
+				                    
 				var spr_ = ds_map_find_value(pload_pat,pname);
 					
 	            if !is_undefined(spr_){
@@ -29,6 +29,10 @@ if tdat == undefined{
 					var oX,oY;
 					oX = pdat[?"o_left"];
 					oY = pdat[?"o_top"];
+					
+					trace("Patch data for " + pname,ox+oX,oy+oY);
+					ds_map_print(pdat);
+					
 	                draw_sprite_ext(spr_,0,ox+oX,oy+oY,1,1,0,c_white,1);
 						
 	            }

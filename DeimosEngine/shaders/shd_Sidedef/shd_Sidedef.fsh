@@ -36,23 +36,49 @@ float computeLinearFogFactor()
 void main()
 {
 
-    float fogger = computeLinearFogFactor();
-    vec4 vcol = v_vColour;
     vec4 col;
     
-    //gl_FragColor = vec4(0.0,0.0,0.0,1.0);
-    
-    if (v_vMiddle==0.0)
-    {
-        if (v_vTIndex==0.0) col = texture2D( tex_L, mod(v_vTexcoord*u_Luv,u_Luv) );
-        else col = texture2D( tex_U, mod(v_vTexcoord*u_Uuv,u_Uuv) );
-    }else
-     col = texture2D( gm_BaseTexture, mod(v_vTexcoord*u_Muv,u_Muv) );
+    if (v_vMiddle==0.0){
+        if (v_vTIndex==0.0){
+			vec2 UV = (v_vTexcoord);
+			if (UV != vec2(1.0,1.0)){
+				UV =  floor(UV);
+				vec2 rmn = v_vTexcoord - UV;
+				rmn *= u_Luv;
+				UV += rmn;
+			}
+			col = texture2D( tex_L, UV );
+		}
+        else{
+			vec2 UV = (v_vTexcoord);
+			if (UV != vec2(1.0,1.0)){
+				UV =  floor(UV);
+				vec2 rmn = v_vTexcoord - UV;
+				rmn *= u_Uuv;
+				UV += rmn;
+			}
+			col = texture2D( tex_U, UV );
+		}
+    }else{
+		vec2 UV = (v_vTexcoord);
+		if (UV != vec2(1.0,1.0)){
+			UV =  floor(UV);
+			vec2 rmn = v_vTexcoord - UV;
+			rmn *= u_Muv;
+			UV += rmn;
+		}
+		col = texture2D( gm_BaseTexture, UV );
+		
+	}
 
+	if (col.a < 0.1) discard;
+	
+    float fogger = computeLinearFogFactor();
+    vec4 vcol = v_vColour * 1.01;
     fogger = floor(fogger*16.0+0.5)/16.0; 
     
-    gl_FragColor=( col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
-    gl_FragColor.a = col.a;// * ( ( fogFactor -0.1 ) * 13.0 );  
+    gl_FragColor=( col * vcol * vcol ) * fogger + u_fogColor * (1.0 - fogger);
+    gl_FragColor.a = col.a; 
     
 }
 

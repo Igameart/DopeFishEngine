@@ -1,6 +1,5 @@
 //wadLoader.getHeader=function(){
 //this.view.seek(0);
-wadHeader = ds_map_build();
 
 //file_bin_seek(wad,0);
 
@@ -14,7 +13,7 @@ ds_map_add(wadHeader,"numlumps",numlumps);
 ds_map_add(wadHeader,"infotableofs",infotableofs);
 
 show_debug_message("NOTICE: Got Header: "+ds_map_write(wadHeader));
-if(ds_map_find_value_fixed(wadHeader,"id")!="IWAD")
+if(id_!="IWAD")
 	show_debug_message("Unsupported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));
 else{
 	show_debug_message("Supported WAD format: "+ds_map_find_value_fixed(wadHeader,"id"));

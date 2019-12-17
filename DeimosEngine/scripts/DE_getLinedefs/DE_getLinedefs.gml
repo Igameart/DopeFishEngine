@@ -1,6 +1,6 @@
 var level=argument0,lump=argument1;
-var linedefs=ds_list_build();
-mapLinedefs = linedefs;
+var linedefs=mapLinedefs;//ds_list_build();
+//mapLinedefs = linedefs;
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 
@@ -67,8 +67,10 @@ while(buffer_tell(wadbuff)<len){
     ds_map_add(ldef,"left",back);	
     
 	if type != 0{
-		
+		if WAD_FORMAT = "HEXEN" ssect = arg[0]
 		trace("Created Switch Type "+string(type)+" with Tag "+string(ssect)+" From Linedef "+string(line));
+		//else if WAD_FORMAT = "HEXEN"
+		//trace("Created Switch Type "+string(type)+" with Tag "+string(arg)+" From Linedef "+string(line));
 	        
 		var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
 		DE_switch.line = line;

@@ -3,7 +3,10 @@
 maps=1;
 wadColorMaps=ds_grid_create(maps,256);
 wadPlaypal=ds_list_build();
+globalvar wadPlaypalRAW;
+wadPlaypalRAW=ds_list_build();
 tmp=ds_list_build();
+tmp2=ds_list_build();
 
 DE_bufferSeekLump(("COLORMAP"));
 
@@ -27,8 +30,9 @@ for(var pal=0;pal<1;pal++){
 			var b=buffer_read(wadbuff,buffer_u8);
 			//ds_grid_set(tmp,w,h,make_color_rgb(r,g,b));
 			ds_list_add(tmp,make_color_rgb(r,g,b));
+			ds_list_add(tmp2,[r,g,b]);
 		}
 		
 ds_list_add(wadPlaypal,tmp);
-
+ds_list_add(wadPlaypalRAW,tmp2);
 }

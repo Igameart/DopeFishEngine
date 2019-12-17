@@ -1,8 +1,7 @@
 var level=argument0,lump=argument1;
 
-var vertexes=ds_list_build();
-mapVertexes = vertexes;
-ds_map_add(wad_levels,"vertexes",vertexes);
+var vertexes=mapVertexes;//ds_list_build();
+//mapVertexes = vertexes;
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

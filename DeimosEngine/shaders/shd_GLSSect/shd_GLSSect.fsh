@@ -29,10 +29,8 @@ float computeLinearFogFactor()
 
 void main()
 {
-
-    //float v_eyeDist = length(v_vPosition.xyz);
     float fogger = computeLinearFogFactor();
-    vec4 vcol = v_vColour;
+    vec4 vcol = v_vColour * 1.01;
     vcol.a=1.0;
     vec4 col;
     
@@ -43,8 +41,7 @@ void main()
         
     fogger = floor(fogger*16.0+0.5)/16.0; 
     
-    gl_FragColor=(col * vcol) * fogger + u_fogColor * (1.0 - fogger);
-    gl_FragColor.a = col.a;// * ( ( fogFactor -0.1 ) * 13.0 );
-    //gl_FragColor = vec4(lerp((col * vcol).rgb,(col * vcol),clamp(v_eyeDist,0.0,1.0)),col.a);
+    gl_FragColor=(col * vcol * vcol) * fogger + u_fogColor * (1.0 - fogger);
+    gl_FragColor.a = col.a;
 }
 

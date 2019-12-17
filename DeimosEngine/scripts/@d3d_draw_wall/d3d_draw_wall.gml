@@ -21,8 +21,8 @@ var __x2 = argument3;
 var __y2 = argument4;
 var __z2 = argument5;
 var __tex = argument6;
-var __hrepeat = argument7;
-var __vrepeat = argument8;
+var __hrepeat = argument7-0;
+var __vrepeat = argument8-0;
 
 var __xdiff = __x2 - __x1;
 var __ydiff = __y2 - __y1;
@@ -37,7 +37,7 @@ var __nx = __ydiff / __l;
 var __ny = -__xdiff / __l;
 
 var __oldrep = gpu_get_texrepeat();
-gpu_set_texrepeat(true)	
+gpu_set_texrepeat(false)	
 
 d3d_primitive_begin_texture(pr_trianglefan, __tex);
 

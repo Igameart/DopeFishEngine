@@ -1,9 +1,7 @@
 var level=argument0,lump=argument1+(WAD_FORMAT=="DOOM"?0:1);
 
-var glsegs=ds_list_build();
-mapGLSegs = glsegs;
-
-ds_map_add(wad_levels,"glsegs",glsegs);
+var glsegs=mapGLSegs;//ds_list_build();
+//mapGLSegs = glsegs;
 
 var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 

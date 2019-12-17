@@ -9,9 +9,11 @@ var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
 var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
 var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
 
-for (k=0;k<ds_list_size(lines);k++) {
+for (var k=0;k<ds_list_size(lines);k++) {
 
     var linedef = ds_list_find_value_fixed(lines,k);
+	
+	//ds_map_print(linedef);
     
     var flags=ds_map_find_value_fixed(linedef,"flags");
     var u_peg=ds_map_find_value_fixed(flags,"peg_upper");
@@ -25,22 +27,28 @@ for (k=0;k<ds_list_size(lines);k++) {
     right=ds_map_find_value_fixed(linedef,"right");
     
 	
+	//ds_map_print(flags);
+	
 	//Do Colllision
     if sld or !dub{
+		
+		//trace("Creating collision object");
     
         var startv=ds_map_find_value_fixed(linedef,"start");
-        
         var vert=ds_list_find_value_fixed(verts,startv);
+		//ds_map_print(vert);
+		
         var sx = ds_map_find_value_fixed(vert,"x");
         var sy = ds_map_find_value_fixed(vert,"y");
         
         startv=ds_map_find_value_fixed(linedef,"end");
-            
         vert=ds_list_find_value_fixed(verts,startv);
+		//ds_map_print(vert);
+		
         var ex = ds_map_find_value_fixed(vert,"x");
         var ey = ds_map_find_value_fixed(vert,"y");
         
-        var cLine=instance_create(sx,sy,sliding_collision_obj);
+        var cLine=instance_create_depth(sx,sy,0,sliding_collision_obj);
         cLine.x2=ex;
         cLine.y2=ey;
         with cLine event_user(0);
@@ -50,7 +58,7 @@ for (k=0;k<ds_list_size(lines);k++) {
     
     //Now lets do front and back sides if there are any
     if left!=-1 or right!=-1{
-        show_debug_message("building sides: "+string(left)+","+string(right));
+        //show_debug_message("building sides: "+string(left)+","+string(right));
         
         var front,back;
         
@@ -69,7 +77,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             ex = ds_map_find_value_fixed(vert,"x");
             ey = ds_map_find_value_fixed(vert,"y");
             
-            show_debug_message("building Front: "+string(front));
+            //show_debug_message("building Front: "+string(front));
             
             var buffer = vertex_create_buffer();
             vertex_begin(buffer,YYD_vbformat);
@@ -83,6 +91,8 @@ for (k=0;k<ds_list_size(lines);k++) {
             ds_map_replace(side,"back",back);
             
             sect = ds_list_find_value_fixed(sects,sect);
+			var _ceiling = ds_map_find_value_fixed(sect,"ceiling");
+			
             var bsect=ds_map_find_value_fixed(bside,"sector");
             //ds_map_replace(side,"bsect",bsect);
             //ds_map_replace(linedef,"bsect",bsect);
@@ -94,7 +104,10 @@ for (k=0;k<ds_list_size(lines);k++) {
             var ys=ds_map_find_value(side,"Y_");
             
             var colval = ds_map_find_value_fixed(sect,"lightlevel");
-            var col2=make_colour_hsv(255,0,colval);
+			
+			var ang = (point_direction(sx,sy,ex,ey)*2+90)//*2;
+			var fCon = dsin(ang)*16;
+            var col2=make_colour_hsv(255,0,colval+fCon);
             
             var tcd,tc;
             tc=0;
@@ -104,19 +117,19 @@ for (k=0;k<ds_list_size(lines);k++) {
             
             if (ds_map_find_value_fixed(side,"tex_l")!="-"){
                 tcd[0]=ds_map_find_value_fixed(side,"tex_l");
-                show_debug_message("Lower texture: "+string(tcd[0]));
+                //show_debug_message("Lower texture: "+string(tcd[0]));
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_u")!="-"){
                 tcd[1]=ds_map_find_value_fixed(side,"tex_u");
-                show_debug_message("Upper texture: "+string(tcd[1]));
+                //show_debug_message("Upper texture: "+string(tcd[1]));
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_m")!="-"){
                 tcd[2]=ds_map_find_value_fixed(side,"tex_m");
-                show_debug_message("Middle texture: "+string(tcd[2]));
+                //show_debug_message("Middle texture: "+string(tcd[2]));
                 tc++;
             }
             
@@ -140,7 +153,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 
             }
             
-            show_debug_message("Total Sections: "+string(tc));
+            //show_debug_message("Total Sections: "+string(tc));
             
             // No Texture, don't bother building
             var vv=0;
@@ -151,7 +164,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 var sheight=abs(top-bot);
                 //Let's do the bottom section of the wall first just because
                 if tcd[0]!="-" and back!=-1{
-                    show_debug_message("Lower wall:"+tcd[0]);
+                    //show_debug_message("Lower wall:"+tcd[0]);
                     var bot, top;
                     
                     if back!=-1
@@ -171,17 +184,13 @@ for (k=0;k<ds_list_size(lines);k++) {
                     t_h=ds_map_find_value_fixed(tt,"height");
                     
                     var height=abs(top-bot)/t_h;
-                    
-                    //v0 = (ys)/t_h;
-					
-					//v0 += (abs(_ceiling - top) / (t_h)) * l_peg;
 					
 					v0 = 0;
 					
 					repeat abs(ys){
 						v0 += sign(ys);
 					}
-					
+										
 					v0 = v0/t_h + (abs(_ceiling - top) / t_h) * l_peg;
 					
                     v1=v0+height;
@@ -206,7 +215,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 }
                 
                 if tcd[1]!="-" and back!=-1{
-                    show_debug_message("Upper wall:"+tcd[1]);
+                    //show_debug_message("Upper wall:"+tcd[1]);
 					var _s,_b;
 					_s = ds_map_find_value_fixed(sect,"tex_c");
 					_b = ds_map_find_value_fixed(bsect,"tex_c");
@@ -262,7 +271,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 }
                 
                 if tcd[2]!="-"{
-                    show_debug_message("building middle wall:"+tcd[2]);
+                    //show_debug_message("building middle wall:"+tcd[2]);
                     var bot, top;
                         
                     bot = ds_map_find_value_fixed(sect,"floor");
@@ -300,7 +309,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             }
             vertex_end(buffer);
             ds_map_replace(side,"vbuffer",buffer);
-            show_debug_message("Triangles Built: "+string(vv));
+            //show_debug_message("Triangles Built: "+string(vv));
         }
         
         
@@ -320,7 +329,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             ex = ds_map_find_value_fixed(vert,"x");
             ey = ds_map_find_value_fixed(vert,"y");
             
-            show_debug_message("building Back: "+string(front));
+            //show_debug_message("building Back: "+string(front));
             
             var buffer = vertex_create_buffer();
             vertex_begin(buffer,YYD_vbformat);
@@ -333,7 +342,7 @@ for (k=0;k<ds_list_size(lines);k++) {
             
             ds_map_replace(side,"back",back);
             
-            show_debug_message("Front Sector: "+string(sect));
+            //show_debug_message("Front Sector: "+string(sect));
             
             sect = ds_list_find_value_fixed(sects,sect);
             var bsect=ds_map_find_value_fixed(bside,"sector");
@@ -348,10 +357,13 @@ for (k=0;k<ds_list_size(lines);k++) {
             var us=ds_map_find_value(side,"X_");
             var ys=ds_map_find_value(side,"Y_");
 			
-			trace("Line Offsets:",us,ys);
+			//trace("Line Offsets:",us,ys);
             
             var colval = ds_map_find_value_fixed(sect,"lightlevel");
-            var col2=make_colour_hsv(255,0,colval);
+			
+			var ang = (point_direction(sx,sy,ex,ey)*2-90)//*2;
+			var fCon = dsin(ang)*16;
+            var col2=make_colour_hsv(255,0,colval+fCon);
             
             var tcd,tc;
             tc=0;
@@ -361,19 +373,19 @@ for (k=0;k<ds_list_size(lines);k++) {
              
             if (ds_map_find_value_fixed(side,"tex_l")!="-"){
                 tcd[0]=ds_map_find_value_fixed(side,"tex_l");
-				trace("Lower Texture",tcd[0]);
+				//trace("Lower Texture",tcd[0]);
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_u")!="-"){
                 tcd[1]=ds_map_find_value_fixed(side,"tex_u");
-				trace("Top Texture",tcd[1]);
+				//trace("Top Texture",tcd[1]);
                 tc++;
             }
             
             if (ds_map_find_value_fixed(side,"tex_m")!="-"){
                 tcd[2]=ds_map_find_value_fixed(side,"tex_m");
-				trace("Middle Texture",tcd[2]);
+				//trace("Middle Texture",tcd[2]);
                 tc++;
             }
             
@@ -398,7 +410,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 
             }
             
-            show_debug_message("Total Sections: "+string(tc));
+            //show_debug_message("Total Sections: "+string(tc));
             
             // No Texture, don't bother building
             var vv=0;
@@ -411,7 +423,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 
                 if tcd[1]!="-" and right!=-1{
 					
-                    show_debug_message("Upper wall:"+tcd[1]);
+                    //show_debug_message("Upper wall:"+tcd[1]);
 					
 					var _s,_b;
 					_s = ds_map_find_value_fixed(sect,"tex_c");
@@ -469,7 +481,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 }
                 //Let's do the bottom section of the wall
                 if tcd[0]!="-" and back!=-1{
-                    show_debug_message("Lower wall:"+tcd[0]);
+                    //show_debug_message("Lower wall:"+tcd[0]);
                     var bot, top;
                     
                     if back!=-1
@@ -524,7 +536,7 @@ for (k=0;k<ds_list_size(lines);k++) {
                 }
 				
                 if tcd[2]!="-"{
-                    show_debug_message("building middle wall:"+tcd[2]);
+                    //show_debug_message("building middle wall:"+tcd[2]);
                     var bot, top;
                     bot = ds_map_find_value_fixed(sect,"floor");
                     top = ds_map_find_value_fixed(sect,"ceiling");
@@ -580,12 +592,12 @@ for (k=0;k<ds_list_size(lines);k++) {
             }
             vertex_end(buffer);
             ds_map_replace(side,"vbuffer",buffer);
-            show_debug_message("Triangles Built: "+string(vv));
+            //show_debug_message("Triangles Built: "+string(vv));
         }
     }
 }
 
-show_debug_message("***** >>> NOTICE Collision lines created: "+string(instance_number(sliding_collision_obj)));
+//show_debug_message("***** >>> NOTICE Collision lines created: "+string(instance_number(sliding_collision_obj)));
 
 //return buffer
 

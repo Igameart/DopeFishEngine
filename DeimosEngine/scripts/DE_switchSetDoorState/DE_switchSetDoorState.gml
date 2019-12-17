@@ -11,7 +11,7 @@ for (var Door = 0; Door<taggedSectNum; Door++){
 		FUNC = this.FUNC;
 		state = _state;
 		
-		ds_map_print(sector);
+		//ds_map_print(sector);
 		trace(current_time);
 		
 		switch _state{

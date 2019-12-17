@@ -1,416 +1,215 @@
-/// @description DE_buildSSector=function(data,map,node,side,ss){
-/// @param data
-/// @param map
-/// @param node
-/// @param side
-/// @param ss
-
-var data=argument0;
-var map=argument1;
-var node=argument2;
-var side=argument3;
-var ss=argument4;
-
-var glssect=ds_map_find_value_fixed(wad_levels,"glssects");
-var glsegs=ds_map_find_value_fixed(wad_levels,"glsegs");
-var glverts=ds_map_find_value_fixed(wad_levels,"glverts");
-var vertexes=ds_map_find_value_fixed(wad_levels,"vertexes");
-var linedefs=ds_map_find_value_fixed(wad_levels,"linedefs");
-var sidedefs=ds_map_find_value_fixed(wad_levels,"sidedefs");
-
-var off=ds_map_find_value_fixed(ds_list_find_value_fixed(glssect,ss),"start");
-var lines=ds_list_build();
-for(var segno=0;segno<ds_map_find_value_fixed(ds_list_find_value_fixed(glssect,ss),"count");segno++){
-var off_segno=ds_list_find_value_fixed(glsegs,off+segno)
-var start=ds_map_find_value_fixed(off_segno,"start");
-var end_=ds_map_find_value_fixed(off_segno,"end");
-var line=ds_list_find_value_fixed(linedefs,ds_map_find_value_fixed(off_segno,"linedef"));
-
-var line_left=ds_map_find_value_fixed(line,"left");
-var line_right=ds_map_find_value_fixed(line,"right");
-var line_flags=ds_map_find_value_fixed(line,"flags");
-
-ds_list_add(lines,start);
-
-if(!line)
-continue;
-
-//if(ds_map_find_value_fixed(line,"type")==1){
-//he3d.log("DEBUG","Part of a door at segno:",off+segno);
-//continue;
-//}
-
-if(ds_map_find_value_fixed(off_segno,"side")==0){
-if(line_left){
-DE_addWall(data,map,ds_map_find_value_fixed(sidedefs,line_right),
-ds_map_find_value_fixed(sidedefs,line_left),start,end_,line_flags);
-}else{
-DE_addWall(data,map,ds_map_find_value_fixed(sidedefs,line_right),
-null,start,end_,line_flags);
-}
-} else {
-if(line_right){
-DE_addWall(data,map,ds_map_find_value_fixed(sidedefs,line_left),
-ds_map_find_value_fixed(sidedefs,line_right),start,end_,line_flags);
-}else{
-DE_addWall(data,map,ds_map_find_value_fixed(sidedefs,line_left),
-null,start,end_,line_flags);
-}
-}
-}
-if(!ds_map_find_value_fixed(node,"sector"))
-ds_map_replace(node,"sector",ds_map_find_value_fixed(data,"fsector"));
-
-//SKIP THIS FOR NOW AS I'M MORE CONCERNED ABOUT LEVEL GEOMETRY
-// Get Thing Heights
-//DE_findThingInSSector(map,(!side)?node.bb_r:node.bb_l,data.floor);
-
-var node_bb_r=ds_map_find_value_fixed(node,"bb_r");
-var node_bb_l=ds_map_find_value_fixed(node,"bb_l");
+/// @description DE_buildSSector(GLSSECT)
+/// @param GLSSECT
 /*
-// World Bounding Box
-if(!side){
-if(worldbb[0]==null||ds_list_find_value_fixed(node_bb_r[0]<worldbb[0])
-worldbb[0]=ds_list_find_value_fixed(node_bb_r,0);
-if(worldbb[1]==null||ds_list_find_value_fixed(node_bb_r[1]>worldbb[1])
-worldbb[1]=ds_list_find_value_fixed(node_bb_r,1);
-if(worldbb[2]==null||ds_list_find_value_fixed(node_bb_r[2]<worldbb[2])
-worldbb[2]=ds_list_find_value_fixed(node_bb_r,2);
-if(worldbb[3]==null||ds_list_find_value_fixed(node_bb_r[3]>worldbb[3])
-worldbb[3]=ds_list_find_value_fixed(node_bb_r,3);
-}else{
-if(worldbb[0]==null||ds_list_find_value_fixed(node_bb_l[0]<worldbb[0])
-worldbb[0]=ds_list_find_value_fixed(node_bb_l,0);
-if(worldbb[1]==null||ds_list_find_value_fixed(node_bb_l[1]>worldbb[1])
-worldbb[1]=ds_list_find_value_fixed(node_bb_l,1);
-if(worldbb[2]==null||ds_list_find_value_fixed(node_bb_l[2]<worldbb[2])
-worldbb[2]=ds_list_find_value_fixed(node_bb_l,2);
-if(worldbb[3]==null||ds_list_find_value_fixed(node_bb_l[3]>worldbb[3])
-worldbb[3]=ds_list_find_value_fixed(node_bb_l,3);
-}
-* /
-var data_floor=ds_map_find_value_fixed(data,"floor");
-var data_ceiling=ds_map_find_value_fixed(data,"ceiling");
+**  Usage:
+**      vbuffer = GLSSECT_to_vbuffer(ssector);
+**
+**  Description:
+**      Takes a list of points defining the boundary of a ssector
+**      and returns a list of triangles in the same shape.
+**
+**  Arguments:
+**      ssector      ds_list containing XY coordinate pairs defining
+**                   the shape of a ssector
+**
+**  Returns:
+**      triangles    ds_list containing triplets of XY coordinate pairs
+**
+**  Dependencies:
+**      is_clockwise()
+**      lines_intersect()
+**      point_in_triangle()
+**
+**  Notes:
+**      The ssector points are given and returned in traditional
+**      counter-clockwise order. Polygons are closed figures, the
+**      first point in the ssector will also be considered the last
+**      point in the ssector. Polygons must be simple, which means
+**      they can not have edges that cross each other. The number
+**      of triangles created is (n-2) where n is the number of
+**      points in the ssector.
+**
+**  Example:
+**      in:  ssector = [ 100,100,  100,200,  200,200,  200,100 ]
+**           (a square ssector: four coordinate pairs)
+**
+**      out: triangles = [ 100,100,  100,200,  200,100,   (1st triplet)
+**                         100,200,  200,200,  200,100 ]  (2nd triplet)
+**           (two triangles: two triplet sets of coordinate pairs)
+**
+**  copyright (c) 2006, John Leffingwell
+**  www.planetxot.com
+*/
 
-if(data_floor<worldbb[4])
-worldbb[4]=data.floor;
-if(data_ceiling>worldbb[5])
-worldbb[5]=data_ceiling;
+var ssector, polygonSize, points, polyX, polyY, good, col, sect, colmap;
+var i, j, n, p, A, B, C, x0, y0, x1, y1, x2, y2, x3, y3, x4, y4;
 
-// Floor
-var sv=0;
-var nv=1;
-var itr=false;
-var ev=ds_list_size(lines)-1;
-var tris=ds_list_size(lines)-2;
+var lines = mapSegs;
+var sects = mapSectors;
+var verts = mapVertexes;
+var ssect = mapSSectors;
+var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
 
-if tris<1 then return 0;
+ssector = ds_list_find_value_fixed(ssect,argument0);
 
-var data_flats=ds_map_find_value_fixed(data,"flats")
-var data_floor=ds_map_find_value_fixed(data,"floor");
-var verts=ds_map_find_value_fixed(data_flats,"verts");
+sect = DE_getSectorFromSSect(argument0);
 
-var first=true;
-while(tris--){
-if(first){
-if(ds_list_find_value_fixed(lines,sv)&VERT_IS_GL){
-var glvert=ds_list_find_value_fixed(glverts,ds_list_find_value_fixed(lines,sv)&~VERT_IS_GL);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"y")*MAP_SCALE);
-}else{
-var vert=ds_list_find_value_fixed(vertexes,ds_list_find_value_fixed(lines,sv));
-ds_list_add(verts,ds_map_find_value_fixed(vert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(vert,"y")*MAP_SCALE);
-}
-if(ds_list_find_value_fixed(lines,ev)&VERT_IS_GL){
-//data_flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-//data_floor,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-var glvert=ds_list_find_value_fixed(glverts,ds_list_find_value_fixed(lines,ev)&~VERT_IS_GL);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"y")*MAP_SCALE);
-}else{
-var vert=ds_list_find_value_fixed(vertexes,ds_list_find_value_fixed(lines,ev));
-ds_list_add(verts,ds_map_find_value_fixed(vert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(vert,"y")*MAP_SCALE);
-}
+ds_map_replace(ssector,"sector",sect);
 
-if(ds_list_find_value_fixed(lines,nv)&VERT_IS_GL){
-var glvert=ds_list_find_value_fixed(glverts,ds_list_find_value_fixed(lines,nv)&~VERT_IS_GL);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(glvert,"y")*MAP_SCALE);
-}else{
-var vert=ds_list_find_value_fixed(vertexes,ds_list_find_value_fixed(lines,nv));
-ds_list_add(verts,ds_map_find_value_fixed(vert,"x")*MAP_SCALE);
-ds_list_add(verts,data_floor);
-ds_list_add(verts,ds_map_find_value_fixed(vert,"y")*MAP_SCALE);
-}
-var indices=ds_map_find_value_fixed(data_flats,"indices");
+sect=ds_list_find_value_fixed(sects,sect);
 
-var dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_map_replace(data_flats,"i",dat_flats_i+1);
-dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_list_add(indices,dat_flats_i);
 
-dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_map_replace(data_flats,"i",dat_flats_i+1);
-dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_list_add(indices,dat_flats_i);
+colmap=ds_map_find_value(sect,"colmap");
 
-dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_map_replace(data_flats,"i",dat_flats_i+1);
-dat_flats_i=ds_map_find_value_fixed(data_flats,"i");
-ds_list_add(indices,dat_flats_i);
+show_debug_message("BUILDING SubSector: "+string(argument0));
 
-var uc;
-uv[0]=ds_map_build();
-ds_map_add(uv[0],"t",ds_map_find_value_fixed(data,"tex_f"));
-ds_map_add(uv[0],"v",0);
-ds_map_add(uv[0],"u",1);
 
-uv[1]=ds_map_build();
-ds_map_add(uv[1],"t",ds_map_find_value_fixed(data,"tex_f"));
-ds_map_add(uv[1],"v",0);
-ds_map_add(uv[1],"u",3);
+var colval = ds_map_find_value_fixed(sect,"lightlevel");
+col=make_colour_hsv(255,0,colval);
+var fheight = ds_map_find_value_fixed(sect,"floor");
+var cheight = ds_map_find_value_fixed(sect,"ceiling");
+var ftex = ds_map_find_value_fixed(sect,"tex_f");
+var ctex = ds_map_find_value_fixed(sect,"tex_c");
 
-uv[2]=ds_map_build();
-ds_map_add(uv[2],"t",ds_map_find_value_fixed(data,"tex_f"));
-ds_map_add(uv[2],"v",2);
-ds_map_add(uv[2],"u",1);
 
-vardat_flat_uv=ds_map_find_value_fixed(data_flats,"uv");
-ds_list_add(dat_flat_uv,uv[0]);
-ds_list_add(dat_flat_uv,uv[1]);
-ds_list_add(dat_flat_uv,uv[2]);
+ds_map_replace(ssector,"tex_f",ftex);
+ds_map_replace(ssector,"tex_c",ctex);
 
-var dat_light=ds_map_find_value_fixed(data,"light");
-var brightness=ds_map_find_value_fixed(data_flats,"brightness");
-repeat 3 ds_list_add(brightness,dat_light);
-//data.flats.brightness.push(data.light,data.light,data.light);
+var vbuffer = vertex_create_buffer();
+vertex_begin(vbuffer,YYD_vbformat);
+    
+if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001")){
+    
+    
+    show_debug_message("STILL BUILDING Sector: "+string(argument0));
+    var count,start;
+	
+    count=ds_map_find_value(ssector,"count");
+    start=ds_map_find_value(ssector,"start");
+    
+    polygonSize = count;
+    points = ds_list_create();
+    polyX = ds_list_create();
+    polyY = ds_list_create();
+    
+    var k = 0;
+    repeat (count) {
+		
+        var line = ds_list_find_value(lines,k+start);
+            
+        var startv=ds_map_find_value(line,"start");
+        
+        var sx,sy,vert,vcheck;
+        vcheck=verts;
+		
+	    /*
+		var mline=ds_list_find_value_fixed(lines,line);
+		var side=ds_map_find_value_fixed(line,"side");
+	    if side==0{
+	        side = ds_map_find_value_fixed(mline,"right");
+	    }else{
+	        side = ds_map_find_value_fixed(mline,"left");
+	    }
+        
+	    side = ds_list_find_value_fixed(sides,side);
+	    var sector = ds_map_find_value_fixed(side,"sector");*/
+        
+        vert=ds_list_find_value(vcheck,startv);
+        sx = ds_map_find_value_fixed(vert,"x");
+        sy = ds_map_find_value_fixed(vert,"y");
+        
+        ds_list_add(polyX, -sx);
+        ds_list_add(polyY, sy);
+        k++;
+    }
+	
+    
+    trace("Sector ssector Size:",polygonSize);
+    
+    for (n = polygonSize; n > 3; n -= 1) {
+		
+        ds_list_clear(points);
+        for (p = 0; p < n; p += 1) ds_list_add(points, p);
+        repeat (p) {
+            i = floor(random(ds_list_size(points)));
+            A = ds_list_find_value(points, i);
+            ds_list_delete(points, i);
+            //  b. Pick the next two points
+            B = (A + 1) mod n;
+            C = (A + 2) mod n;
+            //  c. Make a triangle with the selected points
+            x0 = ds_list_find_value(polyX, A);
+            y0 = ds_list_find_value(polyY, A);
+            x1 = ds_list_find_value(polyX, B);
+            y1 = ds_list_find_value(polyY, B);
+            x2 = ds_list_find_value(polyX, C);
+            y2 = ds_list_find_value(polyY, C);
+            //  d. If triangle is counter-clockwise...
+            if (not is_clockwise(x0, y0, x1, y1, x2, y2)) {
+                good = true;
+                //  ...and if triangle has no vertices within it...
+                for (i = 0; i < n; i += 1) {
+                    if ((i != A) && (i != B) && (i != C)) {
+                        x3 = ds_list_find_value(polyX, i);
+                        y3 = ds_list_find_value(polyY, i);
+                        if (point_in_triangle(x0, y0, x1, y1, x2, y2, x3, y3)) { good = false; break; }
+                        //  ...and if the new edge has no other edges crossing it...
+                        j = (i + 1) mod n;
+                        if ((j != A) && (j != B) && (j != C)) {
+                            x4 = ds_list_find_value(polyX, j);
+                            y4 = ds_list_find_value(polyY, j);
+                            if (lines_intersect(x0, y0, x2, y2, x3, y3, x4, y4)) { good = false; break; }
+                        }
+                    }
+                }
+                //  e.  ...then add the triangle to list and remove the shared outside edge point
+                if (good) {
+                
+                    ds_list_add(colmap,-x0,y0,-x1,y1,-x2,y2);
+                    //show_debug_message("STILL BUILDING Sector: "+string(argument0));
+                    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
+                        DE_vertexGLSS(vbuffer,-x0,y0,fheight,0,0,0,-x0/64,y0/64,col,1,0);
+                        DE_vertexGLSS(vbuffer,-x1,y1,fheight,0,0,0,-x1/64,y1/64,col,1,0);
+                        DE_vertexGLSS(vbuffer,-x2,y2,fheight,0,0,0,-x2/64,y2/64,col,1,0);
+                    }
+                    
+                    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
+                        DE_vertexGLSS(vbuffer,-x1,y1,cheight,0,0,0,x1/64,y1/64,col,1,1);
+                        DE_vertexGLSS(vbuffer,-x0,y0,cheight,0,0,0,x0/64,y0/64,col,1,1);
+                        DE_vertexGLSS(vbuffer,-x2,y2,cheight,0,0,0,x2/64,y2/64,col,1,1);
+                    }
+                    
+                    ds_list_delete(polyX, B);
+                    ds_list_delete(polyY, B);
+                    break;
+                }
+            }
+        }
+    }
+    
+    //  2. There are only three vertices left, so add the final triangle to the list
+    
+    ds_list_add(colmap,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),
+                        -ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),
+                         -ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2));
 
-dat_stype=ds_map_find_value_fixed(data,"stype");
-var type=ds_map_find_value_fixed(data_flats,"type");
-repeat 3 ds_list_add(type,dat_stype);
-//data.flats.type.push(data.stype,data.stype,data.stype);
-
-var cf=ds_map_find_value_fixed(data_flats,"cf");
-repeat 9 ds_list_add(cf,'f');
-//data.flats.cf.push('f','f','f','f','f','f','f','f','f');
-
-dat_fsector=ds_map_find_value_fixed(data,"fsector");
-var sec=ds_map_find_value_fixed(data_flats,"sector");
-repeat 3 ds_list_add(sec,dat_fsector);
-//data.flats.sector.push(data.fsector,data.fsector,data.fsector);
-first=false;
-continue;
-
-}/* else {
-
-if(itr){
-sv=nv;
-nv++;
-if(lines[sv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[sv]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[sv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[sv]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[sv]].y*MAP_SCALE);
-
-if(lines[ev]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[ev]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[ev]].y*MAP_SCALE);
-
-if(lines[nv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[nv]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[nv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[nv]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[nv]].y*MAP_SCALE);
-
-data.flats.indices.push(data.flats.i++,data.flats.i++,data.flats.i++);
-data.flats.uv.push(
-{t:data.tex_f,v:0,u:1},
-{t:data.tex_f,v:0,u:3},
-{t:data.tex_f,v:2,u:1}
-);
-data.flats.brightness.push(data.light,data.light,data.light);
-data.flats.type.push(data.stype,data.stype,data.stype);
-data.flats.cf.push('f','f','f','f','f','f','f','f','f');
-data.flats.sector.push(data.fsector,data.fsector,data.fsector);
-} else {
-sv=ev;
-ev--;
-
-if(lines[sv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[sv]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[sv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[sv]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[sv]].y*MAP_SCALE);
-
-if(lines[ev]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[ev]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[ev]].y*MAP_SCALE);
-
-if(lines[nv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[nv]&~VERT_IS_GL].x*MAP_SCALE,
-data.floor,map.glverts[lines[nv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[nv]].x*MAP_SCALE,
-data.floor,map.vertexes[lines[nv]].y*MAP_SCALE);
-
-data.flats.indices.push(data.flats.i++,data.flats.i++,data.flats.i++);
-data.flats.uv.push(
-{t:data.tex_f,v:0,u:3},
-{t:data.tex_f,v:2,u:3},
-{t:data.tex_f,v:2,u:1}
-);
-data.flats.brightness.push(data.light,data.light,data.light);
-data.flats.type.push(data.stype,data.stype,data.stype);
-data.flats.cf.push('f','f','f','f','f','f','f','f','f');
-data.flats.sector.push(data.fsector,data.fsector,data.fsector);
+    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,col,1,0);
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,col,1,0);
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,col,1,0);
+    }
+    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),cheight,0,0,0,ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,col,1,1);
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),cheight,0,0,0,ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,col,1,1);
+        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),cheight,0,0,0,ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,col,1,1);
+    }
+    //  3. Clean up
+    ds_list_destroy(polyX);
+    ds_list_destroy(polyY);
+    ds_list_destroy(points);
+    
+    vertex_end(vbuffer);
+    ds_map_add(ssector,"vbuffer",vbuffer);
 }
 
-}
-itr=!itr;
-}
-
-// Ceiling
-if(data.tex_c.indexOf('SKY')!=-1)
-return;
-sv=0;
-nv=1;
-itr=true;
-ev=lines.length-1;
-tris=lines.length-2;
-first=true;
-while(tris--){
-if(first){
-if(lines[sv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[sv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[sv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[sv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[sv]].y*MAP_SCALE);
-
-if(lines[nv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[nv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[nv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[nv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[nv]].y*MAP_SCALE);
-
-if(lines[ev]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[ev]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[ev]].y*MAP_SCALE);
-
-data.flats.indices.push(data.flats.i++,data.flats.i++,data.flats.i++);
-data.flats.uv.push(
-{t:data.tex_c,v:0,u:1},
-{t:data.tex_c,v:0,u:3},
-{t:data.tex_c,v:2,u:1}
-);
-data.flats.brightness.push(data.light,data.light,data.light);
-data.flats.type.push(data.stype,data.stype,data.stype);
-data.flats.cf.push('c','c','c','c','c','c','c','c','c');
-data.flats.sector.push(data.fsector,data.fsector,data.fsector);
-first=false;
-continue;
-
-} else {
-
-if(itr){
-sv=nv;
-nv++;
-if(lines[sv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[sv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[sv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[sv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[sv]].y*MAP_SCALE);
-
-if(lines[nv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[nv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[nv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[nv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[nv]].y*MAP_SCALE);
-
-if(lines[ev]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[ev]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[ev]].y*MAP_SCALE);
-
-data.flats.indices.push(data.flats.i++,data.flats.i++,data.flats.i++);
-data.flats.uv.push(
-{t:data.tex_c,v:0,u:1},
-{t:data.tex_c,v:0,u:3},
-{t:data.tex_c,v:2,u:1}
-);
-data.flats.brightness.push(data.light,data.light,data.light);
-data.flats.type.push(data.stype,data.stype,data.stype);
-data.flats.cf.push('c','c','c','c','c','c','c','c','c');
-data.flats.sector.push(data.fsector,data.fsector,data.fsector);
-
-} else {
-sv=ev;
-ev--;
-if(lines[sv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[sv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[sv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[sv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[sv]].y*MAP_SCALE);
-
-if(lines[nv]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[nv]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[nv]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[nv]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[nv]].y*MAP_SCALE);
-
-if(lines[ev]&VERT_IS_GL)
-data.flats.verts.push(map.glverts[lines[ev]&~VERT_IS_GL].x*MAP_SCALE,
-data.ceiling,map.glverts[lines[ev]&~VERT_IS_GL].y*MAP_SCALE);
-else
-data.flats.verts.push(map.vertexes[lines[ev]].x*MAP_SCALE,
-data.ceiling,map.vertexes[lines[ev]].y*MAP_SCALE);
-
-data.flats.indices.push(data.flats.i++,data.flats.i++,data.flats.i++);
-data.flats.uv.push(
-{t:data.tex_c,v:0,u:3},
-{t:data.tex_c,v:2,u:3},
-{t:data.tex_c,v:2,u:1}
-);
-data.flats.brightness.push(data.light,data.light,data.light);
-data.flats.type.push(data.stype,data.stype,data.stype);
-data.flats.cf.push('c','c','c','c','c','c','c','c','c');
-data.flats.sector.push(data.fsector,data.fsector,data.fsector);
-}
-}
-
-itr=!itr;
-}
-
-if(!data.flattextures[data.tex_f])
-data.flattextures[data.tex_f]={count:0};
-data.flattextures[data.tex_f].count++;
-
-if(!data.flattextures[data.tex_c])
-data.flattextures[data.tex_c]={count:0};
-data.flattextures[data.tex_c].count++;
+trace("Done Building Sector");
