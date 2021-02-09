@@ -16,12 +16,13 @@ for (j = 0; j<ds_list_size(sects); j++ ){
 		
         trace("building floor flat: '"+ftex+"'");
 		
-        var spr=ds_map_find_value(flats_,ftex);
+        var spr=flats_[?ftex];
 		
         trace("spr value: '"+string(spr)+"'");
 		
         if !is_undefined(spr){
-            var flat1=DE_buildFlat(spr);   
+            var flat1=DE_buildFlat(spr);
+			wadCompedTextures[? ftex] = sprite_get_texture(flat1,0);
             ds_map_replace(pload_flats,ftex,flat1);
         }
     }
@@ -32,12 +33,13 @@ for (j = 0; j<ds_list_size(sects); j++ ){
 		
         trace("building ceiling flat: '"+ctex+"'");
 		
-        var spr=ds_map_find_value(flats_,ctex);
+		var spr=flats_[?ftex];
 		
-        trace("spr value: "+string(spr));
+        trace("spr value: '"+string(spr)+"'");
 		
         if !is_undefined(spr){
             var flat1=DE_buildFlat(spr);   
+			wadCompedTextures[? ctex] = sprite_get_texture(flat1,0);
             ds_map_replace(pload_flats,ctex,flat1);
         }
     }

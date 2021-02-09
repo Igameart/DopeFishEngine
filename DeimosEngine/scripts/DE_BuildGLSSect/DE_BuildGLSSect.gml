@@ -74,7 +74,7 @@ ds_map_replace(polygon,"tex_f",ftex);
 ds_map_replace(polygon,"tex_c",ctex);
 
 vbuffer = vertex_create_buffer();
-vertex_begin(vbuffer,YYD_vbformat);
+vertex_begin(vbuffer,DE_vFormat);
 
 //DE_buildWalls(argument0,sect,vbuffer,col);
     

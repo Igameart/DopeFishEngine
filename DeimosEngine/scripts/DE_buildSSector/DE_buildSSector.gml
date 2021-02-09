@@ -76,7 +76,7 @@ ds_map_replace(ssector,"tex_f",ftex);
 ds_map_replace(ssector,"tex_c",ctex);
 
 var vbuffer = vertex_create_buffer();
-vertex_begin(vbuffer,YYD_vbformat);
+vertex_begin(vbuffer,DE_vFormat);
     
 if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001")){
     

@@ -61,7 +61,7 @@ for (var k=0;k<ds_list_size(segs);k++) {
 	}
             
     var buffer = vertex_create_buffer();
-    vertex_begin(buffer,YYD_vbformat);
+    vertex_begin(buffer,DE_vFormat);
     
 	var lSides = ["right","left"];
 	var s = lSides[glSeg[?"side"]];
@@ -124,9 +124,8 @@ for (var k=0;k<ds_list_size(segs);k++) {
         var top = ds_map_find_value_fixed(sect,"ceiling");
 		
         //Let's do the bottom section of the wall first just because
-        if tcd[0]!="-" and back!=-1{
+        if tcd[0]!="-"{// and back!=-1{
             //show_debug_message("Lower wall:"+tcd[0]);
-            var bot, top;
                     
             if back!=-1
                 bot = ds_map_find_value_fixed(sect,"floor");
@@ -147,12 +146,21 @@ for (var k=0;k<ds_list_size(segs);k++) {
             var height=abs(top-bot)/t_h;
 					
 			v0 = 0;
-					
+			
+			/**/
+			//Let's adjust for lower unpegged by attaching the texture to the ceiling,
+			//Sometimes the top of the wall exceeds the ceiling height, so we must account for that
+			if l_peg{
+				var tCheck = ds_map_find_value_fixed(sect,"ceiling");
+				var HH = top-tCheck;
+				v0 = -HH;
+			}/* */
+			
 			repeat abs(ys){
 				v0 += sign(ys);
 			}
-										
-			v0 = v0/t_h + (abs(_ceiling - top) / t_h) * l_peg;
+			
+			v0 /= t_h;
 					
             v1=v0+height;
 					
@@ -176,7 +184,7 @@ for (var k=0;k<ds_list_size(segs);k++) {
         }
              
 		//Top Section
-        if tcd[1]!="-" and back!=-1{
+        if tcd[1]!="-"{// and back!=-1{
 			
 			var _s,_b;
 			_s = ds_map_find_value_fixed(sect,"tex_c");
@@ -255,6 +263,8 @@ for (var k=0;k<ds_list_size(segs);k++) {
 				if ds_map_find_value_fixed(bsect,"wrap middle texture") == 0{
 					bot = max(top-t_h,bot);
 				}
+				
+			}else{
 				
 			}
 			

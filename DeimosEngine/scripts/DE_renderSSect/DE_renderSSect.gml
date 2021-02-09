@@ -27,19 +27,14 @@ if !is_undefined(sect){
 	shader_set_uniform_f(u_sectTopOff,crushing);
     
 	if ctex!="-"{
-	    ctex=ds_map_find_value(pload_flats,ctex);
-	    if !is_undefined(ctex)
-	    if sprite_exists(ctex)
-	        texture_set_stage(shd_ctex,sprite_get_texture(ctex,0));
+		var tex = DE_getCompedFlat(ctex);
+		texture_set_stage(shd_ctex,tex);
 	}
 
 	if ftex!="-"{
-		//trace(ftex)
-	ftex=ds_map_find_value(pload_flats,ftex);
-	if !is_undefined(ftex)
-	    if sprite_exists(ftex)
-	    ttex=sprite_get_texture(ftex,0);
+		ttex = DE_getCompedFlat(ftex);
 	}
-
+	
+	
 	vertex_submit(vbuffer,pr_trianglelist,ttex);
 }

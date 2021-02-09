@@ -30,8 +30,8 @@ if tdat == undefined{
 					oX = pdat[?"o_left"];
 					oY = pdat[?"o_top"];
 					
-					trace("Patch data for " + pname,ox+oX,oy+oY);
-					ds_map_print(pdat);
+					//trace("Patch data for " + pname,ox+oX,oy+oY);
+					//ds_map_print(pdat);
 					
 	                draw_sprite_ext(spr_,0,ox+oX,oy+oY,1,1,0,c_white,1);
 						
@@ -42,6 +42,8 @@ if tdat == undefined{
 	    surface_reset_target();
 			
 		var spr = sprite_create_from_surface(surf,0,0,t_w,t_h,false,false,0,0);
+		
+		wadCompedTextures[? t_name] = sprite_get_texture(spr,0);
 				
 		var sprDat = sprite_get_uvs(spr,0);
 		var tdat = [spr,sprDat[TexUVS.Left],sprDat[TexUVS.Top]];

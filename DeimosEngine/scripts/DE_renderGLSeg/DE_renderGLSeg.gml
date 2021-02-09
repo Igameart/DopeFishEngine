@@ -13,7 +13,7 @@ if l = 65535 return;
 
 var linedef = ds_list_find_value(lines,l);
 	
-/** /
+/**/
 var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
 var gverts = mapGLVerts;//ds_map_find_value_fixed(wad_levels,"glverts");
 var startv,endv;
@@ -51,7 +51,7 @@ var s = lSides[seg[?"side"]];
 s = linedef[?s];
 var side = sides[|s];
 
-var flags = ds_map_find_value_fixed(linedef,"flags");
+var flags = ds_map_find_value(linedef,"flags");
     
 var s=ds_map_find_value(side,"sector");
 s = ds_list_find_value(sects,s);
@@ -112,8 +112,10 @@ if tex_l!="-" or tex_u!="-" or tex_m!="-"{
             shader_set_uniform_f(u_TexHL,sprite_get_height(vtex_l[0]));
 				
 			shader_set_uniform_f(shd_uLuv,vtex_l[1],vtex_l[2]);
+			
+			var tex = DE_getCompedTexture(tex_l);
 				
-            texture_set_stage(shd_ltex,sprite_get_texture(vtex_l[0],0));
+            texture_set_stage(shd_ltex,tex);
 				
         }
 			
@@ -126,8 +128,10 @@ if tex_l!="-" or tex_u!="-" or tex_m!="-"{
             shader_set_uniform_f(u_TexHU,sprite_get_height(vtex_u[0]));
 				
 			shader_set_uniform_f(shd_uUuv,vtex_u[1],vtex_u[2]);
+			
+			var tex = DE_getCompedTexture(tex_u);
 				
-            texture_set_stage(shd_utex,sprite_get_texture(vtex_u[0],0));
+            texture_set_stage(shd_utex,tex);
 				
         }
             
@@ -135,5 +139,7 @@ if tex_l!="-" or tex_u!="-" or tex_m!="-"{
 			
 		shader_set_uniform_f(shd_uMuv,vtex_m[1],vtex_m[2]);
 			
-		vertex_submit(vbuffer,pr_trianglelist,sprite_get_texture(vtex_m[0],0));
+		var tex = DE_getCompedTexture(tex_m);
+			
+		vertex_submit(vbuffer,pr_trianglelist,tex);
 }

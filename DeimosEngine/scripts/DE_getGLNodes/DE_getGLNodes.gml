@@ -21,20 +21,21 @@ while(buffer_tell(wadbuff)<len){
 	ds_map_add(glnode,"dy",-buffer_read(wadbuff,buffer_s16));
 	
 	var list1=ds_list_build();
-	ds_map_add(glnode,"c_r_bb",list1);
 	ds_list_add(list1,-buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list1,-buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list1,buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list1,buffer_read(wadbuff,buffer_s16));
 	
 	var list2=ds_list_build();
-	ds_map_add(glnode,"c_l_bb",list1);
 	ds_list_add(list2,-buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list2,-buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list2,buffer_read(wadbuff,buffer_s16));
 	ds_list_add(list2,buffer_read(wadbuff,buffer_s16));
+	
+	
+	ds_map_add(glnode,"bbox",[list1,list2]);
 
-	var crSSect,clSSect,mask;
+	//var crSSect,clSSect;
 	
 	if(wadGLVersion == 5){
 	
@@ -51,11 +52,7 @@ while(buffer_tell(wadbuff)<len){
 		CHILD_SUBSEC_MASK = ((1 << 15) - 1);
 	}
 
-	glnode[?"c_r"] = (C_R);
-	glnode[?"c_l"] = (C_L);
-	
-	//trace("GL NODE:",glnode);
-	//ds_map_print(glnode);
+	glnode[?"children"] = [C_R,C_L];
 
 	ds_list_add(mapGLNodes,glnode);
 

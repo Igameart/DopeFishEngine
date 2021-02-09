@@ -19,15 +19,13 @@ for (j = 0; j<ds_list_size(ssects); j++ ){
     DE_renderSSect(ssect);
 
 }
-//window_set_caption(str)
+
 shader_reset();
 
 shader_set(shd_Sidedef);
 shader_set_uniform_f(u_fogColorS,color_get_red((fcol))/255,color_get_green((fcol))/255,color_get_blue((fcol))/255,1);
 shader_set_uniform_f(u_fogMaxDistS,f_far*0.9);
 shader_set_uniform_f(u_fogMinDistS,f_near);
-
-//var sides = ds_map_find_value_fixed(wad_levels,"sidedefs");
 
 for (var j = 0; j<ds_list_size(mapGLSegs); j++ ){
 

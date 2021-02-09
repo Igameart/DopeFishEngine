@@ -38,11 +38,14 @@ enum DEThingDef{
 	Description
 }
 
+gml_release_mode(true);
+
 // Macros
 #macro ANG45 0x20000000
 #macro ANG90 0x40000000
 #macro ANG180 0x80000000
 #macro ANG270 0xc0000000
+#macro ANGLE_MAX 0xffffffff
 
 #macro MAXCHAR (0x7f)
 #macro MAXSHORT (0x7fff)
@@ -159,6 +162,7 @@ globalvar wadPatches; wadPatches = ds_map_build();
 globalvar wadPNames; wadPNames = ds_list_build();
 globalvar wadWallTextures; wadWallTextures = noone;
 globalvar wadFlatTextures; wadFlatTextures = noone;
+globalvar wadCompedTextures; wadCompedTextures = ds_map_build();
 globalvar wadSwitchTextures; wadSwitchTextures = noone;
 globalvar wadSounds; wadSounds = ds_map_create();
 
@@ -215,6 +219,10 @@ globalvar NOGROUND; NOGROUND = -9999;
 globalvar ANGLE_MASK; ANGLE_MASK = $FFFFFFFF;
 globalvar WAD_FORMAT; WAD_FORMAT = "DOOM";
 globalvar glversion; glversion = -1;
+
+// Some BSP defines
+globalvar bspLineCache; bspLineCache = ds_list_create();
+globalvar bspSSectCache; bspSSectCache = ds_list_create();
 
 //globalvar null; null=NOINDEX;
 

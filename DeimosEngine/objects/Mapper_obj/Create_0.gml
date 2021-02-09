@@ -4,13 +4,13 @@ num=0;
 //application_surface_draw_enable(false);
 
 dtex=sprite_get_texture(RFXbayerdith_spr,0);
-RFX_init(2,dtex,256,false);
+RFX_init(3,dtex,256,false);
 //ptex=sprite_get_texture(RFXpalettes_spr,3);
 //RFX_set_palswap(ptex);
-RFX_set_coldepth(32);
-RFXenabled = false;
+RFX_set_coldepth(24);
+//RFXenabled = false;
 
-//surface_resize(application_surface,display_get_gui_width()/RFXscale,display_get_gui_height()/RFXscale);
+surface_resize(application_surface,display_get_gui_width()/RFXscale,display_get_gui_height()/RFXscale);
 
 view_wport[0] = display_get_gui_width()/RFXscale;
 view_hport[0] = display_get_gui_height()/RFXscale;
@@ -33,12 +33,6 @@ draw_set_alpha_test_ref_value(128);
 //gpu_set_tex_mip_bias(-0.5);
 //gpu_set_tex_max_mip(8);
 //gpu_set_tex_max_aniso(16);
-
-
-
-fcol=__background_get_colour( );
-f_far=(2048)*1.5;
-f_near=16;
 
 xx=1;
 yy=0;
@@ -84,39 +78,5 @@ cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
 cam_z=lengthdir_y(1,pitch)
 
 mouse_free=0;
-
-shd_ctex=shader_get_sampler_index(shd_GLSSect,"tex_C");
-shd_ltex=shader_get_sampler_index(shd_Sidedef,"tex_L");
-shd_utex=shader_get_sampler_index(shd_Sidedef,"tex_U");
-shd_uLuv=shader_get_uniform(shd_Sidedef,"u_Luv");
-shd_uUuv=shader_get_uniform(shd_Sidedef,"u_Uuv");
-shd_uMuv=shader_get_uniform(shd_Sidedef,"u_Muv");
-
-u_fogColorS=shader_get_uniform(shd_Sidedef,"u_fogColor");
-u_fogMinDistS=shader_get_uniform(shd_Sidedef,"u_fogMinDist");
-u_fogMaxDistS=shader_get_uniform(shd_Sidedef,"u_fogMaxDist");
-
-u_fogColorG=shader_get_uniform(shd_GLSSect,"u_fogColor");
-u_fogMinDistG=shader_get_uniform(shd_GLSSect,"u_fogMinDist");
-u_fogMaxDistG=shader_get_uniform(shd_GLSSect,"u_fogMaxDist");
-
-
-u_sectBotOff=shader_get_uniform(shd_GLSSect,"u_sectBotOff");
-u_sectTopOff=shader_get_uniform(shd_GLSSect,"u_sectTopOff");
-
-u_lowBotOff=shader_get_uniform(shd_Sidedef,"u_lowBotOff");
-u_lowTopOff=shader_get_uniform(shd_Sidedef,"u_lowTopOff");
-u_upBotOff=shader_get_uniform(shd_Sidedef,"u_upBotOff");
-u_upTopOff=shader_get_uniform(shd_Sidedef,"u_upTopOff");
-
-u_midBotOff=shader_get_uniform(shd_Sidedef,"u_midBotOff");
-u_midTopOff=shader_get_uniform(shd_Sidedef,"u_midTopOff");
-
-u_LowPeg=shader_get_uniform(shd_Sidedef,"u_LowPeg");
-u_UpPeg=shader_get_uniform(shd_Sidedef,"u_UpPeg");
-
-u_TexHU=shader_get_uniform(shd_Sidedef,"u_TexHU");
-u_TexHL=shader_get_uniform(shd_Sidedef,"u_TexHL");
-u_TexHM=shader_get_uniform(shd_Sidedef,"u_TexHM");
 
 time=0;

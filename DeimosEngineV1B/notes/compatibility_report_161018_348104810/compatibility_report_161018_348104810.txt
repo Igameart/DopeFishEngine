@@ -1,0 +1,291 @@
+Converting GML script: ${project_dir}\scripts\DE_getFile\DE_getFile.gml
+Converted string - line 6: '\' -> "\\"
+Converted string - line 24: '.' -> "."
+Converted string - line 28: 'FATAL: Failed to retrieve Map:' -> "FATAL: Failed to retrieve Map:"
+Converted string - line 39: 'wad' -> "wad"
+Converted string - line 40: 'SUCCESS: Retrieved Map:' -> "SUCCESS: Retrieved Map:"
+Converted string - line 47: 'WARNING: Unknown map file type' -> "WARNING: Unknown map file type"
+
+Converting GML script: ${project_dir}\scripts\DE_getHeader\DE_getHeader.gml
+Converted string - line 18: 'IWAD' -> "IWAD"
+
+Converting GML script: ${project_dir}\scripts\DE_getGLVerts\DE_getGLVerts.gml
+Converted string - line 15: '] GL_VERSION gNd' -> "] GL_VERSION gNd"
+Converted string - line 36: '] GL_VERT ' -> "] GL_VERT "
+
+Converting GML script: ${project_dir}\scripts\DE_getGLSegs\DE_getGLSegs.gml
+Converted string - line 14: '] GL_SEGS GL_VERSION gNd' -> "] GL_SEGS GL_VERSION gNd"
+Converted string - line 56: '] GL_SEGS ' -> "] GL_SEGS "
+
+Converting GML script: ${project_dir}\scripts\DE_getGLNodes\DE_getGLNodes.gml
+Converted string - line 19: 'gNd5' -> "gNd5"
+Converted string - line 71: '] GL_NODES ' -> "] GL_NODES "
+
+Converting GML script: ${project_dir}\scripts\DE_getGLSSect\DE_getGLSSect.gml
+Converted string - line 14: '] GL_SSECT GLversion ' -> "] GL_SSECT GLversion "
+Converted string - line 24: '] GL_SSECT 3 Count ' -> "] GL_SSECT 3 Count "
+Converted string - line 35: '] GL_SSECT 2 Count ' -> "] GL_SSECT 2 Count "
+Converted string - line 46: '] GL_SSECT ' -> "] GL_SSECT "
+
+Converting GML script: ${project_dir}\scripts\DE_getLinedefs\DE_getLinedefs.gml
+Converted string - line 102: '] LINEDEFS ' -> "] LINEDEFS "
+
+Converting GML script: ${project_dir}\scripts\DE_getVertexes\DE_getVertexes.gml
+Converted string - line 23: '] VERTEX 0 X position ' -> "] VERTEX 0 X position "
+Converted string - line 24: '] VERTEX 0 Y position ' -> "] VERTEX 0 Y position "
+Converted string - line 31: '] VERTEXES ' -> "] VERTEXES "
+
+Converting GML script: ${project_dir}\scripts\DE_getNodes\DE_getNodes.gml
+Converted string - line 48: '] NODE 2 x ' -> "] NODE 2 x "
+Converted string - line 49: '] NODE 2 y ' -> "] NODE 2 y "
+Converted string - line 50: '] NODE 2 dx ' -> "] NODE 2 dx "
+Converted string - line 51: '] NODE 2 dy ' -> "] NODE 2 dy "
+Converted string - line 52: '] NODE 2 bbr 0 ' -> "] NODE 2 bbr 0 "
+Converted string - line 53: '] NODE 2 bbr 1 ' -> "] NODE 2 bbr 1 "
+Converted string - line 54: '] NODE 2 bbr 2 ' -> "] NODE 2 bbr 2 "
+Converted string - line 55: '] NODE 2 bbr 3 ' -> "] NODE 2 bbr 3 "
+Converted string - line 56: '] NODE 2 c_l ' -> "] NODE 2 c_l "
+Converted string - line 65: '] NODES ' -> "] NODES "
+
+Converting GML script: ${project_dir}\scripts\DE_getReject\DE_getReject.gml
+Converted string - line 23: '] REJECT ' -> "] REJECT "
+
+Converting GML script: ${project_dir}\scripts\DE_getSegs\DE_getSegs.gml
+Converted string - line 29: '] SEGS ' -> "] SEGS "
+
+Converting GML script: ${project_dir}\scripts\DE_getSidedefs\DE_getSidedefs.gml
+Converted string - line 39: '] SIDEDEFS ' -> "] SIDEDEFS "
+
+Converting GML script: ${project_dir}\scripts\DE_getSectors\DE_getSectors.gml
+Converted string - line 41: '] SECTORS ' -> "] SECTORS "
+
+Converting GML script: ${project_dir}\scripts\DE_getSsectors\DE_getSsectors.gml
+Converted string - line 26: '] SSECTORS ' -> "] SSECTORS "
+
+Converting GML script: ${project_dir}\scripts\DE_getThings\DE_getThings.gml
+Converted string - line 45: '] THING 137 ANGLE ' -> "] THING 137 ANGLE "
+Converted string - line 51: '] THINGS ' -> "] THINGS "
+
+Converting GML script: ${project_dir}\scripts\DE_buildSSector\DE_buildSSector.gml
+Converted description /// @description DE_buildSSector=function(data,map,node,side,ss){/// @param data
+/// @param map
+/// @param node
+/// @param side
+/// @param ss
+
+Converting GML script: ${project_dir}\scripts\DE_getColorMaps\DE_getColorMaps.gml
+Converted string - line 12: 'COLORMAP' -> "COLORMAP"
+Converted string - line 29: 'PLAYPAL' -> "PLAYPAL"
+
+Converting GML script: ${project_dir}\scripts\DE_getPatch\DE_getPatch.gml
+Converted description /// @description DE_getPatch(patch,poff){/// @param patch
+/// @param poff
+
+Converting GML script: ${project_dir}\scripts\DE_getFlatTextures\DE_getFlatTextures.gml
+Converted string - line 11: 'F1_START' -> "F1_START"
+Converted string - line 11: 'F1_END' -> "F1_END"
+Converted string - line 12: 'F2_START' -> "F2_START"
+Converted string - line 12: 'F2_END' -> "F2_END"
+
+Converting GML script: ${project_dir}\scripts\DE_getWallTextures\DE_getWallTextures.gml
+Converted string - line 13: 'TEXTURE1' -> "TEXTURE1"
+Converted string - line 88: 'TEXTURE2' -> "TEXTURE2"
+
+Converting GML script: ${project_dir}\scripts\DE_preload_textures\DE_preload_textures.gml
+Converted description /// @description DE_preload_textures()
+
+Converting GML script: ${project_dir}\scripts\DE_preload_patches\DE_preload_patches.gml
+Converted description /// @description DE_preload_textures()
+
+Converting GML script: ${project_dir}\scripts\DE_preload_flats\DE_preload_flats.gml
+Converted description /// @description DE_preload_flats();
+
+Converting GML script: ${project_dir}\scripts\DE_buildGLSSect\DE_buildGLSSect.gml
+Converted description /// @description DE_buildGLSSect(GLSSECT)/// @param GLSSECT
+
+Converting GML script: ${project_dir}\scripts\DE_buildWalls\DE_buildWalls.gml
+Converted description /// @description DE_buildWalls(GLSSECT,sector,buffer,color);/// @param GLSSECT
+/// @param sector
+/// @param buffer
+/// @param color
+Converted string - line 100: '-' -> "-"
+Converted string - line 101: '-' -> "-"
+Converted string - line 102: '-' -> "-"
+Converted string - line 104: '-' -> "-"
+Converted string - line 110: '-' -> "-"
+Converted string - line 116: '-' -> "-"
+Converted string - line 298: '-' -> "-"
+Converted string - line 299: '-' -> "-"
+Converted string - line 300: '-' -> "-"
+Converted string - line 302: '-' -> "-"
+Converted string - line 308: '-' -> "-"
+Converted string - line 314: '-' -> "-"
+
+Converting GML script: ${project_dir}\scripts\DE_vbufferFormatDefine\DE_vbufferFormatDefine.gml
+Converted description /// @description DE_vbufferFormatDefine();
+
+Converting GML script: ${project_dir}\scripts\DE_vertexNormal\DE_vertexNormal.gml
+Converted description /// @description DE_vertexNormal(buffer, x, y, z, nx, ny, nz, u,v, col, alpha,texture index,middle?)/// @param buffer
+/// @param  x
+/// @param  y
+/// @param  z
+/// @param  nx
+/// @param  ny
+/// @param  nz
+/// @param  u
+/// @param v
+/// @param  col
+/// @param  alpha
+/// @param texture index
+/// @param middle?
+
+Converting GML script: ${project_dir}\scripts\DE_vertexGLSS\DE_vertexGLSS.gml
+Converted description /// @description DE_vertexGLSS(buffer, x, y, z, nx, ny, nz, u,v, col, alpha,texture index, Top?)/// @param buffer
+/// @param  x
+/// @param  y
+/// @param  z
+/// @param  nx
+/// @param  ny
+/// @param  nz
+/// @param  u
+/// @param v
+/// @param  col
+/// @param  alpha
+/// @param texture index
+/// @param  Top?
+
+Converting GML script: ${project_dir}\scripts\DE_vertexSides\DE_vertexSides.gml
+Converted description /// @description DE_vertexSides(buffer, x, y, z, nx, ny, nz, u,v, col, alpha, index, middle, top)/// @param buffer
+/// @param  x
+/// @param  y
+/// @param  z
+/// @param  nx
+/// @param  ny
+/// @param  nz
+/// @param  u
+/// @param v
+/// @param  col
+/// @param  alpha
+/// @param  index
+/// @param  middle
+/// @param  top
+
+Converting GML script: ${project_dir}\scripts\DE_getSectorFromSSect\DE_getSectorFromSSect.gml
+Converted description /// @description DE_getSectorFromSSect(GLSSECT)/// @param GLSSECT
+
+Converting GML script: ${project_dir}\scripts\DE_findSectorAt\DE_findSectorAt.gml
+Converted description /// @description DE_findSectorAt(current sector)/// @param current sector
+
+Converting GML script: ${project_dir}\scripts\DE_IdTypeIsDoor\DE_IdTypeIsDoor.gml
+Converted description /// @description DE_IdTypeIsDoor(type number);/// @param type number
+
+Converting GML script: ${project_dir}\scripts\is_clockwise\is_clockwise.gml
+Converted description /// @description is_clockwise(x0, y0, x1, y1, x2, y2)/// @param x0
+/// @param  y0
+/// @param  x1
+/// @param  y1
+/// @param  x2
+/// @param  y2
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Converting GML script: ${project_dir}\scripts\lines_intersect\lines_intersect.gml
+Converted description /// @description lines_intersect(x0, y0, x1, y1, x2, y2, x3, y3)/// @param x0
+/// @param  y0
+/// @param  x1
+/// @param  y1
+/// @param  x2
+/// @param  y2
+/// @param  x3
+/// @param  y3
+
+Converting GML script: ${project_dir}\scripts\pnt_in_triangle\pnt_in_triangle.gml
+Converted description /// @description pnt_in_triangle(x0, y0, x1, y1, x2, y2, x3, y3);/// @param x0
+/// @param  y0
+/// @param  x1
+/// @param  y1
+/// @param  x2
+/// @param  y2
+/// @param  x3
+/// @param  y3
+
+Converting GML script: ${project_dir}\scripts\camera_calculate\camera_calculate.gml
+Converted description /// @description Gets the coordinates of where the camera is 'looking'
+
+Converting GML script: ${project_dir}\scripts\rnd\rnd.gml
+Converted description /// @description rnd(value)/// @param value
+
+Converting GML script: ${project_dir}\scripts\slide_on_line\slide_on_line.gml
+Converted description /// @description slide_on_line( x1,y1, x2,y2 );/// @param  x1
+/// @param y1
+/// @param  x2
+/// @param y2
+
+Converting GML script: ${project_dir}\scripts\RFX_init\RFX_init.gml
+Converted builtin - line 19: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 19: view_hview -> __view_get( e__VW.HView, 0 )
+Converted description /// @description RFX_init(pixel width, dither texture, dither spread, double wide pixels)/// @param pixel width
+/// @param  dither texture
+/// @param  dither spread
+/// @param  double wide pixels
+
+Converting GML script: ${project_dir}\scripts\RFX_set_palswap\RFX_set_palswap.gml
+Converted description /// @description RFX_set_palswap( Lut texture )/// @param  Lut texture
+
+Converting GML script: ${project_dir}\scripts\RFX_set_coldepth\RFX_set_coldepth.gml
+Converted description /// @description RFX_set_coldepth()
+
+Converting GML script: ${project_dir}\scripts\RFX_apply\RFX_apply.gml
+Converted description /// @description RFX_apply()
+
+Converting GML script: ${project_dir}\objects\Mapper_obj\Create_0.gml
+Converted builtin - line 8: background_colour -> __background_get_colour( )
+
+Converting GML script: ${project_dir}\objects\Mapper_obj\Step_1.gml
+Converted string - line 12: 'W' -> "W"
+Converted string - line 13: 'A' -> "A"
+Converted string - line 14: 'S' -> "S"
+Converted string - line 15: 'D' -> "D"
+
+Converting GML script: ${project_dir}\objects\Mapper_obj\Draw_0.gml
+Converted builtin - line 343: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 344: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 347: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 351: view_xview -> __view_get( e__VW.XView, 0 )
+Converted builtin - line 343: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 344: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 347: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 351: view_yview -> __view_get( e__VW.YView, 0 )
+Converted builtin - line 3: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 351: view_wview -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 3: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 343: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 344: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 347: view_hview -> __view_get( e__VW.HView, 0 )
+Converted builtin - line 351: view_hview -> __view_get( e__VW.HView, 0 )
+Converted description /// @description Draw the Background & Do Projection
+
+Game speed set to 60
+Added compatibility script 'action/action_end_game.gml'
+Added compatibility script 'background/__background_get_colour.gml'
+Added compatibility script 'background/__background_get_colour_element.gml'
+Added compatibility script 'background/__background_set_element.gml'
+Added compatibility script 'd3d/d3d_set_culling.gml'
+Added compatibility script 'd3d/d3d_set_hidden.gml'
+Added compatibility script 'd3d/d3d_set_perspective.gml'
+Added compatibility script 'd3d/d3d_set_projection_ext.gml'
+Added compatibility script 'd3d/d3d_start.gml'
+Added compatibility script 'draw/draw_set_alpha_test.gml'
+Added compatibility script 'draw/draw_set_alpha_test_ref_value.gml'
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script 'texture/texture_set_interpolation.gml'
+Added compatibility script 'texture/texture_set_repeat.gml'
+Added compatibility script 'texture/texture_set_repeat_ext.gml'
+Added compatibility script 'view/__view_get.gml'
+Added compatibility script 'action/__init_action.gml'
+Added compatibility script 'background/__init_background.gml'
+Added compatibility script 'd3d/__init_d3d.gml'
+Added compatibility script 'view/__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

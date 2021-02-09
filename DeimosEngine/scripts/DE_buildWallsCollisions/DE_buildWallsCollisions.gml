@@ -80,7 +80,7 @@ for (var k=0; k<ds_list_size(lines);k++) {
             //show_debug_message("building Front: "+string(front));
             
             var buffer = vertex_create_buffer();
-            vertex_begin(buffer,YYD_vbformat);
+            vertex_begin(buffer,DE_vFormat);
             
             var side=ds_list_find_value_fixed(sides,front);
             
@@ -165,7 +165,7 @@ for (var k=0; k<ds_list_size(lines);k++) {
             //show_debug_message("building Back: "+string(front));
             
             var buffer = vertex_create_buffer();
-            vertex_begin(buffer,YYD_vbformat);
+            vertex_begin(buffer,DE_vFormat);
             
             var side=ds_list_find_value_fixed(sides,front);
             

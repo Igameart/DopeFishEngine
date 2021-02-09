@@ -50,9 +50,9 @@ node=ds_list_find_value_fixed(map_glnodes,n);
 node_c_r=ds_map_find_value_fixed(node,"c_r");
 node_c_l=ds_map_find_value_fixed(node,"c_l");
 if(node_c_r&SUBSECTOR)
-DE_buildSSectorOld(data,map,node,0,node_c_r&~SUBSECTOR);
+	DE_buildSSectorOld(data,map,node,0,node_c_r&~SUBSECTOR);
 if(node_c_l&SUBSECTOR)
-DE_buildSSectorOld(data,map,node,1,node_c_l&~SUBSECTOR);
+	DE_buildSSectorOld(data,map,node,1,node_c_l&~SUBSECTOR);
 
 //bsplines.push(
 //node.x,this.wad.worldbb[5],node.y,2.1,

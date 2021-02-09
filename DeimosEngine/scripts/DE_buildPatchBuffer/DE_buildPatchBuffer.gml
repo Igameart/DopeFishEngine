@@ -38,8 +38,10 @@ for(var h=0;h<patch_height;h++){
 
 buffer_set_surface(pBuffer,surf,0,0,0);
 
-var data2=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,xOffset,yOffset);
+var spr=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,xOffset,yOffset);
+
+wadCompedTextures[? spr] = sprite_get_texture(spr,0);
 
 surface_free(surf);
 
-return data2;
+return spr;
