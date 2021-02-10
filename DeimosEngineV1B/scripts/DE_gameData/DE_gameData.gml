@@ -1,6 +1,8 @@
 function DE_gameData() {
 	trace("Game Type:",DENAMESPACE);
 
+	DE_ThingMacros();
+
 	switch DENAMESPACE{
 		case DEnameSpaces.DOOM:
 			DE_thingTypesDOOM();

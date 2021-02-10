@@ -31,13 +31,15 @@ function DE_getSprites() {
 
 				var spr_width=buffer_read(wadbuff,buffer_u16);
 				var spr_height=buffer_read(wadbuff,buffer_u16);
+				var spr_left = buffer_read(wadbuff,buffer_s16);
+				var spr_top = buffer_read(wadbuff,buffer_s16);
 
 				ds_map_add(_spr,"width",spr_width);
 				ds_map_add(_spr,"height",spr_height);
-				ds_map_add(_spr,"o_left",buffer_read(wadbuff,buffer_s16));
-				ds_map_add(_spr,"o_top",buffer_read(wadbuff,buffer_s16));
+				ds_map_add(_spr,"o_left",spr_left);
+				ds_map_add(_spr,"o_top",spr_top);
 			
-				//trace("Sprite Size:",spr_width,spr_height);
+				trace("Sprite Loaded:", n, spr_width, spr_height, spr_left, spr_top);
 		
 	            var data=ds_grid_build(spr_width,spr_height);
 				ds_grid_clear(data,-1);

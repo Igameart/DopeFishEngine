@@ -97,9 +97,9 @@ function DE_getThings(argument0, argument1) {
 		if (mponly && !DENetPlay) addThing = false;
 	
 		if addThing == true{
-			var _3Dspr = instance_create_depth(X,Z,0,DEBillboardV_obj);
-	
+			var _3Dspr = instance_create_depth(X,Z,0,DEEntity_obj);
 			with _3Dspr{
+				startZ = Y;
 				thingType = TYPE;
 				event_user(0);
 			}

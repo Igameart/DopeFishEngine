@@ -13,6 +13,9 @@ name = thing[ DEThingDef.Description ];
 
 sprPrefix = thing[ DEThingDef.Sprite ];
 sprSequence = thing[ DEThingDef.Sequence ];
+sprClass = thing[ DEThingDef.Class ];
+
+parseClassDat(sprClass);
 
 var num = 0;
 do{
@@ -49,10 +52,12 @@ if spriteDat != undefined{
 		DESprites[?sprName] = DESprite;
 	}else DESprite = DESprites[?sprName];
 
-	TexW = spriteDat[?"width"];
-	TexH = spriteDat[?"height"];
-	xOff = spriteDat[?"o_left"];
-	yOff = spriteDat[?"o_top"];
+	TexW = spriteDat[? "width"];
+	TexH = spriteDat[? "height"];
+	xOff = spriteDat[? "o_left"];
+	yOff = spriteDat[? "o_top"];
+	
+	trace("Added entity",sprName,TexW,TexH,xOff,yOff);
 	
 }
 

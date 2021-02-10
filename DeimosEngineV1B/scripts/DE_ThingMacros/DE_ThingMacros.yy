@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Math and Data",
-    "path": "folders/Scripts/Math and Data.yy",
+    "name": "GENERAL",
+    "path": "folders/Scripts/DopeFish/Main/Data Management/GENERAL.yy",
   },
   "resourceVersion": "1.0",
-  "name": "split",
+  "name": "DE_ThingMacros",
   "tags": [],
   "resourceType": "GMScript",
 }
