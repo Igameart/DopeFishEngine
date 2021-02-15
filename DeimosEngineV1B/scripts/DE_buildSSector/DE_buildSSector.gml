@@ -210,6 +210,8 @@ function DE_buildSSector(argument0) {
 	    ds_list_destroy(points);
     
 	    vertex_end(vbuffer);
+		vertex_freeze(vbuffer);
+		
 	    ds_map_add(ssector,"vbuffer",vbuffer);
 	}
 

@@ -20,6 +20,9 @@ function RFX_draw_surface() {
 
 	if RFXenabled{
 	
+		var __mip = gpu_get_tex_mip_enable();
+		gpu_set_tex_mip_enable(false);
+	
 	    shader_set(RFXshader);
 	
 		var area = [surface_get_width(surf)*xScale,surface_get_height(surf)*yScale];
@@ -41,6 +44,7 @@ function RFX_draw_surface() {
 
 	if RFXenabled{
 	    shader_reset();
+		gpu_set_tex_mip_enable(__mip);
 	}
 
 

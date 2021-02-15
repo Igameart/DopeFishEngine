@@ -73,11 +73,18 @@ void main()
 
 	if (col.a < 0.1) discard;
 	
+	/*#extension GL_EXT_frag_depth : require
+	#ifdef GL_EXT_frag_depth
+		float vDepth = length(v_vPosition.xyz)-0.0;
+		float dDiff = u_fogMaxDist - 0.2;
+		gl_FragDepthEXT = 0.2/dDiff + vDepth/(dDiff);
+	#endif*/
+	
     float fogger = computeLinearFogFactor();
     vec4 vcol = v_vColour * 1.01;
     fogger = floor(fogger*16.0+0.5)/16.0; 
     
-    gl_FragColor=( col * vcol * vcol ) * fogger + u_fogColor * (1.0 - fogger);
+    gl_FragColor=( col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
     gl_FragColor.a = col.a * vcol.a; 
     
 }

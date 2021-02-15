@@ -1,5 +1,4 @@
-function DE_loadMap() {
-	var _map = argument[0];
+function DE_loadMap( _map ) {
 
 	DEMap = _map;
 
@@ -13,13 +12,14 @@ function DE_loadMap() {
 	DE_getSidedefs(_map,LEV+SIDEDEFOFS);
 	DE_getLinedefs(_map,LEV+LINEDEFOFS);
 	DE_getLinedefs(_map,LEV+LINEDEFOFS);
+	//DE_getReject(_map,LEV+REJECTOFS);
 
-	if glversion!=-1{
+	if wadGLVersion!=-1{
 		DE_getGLSegs(_map,LEV+GL_SEGSOFS);
 		DE_getGLSSect(_map,LEV+GL_SSECTOFS);
 		DE_getGLNodes(_map,LEV+GL_NODESOFS);
+		DE_getGLPVIS(_map,LEV+GL_PVSOFS);
 	}else{
-		show_message("Map is missing GL Nodes. Map will render incorrectly. (for now)");
 		DE_getSegs(_map,LEV+SEGSOFS);
 		DE_getSsectors(_map,LEV+SSECTORSOFS);
 		DE_getNodes(_map,LEV+NODESOFS);
@@ -41,7 +41,7 @@ function DE_loadMap() {
 
 	DE_vbufferFormatDefine();
 
-	if glversion!=-1{
+	if wadGLVersion!=-1{
 
 		///Generate the vbuffers for each GL subsector
 		var gssects = mapGLSSects;

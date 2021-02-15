@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_DopeFishLogo","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_DopeFishLogo",
     "tags": [],
     "resourceType": "GMSequence",
   },

@@ -74,7 +74,7 @@ function DE_buildGLSSect(argument0) {
 	ds_map_replace(polygon,"tex_f",ftex);
 	ds_map_replace(polygon,"tex_c",ctex);
 
-	vbuffer = vertex_create_buffer();
+	var vbuffer = vertex_create_buffer();
 	vertex_begin(vbuffer,DE_vFormat);
 
 	//DE_buildWalls(argument0,sect,vbuffer,col);
@@ -196,12 +196,15 @@ function DE_buildGLSSect(argument0) {
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),cheight,0,0,0,ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,col,1,1);
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),cheight,0,0,0,ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,col,1,1);
 	    }
+		
 	    //  3. Clean up
 	    ds_list_destroy(polyX);
 	    ds_list_destroy(polyY);
 	    ds_list_destroy(points);
     
 	    vertex_end(vbuffer);
+		vertex_freeze(vbuffer);
+		
 	    ds_map_add(polygon,"vbuffer",vbuffer);
 	}
 	trace("Done Building Sector");

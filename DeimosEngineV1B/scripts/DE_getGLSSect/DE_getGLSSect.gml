@@ -13,19 +13,19 @@ function DE_getGLSSect(argument0, argument1) {
 
 	while(buffer_tell(wadbuff)<len){
 	    var glssect=ds_map_build();
-	    if(glversion==3){
+	    if(wadGLVersion==3){
 	        var count=buffer_read(wadbuff,buffer_u32)
 	        var start=buffer_read(wadbuff,buffer_u32)
-	        show_debug_message("NOTICE: ["+level+"] GL_SSECT 3 Count "+string( count));
+	        //show_debug_message("NOTICE: ["+level+"] GL_SSECT 3 Count "+string( count));
 	        ds_map_add(glssect,"count",count);
 	        ds_map_add(glssect,"start",start);
 	    }
     
-	    if(glversion<=2){
+	    if(wadGLVersion<=2){
     
 	        var count=buffer_read(wadbuff,buffer_u16)
 	        var start=buffer_read(wadbuff,buffer_u16)
-	        show_debug_message("NOTICE: ["+level+"] GL_SSECT 2 Count "+string( count));
+	        //show_debug_message("NOTICE: ["+level+"] GL_SSECT 2 Count "+string( count));
 	        ds_map_add(glssect,"count",count);
 	        ds_map_add(glssect,"start",start);
     

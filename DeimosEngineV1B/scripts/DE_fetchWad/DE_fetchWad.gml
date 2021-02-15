@@ -1,5 +1,5 @@
-function DE_fetchWad() {
-	wad=argument[0];
+function DE_fetchWad( __wad ) {
+	wad = __wad;
 
 	if DE_getFile(wad)=true{
 	
@@ -19,6 +19,5 @@ function DE_fetchWad() {
 	}
 
 	draw_set_font(fnt_d4);
-
 
 }

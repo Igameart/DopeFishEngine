@@ -10,18 +10,18 @@ function DE_getGLSegs(argument0, argument1) {
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
-	//glversion=buffer_read_string(wadbuff,4)
-	//glversion=real(string_digits(glversion));
-	show_debug_message("NOTICE: ["+level+"] GL_SEGS GL_VERSION gNd"+string( glversion ));
+	//wadGLVersion=buffer_read_string(wadbuff,4)
+	//wadGLVersion=real(string_digits(wadGLVersion));
+	show_debug_message("NOTICE: ["+level+"] GL_SEGS GL_VERSION gNd"+string( wadGLVersion ));
 
 	var len=pos+size;
 
 	while(buffer_tell(wadbuff)<len){
 	var glseg=ds_map_build();
-	if(glversion==3 or glversion==5){
+	if(wadGLVersion==3 or wadGLVersion==5){
 
-	    if glversion==3 VERT_IS_GL = (1 << 30);
-	    if glversion==5 VERT_IS_GL = (1 << 31);
+	    if wadGLVersion==3 VERT_IS_GL = (1 << 30);
+	    if wadGLVersion==5 VERT_IS_GL = (1 << 31);
 	    var val;
 	    val=real(buffer_read(wadbuff,buffer_u32));
 	    ds_map_add(glseg,"start",val);
@@ -35,7 +35,7 @@ function DE_getGLSegs(argument0, argument1) {
 	    ds_map_add(glseg,"partner",val);
 
 	}
-	if(glversion<=2){
+	if(wadGLVersion<=2){
 	    VERT_IS_GL = (1 << 15);
 	    var val;
 	    val=real(buffer_read(wadbuff,buffer_u16));

@@ -1,5 +1,5 @@
 /// @description DopeFishEngineInit( WAD, Camera );
-function DopeFishEngineInit() {
+function DopeFishEngineInit( CameraObject ) {
 
 	enum BBOX
 	{
@@ -114,9 +114,9 @@ function DopeFishEngineInit() {
 	//exture scrollers
 #macro SCROLL_UNIT	64
 
+	gc_enable(true);
 
-
-	globalvar DEcam; DEcam = argument[0];
+	globalvar DEcam; DEcam = CameraObject;
 
 	globalvar wadbuff;
 
@@ -126,6 +126,14 @@ function DopeFishEngineInit() {
 
 	// Some System defines
 	//globalvar DE_SysReadout; DE_SysReadout = ds_list_create();
+	
+	// Some GLBSP defines
+	if !file_exists(game_save_id+"DE_GLBSP.dll"){
+		file_copy("DE_GLBSP.dll",game_save_id+"DE_GLBSP.dll");
+		file_copy("glbsp.exe",game_save_id+"glbsp.exe");
+	}
+	
+	//globalvar wadProcessGLBSP; wadProcessGLBSP = external_define( game_save_id+"DE_GLBSP.dll", "wad_GLBSPProcess", dll_cdecl, ty_real, 0);
 
 	// Some Logic defines
 	globalvar DESkillLevel;	DESkillLevel = 0;
@@ -154,6 +162,7 @@ function DopeFishEngineInit() {
 
 	// Some WAD defines
 	globalvar wad; wad = "";
+	globalvar wadFile; wadFile = "";
 	globalvar wadHeader; wadHeader = ds_map_build();
 	globalvar wadDirectory; wadDirectory = noone;
 	globalvar wadDirectoryOfs; wadDirectoryOfs = noone;
@@ -161,11 +170,15 @@ function DopeFishEngineInit() {
 	globalvar wadPlaypal; wadPlaypal = noone;
 	globalvar wadPatches; wadPatches = ds_map_build();
 	globalvar wadPNames; wadPNames = ds_list_build();
-	globalvar wadWallTextures; wadWallTextures = noone;
+	//globalvar wadWallTextures; wadWallTextures = noone;
 	globalvar wadFlatTextures; wadFlatTextures = noone;
 	globalvar wadCompedTextures; wadCompedTextures = ds_map_build();
 	globalvar wadSwitchTextures; wadSwitchTextures = noone;
 	globalvar wadSounds; wadSounds = ds_map_create();
+	globalvar wadSpriteDB; wadSpriteDB = ds_map_create();
+	//globalvar wadSpritesNFO; wadSpritesNFO = ds_map_create();
+	globalvar wadSpritesMir; wadSpritesMir = ds_map_create();
+	globalvar wadSpritesDir; wadSpritesDir = ds_map_create();
 
 	globalvar wad_levels;wad_levels=ds_map_build();
 	globalvar flats_;flats_=ds_map_build();
@@ -189,6 +202,8 @@ function DopeFishEngineInit() {
 	globalvar mapSSectors;mapSSectors=ds_list_build();
 	globalvar mapSectTags; mapSectTags = ds_list_build();
 	globalvar mapDoors; mapDoors = ds_list_build();
+	globalvar mapReject; mapReject = ds_list_build();
+	globalvar mapPVIS; mapPVIS = ds_list_build();
 
 
 	ds_map_add(wad_levels,"glnodes",mapGLNodes);
@@ -219,7 +234,9 @@ function DopeFishEngineInit() {
 	globalvar NOGROUND; NOGROUND = -9999;
 	globalvar ANGLE_MASK; ANGLE_MASK = $FFFFFFFF;
 	globalvar WAD_FORMAT; WAD_FORMAT = "DOOM";
-	globalvar glversion; glversion = -1;
+	globalvar WAD_EPISODIC; WAD_EPISODIC = true;
+	globalvar WAD_ISGL; WAD_ISGL = false;
+	globalvar DE_alphabetCheck; DE_alphabetCheck = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 	// Some BSP defines
 	globalvar bspLineCache; bspLineCache = ds_list_create();

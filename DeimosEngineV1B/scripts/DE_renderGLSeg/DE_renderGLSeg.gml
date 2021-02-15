@@ -1,10 +1,13 @@
-function DE_renderGLSeg() {
-	var j = argument[0];
+function DE_renderGLSeg(j) {
+	
+	//CHRIS:
+	//Perhaps only do these checks for segs tagged as dynamic, cut back on all the calculations needed to be done for each seg being drawn
+	//Also check to see if some of this stuff can be condensed
 
-	var segs = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var segs = mapGLSegs;	
+	var lines = mapLinedefs;
+	var sects = mapSectors;	
+	var sides = mapSidedefs;
 
 	var seg = segs[|j];
 
@@ -15,8 +18,8 @@ function DE_renderGLSeg() {
 	var linedef = ds_list_find_value(lines,l);
 	
 	/**/
-	var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
-	var gverts = mapGLVerts;//ds_map_find_value_fixed(wad_levels,"glverts");
+	var verts = mapVertexes;
+	var gverts = mapGLVerts;
 	var startv,endv;
 
 	startv = seg[?"start"];

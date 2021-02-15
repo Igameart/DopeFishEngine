@@ -4,7 +4,7 @@ function DE_getSectorFromSSect(argument0) {
 	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
 	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
 
-	if glversion !=-1{
+	if wadGLVersion !=-1{
 		var glsegs = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
 
 		var gssect = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");

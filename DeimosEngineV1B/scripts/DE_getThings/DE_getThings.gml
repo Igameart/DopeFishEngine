@@ -1,5 +1,4 @@
-function DE_getThings(argument0, argument1) {
-	var level=argument0,lump=argument1;
+function DE_getThings(level, lump) {
 
 	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
 
@@ -11,7 +10,7 @@ function DE_getThings(argument0, argument1) {
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
 	var len=pos+size;
-	l=0;
+	var __l=0;
 	while(buffer_tell(wadbuff)<len){
 	
 		var thing =ds_map_build();
@@ -62,10 +61,6 @@ function DE_getThings(argument0, argument1) {
 		ds_map_add(thing,"action argument 5",ARG5)
 		ds_list_add(mapThings,thing);
 
-		// Bit Shift flags
-		//var flags=ds_map_find_value_fixed(thing,"flags");
-		//var flagmap=ds_map_build();
-
 		//CONTINUE HERE
 	
 		var skill1_2,skill3,skill4_5,deaf,mponly;
@@ -75,14 +70,10 @@ function DE_getThings(argument0, argument1) {
 		skill4_5 = (FLAGS&(1<<2)!=0);
 		deaf = (FLAGS&(1<<3)!=0);
 		mponly = (FLAGS&(1<<4)!=0);
-
-		//ds_map_add(flagmap,"skill1_2",	skill1_2);
-		//ds_map_add(flagmap,"skill3",	skill3);
-		//ds_map_add(flagmap,"skill4_5",	skill4_5);
-		//ds_map_add(flagmap,"deaf",		deaf);
-		//ds_map_add(flagmap,"mponly",	mponly);
 	
-		if l == 0 {
+		var __thing = DEThingType[TYPE];
+		if __thing[@ DEThingDef.Description ] == "Player 1 start"
+		with DEcam{
 			x = X;
 			y = Z;
 			yaw = ANGLE;
@@ -99,18 +90,16 @@ function DE_getThings(argument0, argument1) {
 		if addThing == true{
 			var _3Dspr = instance_create_depth(X,Z,0,DEEntity_obj);
 			with _3Dspr{
-				startZ = Y;
+				entDirection = ANGLE;
 				thingType = TYPE;
 				event_user(0);
 			}
 		}
 
-		//ds_map_replace(thing,"flags",flagmap);
-
 		l+=1;
 
 	};
-	show_debug_message("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
+	//show_debug_message("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
 
 
 }

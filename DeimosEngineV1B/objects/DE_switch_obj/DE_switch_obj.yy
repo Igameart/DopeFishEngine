@@ -24,7 +24,7 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"Mapper_obj","path":"objects/Mapper_obj/Mapper_obj.yy",},"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objDEMapHandler","path":"objects/objDEMapHandler/objDEMapHandler.yy",},"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":11,"eventType":7,"collisionObjectId":null,"parent":{"name":"DE_switch_obj","path":"objects/DE_switch_obj/DE_switch_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],

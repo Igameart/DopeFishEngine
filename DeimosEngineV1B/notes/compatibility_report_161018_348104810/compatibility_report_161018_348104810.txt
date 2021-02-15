@@ -238,16 +238,16 @@ Converted description /// @description RFX_set_coldepth()
 Converting GML script: ${project_dir}\scripts\RFX_apply\RFX_apply.gml
 Converted description /// @description RFX_apply()
 
-Converting GML script: ${project_dir}\objects\Mapper_obj\Create_0.gml
+Converting GML script: ${project_dir}\objects\objDEMapHandler\Create_0.gml
 Converted builtin - line 8: background_colour -> __background_get_colour( )
 
-Converting GML script: ${project_dir}\objects\Mapper_obj\Step_1.gml
+Converting GML script: ${project_dir}\objects\objDEMapHandler\Step_1.gml
 Converted string - line 12: 'W' -> "W"
 Converted string - line 13: 'A' -> "A"
 Converted string - line 14: 'S' -> "S"
 Converted string - line 15: 'D' -> "D"
 
-Converting GML script: ${project_dir}\objects\Mapper_obj\Draw_0.gml
+Converting GML script: ${project_dir}\objects\objDEMapHandler\Draw_0.gml
 Converted builtin - line 343: view_xview -> __view_get( e__VW.XView, 0 )
 Converted builtin - line 344: view_xview -> __view_get( e__VW.XView, 0 )
 Converted builtin - line 347: view_xview -> __view_get( e__VW.XView, 0 )

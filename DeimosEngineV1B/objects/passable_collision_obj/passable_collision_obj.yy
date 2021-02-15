@@ -25,7 +25,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"passable_collision_obj","path":"objects/passable_collision_obj/passable_collision_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"Mapper_obj","path":"objects/Mapper_obj/Mapper_obj.yy",},"parent":{"name":"passable_collision_obj","path":"objects/passable_collision_obj/passable_collision_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objDEMapHandler","path":"objects/objDEMapHandler/objDEMapHandler.yy",},"parent":{"name":"passable_collision_obj","path":"objects/passable_collision_obj/passable_collision_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"parent":{"name":"passable_collision_obj","path":"objects/passable_collision_obj/passable_collision_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"passable_collision_obj","path":"objects/passable_collision_obj/passable_collision_obj.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],

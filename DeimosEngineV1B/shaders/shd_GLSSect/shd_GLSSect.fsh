@@ -33,6 +33,14 @@ void main()
     vec4 vcol = v_vColour * 1.01;
     //vcol.a=1.0;
     vec4 col;
+	
+	
+	/*#extension GL_EXT_frag_depth : require
+	#ifdef GL_EXT_frag_depth
+		float vDepth = length(v_vPosition.xyz)+12.0*0.0;
+		float dDiff = u_fogMaxDist - 0.2;
+		gl_FragDepthEXT = 0.2/dDiff + vDepth/(dDiff);
+	#endif*/
     
     if (v_vTIndex==0.0)
         col = texture2D( gm_BaseTexture, v_vTexcoord );
@@ -41,7 +49,7 @@ void main()
         
     fogger = floor(fogger*16.0+0.5)/16.0; 
     
-    gl_FragColor=(col * vcol * vcol) * fogger + u_fogColor * (1.0 - fogger);
+    gl_FragColor=(col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
     gl_FragColor.a = col.a * vcol.a;
 }
 

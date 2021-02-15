@@ -3,6 +3,4 @@ function ds_list_build() {
 	ds_list_add(ds_lists,dat);
 	return dat;
 
-
-
 }

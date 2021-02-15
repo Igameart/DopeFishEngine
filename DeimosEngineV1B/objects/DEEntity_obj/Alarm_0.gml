@@ -11,7 +11,6 @@ if cMsect!=Msect{
         Msect	= cMsect;
     }
 	
-
 	z = secZ;
 
 	if !entGrounded{
@@ -19,4 +18,10 @@ if cMsect!=Msect{
 			z = secC-yOff;
 		}
 	}
+	
+	secColor = 1;
+	if secL!=undefined{
+		secColor = secL/255;
+	}
+	
 };

@@ -18,6 +18,9 @@ void main()
     vec2 dCoord = v_texcoord;
     dCoord.x *= screensize.x/128.0;
     dCoord.y *= screensize.y/128.0;
+	
+	float gamma = 1.0;
+    t_color.rgb = pow(t_color.rgb, vec3(1.0/gamma));
     
     float ditherValue = 2.0 * texture2D(s_dithmap, dCoord).r - 1.0;
     t_color.rgb += ditherValue/dspread;

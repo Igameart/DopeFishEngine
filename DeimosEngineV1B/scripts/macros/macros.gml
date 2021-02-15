@@ -13,6 +13,7 @@ function macros() {
 #macro GL_SEGSOFS 13
 #macro GL_SSECTOFS 14
 #macro GL_NODESOFS 15
+#macro GL_PVSOFS 16
 
 #macro null pointer_null
 

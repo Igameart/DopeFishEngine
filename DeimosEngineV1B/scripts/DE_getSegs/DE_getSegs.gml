@@ -26,7 +26,7 @@ function DE_getSegs(argument0, argument1) {
 	ds_list_add(segs,seg);
 	};
 
-	show_debug_message("NOTICE: ["+level+"] SEGS "+string( ds_list_size(segs) ));
+	//show_debug_message("NOTICE: ["+level+"] SEGS "+string( ds_list_size(segs) ));
 
 
 

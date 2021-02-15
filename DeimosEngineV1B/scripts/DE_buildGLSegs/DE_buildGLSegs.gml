@@ -60,9 +60,6 @@ function DE_buildGLSegs() {
 			lVert = mapVertexes[|lVert];
 			segOff = point_distance(sx,sy,lVert[?"x"],lVert[?"y"]);
 		}
-            
-	    var buffer = vertex_create_buffer();
-	    vertex_begin(buffer,DE_vFormat);
     
 		var lSides = ["right","left"];
 		var s = lSides[glSeg[?"side"]];
@@ -124,6 +121,12 @@ function DE_buildGLSegs() {
 	    var vv=0;
 	    if(tc>0)
 	    {//We have some walls to render.
+			
+		    var buffer = vertex_create_buffer();
+		    vertex_begin(buffer,DE_vFormat);
+			
+			var __Empty = true;
+			
 	        var bot = ds_map_find_value_fixed(sect,"floor");
 	        var top = ds_map_find_value_fixed(sect,"ceiling");
 		
@@ -131,12 +134,11 @@ function DE_buildGLSegs() {
 	        if tcd[0]!="-"{// and back!=-1{
 	            //show_debug_message("Lower wall:"+tcd[0]);
                     
-	            if back!=-1
-	                bot = ds_map_find_value_fixed(sect,"floor");
-	            else
-	                bot = ds_map_find_value_fixed(bsect,"ceiling");
-                    
-	            top = ds_map_find_value_fixed(bsect,"floor");
+	            if back!=-1{
+					bot = ds_map_find_value_fixed(sect,"floor");
+	                //bot = ds_map_find_value_fixed(bsect,"ceiling");
+					top = ds_map_find_value_fixed(bsect,"floor");
+				}
                     
 	            //if top<=bot{
 	            //    bot=top;
@@ -176,7 +178,8 @@ function DE_buildGLSegs() {
 					
 				u0 = u0/t_w;
 	            u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
-                    
+				
+				__Empty = false;                    
 	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,0,0,0);
 	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
 	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
@@ -227,7 +230,8 @@ function DE_buildGLSegs() {
 					u0 = u0/t_w;
 						
 	                u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
-                                                            
+                        
+					__Empty = false;                                    
 	                DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,1,0,0);
 	                DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
 	                DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
@@ -310,6 +314,7 @@ function DE_buildGLSegs() {
 							
 	            u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
         
+				__Empty = false;
 	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,-2,1,0);
 	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
 	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
@@ -319,10 +324,15 @@ function DE_buildGLSegs() {
 	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
 	            vv+=2;
 	        }
-	    }
+			
 	    vertex_end(buffer);
+		
+		if __Empty == false
+			vertex_freeze(buffer);
 	
 	    ds_map_replace(glSeg,"vbuffer",buffer);
+		
+	    }
 
 	}
 

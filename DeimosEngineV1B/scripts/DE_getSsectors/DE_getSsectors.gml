@@ -15,7 +15,7 @@ function DE_getSsectors(argument0, argument1) {
 		var ssector=ds_map_build();
 	    var count=buffer_read(wadbuff,buffer_u16)
 	    var start=buffer_read(wadbuff,buffer_u16)
-	    show_debug_message("NOTICE: ["+level+"] SSECTOR Data: "+string( count)+","+string( start));
+	    //show_debug_message("NOTICE: ["+level+"] SSECTOR Data: "+string( count)+","+string( start));
 	    ds_map_add(ssector,"count",count);
 	    ds_map_add(ssector,"start",start);
 
@@ -23,7 +23,7 @@ function DE_getSsectors(argument0, argument1) {
 
 	}
 
-	show_debug_message("NOTICE: ["+level+"] SSECTORS "+string( ds_list_size(ds_map_find_value_fixed(wad_levels,"ssectors")) ));
+	//show_debug_message("NOTICE: ["+level+"] SSECTORS "+string( ds_list_size(ds_map_find_value_fixed(wad_levels,"ssectors")) ));
 
 
 

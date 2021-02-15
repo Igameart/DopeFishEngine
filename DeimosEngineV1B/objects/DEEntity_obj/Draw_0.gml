@@ -1,27 +1,32 @@
 /// @description  Draw the right surface
-if DESprite!=noone{
-	
-	if secL!=undefined
-		draw_set_color(make_color_hsv(255,0,secL));
-	else draw_set_color(c_white);
+
+//CHRIS: Move frame/sprite picking into a custom event called only when a frame index or animation sequence changes!
+
+if sprPrefix != "none"{	
 	
 	shader_set(shader);
 	
+	
+	
+	shader_set_uniform_f(u_spriteColor,secColor,secColor,secColor);
+	
 	with DEcam{
 		shader_set_uniform_f(other.u_fogColor,color_get_red((fcol))/255,color_get_green((fcol))/255,color_get_blue((fcol))/255,1);
-		shader_set_uniform_f(other.u_fogMaxDist,f_far*0.9);
+		shader_set_uniform_f(other.u_fogMaxDist,f_far);
 		shader_set_uniform_f(other.u_fogMinDist,f_near);
 	}
 	
-	d3d_transform_add_translation(-xOff,0,+yOff);
-	d3d_transform_add_rotation_z(90+DEcam.yaw);
-	d3d_transform_add_translation(x,y,z);
-
-	var tex = sprite_get_texture(DESprite,0);
-
-	d3d_draw_wall(TexW,0,0,0,0,-TexH,tex,1,1);
-	
-	d3d_transform_set_identity();
+	d3d_transform_add_translation( x, y, z );
+		
+	var __oldrep = gpu_get_texrepeat();
+	gpu_set_texrepeat(false)
+		
+	if buff!= noone vertex_submit(buff,pr_trianglefan,tex);
+		
+	gpu_set_texrepeat(__oldrep);
 
 	shader_reset();
-}
+	
+	d3d_transform_set_identity();
+	
+}else instance_destroy();

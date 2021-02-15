@@ -1,11 +1,16 @@
 /// @description Fetch Wad
 
 DE_fetchWad(WAD);
+
 loading = false;
 
 var wadType = wadHeader[?"id"]
 
 if wadType == "IWAD"{
+	
+	if WAD_EPISODIC == false{
+		mapName = "MAP01"
+	}
 
 	_wadDat = "wad stats\n\n"
 	_wadDat+= "* * * * * * * * * *\n\n\n"

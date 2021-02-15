@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Utility",
-    "path": "folders/Scripts/DS Print/Utility.yy",
+    "path": "folders/Fonts/DS Print/Utility.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_string_trim_right",

@@ -2,7 +2,7 @@
 
 image_speed = 0;
 
-DopeFishEngineInit(Mapper_obj);
+DopeFishEngineInit(objDEMapHandler);
 
 selMode = 0;
 _GameTitles = [spr_DoomTitle,spr_HereticTitle,spr_HexenTitle];//,spr_StrifeTitle];
@@ -87,4 +87,4 @@ wadName = wad;
 
 lgray = make_color_hsv(0,0,230);
 
-WAD = ""
+WAD = "";

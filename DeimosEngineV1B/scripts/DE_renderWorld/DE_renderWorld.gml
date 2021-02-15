@@ -7,7 +7,7 @@ function DE_renderWorld() {
 	shader_set_uniform_f(u_fogMinDistG,f_near);
 
 	var ssects;
-	if glversion !=-1{
+	if wadGLVersion !=-1{
 		ssects = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");
 	}else{
 		ssects = mapSSectors;

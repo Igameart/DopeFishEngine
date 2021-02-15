@@ -35,7 +35,7 @@ function DE_getSidedefs(argument0, argument1) {
 	l+=1;
 	}
 
-	show_debug_message("NOTICE: ["+level+"] SIDEDEFS "+string( ds_list_size(sidedefs) ));
+	//show_debug_message("NOTICE: ["+level+"] SIDEDEFS "+string( ds_list_size(sidedefs) ));
 
 
 
