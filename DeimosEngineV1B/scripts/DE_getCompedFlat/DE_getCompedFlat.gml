@@ -7,6 +7,7 @@ function DE_getCompedFlat() {
 		var tex = wadCompedTextures[? t_name ];
 
 		if tex == undefined{
+			
 			trace("Comped Flat Does Not Exist:",t_name);
 	
 			var sprite = ds_map_find_value(pload_flats,t_name);

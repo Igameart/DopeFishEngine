@@ -1,4 +1,80 @@
 /// @description DopeFishEngineInit( WAD, Camera );
+
+function DE_wadDataPopulate(){
+
+	ds_data_init();
+	// Some WAD defines
+	wadHeader = ds_map_build();
+	wadDirectory=ds_list_build();
+	wadDirectoryOfs = ds_map_build();
+	wadColorMaps = noone;
+	wadPlaypal = noone;
+	wadPatches = ds_map_build();
+	wadPNames = ds_list_build();
+	wadFlatTextures = noone;
+	wadCompedTextures = ds_map_build();
+	wadSwitchTextures = noone;
+	wadSounds = ds_map_build();
+	wadSpriteDB = ds_map_build();
+	wadSpritesMir = ds_map_build();
+	wadSpritesDir = ds_map_build();
+	
+
+	wad_levels=ds_map_build();
+	flats_=ds_map_build();
+	pload_flats=ds_map_build();
+
+	// Some Map defines
+	DEMap = "E1M1";
+	mapLinedefs = ds_list_build();
+	mapVertexes = ds_list_build();
+	mapSidedefs = ds_list_build();
+	mapSectors = ds_list_build();
+	mapThings = ds_list_build();
+	mapGLVerts = ds_list_build();
+	mapGLSegs = ds_list_build();
+	mapSegs = ds_list_build();
+	mapGLSSects = ds_list_build();
+	mapGLNodes = ds_list_build();
+	mapSegs = ds_list_build();
+	mapSSectors=ds_list_build();
+	mapSectTags = ds_list_build();
+	mapDoors = ds_map_build();
+	mapTags = ds_map_build();
+	mapReject = ds_list_build();
+	mapPVIS = noone;
+	mapPVISTable = ds_list_build();
+	
+	
+	ds_map_add(wad_levels,"glnodes",mapGLNodes);
+	ds_map_add(wad_levels,"glsegs",mapGLSegs);
+	ds_map_add(wad_levels,"glverts",mapGLVerts);
+	ds_map_add(wad_levels,"things",mapThings);
+	ds_map_add(wad_levels,"ssectors",mapSSectors);
+	ds_map_add(wad_levels,"glssects",mapGLSSects);
+	ds_map_add(wad_levels,"vertexes",mapVertexes);
+	ds_map_add(wad_levels,"nodes",mapGLNodes);
+	ds_map_add(wad_levels,"sidedefs",mapSidedefs);
+	ds_map_add(wad_levels,"segs",mapSegs);
+	ds_map_add(wad_levels,"sectors",mapSectors);
+	
+	// Some BSP defines
+	bspLineCache = ds_list_build();
+	bspSSectCache = ds_list_build();
+}
+
+function DE_addSectorToTag( sector, tag ){
+	var tagList = mapTags[? tag ];
+	
+	if ( tagList == undefined ){
+		tagList = ds_list_build();
+		mapTags[? tag ] = tagList;
+	}
+	
+	ds_list_add(tagList,sector);
+	
+}
+
 function DopeFishEngineInit( CameraObject ) {
 
 	enum BBOX
@@ -42,77 +118,77 @@ function DopeFishEngineInit( CameraObject ) {
 	gml_release_mode(true);
 
 	// Macros
-#macro ANG45 0x20000000
-#macro ANG90 0x40000000
-#macro ANG180 0x80000000
-#macro ANG270 0xc0000000
-#macro ANGLE_MAX 0xffffffff
+	#macro ANG45 0x20000000
+	#macro ANG90 0x40000000
+	#macro ANG180 0x80000000
+	#macro ANG270 0xc0000000
+	#macro ANGLE_MAX 0xffffffff
 
-#macro MAXCHAR (0x7f)
-#macro MAXSHORT (0x7fff)
-#macro MAXINT	(0x7fffffff)	/* max pos 32-bit int */
-#macro MAXLONG (0x7fffffff)
+	#macro MAXCHAR (0x7f)
+	#macro MAXSHORT (0x7fff)
+	#macro MAXINT	(0x7fffffff)	/* max pos 32-bit int */
+	#macro MAXLONG (0x7fffffff)
 
-#macro MINCHAR (0x80)
-#macro MINSHORT (0x8000)
-#macro MININT 	(0x80000000)	/* max negative 32-bit integer */
-#macro MINLONG (0x80000000)
+	#macro MINCHAR (0x80)
+	#macro MINSHORT (0x8000)
+	#macro MININT 	(0x80000000)	/* max negative 32-bit integer */
+	#macro MINLONG (0x80000000)
 
-#macro SLOPERANGE		2048
-#macro SLOPEBITS		11
-#macro FINEANGLES		8192
-#macro FINEMASK		(FINEANGLES-1)
-#macro ANGLETOFINESHIFT	19	// 0x100000000 to 0x2000
-#macro FRACBITS 16
-#macro FRACUNIT (1<<FRACBITS)
-#macro NF_SUBSECTOR 0x8000
+	#macro SLOPERANGE		2048
+	#macro SLOPEBITS		11
+	#macro FINEANGLES		8192
+	#macro FINEMASK		(FINEANGLES-1)
+	#macro ANGLETOFINESHIFT	19	// 0x100000000 to 0x2000
+	#macro FRACBITS 16
+	#macro FRACUNIT (1<<FRACBITS)
+	#macro NF_SUBSECTOR 0x8000
 
-#macro NSDOOM "doom"
-#macro NSHERETIC "heretic"
-#macro NSHEXEN "hexen"
-#macro NSSTRIFE "strife"
+	#macro NSDOOM "doom"
+	#macro NSHERETIC "heretic"
+	#macro NSHEXEN "hexen"
+	#macro NSSTRIFE "strife"
 
-	//Ceiling and crusher speed
-#macro C_SLOW	 8
-#macro C_NORMAL	 16
-#macro C_FAST	 32
-#macro C_TURBO	 64
+		//Ceiling and crusher speed
+	#macro C_SLOW	 8
+	#macro C_NORMAL	 16
+	#macro C_FAST	 32
+	#macro C_TURBO	 64
 
-	//Floor speed
-#macro F_SLOW	 8
-#macro F_NORMAL	 16
-#macro F_FAST	 32
-#macro F_TURBO	 64
+		//Floor speed
+	#macro F_SLOW	 8
+	#macro F_NORMAL	 16
+	#macro F_FAST	 32
+	#macro F_TURBO	 64
 
-	//Door speed
-#macro D_SLOW	 16
-#macro D_NORMAL	 32
-#macro D_FAST	 64
-#macro D_TURBO	 128
+		//Door speed
+	#macro D_SLOW	 16
+	#macro D_NORMAL	 32
+	#macro D_FAST	 64
+	#macro D_TURBO	 128
 
-#macro VDOORSPEED	FRACUNIT*2;
+	#macro VDOORSPEED	FRACUNIT*2;
 
-#macro VDOORWAIT 150
+	#macro VDOORWAIT 150
 
-	//Stair building speed
-#macro ST_SLOW	 2
-#macro ST_NORMAL 4
-#macro ST_FAST	 16
-#macro ST_TURBO	 32
+		//Stair building speed
+	#macro ST_SLOW	 2
+	#macro ST_NORMAL 4
+	#macro ST_FAST	 16
+	#macro ST_TURBO	 32
 
-	//Platform/lift speed
-#macro P_SLOW	 8
-#macro P_NORMAL	 16
-#macro P_FAST	 32
-#macro P_TURBO	 64
-#macro PLATWAIT	 105
-#macro ELEVATORSPEED 32
+		//Platform/lift speed
+	#macro P_SLOW	 8
+	#macro P_NORMAL	 16
+	#macro P_FAST	 32
+	#macro P_TURBO	 64
+	#macro PLATWAIT	 105
+	#macro ELEVATORSPEED 32
 
-	//Donut/pillar speed
-#macro DORATE	 4
+		//Donut/pillar speed
+	#macro DORATE	 4
 
-	//exture scrollers
-#macro SCROLL_UNIT	64
+		//exture scrollers
+	#macro SCROLL_UNIT	64
 
 	gc_enable(true);
 
@@ -120,9 +196,9 @@ function DopeFishEngineInit( CameraObject ) {
 
 	globalvar wadbuff;
 
-	ds_data_init();
-
 	globalvar DEThingType;
+	
+	globalvar ideal_time; ideal_time = 1/60 * 1000000 * 5;
 
 	// Some System defines
 	//globalvar DE_SysReadout; DE_SysReadout = ds_list_create();
@@ -131,6 +207,7 @@ function DopeFishEngineInit( CameraObject ) {
 	if !file_exists(game_save_id+"DE_GLBSP.dll"){
 		file_copy("DE_GLBSP.dll",game_save_id+"DE_GLBSP.dll");
 		file_copy("glbsp.exe",game_save_id+"glbsp.exe");
+		file_copy("glvis.exe",game_save_id+"glvis.exe");
 	}
 	
 	//globalvar wadProcessGLBSP; wadProcessGLBSP = external_define( game_save_id+"DE_GLBSP.dll", "wad_GLBSPProcess", dll_cdecl, ty_real, 0);
@@ -159,65 +236,56 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar skyflatnum;
 	globalvar skytexture;
 	globalvar skytexturemid;
-
-	// Some WAD defines
 	globalvar wad; wad = "";
 	globalvar wadFile; wadFile = "";
-	globalvar wadHeader; wadHeader = ds_map_build();
-	globalvar wadDirectory; wadDirectory = noone;
-	globalvar wadDirectoryOfs; wadDirectoryOfs = noone;
-	globalvar wadColorMaps; wadColorMaps = noone;
-	globalvar wadPlaypal; wadPlaypal = noone;
-	globalvar wadPatches; wadPatches = ds_map_build();
-	globalvar wadPNames; wadPNames = ds_list_build();
-	//globalvar wadWallTextures; wadWallTextures = noone;
-	globalvar wadFlatTextures; wadFlatTextures = noone;
-	globalvar wadCompedTextures; wadCompedTextures = ds_map_build();
-	globalvar wadSwitchTextures; wadSwitchTextures = noone;
-	globalvar wadSounds; wadSounds = ds_map_create();
-	globalvar wadSpriteDB; wadSpriteDB = ds_map_create();
-	//globalvar wadSpritesNFO; wadSpritesNFO = ds_map_create();
-	globalvar wadSpritesMir; wadSpritesMir = ds_map_create();
-	globalvar wadSpritesDir; wadSpritesDir = ds_map_create();
-
-	globalvar wad_levels;wad_levels=ds_map_build();
-	globalvar flats_;flats_=ds_map_build();
-	globalvar pload_flats;pload_flats=ds_map_build();
 	globalvar numGLNodes;
 	globalvar clipangle; //clipangle = xtoviewangle[0];
 
+	// Some WAD defines
+	globalvar wadHeader;
+	globalvar wadDirectory;
+	globalvar wadDirectoryOfs;
+	globalvar wadColorMaps;
+	globalvar wadPlaypal;
+	globalvar wadPatches;
+	globalvar wadPNames;
+	globalvar wadFlatTextures;
+	globalvar wadCompedTextures; 
+	globalvar wadSwitchTextures; 
+	globalvar wadSounds;
+	globalvar wadSpriteDB;
+	globalvar wadSpritesMir;
+	globalvar wadSpritesDir;
+
+	globalvar wad_levels;
+	globalvar flats_;
+	globalvar pload_flats;
+
 	// Some Map defines
-	globalvar DEMap;DEMap = "E1M1";
-	globalvar mapLinedefs; mapLinedefs = ds_list_build();
-	globalvar mapVertexes; mapVertexes = ds_list_build();
-	globalvar mapSidedefs; mapSidedefs = ds_list_build();
-	globalvar mapSectors; mapSectors = ds_list_build();
-	globalvar mapThings; mapThings = ds_list_build();
-	globalvar mapGLVerts; mapGLVerts = ds_list_build();
-	globalvar mapGLSegs; mapGLSegs = ds_list_build();
-	globalvar mapSegs; mapSegs = ds_list_build();
-	globalvar mapGLSSects; mapGLSSects = ds_list_build();
-	globalvar mapGLNodes; mapGLNodes = ds_list_build();
-	globalvar mapSegs;mapSegs = ds_list_build();
-	globalvar mapSSectors;mapSSectors=ds_list_build();
-	globalvar mapSectTags; mapSectTags = ds_list_build();
-	globalvar mapDoors; mapDoors = ds_list_build();
-	globalvar mapReject; mapReject = ds_list_build();
-	globalvar mapPVIS; mapPVIS = ds_list_build();
-
-
-	ds_map_add(wad_levels,"glnodes",mapGLNodes);
-	ds_map_add(wad_levels,"glsegs",mapGLSegs);
-	ds_map_add(wad_levels,"glverts",mapGLVerts);
-	ds_map_add(wad_levels,"things",mapThings);
-	ds_map_add(wad_levels,"ssectors",mapSSectors);
-	ds_map_add(wad_levels,"glssects",mapGLSSects);
-	ds_map_add(wad_levels,"vertexes",mapVertexes);
-	ds_map_add(wad_levels,"nodes",mapGLNodes);
-	ds_map_add(wad_levels,"sidedefs",mapSidedefs);
-	ds_map_add(wad_levels,"segs",mapSegs);
-	ds_map_add(wad_levels,"sectors",mapSectors);
-
+	globalvar DEMap;;
+	globalvar mapLinedefs;
+	globalvar mapVertexes;
+	globalvar mapSidedefs;
+	globalvar mapSectors; 
+	globalvar mapThings; 
+	globalvar mapGLVerts;
+	globalvar mapGLSegs; 
+	globalvar mapSegs; 
+	globalvar mapGLSSects;
+	globalvar mapGLNodes; 
+	globalvar mapSegs;
+	globalvar mapSSectors;
+	globalvar mapSectTags;
+	globalvar mapDoors;
+	globalvar mapTags;
+	globalvar mapReject;
+	globalvar mapPVIS;
+	globalvar mapPVISTable;
+	
+	// Some BSP defines
+	globalvar bspLineCache; 
+	globalvar bspSSectCache;
+	
 	globalvar wadbuff;
 	globalvar pwadbuff;
 
@@ -238,12 +306,10 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar WAD_ISGL; WAD_ISGL = false;
 	globalvar DE_alphabetCheck; DE_alphabetCheck = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-	// Some BSP defines
-	globalvar bspLineCache; bspLineCache = ds_list_create();
-	globalvar bspSSectCache; bspSSectCache = ds_list_create();
+	verlet_init();
 
-	//globalvar null; null=NOINDEX;
-
+	DE_wadDataPopulate();
+	
 	DE_initTables();
 
 

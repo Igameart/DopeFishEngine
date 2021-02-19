@@ -21,16 +21,30 @@ uniform float u_fogMinDist;
 
 float computeLinearFogFactor()
 {
-   float factor;
+	float factor;
    
-   // Compute linear fog equation
-   factor = (u_fogMaxDist - length(v_vPosition.xyz)) /
-            (u_fogMaxDist - u_fogMinDist );
+	// Compute linear fog equation
+	factor = (u_fogMaxDist - (v_vPosition.z)) /
+	        (u_fogMaxDist - u_fogMinDist );
    
-   // Clamp in the [0,1] range
-   factor = clamp( factor, 0.0, 1.0 );
-            
-   return factor;            
+	// Clamp in the [0,1] range
+	factor = clamp( factor, 0.0, 1.0 );
+	factor = floor(factor*16.0+0.5)/16.0;
+	return factor;            
+}
+
+float computeLightCorrection()
+{
+	float factor;
+   
+	// Compute linear fog equation
+   factor = (u_fogMaxDist/8.0 - (v_vPosition.z)) /
+            (u_fogMaxDist/8.0 + u_fogMaxDist/16.0);
+   
+	// Clamp in the [0,1] range
+	factor = clamp( factor, 0.0, 1.0 );
+	factor = floor(factor*16.0+0.5)/16.0;
+	return factor;            
 }
 
 void main()
@@ -81,8 +95,9 @@ void main()
 	#endif*/
 	
     float fogger = computeLinearFogFactor();
-    vec4 vcol = v_vColour * 1.01;
-    fogger = floor(fogger*16.0+0.5)/16.0; 
+	float lighten = computeLightCorrection();
+    vec4 vcol = v_vColour + lighten;
+	vcol.rgb = min(vcol.rgb,vec3(1.0));
     
     gl_FragColor=( col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
     gl_FragColor.a = col.a * vcol.a; 

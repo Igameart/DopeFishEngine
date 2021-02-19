@@ -9,7 +9,7 @@ function DE_getColorMaps() {
 	tmp=ds_list_build();
 	tmp2=ds_list_build();
 
-	DE_bufferSeekLump(("COLORMAP"));
+	DE_bufferSeekLump("COLORMAP");
 
 	show_debug_message("NOTICE: Found COLORMAP at: "+string(buffer_tell(wadbuff)));
 

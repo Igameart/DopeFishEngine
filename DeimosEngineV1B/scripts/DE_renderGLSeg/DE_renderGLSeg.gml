@@ -9,7 +9,7 @@ function DE_renderGLSeg(j) {
 	var sects = mapSectors;	
 	var sides = mapSidedefs;
 
-	var seg = segs[|j];
+	var seg = segs[| j ];
 
 	var l = seg[?"linedef"];
 

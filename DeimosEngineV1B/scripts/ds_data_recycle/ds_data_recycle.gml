@@ -17,8 +17,4 @@ function ds_data_recycle() {
 	}
 	ds_list_destroy(ds_grids);
 
-	buffer_delete(wadbuff);
-
-
-
 }

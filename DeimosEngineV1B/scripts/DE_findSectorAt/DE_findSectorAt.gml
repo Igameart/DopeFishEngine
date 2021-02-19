@@ -49,3 +49,23 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 
 
 }
+
+function DE_findSubSectorAt(x0, y0){//, ssCheck) {
+
+	var sects = mapGLSSects;
+	var secnum;
+	    for (secnum=0;secnum<ds_list_size(sects);secnum++){
+	        var sect=ds_list_find_value_fixed(sects,secnum);
+	        var colmap=ds_map_find_value(sect,"colmap");
+			
+			if (colmap != undefined){
+				//trace("Checking if inside polygon");
+				//ds_list_print(colmap);
+			
+				if point_in_polygon(-x0,y0,colmap) == true return secnum;
+			}
+
+	    }
+	return -1;
+
+}

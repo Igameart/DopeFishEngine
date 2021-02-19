@@ -31,6 +31,11 @@ function DE_getGLSSect(argument0, argument1) {
     
 	    }
     
+		
+		var coltris = ds_list_build();//Create a Collision Map
+
+		ds_map_add(glssect,"colmap",coltris);//assign the Collision map
+	
 	    ds_list_add(glssects,glssect);
     
 	}

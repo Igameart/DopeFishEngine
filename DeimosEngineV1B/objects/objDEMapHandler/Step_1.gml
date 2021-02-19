@@ -8,7 +8,9 @@ if keyboard_check_pressed(vk_numpad0) IDDQD = !IDDQD;
 if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 
 var cMsect;
-cMsect=DE_findSectorAt(x,y,Msect);
+cMsect	= DE_findSectorAt( x, y, Msect );
+
+Mssect	= DE_findSubSectorAt( x, y );
 
 if cMsect!=Msect{
     if !is_undefined(cMsect){
@@ -18,62 +20,49 @@ if cMsect!=Msect{
     }
 };
     
-if Msect!=-1{
-	
-	if (IDDQD == false){
-	
-	    if z>secZ{
-	            z-=6;
-	    }
-	
-	    if zspeed<=0.05{
+if (IDDQD == false){
+	if Msect!=-1{
 	        if z<=secZ{
-	            zspeed=0;
+				vGravity = 0.0;
+				vFriction = 0.995;
+	            //zspeed=0;
 	            var zdiff=secZ-z;
 	            if (abs(zdiff)>0.2){
 	                z+=zdiff*0.4;
 	            }else z=secZ;
-	        }
+	        }else vGravity = 1.0;
+	    if z <= secZ + 12 {
+	        if keyboard_check_pressed(vk_space){
+				verlet_apply_force([0,0,130]);
+				vGravity = 1.0;
+				vFriction = 1;
+			}
 	    }
-	    if z<=secZ{
-	        if keyboard_check_pressed(vk_space) zspeed=24;
-	    }
-	}else{
-		zspeed = ( keyboard_check(vk_space) - keyboard_check(vk_lcontrol) ) * 3;
-		if (z < secZ){
-			z = secZ;
-		}
 	}
+}else{
+	z += ( keyboard_check(vk_space) - keyboard_check(vk_lcontrol) ) * 3;
+	vGravity = 0;
+	vFriction = 0.995;
 }
-
-speed*=.9;
-z+=zspeed;
-zspeed*=.7;
 
 if keyboard_check_pressed(vk_enter){
 	mouse_free=!mouse_free
 	if mouse_free == false display_mouse_set(center_x,center_y);
 }
 
-	
-var spd=1;
+
+var spd=5+keyboard_check(vk_shift)*7;
+
+if vGravity != 0 spd *= 0.5;
+
 // movement
-if keyboard_check(ord("W"))motion_add(yaw    ,spd)
-if keyboard_check(ord("A"))motion_add(yaw+90 ,spd)
-if keyboard_check(ord("S"))motion_add(yaw+180,spd)
-if keyboard_check(ord("D"))motion_add(yaw+270,spd)
-	
-if mouse_free=0{
+if keyboard_check(ord("W")) verlet_motion_add_2d( yaw     ,spd);
+if keyboard_check(ord("A")) verlet_motion_add_2d( yaw+90  ,spd);
+if keyboard_check(ord("S")) verlet_motion_add_2d( yaw+180 ,spd);
+if keyboard_check(ord("D")) verlet_motion_add_2d( yaw+270 ,spd);
 
-	// camera
-	yaw  +=(center_x-display_mouse_get_x())/6;
-	pitch+=(display_mouse_get_y()-center_y)/6;
-	pitch=min(89,max(-89,pitch));
-	
-    display_mouse_set(center_x,center_y);
-    cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw);
-    cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw);
-    cam_z=lengthdir_y(1,pitch);
-	
-}
+//speed = min(speed,6+keyboard_check(vk_shift)*4);
 
+var _dt = delta_time / 1000000;//ideal_time;
+
+repeat 15 verlet_update( _dt );

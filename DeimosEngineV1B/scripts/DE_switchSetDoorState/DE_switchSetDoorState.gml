@@ -1,33 +1,68 @@
-function DE_switchSetDoorState() {
+function DE_switchSetDoorState(_state) {
 	//For all linked doors, set their state
+	
+	var _activated = false;
+	
+	var _doors = ds_list_size(taggedSectors);
 
-	var _state = argument[0];
+	trace("Switch Activates",_doors,"Door Sectors");
 
-	trace("Linedef Action Engaged:",_state,FUNC);
-
-	for (var Door = 0; Door<taggedSectNum; Door++){
+	for (var Door = 0; Door < _doors; Door++){
+		
 		var this = id;
-		with taggedSectors[|Door]{
-			owner = this;
-			FUNC = this.FUNC;
-			state = _state;
 		
-			//ds_map_print(sector);
-			trace(current_time);
-		
-			switch _state{
-		
-				case "Open":
-					audio_play_sound(DE_getSound("DSDOROPN"),random(16),false);
-				break;
+		with taggedSectors[| Door ]{
 			
-				case "Close":
-					audio_play_sound(DE_getSound("DSDORCLS"),random(16),false);
-				break;
-		
+			if ready == true
+			if active == false && state!="Idle"{
+				
+				var _engage = false;
+				
+				switch _state{
+					case "Open":
+						if state == "Closed" _engage = true;
+					break;
+					case "Close":
+						if active = false _engage = true;
+					break;
+				}
+				
+				if _engage == true{
+					active = true;
+					ready = false;
+					FUNC = this.FUNC;
+					state = _state;
+					_activated = true;
+				}
 			}
 		}
 	}
+	
+	if (_activated == true){
+		
+		trace("Linedef Action Engaged:",_state,FUNC);
+		
+		switch _state{
+			case "Open":
+				audio_play_sound(DE_getSound("DSDOROPN"),random(16),false);
+			break;
+			case "Close":
+				audio_play_sound(DE_getSound("DSDORCLS"),random(16),false);
+			break;
+		}
+	}
+}
 
+function DE_switchCheckIfReady(){
+	var _ready = 0;
+	
+	var _doors = ds_list_size(taggedSectors);
 
+	for (var Door = 0; Door < _doors; Door++){
+		
+		with taggedSectors[| Door ] if ready == true _ready++;
+		
+	}
+	
+	if _ready >= _doors return true else return false;
 }

@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"RFXbayerdith_spr","path":"sprites/RFXbayerdith_spr/RFXbayerdith_spr.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "RFXbayerdith_spr",
     "tags": [],
     "resourceType": "GMSequence",
   },

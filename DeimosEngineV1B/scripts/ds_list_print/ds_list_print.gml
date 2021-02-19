@@ -47,11 +47,11 @@ function ds_list_print() {
 	for (var _i=0; _i < ds_list_size(_list); ++_i) {
     
 	    if (_filename != "") {
-	        file_text_write_string(_file_handle, " "+scr_string_pad_right(string(_i), _maxlength, " ")+" : "+_list[| _i] );
+	        file_text_write_string(_file_handle, " "+scr_string_pad_right(string(_i), _maxlength, " ")+" : "+string(_list[| _i]) );
 	        file_text_writeln(_file_handle);
 	        file_text_writeln(_file_handle);
 	    } else {
-	        show_debug_message( " "+scr_string_pad_right(string(_i), _maxlength, " ")+" : "+_list[| _i] );
+	        show_debug_message( " "+scr_string_pad_right(string(_i), _maxlength, " ")+" : "+string(_list[| _i]) );
 	    }
     
 	}

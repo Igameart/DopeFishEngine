@@ -12,4 +12,4 @@ if ds_exists(wadSounds,ds_type_map){
 	}until key == undefined;
 }
 
-buffer_delete(wadbuff);
+//buffer_delete(wadbuff);

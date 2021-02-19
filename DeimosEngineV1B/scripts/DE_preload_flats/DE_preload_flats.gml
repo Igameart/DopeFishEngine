@@ -34,7 +34,7 @@ function DE_preload_flats() {
 		
 	        trace("building ceiling flat: '"+ctex+"'");
 		
-			var spr=flats_[?ftex];
+			var spr=flats_[?ctex];
 		
 	        trace("spr value: '"+string(spr)+"'");
 		

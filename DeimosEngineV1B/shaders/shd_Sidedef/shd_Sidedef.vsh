@@ -82,6 +82,7 @@ void main()
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
     
     v_vPosition = (gm_Matrices[MATRIX_WORLD_VIEW] * object_space_pos);
+	
     v_vColour = in_Colour;
     
     v_vTexcoord = vtcoord;

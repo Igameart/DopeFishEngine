@@ -9,7 +9,8 @@ function RFX_set_coldepth(argument0) {
 	RFXscreensize = shader_get_uniform(RFXshader ,"screensize");
 	RFXuspread = shader_get_uniform(RFXshader ,"dspread");
 	RFXudepth = shader_get_uniform(RFXshader ,"cdepth");
-	//RFXuPixelScale = shader_get_uniform(RFXshader ,"PixelScale");
+	RFXugamma = shader_get_uniform(RFXshader, "u_Gamma");
+	RFXunoMask = shader_get_uniform(RFXshader, "u_NoMask");
 
 	texture_set_repeat_ext(RFXpalsampler,false);
 	texture_set_repeat_ext(RFXdithsampler,true);

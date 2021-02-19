@@ -9,6 +9,8 @@ function RFX_set_palswap(argument0) {
 	RFXscreensize = shader_get_uniform(RFXshader ,"screensize");
 	RFXuspread = shader_get_uniform(RFXshader ,"dspread");
 	RFXudepth = shader_get_uniform(RFXshader ,"cdepth");
+	RFXugamma = shader_get_uniform(RFXshader, "u_Gamma");
+	RFXunoMask = shader_get_uniform(RFXshader, "u_NoMask");
 	//RFXuPixelScale = shader_get_uniform(RFXshader ,"PixelScale");
 
 	texture_set_repeat_ext(RFXpalsampler,false);

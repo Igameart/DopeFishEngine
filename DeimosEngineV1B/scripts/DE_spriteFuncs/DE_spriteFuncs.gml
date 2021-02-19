@@ -130,8 +130,8 @@ function DE_getSprites() {
 					
 					trace("NOTICE: creating database for SPRITE:", __sprName);
 					
-					__sprDB = ds_map_create();
-					__sprDB[? "frames"] = ds_map_create();
+					__sprDB = ds_map_build();
+					__sprDB[? "frames"] = ds_map_build();
 					__sprDB[? "directional"] = false;
 					
 					wadSpriteDB[? __sprName ] = __sprDB;
@@ -140,7 +140,7 @@ function DE_getSprites() {
 				
 				DE_parseSpriteName( __sprDB, n );
 			
-				var _spr = ds_map_create();			
+				var _spr = ds_map_build();			
 
 				var spr_width	=buffer_read(wadbuff,buffer_u16);
 				var spr_height	=buffer_read(wadbuff,buffer_u16);

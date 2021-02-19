@@ -12,22 +12,33 @@ function DE_getSectors(argument0, argument1) {
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
 	var len=pos+size;
-	l=0;
+	var l = 0;
 	while(buffer_tell(wadbuff)<len){
 	
 		var sector =ds_map_build();
 		var _floor = buffer_read(wadbuff,buffer_s16);
 		var _ceiling = buffer_read(wadbuff,buffer_s16);
+		var _texF = string_upper(buffer_read_string(wadbuff,8));
+		var _texC = string_upper(buffer_read_string(wadbuff,8));
+		var _light = buffer_read(wadbuff,buffer_u16);
+		var _type = buffer_read(wadbuff,buffer_u16);
+		var _tag = buffer_read(wadbuff,buffer_u16);
+		
+		//If sector is not tagged -1, then we need to do something with it
+		//Save this sector to a list for quick retrieval later!
+		if ( _tag != -1 ){
+			DE_addSectorToTag(l,_tag);
+		}
 
 		ds_map_add(sector,"floor",_floor);
 		ds_map_add(sector,"ceiling",_ceiling);
 		ds_map_add(sector,"height",_ceiling-_floor);
 
-		ds_map_add(sector,"tex_f",string_upper(buffer_read_string(wadbuff,8)));
-		ds_map_add(sector,"tex_c",string_upper(buffer_read_string(wadbuff,8)));
-		ds_map_add(sector,"lightlevel",buffer_read(wadbuff,buffer_u16));
-		ds_map_add(sector,"type",buffer_read(wadbuff,buffer_u16));
-		ds_map_add(sector,"tag",buffer_read(wadbuff,buffer_u16));
+		ds_map_add(sector,"tex_f",_texF);
+		ds_map_add(sector,"tex_c",_texC);
+		ds_map_add(sector,"lightlevel",_light);
+		ds_map_add(sector,"type",_type);
+		ds_map_add(sector,"tag",_tag);
 		ds_map_add(sector,"lift",0);
 		ds_map_add(sector,"crush",0);
 
@@ -41,8 +52,5 @@ function DE_getSectors(argument0, argument1) {
 	}
 
 	show_debug_message("NOTICE: ["+level+"] SECTORS "+string( ds_list_size(sectors) ));
-
-
-
 
 }

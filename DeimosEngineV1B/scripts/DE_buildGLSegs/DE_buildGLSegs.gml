@@ -2,9 +2,9 @@
 function DE_buildGLSegs() {
 
 	var segs  = mapGLSegs;
-	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
-	var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
+	var lines = mapLinedefs;
+	var sides = mapSidedefs;
+	var sects = mapSectors;
 
 	for (var k=0;k<ds_list_size(segs);k++) {
 
@@ -129,9 +129,10 @@ function DE_buildGLSegs() {
 			
 	        var bot = ds_map_find_value_fixed(sect,"floor");
 	        var top = ds_map_find_value_fixed(sect,"ceiling");
-		
+			
+			//CHRIS: Create a script to check that a texture isn't a currently known sky texture rather than having a hard coded check for F_SKY1
 	        //Let's do the bottom section of the wall first just because
-	        if tcd[0]!="-"{// and back!=-1{
+	        if tcd[0]!="-" && tcd[0]!="F_SKY1"{// and back!=-1{
 	            //show_debug_message("Lower wall:"+tcd[0]);
                     
 	            if back!=-1{
@@ -191,7 +192,7 @@ function DE_buildGLSegs() {
 	        }
              
 			//Top Section
-	        if tcd[1]!="-"{// and back!=-1{
+	        if tcd[1]!="-" and back!=-1 && tcd[1]!="F_SKY1"{
 			
 				var _s,_b;
 				_s = ds_map_find_value_fixed(sect,"tex_c");
@@ -245,7 +246,7 @@ function DE_buildGLSegs() {
 	        }
 		
 			//Middle section
-	        if tcd[2]!="-"{
+	        if tcd[2]!="-" && tcd[2]!="F_SKY1"{
 	            //show_debug_message("building middle wall:"+tcd[2]);
 	            var bot, top;
                         
@@ -276,9 +277,9 @@ function DE_buildGLSegs() {
 						top = lowest_value(top,btop);
 						bot = top - t_h;
 					}*/
-					/*else{
-						if l_peg top -= abs(bot - top) - t_h;
-					}*/
+					//else{
+					if l_peg top -= abs(bot - top) - t_h;
+					//}
 					
 					top += ys;
 					ys = 0;

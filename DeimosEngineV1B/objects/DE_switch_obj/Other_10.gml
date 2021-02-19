@@ -1,15 +1,8 @@
 /// @description perform action
 
-/*switchIndex = sPos;
-
-if sPos!=undefined{
-
-	switchTex[0] = side[?switchIndex];
-	switchTex[1] = wadSwitchTextures[? side[? switchIndex ] ];
-	
-}*/
-
 if switched == false{
+	
+	trace( "Performing Action For Switch" );
 	
 	switched = true;
 
@@ -20,11 +13,6 @@ if switched == false{
 		}
 		
 	}
-	
-	/*
-	if TRIG[1] == "R"{	//Action is repeatable so reset the switch after a moment
-		alarm[1] = sOnTime*room_speed;
-	}*/
 
 	switch routine{
 		case DERoutines.DOOR:

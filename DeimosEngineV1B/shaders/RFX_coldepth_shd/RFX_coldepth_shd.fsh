@@ -10,6 +10,9 @@ uniform vec2 screensize;
 uniform float dspread;
 uniform float cdepth;
 
+uniform float u_Gamma;
+uniform bool u_NoMask;
+
 void main()
 {
     vec4 t_color;
@@ -19,7 +22,7 @@ void main()
     dCoord.x *= screensize.x/128.0;
     dCoord.y *= screensize.y/128.0;
 	
-	float gamma = 1.0;
+	float gamma = u_Gamma;
     t_color.rgb = pow(t_color.rgb, vec3(1.0/gamma));
     
     float ditherValue = 2.0 * texture2D(s_dithmap, dCoord).r - 1.0;
@@ -31,4 +34,8 @@ void main()
     t_color.rgb = floor(t_color.rgb*cdepth+0.5)/cdepth;
    
     gl_FragColor = t_color;
+	
+	if (u_NoMask == true){
+		gl_FragColor.a = 1.0;
+	}
 }

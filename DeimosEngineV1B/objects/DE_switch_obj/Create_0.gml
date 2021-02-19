@@ -1,6 +1,6 @@
-taggedSectors = ds_list_create();
+taggedSectors = ds_list_build();
 taggedSectNum = 0;
-sectsComplete = -1;
+sectsComplete = 0;
 
 tag = -1;
 line = -1
@@ -34,6 +34,8 @@ switchIndex = undefined;
 
 switchTex = undefined;
 
+repeatable = true;
+
 state = 0
 
 CLASS = "Regular";
@@ -42,7 +44,7 @@ LOCK = false;
 SPEED = 16;
 WAIT =	150;
 MONST =	false;
-FUNC = ["Open"];
+FUNC = [ "Open" ];
 funcPos = 0;
 DIR = "Dn";
 TEXTURE_CHANGE = "None";

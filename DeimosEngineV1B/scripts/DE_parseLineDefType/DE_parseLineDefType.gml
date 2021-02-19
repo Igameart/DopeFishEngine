@@ -1,4 +1,5 @@
 function DE_parseLineDefType() {
+	
 	var No = false;
 	var Yes = true;
 	var Slow,Fast;
@@ -9,9 +10,6 @@ function DE_parseLineDefType() {
 	var Reg = "Regular", Ext = "Extended";
 
 	if WAD_FORMAT == "DOOM"{//Disable hexen format for now, that requires implementing different functions
-
-			//Prepare all door sectors for receiving:
-		DE_prepDoors();
 
 			//If this Linedef triggers a door, set routine
 		if DE_IdTypeIsDoor(type) routine = DERoutines.DOOR;
@@ -131,26 +129,28 @@ function DE_parseLineDefType() {
 			case	239	: CLASS = Ext; TRIG =["W","1"];	DIR = "--"; SPEED = "--"; TEXTURE_CHANGE = "TxTy"; MODEL = "Num"; MONST= No; CRUSH = No;	TARGET = "None";break;
 
 		}
-
-			//Let's designate our collision type based on trigger info!
-		DE_lineDefDefineCollision();
-
-		switch routine {
-			case DERoutines.DOOR:
-				trace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
-				DE_switchRetrieveDoorSectors();
-			break;
-			case DERoutines.FLOOR:
-				trace("Floor Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
-				//DE_switchRetrieveDoorSectors();
-			break;
-		}
-
-
-		if TRIG[0] == "S"	//This is a switch
-			DE_prepSwitch();
 	
 	}
+
+		//Let's designate our collision type based on trigger info!
+	DE_lineDefDefineCollision();
+
+	switch routine {
+		
+		case DERoutines.DOOR:
+			trace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+			DE_switchRetrieveDoorSectors();
+		break;
+		
+		case DERoutines.FLOOR:
+			trace("Floor Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+			//DE_switchRetrieveDoorSectors();
+		break;
+		
+	}
+
+	if TRIG[0] == "S"	//This is a switch
+		DE_prepSwitch();
 
 
 }

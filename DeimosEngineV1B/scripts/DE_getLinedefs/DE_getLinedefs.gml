@@ -21,26 +21,26 @@ function DE_getLinedefs(argument0, argument1) {
 	    ds_map_add(ldef,"flags",buffer_read(wadbuff,buffer_s16));
     
 	    if WAD_FORMAT == "DOOM"{
-		    var type,ssect;
+		    var type,_tag;
     
 		    type=buffer_read(wadbuff,buffer_s16);
-		    ssect=buffer_read(wadbuff,buffer_s16);
+		    _tag=buffer_read(wadbuff,buffer_s16);
 		
 			//if ssect!=0{
-				mapSectTags[|ssect] = type;
+				mapSectTags[|_tag] = type;
 			//}
     
 		    ds_map_add(ldef,"type",type);
-		    ds_map_add(ldef,"sector",ssect);
+		    ds_map_add(ldef,"sector",_tag);
     
 	    }else{
 	        var type,arg;
 	        type=buffer_read(wadbuff,buffer_s8);
-	        arg[0]=buffer_read(wadbuff,buffer_s8);
-	        arg[1]=buffer_read(wadbuff,buffer_s8);
-	        arg[2]=buffer_read(wadbuff,buffer_s8);
-	        arg[3]=buffer_read(wadbuff,buffer_s8);
-	        arg[4]=buffer_read(wadbuff,buffer_s8);
+	        arg = [ buffer_read(wadbuff,buffer_s8),
+					buffer_read(wadbuff,buffer_s8),
+					buffer_read(wadbuff,buffer_s8),
+					buffer_read(wadbuff,buffer_s8),
+					buffer_read(wadbuff,buffer_s8)];
         
 	        var str="HF Linedef Special: ";
 	        str+=string(type);
@@ -68,15 +68,27 @@ function DE_getLinedefs(argument0, argument1) {
 	    ds_map_add(ldef,"left",back);	
     
 		if type != 0{
-			if WAD_FORMAT = "HEXEN" ssect = arg[0]
-			trace("Created Switch Type "+string(type)+" with Tag "+string(ssect)+" From Linedef "+string(line));
+			
+			if WAD_FORMAT = "HEXEN" _tag = arg[0];
+			
+			trace("Created Switch Type "+string(type)+" with Tag "+string(_tag)+" From Linedef "+string(line));
 			//else if WAD_FORMAT = "HEXEN"
 			//trace("Created Switch Type "+string(type)+" with Tag "+string(arg)+" From Linedef "+string(line));
 	        
 			var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
 			DE_switch.line = line;
+			
+			var v1 = ldef[? "start" ];
+			var v2 = v1+1;
+			
+			v1 = mapVertexes[| v1 ];
+			v2 = mapVertexes[| v2 ];
+			
+			DE_switch.x = mean(v1[?"x"],v2[?"x"]);
+			DE_switch.y = mean(v1[?"y"],v2[?"y"]);
+			
 			DE_switch.type = type;
-			DE_switch.tag = ssect;
+			DE_switch.tag = _tag;
 			DE_switch.side = mapSidedefs[|front];
 			
 		}
@@ -113,6 +125,10 @@ function DE_getLinedefs(argument0, argument1) {
 	    ds_list_add(lSides,back);
     
 	    ds_map_add(ldef,"sides",lSides);
+		
+		//Check linedef to see if it's part of a door, if it is populate some data.
+		DE_isLineDoor(ldef);
+		
 	    ds_list_add(linedefs,ldef);
 	    //show_debug_message("NOTICE: ["+level+'] LINEDEFS '+string( ds_list_size(linedefs) ));
 	}

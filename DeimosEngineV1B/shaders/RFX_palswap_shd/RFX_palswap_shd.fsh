@@ -9,6 +9,8 @@ uniform sampler2D s_dithmap;
 uniform vec2 screensize;
 uniform float dspread;
 
+uniform float u_Gamma;
+uniform bool u_NoMask;
 
 
 vec3 sample3DTexture(sampler2D texture, vec3 color, float width) {
@@ -43,7 +45,7 @@ void main()
     dCoord.x *= screensize.x/128.0;
     dCoord.y *= screensize.y/128.0;
 	
-	float gamma = 1.0;
+	float gamma = u_Gamma;
     t_color.rgb = pow(t_color.rgb, vec3(1.0/gamma));
     
     float ditherValue = 2.0 * texture2D(s_dithmap, dCoord).r - 1.0;
@@ -54,4 +56,7 @@ void main()
     vec3 t_col = sample3DTexture(s_lutmap, t_color, 16.0);
 	
     gl_FragColor = vec4(t_col.rgb,oCol.a);
+	if (u_NoMask == true){
+		gl_FragColor.a = 1.0;
+	}
 }

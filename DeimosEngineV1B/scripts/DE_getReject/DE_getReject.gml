@@ -47,50 +47,45 @@ function DE_getGLPVIS(level, lump) {
 	var __LDat = ds_list_find_value_fixed(wadDirectory,lump);
 
 	var pos=ds_map_find_value_fixed(__LDat,"filepos");
-
-	var size=ds_map_find_value_fixed(__LDat,"size");
-
-	buffer_seek(wadbuff,buffer_seek_start,pos);
-
-	var len=pos+size;
-
-	while(buffer_tell(wadbuff)<len){
+	
+	mapPVIS = pos;
+	
+	trace("COMPILING GL_PVS TABLE");
+	
+	var numsubsectors = ds_list_size(mapGLSSects);
+	
+	var __ss = 0;
+	repeat numsubsectors{
+		var __list = ds_list_build();
+		mapPVISTable[| __ss ] = __list;
 		
-		var __byte = buffer_read(wadbuff,buffer_bool);
-				
+		var __sCheck = 0;
+		repeat numsubsectors{
+			if (DE_checkPVS(__ss,__sCheck)==true){
+				ds_list_add(__list,__sCheck);
+			}
+			__sCheck++;
+		}
 		
-		ds_list_add(mapPVIS, __byte);
+		__ss++
 		
-		/*repeat 8{
-			var __bval = bit_get(__byte,__bit++);
-			//trace(__bval);
-			ds_list_add(mapPVIS,__bval);
-		}*/
 	}
-
-	show_debug_message("NOTICE: ["+level+"] GL_PVS "+string( size ));
-	//ds_list_print(mapReject);
 
 }
 
 function DE_checkPVS( view_sub, i ){
 	
-    //byte *vis_data;   	// PVS lump
+	var numsubsectors = ds_list_size(mapGLSSects);
 	
-	var numsubsectors = ds_list_size(mapSSectors);
+    var __vis = mapPVIS + (((numsubsectors + 7) div 8) * view_sub);
     
-	var vis = mapPVIS[| ((numsubsectors + 7) / 8) * i];
-    
-    if (byte_get_bit(vis,i >> 3) & (1 << (i & 7)))
+    if (buffer_peek(wadbuff, __vis + (i >> 3), buffer_u8 ) & (1 << (i & 7)) > 0)
     {
-        // Subsector is visible
 		return true;
     }
     else
     {
-        // Subsector is not visible
 		return false;
     }
-	
 }
 

@@ -31,10 +31,6 @@ function DE_getFile( e ) {
 }
 
 function DE_getHeader() {
-	//wadLoader.getHeader=function(){
-	//this.view.seek(0);
-
-	//file_bin_seek(wad,0);
 
 	buffer_seek(wadbuff,buffer_seek_start, 0);
 	var id_=buffer_read_string(wadbuff,4);
@@ -56,38 +52,21 @@ function DE_getHeader() {
 
 }
 
-function DE_getGLVersion(){
-	
-	/*var lump = argument1 + (WAD_FORMAT=="DOOM"?0:1);
-
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
-
-	buffer_seek(wadbuff,buffer_seek_start,pos);
-
-	wadGLVersion=buffer_read_string(wadbuff,4);
-	trace("NOTICE: GL Version " + wadGLVersion);
-	wadGLVersion = string_digits(wadGLVersion);
-
-	if wadGLVersion!=""{
-		
-	}*/
-}
-
 function DE_getDirectory() {
 
 	buffer_seek(wadbuff,buffer_seek_start, ds_map_find_value_fixed(wadHeader,"infotableofs"));
-
-	wadDirectory=ds_list_build();
-	wadDirectoryOfs = ds_map_build();
+	
 	var l;
 	for(l=0;l<ds_map_find_value_fixed(wadHeader,"numlumps");l+=1){
+		
 	        var _directory=ds_map_build();
 			var fPos = buffer_read(wadbuff,buffer_u32);
+			var size = buffer_read(wadbuff,buffer_u32);
 	        ds_map_add(_directory,"filepos",fPos);
-	        ds_map_add(_directory,"size",buffer_read(wadbuff,buffer_u32) );
+	        ds_map_add(_directory,"size",size );
 			var name = string_upper(buffer_read_string(wadbuff,8));
 		
-			if name == "BEHAVIOR"{
+			if name == "BEHAVIOR" && WAD_FORMAT!="HEXEN"{
 				WAD_FORMAT = "HEXEN";
 				show_message("Hexen formatted maps will load, but you may experience issues with map interactions.\n(Hexen format integration is incomplete)");
 			}
@@ -98,12 +77,16 @@ function DE_getDirectory() {
 				WAD_ISGL = true;
 			}
 		
-	        ds_map_add(_directory,"name",name );
+	        _directory[? "name"] = name;
 	        ds_list_add(wadDirectory,_directory);
 		
-			ds_map_add(wadDirectoryOfs,name,fPos);
+			wadDirectoryOfs[? name] = fPos;
+			
+			trace("NOTICE: Found Lump["+name+"]: ",fPos,size);
         
 	}
+	
+	ds_map_print(wadDirectoryOfs);
 	
 	if WAD_ISGL == false{
 		var __question = show_question("WARNING: GL Nodes not present. The map will not display correctly without them. Build them now?");
@@ -117,15 +100,14 @@ function DE_getDirectory() {
 				__tmpWad = get_save_filename("Doom Wad|*.wad",__tmpWad);
 				
 				DE_glbspProcessWad(wadFile,__tmpWad);
+				return false;
 				
 			}
 		}
 	}
-
-	if(ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l-1),"name")!="F_END"){
-	//show_debug_message("Unexpected end of Directory Marker: "+ ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l-1),"name"))
-	//JSON.stringify(this.wad.directory[this.wad.directory.length-1]);
-	}
+	
+	return true;
+	
 }
 
 function DE_getLevel(level) {
@@ -172,17 +154,18 @@ function DE_getLevel(level) {
 function DE_getLumpOfs(lump) {
 	
 	var ofs = wadDirectoryOfs[? lump ];
-
+	trace("NOTICE: Lump["+lump+"] located at ",ofs);
 	if ofs != undefined{
-		return ofs;//ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,ofs),"filepos");
+		return ofs;
 	}
+	
 	return -1;
 	
 }
 
 function DE_getLumpNum(lump) {
 	
-	for(l=0;l<ds_list_size(wadDirectory);l+=1)
+	for(var l=0;l<ds_list_size(wadDirectory);l+=1)
 	if(ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l),"name")=lump){
 	//show_debug_message("NOTICE: Found Lump["+string(l)+"]: "+ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l),"name"));
 	return l;

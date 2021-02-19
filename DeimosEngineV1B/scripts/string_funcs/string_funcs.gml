@@ -6,7 +6,7 @@ function split(_string, _split) {
 }
 
 function string_to_list(string){
-	var list = ds_list_create();
+	var list = ds_list_build();
 
 	var slot = 0;
 

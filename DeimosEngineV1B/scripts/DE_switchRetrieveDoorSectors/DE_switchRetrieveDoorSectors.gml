@@ -1,39 +1,46 @@
 function DE_switchRetrieveDoorSectors() {
-
+	
+	var this = id;
+	
 	var secs = mapSectors;
-	var SSize = ds_list_size(secs);
+	
+	var tagList = mapTags[? tag ];
 
+	if tagList == undefined return undefined;
+	
+	var SSize = ds_list_size(tagList);
+	
 	if DE_IdTypeIsRemoteDoor(type){
 
 		for (var S = 0; S<SSize; S++){
-			var Sect = secs[|S];
+			
+			var tagSec = tagList[|S];
+			
+			var Sect = secs[|tagSec];
 		
-			//if tag!=-1
-			if Sect[?"tag"] == tag{
-		
-				var dCheck = mapDoors[|S]
+			var dCheck = mapDoors[? tagSec ];
 	
-				if dCheck == undefined ||
-				dCheck.object_index != door_sector_obj{
+			if dCheck == undefined{
 		
-					var door = instance_create_depth(0,0,0,door_sector_obj);
-					trace("Created Door For Sector:",S);
+				var door = instance_create_depth(0,0,0,objDoorHandler);
+				trace("Created Door For Sector:",tagSec);
 				
-					ds_list_add(taggedSectors,door);
-					door.owner = id;
-					door.wait = WAIT;
-					door.funcs = FUNC;
-					door.doorSpeed = SPEED;
-					door.sector = Sect;
-					door.repeatable = (TRIG[1] == "R");
-					with door event_user(0);
+				ds_list_add(taggedSectors,door);
+				door.tag = this.tag;
+				door.wait = WAIT;
+				door.funcs = FUNC;
+				door.doorSpeed = SPEED;
+				door.sector = Sect;
+				door.repeatable = ( TRIG[1] == "R" );
+				this.repeatable = door.repeatable;
+				with door event_user(0);
 				
-					mapDoors[|S] = door;
+				mapDoors[? tagSec] = door;
 				
-				}else{
+			}else{
+				//if ds_list_find_index(taggedSectors,dCheck) == undefined
 					ds_list_add(taggedSectors,dCheck);
-					trace("Remote Door For Sector Already Exists:",dCheck.tag);
-				}
+				trace("Remote Door For Sector Already Exists:",dCheck.tag);
 			}
 		}
 	
@@ -45,32 +52,35 @@ function DE_switchRetrieveDoorSectors() {
 	
 		var Sect=ds_map_find_value(linedef,"bsect");
 	
-		//ds_map_print(linedef)
-	
 		var secNum = Sect;
 		Sect = secs[|Sect]
 		
-		var dCheck = mapDoors[|secNum]
-	
-		if dCheck == undefined ||
-		dCheck.object_index != door_sector_obj{
+		var dCheck = mapDoors[? secNum ]
 		
-			var door = instance_create_depth(0,0,0,door_sector_obj);
+		//If is undefined, we've not created a controller for this sector, let's do it now
+		if dCheck == undefined{
+		
+			var door = instance_create_depth(0,0,0,objDoorHandler);
+			
 			trace("Created Door For Sector:",secNum);
+			
 			ds_list_add(taggedSectors,door);
-			door.owner = id;
+			door.tag = this.tag;
 			door.wait = WAIT;
 			door.funcs = FUNC;
 			door.doorSpeed = SPEED;
 			door.sector = Sect;
 			door.repeatable = (TRIG[1] == "R");
+			this.repeatable = door.repeatable;
 			with door event_user(0);
 		
-			mapDoors[|secNum] = door;
+			mapDoors[? secNum ] = door;
 			
 		}else{
+			//We've created a controller for this sector previously, if it's not on our list, add it!
 			
-			ds_list_add(taggedSectors,dCheck);
+			//if ds_list_find_index(taggedSectors,dCheck) == undefined
+				ds_list_add(taggedSectors,dCheck);
 			trace("Local Door For Sector Already Exists:",dCheck.tag);
 			
 		}
@@ -80,7 +90,5 @@ function DE_switchRetrieveDoorSectors() {
 	taggedSectNum = ds_list_size(taggedSectors);
 
 	trace("Door Controller Connected To "+string(taggedSectNum)+" Doors");
-
-
-
+	
 }

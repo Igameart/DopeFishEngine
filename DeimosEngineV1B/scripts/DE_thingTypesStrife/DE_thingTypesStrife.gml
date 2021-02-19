@@ -7,346 +7,346 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[231] = thing;
 	//41 BBCE7 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (blue)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Acolyte (blue)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[147] = thing;
 	//41 BBC93 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (dark green)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (dark green)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[148] = thing;
 	//41 BBC 94
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (gold)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (gold)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[146] = thing;
 	//41 BBC 92
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (gray)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (gray)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[232] = thing;
 	//41 BBC E8
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (light green)"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (light green)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[142] = thing;
 	//41 BBC 8E
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (red)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (red)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[143] = thing;
 	//41 BBC 8F
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (rust)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (rust)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[3002] = thing;
 	//41 BBC BBA 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Acolyte (tan)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =		"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] =	"Acolyte (tan)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[201] = thing;
 	//41 BBC C9
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"ARMR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Becoming Acolyte"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"ARMR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Becoming Acolyte"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[187] = thing;
 	//41 BBC BB
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"40"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"MLDR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Bishop"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"40"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"MLDR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Bishop"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[27] = thing;
 	//41 BBC1B 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TURT"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"M*^"
-	thing[?"Description"] = "Ceiling turret"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TURT"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"M*^"
+	thing[@ DEThingDef.Description ] = "Ceiling turret"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[3005] = thing;
 	//41 BBCBBD
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"40"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"ROB2"
-	thing[?"Sequence"] =	"Q+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Crusader"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"40"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"ROB2"
+	thing[@ DEThingDef.Sequence ] =	"Q+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Crusader"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[128] = thing;
 	//41 BBC 80
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"130"
-	thing[?"Height"] =		"200"
-	thing[?"Sprite"] =		"MNAM"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Entity"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"130"
+	thing[@ DEThingDef.Height ] =		"200"
+	thing[@ DEThingDef.Sprite ] =		"MNAM"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Entity"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[26] = thing;
 	//41 BBC 1A
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"84"
-	thing[?"Height"] =		"47"
-	thing[?"Sprite"] =		"NEST"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Entity nest"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"84"
+	thing[@ DEThingDef.Height ] =		"47"
+	thing[@ DEThingDef.Sprite ] =		"NEST"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Entity nest"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[198] = thing;
 	//41 BBC C6
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"25"
-	thing[?"Height"] =		"91"
-	thing[?"Sprite"] =		"PODD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Entity pod"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"25"
+	thing[@ DEThingDef.Height ] =		"91"
+	thing[@ DEThingDef.Sprite ] =		"PODD"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Entity pod"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[16] = thing;
 	//41 BBC 10
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"40"
-	thing[?"Height"] =		"110"
-	thing[?"Sprite"] =		"ROB3"
-	thing[?"Sequence"] =	"AB+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Inquisitor"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"40"
+	thing[@ DEThingDef.Height ] =		"110"
+	thing[@ DEThingDef.Sprite ] =		"ROB3"
+	thing[@ DEThingDef.Sequence ] =	"AB+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Inquisitor"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[12] = thing;
 	//41 BBC C 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PRST"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Loremaster"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PRST"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Loremaster"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[64] = thing;
 	//41 BBC 40
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"LEDR"
-	thing[?"Sequence"] =	"C+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Macil"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"LEDR"
+	thing[@ DEThingDef.Sequence ] =	"C+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Macil"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[200] = thing;
 	//41 BBC C8
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"LEDR"
-	thing[?"Sequence"] =	"C+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Macil Spectre"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"LEDR"
+	thing[@ DEThingDef.Sequence ] =	"C+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Macil Spectre"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[199] = thing;
 	//41 BBC C7
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"ORCL"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Oracle"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"ORCL"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Oracle"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[71] = thing;
 	//41 BBC47 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"45"
-	thing[?"Height"] =		"60"
-	thing[?"Sprite"] =		"PRGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Programmer"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"45"
+	thing[@ DEThingDef.Height ] =		"60"
+	thing[@ DEThingDef.Sprite ] =		"PRGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Programmer"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[3001] = thing;
 	//41 BBCBB9
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"60"
-	thing[?"Sprite"] =		"ROB1"
-	thing[?"Sequence"] =	"AA+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Reaver"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"60"
+	thing[@ DEThingDef.Sprite ] =		"ROB1"
+	thing[@ DEThingDef.Sequence ] =	"AA+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Reaver"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[3006] = thing;
 	//41 BBC BBE 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"23"
-	thing[?"Height"] =		"53"
-	thing[?"Sprite"] =		"SEWR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Sentinel"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"23"
+	thing[@ DEThingDef.Height ] =		"53"
+	thing[@ DEThingDef.Sprite ] =		"SEWR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Sentinel"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[58] = thing;
 	//41 BBC 3A
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Shadow Acolyte"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Shadow Acolyte"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[75] = thing;
 	//41 BBC 4B
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"ALN1"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Spectre (Bishop)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"ALN1"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Spectre (Bishop)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[168] = thing;
 	//41 BBC A8
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"ALN1"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Spectre (Loremaster)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"ALN1"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Spectre (Loremaster)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[167] = thing;
 	//41 BBC A7
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"ALN1"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Spectre (Macil)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"ALN1"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Spectre (Macil)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[76] = thing;
 	//41 BBC 4C
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"ALN1"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Spectre (Oracle)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"ALN1"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Spectre (Oracle)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[129] = thing;
 	//41 BBC 81
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"64"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"ALN1"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Spectre (Programmer)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"64"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"ALN1"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Spectre (Programmer)"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[186] = thing;
 	//41 BBC BA
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"31"
-	thing[?"Height"] =		"25"
-	thing[?"Sprite"] =		"SPID"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*^"
-	thing[?"Description"] = "Stalker"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"31"
+	thing[@ DEThingDef.Height ] =		"25"
+	thing[@ DEThingDef.Sprite ] =		"SPID"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*^"
+	thing[@ DEThingDef.Description ] = "Stalker"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[3003] = thing;
 	//41 BBC BA BBB 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"60"
-	thing[?"Sprite"] =		"PGRD"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Templar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"60"
+	thing[@ DEThingDef.Sprite ] =		"PGRD"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Templar"
 
 	/****************************************************************************/
 	/*																			*/
@@ -354,445 +354,445 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[73] = thing;
 	//41 BBC 49 
-	thing[?"Version"] =		"D" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"MRST1" 
-	thing[?"Sequence"] =	"A" 
-	thing[?"Class"] =		"O*" 
-	thing[?"Description"] = "Armorer" 
+	thing[@ DEThingDef.Version ] =		"D" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"MRST1" 
+	thing[@ DEThingDef.Sequence ] =	"A" 
+	thing[@ DEThingDef.Class ] =		"O*" 
+	thing[@ DEThingDef.Description ] = "Armorer" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[72] = thing;
 	//41 BBC 48 
-	thing[?"Version"] =		"D" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"MRST1" 
-	thing[?"Sequence"] =	"A" 
-	thing[?"Class"] =		"O*" 
-	thing[?"Description"] = "Barkeep" 
+	thing[@ DEThingDef.Version ] =		"D" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"MRST1" 
+	thing[@ DEThingDef.Sequence ] =	"A" 
+	thing[@ DEThingDef.Class ] =		"O*" 
+	thing[@ DEThingDef.Description ] = "Barkeep" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[141] = thing;
 	//41 BBC 8D 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"BEGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Beggar 1"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"BEGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Beggar 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[155] = thing;
 	//41 BBC 9B 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"BEGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Beggar 2"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"BEGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Beggar 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[156] = thing;
 	//41 BBC 9C 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"BEGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Beggar 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"BEGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Beggar 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[157] = thing;
 	//41 BBC 9D 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"BEGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Beggar 4"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"BEGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Beggar 4"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[158] = thing;
 	//41 BBC 9E 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"BEGR"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Beggar 5"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"BEGR"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Beggar 5"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[204] = thing;
 	//41 BBC CC 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"6"
-	thing[?"Height"] =		"6"
-	thing[?"Sprite"] =		"NEAL"
-	thing[?"Sequence"] =	"AB+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Kneeling Guy"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"6"
+	thing[@ DEThingDef.Height ] =		"6"
+	thing[@ DEThingDef.Sprite ] =		"NEAL"
+	thing[@ DEThingDef.Sequence ] =	"AB+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Kneeling Guy"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[74] = thing;
 	//41 BBC 4A 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"MRST1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Medic"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"MRST1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Medic"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[181] = thing;
 	//41 BBC B5 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Blue"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Blue"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[172] = thing;
 	//41 BBC AC 
-	thing[?"Version"] =		"C" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"PEAS" 
-	thing[?"Sequence"] =	"A+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Peasant Dark Green 1" 
+	thing[@ DEThingDef.Version ] =		"C" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"PEAS" 
+	thing[@ DEThingDef.Sequence ] =	"A+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Peasant Dark Green 1" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[173] = thing;
 	//41 BBC AD 
-	thing[?"Version"] =		"C" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"PEAS" 
-	thing[?"Sequence"] =	"A+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Peasant Dark Green 2" 
+	thing[@ DEThingDef.Version ] =		"C" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"PEAS" 
+	thing[@ DEThingDef.Sequence ] =	"A+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Peasant Dark Green 2" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[174] = thing;
 	//41 BBC AE 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Dark Green 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Dark Green 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[178] = thing;
 	//41 BBC B2 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gold 1"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gold 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[179] = thing;
 	//41 BBC B3 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gold 2"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gold 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[180] = thing;
 	//41 BBC B4 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gold 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gold 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[66] = thing;
 	//41 BBC 42 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gray 1"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gray 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[134] = thing;
 	//41 BBC 86 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gray 2"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gray 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[135] = thing;
 	//41 BBC 87 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Gray 3"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Gray 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[175] = thing;
 	//41 BBC AF 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Light Green 1"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Light Green 1"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[176] = thing;
 	//41 BBC B0 
-	thing[?"Version"] =		"D2" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"PEAS" 
-	thing[?"Sequence"] =	"A+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Peasant Light Green 2" 
+	thing[@ DEThingDef.Version ] =		"D2" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"PEAS" 
+	thing[@ DEThingDef.Sequence ] =	"A+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Peasant Light Green 2" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[177] = thing;
 	//41 BBC B1 
-	thing[?"Version"] =		"D2" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"PEAS" 
-	thing[?"Sequence"] =	"A+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Peasant Light Green 3" 
+	thing[@ DEThingDef.Version ] =		"D2" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"PEAS" 
+	thing[@ DEThingDef.Sequence ] =	"A+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Peasant Light Green 3" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[65] = thing;
 	//41 BBC 41 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Red 1"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Red 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[132] = thing;
 	//41 BBC 84 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Red 2"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Red 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[133] = thing;
 	//41 BBC 85 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Red 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Red 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[67] = thing;
 	//41 BBC 43 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Rust 1"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Rust 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[136] = thing;
 	//41 BBC 88 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Rust 2"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Rust 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[137] = thing;
 	//41 BBC 89 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Rust 3"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Rust 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[3004] = thing;
 	//41 BBC BBC 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Tan 1"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Tan 1"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[130] = thing;
 	//41 BBC 82 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Peasant Tan 2"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Peasant Tan 2"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[131] = thing;
 	//41 BBC 83 
-	thing[?"Version"] =		"D" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"PEAS" 
-	thing[?"Sequence"] =	"A+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Peasant Tan 3" 
+	thing[@ DEThingDef.Version ] =		"D" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"PEAS" 
+	thing[@ DEThingDef.Sequence ] =	"A+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Peasant Tan 3" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[9] = thing;
 	//41 BBC 9 
-	thing[?"Version"] =		"D" 
-	thing[?"Radius"] =		"20" 
-	thing[?"Height"] =		"56" 
-	thing[?"Sprite"] =		"HMN1" 
-	thing[?"Sequence"] =	"P+" 
-	thing[?"Class"] =		"MO*" 
-	thing[?"Description"] = "Rebel 1" 
+	thing[@ DEThingDef.Version ] =		"D" 
+	thing[@ DEThingDef.Radius ] =		"20" 
+	thing[@ DEThingDef.Height ] =		"56" 
+	thing[@ DEThingDef.Sprite ] =		"HMN1" 
+	thing[@ DEThingDef.Sequence ] =	"P+" 
+	thing[@ DEThingDef.Class ] =		"MO*" 
+	thing[@ DEThingDef.Description ] = "Rebel 1" 
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[144] = thing;
 	//41 BBC 90 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HMN1"
-	thing[?"Sequence"] =	"P+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Rebel 2"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HMN1"
+	thing[@ DEThingDef.Sequence ] =	"P+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Rebel 2"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[145] = thing;
 	//41 BBC 91 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HMN1"
-	thing[?"Sequence"] =	"P+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Rebel 3"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HMN1"
+	thing[@ DEThingDef.Sequence ] =	"P+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Rebel 3"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[149] = thing;
 	//41 BBC 95 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HMN1"
-	thing[?"Sequence"] =	"P+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Rebel 4"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HMN1"
+	thing[@ DEThingDef.Sequence ] =	"P+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Rebel 4"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[150] = thing;
 	//41 BBC 96 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HMN1"
-	thing[?"Sequence"] =	"P+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Rebel 5"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HMN1"
+	thing[@ DEThingDef.Sequence ] =	"P+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Rebel 5"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[151] = thing;
 	//41 BBC 97 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HMN1"
-	thing[?"Sequence"] =	"P+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Rebel 6"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HMN1"
+	thing[@ DEThingDef.Sequence ] =	"P+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Rebel 6"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[116] = thing;
 	//41 BBC 74 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"MRST1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Weapon smith"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"MRST1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Weapon smith"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[169] = thing;
 	//41 BBC A9 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"MO*"
-	thing[?"Description"] = "Zombie"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"MO*"
+	thing[@ DEThingDef.Description ] = "Zombie"
  
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[170] = thing;
 	//41 BBC AA 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"none3"
-	thing[?"Sequence"] =	"-"
-	thing[?"Class"] =		"*"
-	thing[?"Description"] = "Zombie spawner"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"none3"
+	thing[@ DEThingDef.Sequence ] =	"-"
+	thing[@ DEThingDef.Class ] =		"*"
+	thing[@ DEThingDef.Description ] = "Zombie spawner"
 
 
 	/****************************************************************************/
@@ -801,137 +801,137 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2002] = thing;
 	//41 BBC  7D2
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RIFL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Assault rifle (lying)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RIFL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Assault rifle (lying)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2006] = thing;
 	//41 BBC  7D6
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RIFL"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Assault rifle (standing)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RIFL"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Assault rifle (standing)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2001] = thing;
 	//41 BBC 7D1 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CBOW"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Crossbow"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CBOW"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Crossbow"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2005] = thing;
 	//41 BBC 7D5 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLAM"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Flamethrower"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLAM"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Flamethrower"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[154] = thing;
 	//41 BBC 9A  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"GRND"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Grenade launcher"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"GRND"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Grenade launcher"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2004] = thing;
 	//41 BBC  7D4
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TRPD"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Mauler"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TRPD"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Mauler"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2003] = thing;
 	//41 BBC  7D3
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MMSL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Mini-missile launcher"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MMSL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Mini-missile launcher"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[77] = thing;
 	//41 BBC 4D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SIGL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Sigil 1 (Lightning)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SIGL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Sigil 1 (Lightning)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[78] = thing;
 	//41 BBC 4E  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SIGL"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Sigil 2 (Rail)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SIGL"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Sigil 2 (Rail)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[79] = thing;
 	//41 BBC 4F  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SIGL"
-	thing[?"Sequence"] =	"C"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Sigil 3 (Spread)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SIGL"
+	thing[@ DEThingDef.Sequence ] =	"C"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Sigil 3 (Spread)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[80] = thing;
 	//41 BBC  50 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SIGL"
-	thing[?"Sequence"] =	"D"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Sigil 4 (Column)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SIGL"
+	thing[@ DEThingDef.Sequence ] =	"D"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Sigil 4 (Column)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[81] = thing;
 	//41 BBC  51 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SIGL"
-	thing[?"Sequence"] =	"E"
-	thing[?"Class"] =		"WP"
-	thing[?"Description"] = "Sigil 5 (Blast)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SIGL"
+	thing[@ DEThingDef.Sequence ] =	"E"
+	thing[@ DEThingDef.Class ] =		"WP"
+	thing[@ DEThingDef.Description ] = "Sigil 5 (Blast)"
 
 
 	/****************************************************************************/
@@ -940,610 +940,610 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2048] = thing; 
 	//41 BBC800
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BBOX"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Box of bullets"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BBOX"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Box of bullets"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2007] = thing; 
 	//41 BBC7D7
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BLIT"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Bullet clip"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BLIT"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Bullet clip"
  
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2046] = thing; 
 	//41 BBC 7FE
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ROKT"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Crate of missiles"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ROKT"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Crate of missiles"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[114] = thing; 
 	//41 BBC 72 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"XQRL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Electric bolt"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"XQRL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Electric bolt"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[17] = thing; 
 	//41 BBC 11 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CPAC"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Energy pack"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CPAC"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Energy pack"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[2047] = thing; 
 	//41 BBC 7FF
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BRY1"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Energy pod"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BRY1"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Energy pod"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[152] = thing; 
 	//41 BBC 98 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"GRN1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "HE grenade"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"GRN1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "HE grenade"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[2010] = thing; 
 	//41 BBC 7DA
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MSSL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Mini-missile"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MSSL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Mini-missile"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[153] = thing; 
 	//41 BBC 99 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"GRN2"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Phosphorous grenade"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"GRN2"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Phosphorous grenade"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[115] = thing; 
 	//41 BBC 73 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PQRL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Poison bolt"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PQRL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Poison bolt"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[138] = thing; 
 	//41 BBC  8A  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CRED"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "10 Gold"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CRED"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "10 Gold"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[139] = thing; 
 	//41 BBC  8B  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SACK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "25 Gold"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SACK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "25 Gold"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[140] = thing; 
 	//41 BBC 8C  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CHST"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "50 Gold"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CHST"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "50 Gold"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[183] = thing; 
 	//41 BBC B7  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BKPK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Ammo satchel"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BKPK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Ammo satchel"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[206] = thing; 
 	//41 BBC CE  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"COMM"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Communicator"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"COMM"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Communicator"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2025] = thing; 
 	//41 BBC 7E9 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MASK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Environmental suit"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MASK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Environmental suit"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[93] = thing; 
 	//41 BBC 5D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"COIN"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Gold coin"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"COIN"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Gold coin"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2026] = thing; 
 	//41 BBC 7EA 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PMAP"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Map"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PMAP"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Map"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2027] = thing; 
 	//41 BBC 7EB  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PMUP"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Scanner"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PMUP"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Scanner"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2024] = thing; 
 	//41 BBC 7E8  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SHD1"
-	thing[?"Sequence"] =	"AAAA"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Shadow armor"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SHD1"
+	thing[@ DEThingDef.Sequence ] =	"AAAA"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Shadow armor"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[207] = thing; 
 	//41 BBC  CF 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TARG"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Targeter"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TARG"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Targeter"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[10] = thing; 
 	//41 BBC  A  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BEAC"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Teleporter beacon"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BEAC"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Teleporter beacon"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2018] = thing; 
 	//41 BBC 7E2 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ARM2"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Leather armor"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ARM2"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Leather armor"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2011] = thing; 
 	//41 BBC 7DB 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"STMP"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Med patch"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"STMP"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Med patch"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2012] = thing; 
 	//41 BBC 7DC 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MDKT"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Medical kit"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MDKT"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Medical kit"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[2019] = thing; 
 	//41 BBC 7E3 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ARM1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Metal armor"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ARM1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Metal armor"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[83] = thing; 
 	//41 BBC 53   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FULL"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Surgery kit"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FULL"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Surgery kit"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[230] = thing; 
 	//41 BBC E6   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FUSL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Base Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FUSL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Base Key"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[193] = thing; 
 	//41 BBC C1  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BCRY"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Blue Crystal Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BCRY"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Blue Crystal Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[39] = thing; 
 	//41 BBC 27  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"KY3B"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Brass Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"KY3B"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Brass Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[226] = thing; 
 	//41 BBC  E2 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"COUP"
-	thing[?"Sequence"] =	"C"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Broken power coupling"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"COUP"
+	thing[@ DEThingDef.Sequence ] =	"C"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Broken power coupling"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[195] = thing; 
 	//41 BBC  C3 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CHAP"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Chapel Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CHAP"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Chapel Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[182] = thing; 
 	//41 BBC B6  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"26"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"SECR"
-	thing[?"Sequence"] =	"ABCD+"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Computer"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"26"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"SECR"
+	thing[@ DEThingDef.Sequence ] =	"ABCD+"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Computer"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[236] = thing; 
 	//41 BBC EC  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"GOID"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Core Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"GOID"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Core Key"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[59] = thing; 
 	//41 BBC 3B   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"XPRK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"PO*"
-	thing[?"Description"] = "Degnin ore"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"XPRK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"PO*"
+	thing[@ DEThingDef.Description ] = "Degnin ore"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[234] = thing; 
 	//41 BBC EA   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PROC"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Factory Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PROC"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Factory Key"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[25] = thing; 
 	//41 BBC 19  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"2"
-	thing[?"Height"] =		"1"
-	thing[?"Sprite"] =		"TOKN"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"*"
-	thing[?"Description"] = "Force field guard"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"2"
+	thing[@ DEThingDef.Height ] =		"1"
+	thing[@ DEThingDef.Sprite ] =		"TOKN"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"*"
+	thing[@ DEThingDef.Description ] = "Force field guard"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[45] = thing; 
 	//41 BBC 2D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"76"
-	thing[?"Sprite"] =		"PSTN"
-	thing[?"Sequence"] =	"AB+"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Gate piston"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"76"
+	thing[@ DEThingDef.Sprite ] =		"PSTN"
+	thing[@ DEThingDef.Sequence ] =	"AB+"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Gate piston"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[40] = thing; 
 	//41 BBC 28  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"KY1G"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Gold Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"KY1G"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Gold Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[90] = thing; 
 	//41 BBC 5A  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"UNIF"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Guard uniform"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"UNIF"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Guard uniform"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[184] = thing; 
 	//41 BBC  B8 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CRD1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "ID Badge"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CRD1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "ID Badge"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[13] = thing; 
 	//41 BBC  D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CRD2"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "ID Card"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CRD2"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "ID Card"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[233] = thing; 
 	//41 BBC E9   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BLTK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Mauler Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BLTK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Mauler Key"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[235] = thing; 
 	//41 BBC EB   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MINE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Mine Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MINE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Mine Key"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[205] = thing; 
 	//41 BBC CD  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RELC"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Offering chalice"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RELC"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Offering chalice"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[52] = thing; 
 	//41 BBC 34  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"OFIC"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Officer uniform"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"OFIC"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Officer uniform"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[61] = thing; 
 	//41 BBC 3D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ORAC"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Oracle Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ORAC"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Oracle Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[86] = thing; 
 	//41 BBC 56  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FUBR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Order Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FUBR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Order Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[185] = thing; 
 	//41 BBC B9  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TPAS"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Pass Card"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TPAS"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Pass Card"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[220] = thing; 
 	//41 BBC DC  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"17"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"COUP"
-	thing[?"Sequence"] =	"AB"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Power coupling"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"17"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"COUP"
+	thing[@ DEThingDef.Sequence ] =	"AB"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Power coupling"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[92] = thing; 
 	//41 BBC  5C  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CRYS"
-	thing[?"Sequence"] =	"ABCDEF"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Power crystal"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CRYS"
+	thing[@ DEThingDef.Sequence ] =	"ABCDEF"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Power crystal"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[192] = thing; 
 	//41 BBC  C0  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RCRY"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Red Crystal Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RCRY"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Red Crystal Key"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[91] = thing; 
 	//41 BBC 5B  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"HAND"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Severed Hand"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"HAND"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Severed Hand"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[38] = thing; 
 	//41 BBC 26  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"KY2S"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Silver Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"KY2S"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Silver Key"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[166] = thing; 
 	//41 BBC A6  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"WARE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Warehouse Key"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"WARE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Warehouse Key"
 
 
 	/****************************************************************************/
@@ -1552,610 +1552,610 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[224] = thing; 
 	//41 BBC  E0 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"ASPR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Alien asp climber"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"ASPR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Alien asp climber"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[221] = thing; 
 	//41 BBC  DD 
-	thing[?"Version"] =		"C1"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"BUBB"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Alien bubble column"
+	thing[@ DEThingDef.Version ] =		"C1"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"BUBB"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Alien bubble column"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[223] = thing; 
 	//41 BBC DF 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"72"
-	thing[?"Sprite"] =		"BUBF"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O^"
-	thing[?"Description"] = "Alien ceiling bubble"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"72"
+	thing[@ DEThingDef.Sprite ] =		"BUBF"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O^"
+	thing[@ DEThingDef.Description ] = "Alien ceiling bubble"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[222] = thing; 
 	//41 BBC DE 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"72"
-	thing[?"Sprite"] =		"BUBF"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Alien floor bubble"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"72"
+	thing[@ DEThingDef.Sprite ] =		"BUBF"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Alien floor bubble"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[225] = thing; 
 	//41 BBC E1 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"32"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"SPDL"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Alien spider light"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"32"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"SPDL"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Alien spider light"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[228] = thing; 
 	//41 BBC E4 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"12"
-	thing[?"Height"] =		"24"
-	thing[?"Sprite"] =		"AFED"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Ammo filler"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"12"
+	thing[@ DEThingDef.Height ] =		"24"
+	thing[@ DEThingDef.Sprite ] =		"AFED"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Ammo filler"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[194] = thing; 
 	//41 BBC C2 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"32"
-	thing[?"Sprite"] =		"ANVL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Anvil"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"32"
+	thing[@ DEThingDef.Sprite ] =		"ANVL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Anvil"
 
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[54] = thing; 
 	//41 BBC 36  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"STEL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Aztec pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"STEL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Aztec pillar"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[69] = thing; 
 	//41 BBC 45  
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"BAR1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Barricade column"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"BAR1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Barricade column"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[202] = thing; 
 	//41 BBC CA 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"109"
-	thing[?"Sprite"] =		"TREE"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Big tree"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"109"
+	thing[@ DEThingDef.Sprite ] =		"TREE"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Big tree"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[197] = thing; 
 	//41 BBC  C5
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"8"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"TLMP"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Brass tech lamp"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"8"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"TLMP"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Brass tech lamp"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[70] = thing; 
 	//41 BBC  46
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"48"
-	thing[?"Sprite"] =		"BARL"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Burning barrel"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"48"
+	thing[@ DEThingDef.Sprite ] =		"BARL"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Burning barrel"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[105] = thing; 
 	//41 BBC 69 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BOWL"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Burning bowl"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BOWL"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Burning bowl"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[106] = thing; 
 	//41 BBC 6A 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"32"
-	thing[?"Sprite"] =		"BRAZ"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Burning brazier"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"32"
+	thing[@ DEThingDef.Sprite ] =		"BRAZ"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Burning brazier"
 
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[35] = thing; 
 	//41 BBC 23  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"CLBR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Candelabra"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"CLBR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Candelabra"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[162] = thing; 
 	//41 BBC A2  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"E"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Cave pillar bottom"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"E"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Cave pillar bottom"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[159] = thing; 
 	//41 BBC 9F 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"D"
-	thing[?"Class"] =		"O^"
-	thing[?"Description"] = "Cave pillar top"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"D"
+	thing[@ DEThingDef.Class ] =		"O^"
+	thing[@ DEThingDef.Description ] = "Cave pillar top"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[63] = thing; 
 	//41 BBC 3F 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"STAK"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Chimneystack"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"STAK"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Chimneystack"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[55] = thing; 
 	//41 BBC 37 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"80"
-	thing[?"Sprite"] =		"STLA"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Damaged aztec pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"80"
+	thing[@ DEThingDef.Sprite ] =		"STLA"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Damaged aztec pillar"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[94] = thing; 
 	//41 BBC 5E 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"32"
-	thing[?"Sprite"] =		"BART"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Exploding barrel"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"32"
+	thing[@ DEThingDef.Sprite ] =		"BART"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Exploding barrel"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[2028] = thing; 
 	//41 BBC  7EC    
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"LITE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Globe light"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"LITE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Globe light"
 
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[113] = thing; 
 	//41 BBC  71 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"HERT"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Hearts in tank"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"HERT"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Hearts in tank"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[227] = thing; 
 	//41 BBC E3  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"192"
-	thing[?"Sprite"] =		"APOW"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge alien pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"192"
+	thing[@ DEThingDef.Sprite ] =		"APOW"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge alien pillar"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[209] = thing; 
 	//41 BBC D1 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"192"
-	thing[?"Sprite"] =		"TNK1"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge tank 1 with skeleton"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"192"
+	thing[@ DEThingDef.Sprite ] =		"TNK1"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge tank 1 with skeleton"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[210] = thing; 
 	//41 BBC D2 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"192"
-	thing[?"Sprite"] =		"TNK2"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge tank 2"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"192"
+	thing[@ DEThingDef.Sprite ] =		"TNK2"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge tank 2"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[211] = thing; 
 	//41 BBC D3 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"192"
-	thing[?"Sprite"] =		"TNK3"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge tank 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"192"
+	thing[@ DEThingDef.Sprite ] =		"TNK3"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge tank 3"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[57] = thing; 
 	//41 BBC 39 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"192"
-	thing[?"Sprite"] =		"HUGE"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge tech pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"192"
+	thing[@ DEThingDef.Sprite ] =		"HUGE"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge tech pillar"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[50] = thing; 
 	//41 BBC 32 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"80"
-	thing[?"Sprite"] =		"LOGS"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Huge torch"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"80"
+	thing[@ DEThingDef.Sprite ] =		"LOGS"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Huge torch"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[47] = thing; 
 	//41 BBC 2F   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"72"
-	thing[?"Sprite"] =		"LMPC"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Large torch"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"72"
+	thing[@ DEThingDef.Sprite ] =		"LMPC"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Large torch"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[111] = thing; 
 	//41 BBC 6F   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"4"
-	thing[?"Height"] =		"72"
-	thing[?"Sprite"] =		"LTRH"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Medium torch"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"4"
+	thing[@ DEThingDef.Height ] =		"72"
+	thing[@ DEThingDef.Sprite ] =		"LTRH"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Medium torch"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[43] = thing; 
 	//41 BBC  2B 
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"3"
-	thing[?"Height"] =		"80"
-	thing[?"Sprite"] =		"LAMP"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Outside lamp"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"3"
+	thing[@ DEThingDef.Height ] =		"80"
+	thing[@ DEThingDef.Sprite ] =		"LAMP"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Outside lamp"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[51] = thing; 
 	//41 BBC  33 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"109"
-	thing[?"Sprite"] =		"TREE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Palm tree"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"109"
+	thing[@ DEThingDef.Sprite ] =		"TREE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Palm tree"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[188] = thing; 
 	//41 BBC BC  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"12"
-	thing[?"Height"] =		"32"
-	thing[?"Sprite"] =		"VASE"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Pitcher"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"12"
+	thing[@ DEThingDef.Height ] =		"32"
+	thing[@ DEThingDef.Sprite ] =		"VASE"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Pitcher"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[46] = thing; 
 	//41 BBC 2E  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"3"
-	thing[?"Height"] =		"80"
-	thing[?"Sprite"] =		"LANT"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Pole lantern"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"3"
+	thing[@ DEThingDef.Height ] =		"80"
+	thing[@ DEThingDef.Sprite ] =		"LANT"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Pole lantern"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[165] = thing; 
 	//41 BBC A5  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"12"
-	thing[?"Height"] =		"24"
-	thing[?"Sprite"] =		"VASE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Pot"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"12"
+	thing[@ DEThingDef.Height ] =		"24"
+	thing[@ DEThingDef.Sprite ] =		"VASE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Pot"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[203] = thing; 
 	//41 BBC CB   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"TREE"
-	thing[?"Sequence"] =	"C"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Potted tree"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"TREE"
+	thing[@ DEThingDef.Sequence ] =	"C"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Potted tree"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[56] = thing; 
 	//41 BBC 38   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"STLE"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Ruined aztec pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"STLE"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Ruined aztec pillar"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[44] = thing; 
 	//41 BBC 2C  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"DSTA"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Ruined statue"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"DSTA"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Ruined statue"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[60] = thing; 
 	//41 BBC 3C  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"BUSH"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Short bush"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"BUSH"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Short bush"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[196] = thing; 
 	//41 BBC C4  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"11"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"TLMP"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Silver tech lamp"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"11"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"TLMP"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Silver tech lamp"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[98] = thing; 
 	//41 BBC  62 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"54"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"C"
-	thing[?"Class"] =		"O^"
-	thing[?"Description"] = "Stalactite (large)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"54"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"C"
+	thing[@ DEThingDef.Class ] =		"O^"
+	thing[@ DEThingDef.Description ] = "Stalactite (large)"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[161] = thing; 
 	//41 BBC  A1 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O^"
-	thing[?"Description"] = "Stalactite (small)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O^"
+	thing[@ DEThingDef.Description ] = "Stalactite (small)"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[160] = thing; 
 	//41 BBC A0   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"B"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Stalagmite (large)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"B"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Stalagmite (large)"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[163] = thing; 
 	//41 BBC A3   
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"25"
-	thing[?"Sprite"] =		"STLG"
-	thing[?"Sequence"] =	"F"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Stalagmite (small)"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"25"
+	thing[@ DEThingDef.Sprite ] =		"STLG"
+	thing[@ DEThingDef.Sequence ] =	"F"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Stalagmite (small)"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[110] = thing; 
 	//41 BBC 6E  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"STAT"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Statue"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"STAT"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Statue"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[189] = thing; 
 	//41 BBC BD  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"6"
-	thing[?"Height"] =		"24"
-	thing[?"Sprite"] =		"STOL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Stool"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"6"
+	thing[@ DEThingDef.Height ] =		"24"
+	thing[@ DEThingDef.Sprite ] =		"STOL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Stool"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[117] = thing; 
 	//41 BBC 75  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CRAB"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O^"
-	thing[?"Description"] = "Surgery crab"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CRAB"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O^"
+	thing[@ DEThingDef.Description ] = "Surgery crab"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[62] = thing; 
 	//41 BBC 3E  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"64"
-	thing[?"Sprite"] =		"SHRB"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tall bush"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"64"
+	thing[@ DEThingDef.Sprite ] =		"SHRB"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tall bush"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[213] = thing; 
 	//41 BBC D5  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"TNK4"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tank 4 spine with organs"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"TNK4"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tank 4 spine with organs"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[214] = thing; 
 	//41 BBC D6   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"TNK5"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tank 5 stumpy the acolyte"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"TNK5"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tank 5 stumpy the acolyte"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[229] = thing; 
 	//41 BBC  E5  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"TNK6"
-	thing[?"Sequence"] =	"ABC"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tank 6 spectre"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"TNK6"
+	thing[@ DEThingDef.Sequence ] =	"ABC"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tank 6 spectre"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[48] = thing; 
 	//41 BBC  30 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"128"
-	thing[?"Sprite"] =		"MONI"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tech pillar"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"128"
+	thing[@ DEThingDef.Sprite ] =		"MONI"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tech pillar"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[68] = thing; 
 	//41 BBC 44  
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"40"
-	thing[?"Sprite"] =		"TRAY"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tray"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"40"
+	thing[@ DEThingDef.Sprite ] =		"TRAY"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tray"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[33] = thing; 
 	//41 BBC 21  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"15"
-	thing[?"Height"] =		"80"
-	thing[?"Sprite"] =		"TRE1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"O"
-	thing[?"Description"] = "Tree stub"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"15"
+	thing[@ DEThingDef.Height ] =		"80"
+	thing[@ DEThingDef.Sprite ] =		"TRE1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"O"
+	thing[@ DEThingDef.Description ] = "Tree stub"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[82] = thing; 
 	//41 BBC 52  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"32"
-	thing[?"Sprite"] =		"BARW"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Wooden barrel"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"32"
+	thing[@ DEThingDef.Sprite ] =		"BARW"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Wooden barrel"
 
 
 
@@ -2165,456 +2165,456 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[96] = thing;
 	//41 BBC  60   
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"4"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"LITB"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Brass fluorescent light"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"4"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"LITB"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Brass fluorescent light"    
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[28] = thing;
 	//41 BBC  1C   
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"3"    
-	thing[?"Sprite"] =		"CAGE"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		"^"    
-	thing[?"Description"] = "Cage light"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"3"    
+	thing[@ DEThingDef.Sprite ] =		"CAGE"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		"^"    
+	thing[@ DEThingDef.Description ] = "Cage light"    
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[34] = thing;
 	//41 BBC 22    
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"CNDL"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Candle"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"CNDL"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Candle"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[109] = thing;
 	//41 BBC 6D    
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"93"
-	thing[?"Sprite"] =		"CHAN"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"^"
-	thing[?"Description"] = "Ceiling chain"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"93"
+	thing[@ DEThingDef.Sprite ] =		"CHAN"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"^"
+	thing[@ DEThingDef.Description ] = "Ceiling chain"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[53] = thing;
 	//41 BBC 35    
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"1"
-	thing[?"Sprite"] =		"CDRP"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		"^"
-	thing[?"Description"] = "Ceiling water drip"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"1"
+	thing[@ DEThingDef.Sprite ] =		"CDRP"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		"^"
+	thing[@ DEThingDef.Description ] = "Ceiling water drip"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[21] = thing;
 	//41 BBC 15    
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"AGRD"
-	thing[?"Sequence"] =	"NKL"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Dead acolyte (disappears)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"AGRD"
+	thing[@ DEThingDef.Sequence ] =	"NKL"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Dead acolyte (disappears)"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[22] = thing;
 	//41 BBC 16    
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ROB2"
-	thing[?"Sequence"] =	"OP"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Dead crusader"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ROB2"
+	thing[@ DEThingDef.Sequence ] =	"OP"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Dead crusader"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[18] = thing;
 	//41 BBC 12    
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PEAS"
-	thing[?"Sequence"] =	"NUV"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Dead peasant (disappears)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PEAS"
+	thing[@ DEThingDef.Sequence ] =	"NUV"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Dead peasant (disappears)"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[15] = thing;
 	//41 BBC F
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"PH"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Dead player (disappears)"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"PH"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Dead player (disappears)"
 
-	thing = ds_map_create(); 
+	thing = []; 
 	DEThingType				[20] = thing;
 	//41 BBC 14    
-	thing[?"Version"] =		"C1"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ROB1"
-	thing[?"Sequence"] =	"R"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Dead reaver"
+	thing[@ DEThingDef.Version ] =		"C1"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ROB1"
+	thing[@ DEThingDef.Sequence ] =	"R"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Dead reaver"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[19] = thing;
 	//41 BBC 13   
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"HMN1"    
-	thing[?"Sequence"] =	"N"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Dead rebel"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"HMN1"    
+	thing[@ DEThingDef.Sequence ] =	"N"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Dead rebel"    
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[103] = thing;
 	//41 BBC  67  
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"DRIP"    
-	thing[?"Sequence"] =	"ABCDEFGH"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Floor water drip"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"DRIP"    
+	thing[@ DEThingDef.Sequence ] =	"ABCDEFGH"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Floor water drip"    
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[97] = thing;
 	//41 BBC  61  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"4"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"LITG"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Gold fluorescent light"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"4"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"LITG"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Gold fluorescent light"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[24] = thing;
 	//41 BBC 18   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"KLAX"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"^"
-	thing[?"Description"] = "Klaxon warning light"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"KLAX"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"^"
+	thing[@ DEThingDef.Description ] = "Klaxon warning light"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[190] = thing;
 	//41 BBC BE   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"POT1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Metal pot"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"POT1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Metal pot"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[164] = thing;
 	//41 BBC A4   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"MUGG"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Mug"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"MUGG"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Mug"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[217] = thing;
 	//41 BBC D9   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"BOTR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rebel boots"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"BOTR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rebel boots"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[218] = thing;
 	//41 BBC DA   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"HATR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rebel helmet"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"HATR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rebel helmet"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[219] = thing;
 	//41 BBC DB   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TOPR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rebel shirt"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TOPR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rebel shirt"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[99] = thing;
 	//41 BBC 63   
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ROK1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rock 1"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ROK1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rock 1"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[100] = thing;
 	//41 BBC 64   
-	thing[?"Version"] =		"D1"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"ROK2"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Rock 2"    
+	thing[@ DEThingDef.Version ] =		"D1"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"ROK2"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Rock 2"    
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[101] = thing;
 	//41 BBC 65   
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"ROK3"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Rock 3"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"ROK3"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Rock 3"    
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[102] = thing;
 	//41 BBC  66  
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"ROK4"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rock 4"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"ROK4"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rock 4"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[29] = thing;
 	//41 BBC  1D  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 1"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 1"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[30] = thing;
 	//41 BBC 1E   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB2"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 2"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB2"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 2"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[31] = thing;
 	//41 BBC 1F   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB3"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 3"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB3"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 3"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[32] = thing;
 	//41 BBC 20   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB4"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 4"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB4"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 4"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[36] = thing;
 	//41 BBC 24   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB5"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 5"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB5"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 5"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[37] = thing;
 	//41 BBC 25   
-	thing[?"Version"] =		"D1"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB6"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 6"
+	thing[@ DEThingDef.Version ] =		"D1"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB6"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 6"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[41] = thing;
 	//41 BBC 29   
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RUB7"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Rubble 7"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RUB7"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Rubble 7"
 
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[42] = thing;
 	//41 BBC 2A 
-	thing[?"Version"] =		"D1"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"RUB8"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Rubble 8"    
+	thing[@ DEThingDef.Version ] =		"D1"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"RUB8"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Rubble 8"    
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[212] = thing;
 	//41 BBC D4 
-	thing[?"Version"] =		"C"    
-	thing[?"Radius"] =		"20"    
-	thing[?"Height"] =		"16"    
-	thing[?"Sprite"] =		"SACR"    
-	thing[?"Sequence"] =	"A"    
-	thing[?"Class"] =		""    
-	thing[?"Description"] = "Sacrificed guy"    
+	thing[@ DEThingDef.Version ] =		"C"    
+	thing[@ DEThingDef.Radius ] =		"20"    
+	thing[@ DEThingDef.Height ] =		"16"    
+	thing[@ DEThingDef.Sprite ] =		"SACR"    
+	thing[@ DEThingDef.Sequence ] =	"A"    
+	thing[@ DEThingDef.Class ] =		""    
+	thing[@ DEThingDef.Description ] = "Sacrificed guy"    
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[216] = thing;
 	//41 BBC D8 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"24"
-	thing[?"Height"] =		"96"
-	thing[?"Sprite"] =		"SBAN"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Sigil banner"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"24"
+	thing[@ DEThingDef.Height ] =		"96"
+	thing[@ DEThingDef.Sprite ] =		"SBAN"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Sigil banner"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[95] = thing;
 	//41 BBC  5F
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"4"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"LITS"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Silver fluorescent light"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"4"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"LITS"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Silver fluorescent light"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[107] = thing;
 	//41 BBC  6B
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"0"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TRCH"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Small torch (lit)"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"0"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TRCH"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Small torch (lit)"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[108] = thing;
 	//41 BBC 6C 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"0"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TRHO"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Small torch (unlit)"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"0"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TRHO"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Small torch (unlit)"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[215] = thing;
 	//41 BBC D7 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"LOGG"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Stick in water"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"LOGG"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Stick in water"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[191] = thing;
 	//41 BBC BF 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TUB1"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Tub"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TUB1"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Tub"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[2014] = thing;
 	//41 BBC 7DE
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"WATR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Water bottle"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"WATR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Water bottle"
   
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[112] = thing;
 	//41 BBC 70 
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"WTFT"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Water fountain"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"WTFT"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Water fountain"
 
-	thing = ds_map_create();   
+	thing = [];   
 	DEThingType				[104] = thing;
 	//41 BBC 68 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"SPLH"
-	thing[?"Sequence"] =	"ABCDEFGH"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Waterfall splash"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"SPLH"
+	thing[@ DEThingDef.Sequence ] =	"ABCDEFGH"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Waterfall splash"
 
 
 	/****************************************************************************/
@@ -2623,203 +2623,203 @@ function DE_thingTypesStrife() {
 	/*																			*/
 	/****************************************************************************/
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[11] = thing; 
 	//41 BBC  B   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"none"
-	thing[?"Sequence"] =	"-"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Deathmatch start"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"none"
+	thing[@ DEThingDef.Sequence ] =	"-"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Deathmatch start"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[1] = thing; 
 	//41 BBC  1   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Player 1 start"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Player 1 start"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[2] = thing; 
 	//41 BBC 2   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Player 2 start"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Player 2 start"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[3] = thing; 
 	//41 BBC 3   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Player 3 start"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Player 3 start"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[4] = thing; 
 	//41 BBC 4   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Player 4 start"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Player 4 start"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[208] = thing; 
 	//41 BBC D0  
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"72"
-	thing[?"Sprite"] =		"HOGN"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"O*"
-	thing[?"Description"] = "Practice target"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"72"
+	thing[@ DEThingDef.Sprite ] =		"HOGN"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"O*"
+	thing[@ DEThingDef.Description ] = "Practice target"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[85] = thing; 
 	//41 BBC 55  
-	thing[?"Version"] =		"C"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RATT"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		"M"
-	thing[?"Description"] = "Rat buddy"
+	thing[@ DEThingDef.Version ] =		"C"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RATT"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		"M"
+	thing[@ DEThingDef.Description ] = "Rat buddy"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[14] = thing; 
 	//41 BBC E   
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"none1"
-	thing[?"Sequence"] =	"-"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Teleport landing"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"none1"
+	thing[@ DEThingDef.Sequence ] =	"-"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Teleport landing"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[23] = thing; 
 	//41 BBC  17 
-	thing[?"Version"] =		"D"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"TELP"
-	thing[?"Sequence"] =	"ABCD"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Teleport swirl"
+	thing[@ DEThingDef.Version ] =		"D"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"TELP"
+	thing[@ DEThingDef.Sequence ] =	"ABCD"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Teleport swirl"
 
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[7970] = thing; 
 	//41 BBC  1F22
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"10"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"RELB"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Blue chalice"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"10"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"RELB"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Blue chalice"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[5130] = thing; 
 	//41 BBC 140A 
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLGB"
-	thing[?"Sequence"] =	"AAA"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Blue flag spot"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLGB"
+	thing[@ DEThingDef.Sequence ] =	"AAA"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Blue flag spot"
     
-	thing = ds_map_create();
+	thing = [];
 	DEThingType				[7968] = thing; 
 	//41 BBC 1F20
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLGB"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Blue talisman"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLGB"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Blue talisman"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[7967] = thing; 
 	//41 BBC 1F1F
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLGG"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Green talisman"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLGG"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Green talisman"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[7975] = thing; 
 	//41 BBC 1F27
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"20"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"none1"
-	thing[?"Sequence"] =	"-"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Ore spawner"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"20"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"none1"
+	thing[@ DEThingDef.Sequence ] =	"-"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Ore spawner"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[5131] = thing; 
 	//41 BBC 140B
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLGR"
-	thing[?"Sequence"] =	"AAA"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Red flag spot"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLGR"
+	thing[@ DEThingDef.Sequence ] =	"AAA"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Red flag spot"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[7966] = thing; 
 	//41 BBC 1F1E
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"16"
-	thing[?"Height"] =		"16"
-	thing[?"Sprite"] =		"FLGR"
-	thing[?"Sequence"] =	"A"
-	thing[?"Class"] =		"P"
-	thing[?"Description"] = "Red talisman"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"16"
+	thing[@ DEThingDef.Height ] =		"16"
+	thing[@ DEThingDef.Sprite ] =		"FLGR"
+	thing[@ DEThingDef.Sequence ] =	"A"
+	thing[@ DEThingDef.Class ] =		"P"
+	thing[@ DEThingDef.Description ] = "Red talisman"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[5080] = thing; 
 	//41 BBC 1F1E 13D8
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Team Blue start"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Team Blue start"
    
-	thing = ds_map_create();    
+	thing = [];    
 	DEThingType				[5081] = thing; 
 	//41 BBC 1F1E 13D9
-	thing[?"Version"] =		"V"
-	thing[?"Radius"] =		"18"
-	thing[?"Height"] =		"56"
-	thing[?"Sprite"] =		"PLAY"
-	thing[?"Sequence"] =	"A+"
-	thing[?"Class"] =		""
-	thing[?"Description"] = "Team Red start"
+	thing[@ DEThingDef.Version ] =		"V"
+	thing[@ DEThingDef.Radius ] =		"18"
+	thing[@ DEThingDef.Height ] =		"56"
+	thing[@ DEThingDef.Sprite ] =		"PLAY"
+	thing[@ DEThingDef.Sequence ] =	"A+"
+	thing[@ DEThingDef.Class ] =		""
+	thing[@ DEThingDef.Description ] = "Team Red start"
 
 
 

@@ -23,6 +23,8 @@ globalvar u_fogColorG;u_fogColorG=shader_get_uniform(shd_GLSSect,"u_fogColor");
 globalvar u_fogMinDistG;u_fogMinDistG=shader_get_uniform(shd_GLSSect,"u_fogMinDist");
 globalvar u_fogMaxDistG;u_fogMaxDistG=shader_get_uniform(shd_GLSSect,"u_fogMaxDist");
 
+globalvar u_hightlight; u_hightlight=shader_get_uniform(shd_GLSSect,"u_hightlight");
+
 globalvar u_sectBotOff;u_sectBotOff=shader_get_uniform(shd_GLSSect,"u_sectBotOff");
 globalvar u_sectTopOff;u_sectTopOff=shader_get_uniform(shd_GLSSect,"u_sectTopOff");
 

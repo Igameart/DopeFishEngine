@@ -72,12 +72,13 @@ function DE_getThings(level, lump) {
 		mponly = (FLAGS&(1<<4)!=0);
 	
 		var __thing = DEThingType[TYPE];
-		if __thing[@ DEThingDef.Description ] == "Player 1 start"
-		with DEcam{
-			x = X;
-			y = Z;
-			yaw = ANGLE;
-			direction = yaw;
+		if ( __thing[@ DEThingDef.Description ] == "Player 1 start" ){
+			with DEcam{
+				x = X;
+				y = Z;
+				yaw = ANGLE;
+				direction = ANGLE;
+			}
 		}
 	
 		var addThing = false;
@@ -88,7 +89,7 @@ function DE_getThings(level, lump) {
 		if (mponly && !DENetPlay) addThing = false;
 	
 		if addThing == true{
-			var _3Dspr = instance_create_depth(X,Z,0,DEEntity_obj);
+			var _3Dspr = instance_create_depth(X,Z,0,DEActor_obj);
 			with _3Dspr{
 				entDirection = ANGLE;
 				thingType = TYPE;

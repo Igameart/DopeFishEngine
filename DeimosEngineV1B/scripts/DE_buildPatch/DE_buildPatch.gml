@@ -1,15 +1,13 @@
-function DE_buildPatch() {
+function DE_buildPatch(patch) {
 
-	var patch = argument[0];
-
-	var patch_width = ds_map_find_value_fixed(patch,"width");
-	var patch_height = ds_map_find_value_fixed(patch,"height");
+	var patch_width = ds_map_find_value(patch,"width");
+	var patch_height = ds_map_find_value(patch,"height");
 	var xOffset = ds_map_find_value_fixed(patch,"o_left");
 	var yOffset = ds_map_find_value_fixed(patch,"o_top");
 	var data = ds_map_find_value_fixed(patch,"data");
 
 	//ds_map_print(patch);
-
+	if patch_width == undefined || patch_height == undefined return undefined
 	var surf=surface_create(patch_width,patch_height);
 
 	surface_set_target(surf);
