@@ -1,0 +1,80 @@
+Converting GML script: ${project_dir}\scripts\render_all_frames\render_all_frames.gml
+Converted description /// @description  Renders the no_frames next frames
+
+Converting GML script: ${project_dir}\scripts\create_all_frames\create_all_frames.gml
+Converted description /// @description  Create all frames
+
+Converting GML script: ${project_dir}\scripts\set_generator\set_generator.gml
+Converted description /// @description  This script sets the particle generator for the current display
+
+Converting GML script: ${project_dir}\scripts\pbb_vertex_format\pbb_vertex_format.gml
+Converted description /// @description  Create the vertex format used by the shader-based billboard system
+
+Converting GML script: ${project_dir}\scripts\pbb_add_billboard\pbb_add_billboard.gml
+Converted description /// @description  Add a single billboard to the given vertex buffer
+
+Converting GML script: ${project_dir}\scripts\pbb_create_frames\pbb_create_frames.gml
+Converted description /// @description  This script creates the surface that contains the frames
+
+Converting GML script: ${project_dir}\scripts\pbb_render_frames\pbb_render_frames.gml
+Converted description /// @description  Render no_frames next frames using the shader version
+
+Converting GML script: ${project_dir}\scripts\pbb_resize_frames\pbb_resize_frames.gml
+Converted description /// @description  This script resizes the size of and number of frames generated
+
+Converting GML script: ${project_dir}\objects\obj_generator\Create_0.gml
+Converted description /// @description  Create array of surfaces
+
+Converting GML script: ${project_dir}\objects\obj_generator\Destroy_0.gml
+Converted description /// @description  Free all surfaces
+
+Converting GML script: ${project_dir}\objects\obj_generator\Alarm_0.gml
+Converted description /// @description  Update particle system
+
+Converting GML script: ${project_dir}\objects\obj_generator\Step_0.gml
+Converted description /// @description  Update current frame
+
+Converting GML script: ${project_dir}\objects\obj_display\Create_0.gml
+Converted description /// @description  Initial settings
+
+Converting GML script: ${project_dir}\objects\obj_display\Draw_0.gml
+Converted description /// @description  Draw the right surface
+
+Converting GML script: ${project_dir}\objects\obj_multidisplay\Create_0.gml
+Converted description /// @description  Initial settings
+
+Converting GML script: ${project_dir}\objects\obj_multidisplay\Draw_0.gml
+Converted description /// @description  Draw all surfaces
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Create_0.gml
+Converted description /// @description  Initialize variables & resources
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Destroy_0.gml
+Converted description /// @description  Free surfaces
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Alarm_0.gml
+Converted description /// @description  Update particle system
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Step_2.gml
+Converted description /// @description  Update current frame
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Step_1.gml
+Converted description /// @description  Pre-update debug stuff
+
+Converting GML script: ${project_dir}\objects\obj_pbb_gen_disp\Draw_0.gml
+Converted description /// @description  Draw billboards
+
+Added compatibility script 'action/action_kill_object.gml'
+Added compatibility script 'd3d/d3d_draw_wall.gml'
+Added compatibility script 'd3d/d3d_primitive_begin_texture.gml'
+Added compatibility script 'd3d/d3d_primitive_end.gml'
+Added compatibility script 'd3d/d3d_set_projection_ortho.gml'
+Added compatibility script 'd3d/d3d_set_zwriteenable.gml'
+Added compatibility script 'd3d/d3d_transform_add_rotation_z.gml'
+Added compatibility script 'd3d/d3d_transform_add_translation.gml'
+Added compatibility script 'd3d/d3d_transform_set_identity.gml'
+Added compatibility script 'd3d/d3d_transform_set_rotation_z.gml'
+Added compatibility script 'd3d/d3d_transform_set_translation.gml'
+Added compatibility script 'd3d/d3d_transform_stack_pop.gml'
+Added compatibility script 'd3d/d3d_transform_stack_push.gml'
+Added compatibility script 'd3d/d3d_vertex_normal_texture.gml'
