@@ -1,13 +1,13 @@
 /// @description DE_getSectorFromSSect(GLSSECT)
 /// @param GLSSECT
 function DE_getSectorFromSSect(argument0) {
-	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var lines = mapLinedefs;//ds_map_find_value_fixed(wadlevel,"linedefs");
+	var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
 
 	if wadGLVersion !=-1{
-		var glsegs = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
+		var glsegs = mapGLSegs;//ds_map_find_value_fixed(wadlevel,"glsegs");
 
-		var gssect = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");
+		var gssect = mapGLSSects;//ds_map_find_value_fixed(wadlevel,"glssects");
 
 		var polygon = ds_list_find_value_fixed(gssect,argument0);
 
@@ -40,8 +40,8 @@ function DE_getSectorFromSSect(argument0) {
 		}
 	}else{
 	
-		var segs = mapSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
-		var ssect = mapSSectors;//ds_map_find_value_fixed(wad_levels,"glssects");
+		var segs = mapSegs;//ds_map_find_value_fixed(wadlevel,"glsegs");
+		var ssect = mapSSectors;//ds_map_find_value_fixed(wadlevel,"glssects");
 
 		var polygon = ds_list_find_value_fixed(ssect,argument0);
 

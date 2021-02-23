@@ -4,7 +4,7 @@ function DE_preload_patches() {
 	globalvar pload_pat;
 	pload_pat=ds_map_build();
 
-	var sides = ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var sides = ds_map_find_value_fixed(wadlevel,"sidedefs");
 
 	for (k=0;k<ds_list_size(sides);k++) {
 	    side = ds_list_find_value(sides,k);

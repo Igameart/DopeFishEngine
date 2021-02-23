@@ -123,8 +123,8 @@ function DE_getLevel(level) {
 	        trace("NOTICE: Found Level at Lump["+string(l)+"]: "+ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l),"name"));
 	        curl=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,l),"name");
 			trace("Retrieved Level:",curl,level);
-	        ds_map_add(wad_levels,"name",curl);
-	        ds_map_add(wad_levels,"lump",l);
+	        ds_map_add(wadlevel,"name",curl);
+	        ds_map_add(wadlevel,"lump",l);
         
 	        continue;
 	    }

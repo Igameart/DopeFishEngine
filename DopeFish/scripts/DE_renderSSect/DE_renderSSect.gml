@@ -1,6 +1,6 @@
 function DE_renderSSect( __ssec ) {
 
-	var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
+	var sects = mapSectors;//ds_map_find_value_fixed(wadlevel,"sectors");
 	
 	var ssect = ds_list_find_value_fixed(mapGLSSects,__ssec);
 

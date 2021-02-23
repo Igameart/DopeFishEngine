@@ -50,10 +50,10 @@ function DE_switchRetrieveDoorSectors() {
 		
 		var linedef=ds_list_find_value(mapLinedefs,line);
 	
-		var Sect=ds_map_find_value(linedef,"bsect");
+		var Sect=linedef.bsect;
 	
 		var secNum = Sect;
-		Sect = secs[|Sect]
+		Sect = secs[| Sect ];
 		
 		var dCheck = mapDoors[? secNum ]
 		

@@ -1,7 +1,7 @@
 /// @description DE_preload_flats();
 function DE_preload_flats() {
 
-	var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
 
 	for (var j = 0; j<ds_list_size(sects); j++ ){
     

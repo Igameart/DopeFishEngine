@@ -1,10 +1,10 @@
 function DE_renderLinedef() {
 	var j = argument[0];
 
-	var lines = ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+	var lines = ds_map_find_value_fixed(wadlevel,"linedefs");
+	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
 
-	var sides = ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var sides = ds_map_find_value_fixed(wadlevel,"sidedefs");
 	var side = ds_list_find_value_fixed(sides,j);
 
 	var l = ds_map_find_value_fixed(side,"linedef");
@@ -62,11 +62,11 @@ function DE_renderLinedef() {
     
 	shader_set_uniform_f(u_upTopOff,crushing);
     
-	var val=ds_map_find_value_fixed(flags,"peg_lower");
+	var val=ds_map_find_value_fixed(flags,"peglower");
 	if is_real(val)
 	shader_set_uniform_f(u_LowPeg,val);
     
-	val=ds_map_find_value_fixed(flags,"peg_upper");
+	val=ds_map_find_value_fixed(flags,"pegupper");
 	if is_real(val)
 	shader_set_uniform_f(u_UpPeg,val);
     

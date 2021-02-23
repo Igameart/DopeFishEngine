@@ -4,7 +4,7 @@ function DE_buildLevel(argument0) {
 	//he3d.log("DEBUG","Level Vertexes: ",
 	//this.wad.levels[level].vertexes.length+this.wad.levels[level].glverts.length);
 
-	var map=ds_map_find_value_fixed(wad_levels,level);
+	var map=ds_map_find_value_fixed(wadlevel,level);
 
 	globalvar worldbb;
 	worldbb[0]=null;
@@ -40,10 +40,10 @@ function DE_buildLevel(argument0) {
 	ds_map_add(data,"brightness",ds_list_build());
 	ds_map_add(data,"i",0);
 
-	//ds_map_add(wad_levels,"glnodes",glnodes);
-	show_debug_message("DEBUG: Building Nodes. Total: "+string(ds_list_size(ds_map_find_value_fixed(wad_levels,"glnodes"))));
+	//ds_map_add(wadlevel,"glnodes",glnodes);
+	show_debug_message("DEBUG: Building Nodes. Total: "+string(ds_list_size(ds_map_find_value_fixed(wadlevel,"glnodes"))));
 
-	map_glnodes=ds_map_find_value_fixed(wad_levels,"glnodes");
+	map_glnodes=ds_map_find_value_fixed(wadlevel,"glnodes");
 
 	var node,bsplines=ds_list_build(),bspidx=ds_list_build(),bspi=0;
 	for(var n=0;n<ds_list_size(map_glnodes);n+=1){
@@ -65,7 +65,7 @@ function DE_buildLevel(argument0) {
 
 
 	var nodes=map_glnodes;
-	var sectors=ds_map_find_value_fixed(wad_levels,"sectors");
+	var sectors=ds_map_find_value_fixed(wadlevel,"sectors");
 	/*
 	spawnPos=[0,0,0];
 	spawnDir=0;

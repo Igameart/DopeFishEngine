@@ -8,7 +8,7 @@ function DE_renderSubmit() {
 
 	var ssects;
 	if wadGLVersion !=-1{
-		ssects = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");
+		ssects = mapGLSSects;//ds_map_find_value_fixed(wadlevel,"glssects");
 	}else{
 		ssects = mapSSectors;
 	}

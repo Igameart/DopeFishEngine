@@ -12,14 +12,14 @@ function DE_getGLNodes(argument0, argument1) {
 	var len=pos+size;
 
 	while(buffer_tell(wadbuff)<len){
-		var glnode=ds_map_build();
+		var glnode=new glnodetype;
 
 		var C_R,C_L;
 	
-		ds_map_add(glnode,"x",buffer_read(wadbuff,buffer_s16));
-		ds_map_add(glnode,"y",-buffer_read(wadbuff,buffer_s16));
-		ds_map_add(glnode,"dx",buffer_read(wadbuff,buffer_s16));
-		ds_map_add(glnode,"dy",-buffer_read(wadbuff,buffer_s16));
+		glnode.x	= buffer_read(wadbuff,buffer_s16);
+		glnode.y	= -buffer_read(wadbuff,buffer_s16);
+		glnode.dx	= buffer_read(wadbuff,buffer_s16);
+		glnode.dy	= -buffer_read(wadbuff,buffer_s16);
 	
 		var list1=ds_list_build();
 		ds_list_add(list1,-buffer_read(wadbuff,buffer_s16));
@@ -34,7 +34,7 @@ function DE_getGLNodes(argument0, argument1) {
 		ds_list_add(list2,buffer_read(wadbuff,buffer_s16));
 	
 	
-		ds_map_add(glnode,"bbox",[list1,list2]);
+		glnode.bbox = [list1,list2];
 
 		//var crSSect,clSSect;
 	
@@ -53,7 +53,7 @@ function DE_getGLNodes(argument0, argument1) {
 			CHILD_SUBSEC_MASK = ((1 << 15) - 1);
 		}
 
-		glnode[?"children"] = [C_R,C_L];
+		glnode.children = [C_R,C_L];
 
 		ds_list_add(mapGLNodes,glnode);
 

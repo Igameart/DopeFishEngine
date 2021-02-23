@@ -1,6 +1,6 @@
 function DE_getReject(level, lump) {
 
-	ds_map_add(wad_levels,"reject",mapReject);
+	ds_map_add(wadlevel,"reject",mapReject);
 	
 	var __LDat = ds_list_find_value_fixed(wadDirectory,lump);
 
@@ -42,7 +42,7 @@ function DE_checkReject( __Sect1, __Sect2 ){
 
 function DE_getGLPVIS(level, lump) {
 
-	ds_map_add(wad_levels,"gl_pvis",mapPVIS);
+	ds_map_add(wadlevel,"gl_pvis",mapPVIS);
 	
 	var __LDat = ds_list_find_value_fixed(wadDirectory,lump);
 

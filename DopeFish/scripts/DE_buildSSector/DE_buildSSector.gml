@@ -49,7 +49,7 @@ function DE_buildSSector(argument0) {
 	var sects = mapSectors;
 	var verts = mapVertexes;
 	var ssect = mapSSectors;
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
 
 	ssector = ds_list_find_value_fixed(ssect,argument0);
 

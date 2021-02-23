@@ -4,9 +4,9 @@ function DE_getGLVerts(level, __lump) {
 
 	var glverts=mapGLVerts;
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos=ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size=ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -21,15 +21,16 @@ function DE_getGLVerts(level, __lump) {
 
 		num=0;
 		while(buffer_tell(wadbuff)<len){
-		    var glvert=ds_map_build();
+		    var glvert = new glverttype;
+			
 		    if(wadGLVersion>1){
-		        ds_map_add(glvert,"xm",(buffer_read(wadbuff,buffer_s16)));
-		        ds_map_add(glvert,"x",(buffer_read(wadbuff,buffer_s16)));
-		        ds_map_add(glvert,"ym",-(buffer_read(wadbuff,buffer_s16)));
-		        ds_map_add(glvert,"y",-(buffer_read(wadbuff,buffer_s16)));
+		        glvert.xm=(buffer_read(wadbuff,buffer_s16));
+		        glvert.x=(buffer_read(wadbuff,buffer_s16));
+		        glvert.ym=-(buffer_read(wadbuff,buffer_s16));
+		        glvert.y=-(buffer_read(wadbuff,buffer_s16));
 		    }else{
-		        ds_map_add(glvert,"x",(buffer_read(wadbuff,buffer_s16)));
-		        ds_map_add(glvert,"y",-(buffer_read(wadbuff,buffer_s16)));
+		        glvert.x = (buffer_read(wadbuff,buffer_s16));
+		        glvert.y = -(buffer_read(wadbuff,buffer_s16));
 		    }
     
 		    ds_list_add(glverts,glvert);

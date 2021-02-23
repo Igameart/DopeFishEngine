@@ -23,7 +23,7 @@ function DE_getSsectors(argument0, argument1) {
 
 	}
 
-	//show_debug_message("NOTICE: ["+level+"] SSECTORS "+string( ds_list_size(ds_map_find_value_fixed(wad_levels,"ssectors")) ));
+	//show_debug_message("NOTICE: ["+level+"] SSECTORS "+string( ds_list_size(ds_map_find_value_fixed(wadlevel,"ssectors")) ));
 
 
 

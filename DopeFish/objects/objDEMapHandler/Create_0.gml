@@ -43,7 +43,7 @@ Msect=-1;
 Mssect=-1;
 secZ=0;
 
-//var things=ds_map_find_value_fixed(wad_levels,"things");
+//var things=ds_map_find_value_fixed(wadlevel,"things");
 //things=ds_list_find_value(things,0);
 
 //x=ds_map_find_value(things,"x");
@@ -63,7 +63,7 @@ cMsect=DE_findSectorAt(x,y,Msect);
 
 if cMsect!=Msect{
     if !is_undefined(cMsect){
-        var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+        var sects = ds_map_find_value_fixed(wadlevel,"sectors");
         z=ds_map_find_value_fixed(ds_list_find_value_fixed(sects,cMsect),"floor");
     }
 };

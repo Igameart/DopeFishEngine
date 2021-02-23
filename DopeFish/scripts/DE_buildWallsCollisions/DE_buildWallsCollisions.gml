@@ -5,10 +5,10 @@
 /// @param color
 function DE_buildWallsCollisions() {
 
-	var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
-	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
-	var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
+	var verts = mapVertexes;//ds_map_find_value_fixed(wadlevel,"vertexes");
+	var lines = mapLinedefs;//ds_map_find_value_fixed(wadlevel,"linedefs");
+	var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
+	var sects = mapSectors;//ds_map_find_value_fixed(wadlevel,"sectors");
 
 	for (var k=0; k<ds_list_size(lines);k++) {
 
@@ -17,8 +17,8 @@ function DE_buildWallsCollisions() {
 		//ds_map_print(linedef);
     
 	    var flags=ds_map_find_value_fixed(linedef,"flags");
-	    var u_peg=ds_map_find_value_fixed(flags,"peg_upper");
-	    var l_peg=ds_map_find_value_fixed(flags,"peg_lower");
+	    var u_peg=ds_map_find_value_fixed(flags,"pegupper");
+	    var l_peg=ds_map_find_value_fixed(flags,"peglower");
     
 	    var dub  =ds_map_find_value_fixed(flags,"twosided");
 	    var sld  =ds_map_find_value_fixed(flags,"block_all");

@@ -1,10 +1,10 @@
 function DE_addWall() {
 	//DE_addWall=function(data,map,front,back,start,end_,flags){
 	/*
-	var sides=ds_map_find_value_fixed(wad_levels,"sidedefs");
-	var verts=ds_map_find_value_fixed(wad_levels,"vertexes");
-	var glverts=ds_map_find_value_fixed(wad_levels,"glverts");
-	var sects=ds_map_find_value_fixed(wad_levels,"sectors");
+	var sides=ds_map_find_value_fixed(wadlevel,"sidedefs");
+	var verts=ds_map_find_value_fixed(wadlevel,"vertexes");
+	var glverts=ds_map_find_value_fixed(wadlevel,"glverts");
+	var sects=ds_map_find_value_fixed(wadlevel,"sectors");
 
 	data=argument0;
 	map=argument1;
@@ -182,7 +182,7 @@ function DE_addWall() {
 
 	var ftex = ds_map_find_value_fixed(textures,ds_map_find_value_fixed(front,"tex_l"));
 
-	if(back&&ds_map_find_value_fixed(flags,"peg_lower")&&height<(ds_map_find_value_fixed(ftex,"height"))*MAP_SCALE){
+	if(back&&ds_map_find_value_fixed(flags,"peglower")&&height<(ds_map_find_value_fixed(ftex,"height"))*MAP_SCALE){
 	var tyoff=0;//(height+floor)+fronty;
 	DE_buildFace(data,front,
 	ceiling,floor_,ceiling,floor_,sv,ev,
@@ -252,7 +252,7 @@ function DE_addWall() {
 
 	var utex = ds_map_find_value_fixed(textures,ds_map_find_value_fixed(front,"tex_u"));
 
-	if(back&&!ds_map_find_value_fixed(flags,"peg_upper")&&
+	if(back&&!ds_map_find_value_fixed(flags,"pegupper")&&
 	height>(ds_map_find_value_fixed(utex,"height")-fronty)*MAP_SCALE){
 	var bottom=ceiling-(ds_map_find_value_fixed(utex,"height"))*MAP_SCALE;
 	DE_buildFace(data,front,
@@ -268,8 +268,8 @@ function DE_addWall() {
 	dir,uvec,width,wchunks);
 	}else{
 	// Typically 'upper' door faces will be lower pegged
-	if(!ds_map_find_value_fixed(flags,"peg_upper"))
-	ds_map_replace(flags,"peg_lower",'lower');
+	if(!ds_map_find_value_fixed(flags,"pegupper"))
+	ds_map_replace(flags,"peglower",'lower');
 
 	DE_buildFace(data,front,
 	ceiling,floor_,ceiling,floor_,sv,ev,

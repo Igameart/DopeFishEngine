@@ -10,21 +10,21 @@ function DE_buildGLSegs() {
 
 	    var glSeg = segs[|k];
 	
-	    var linedef = glSeg[?"linedef"];
+	    var linedef = glSeg.linedef;
 	
 		if linedef == 65535 continue;
 	
-		linedef = lines[|linedef];
+		linedef = lines[| linedef];
     
-	    var flags=ds_map_find_value_fixed(linedef,"flags");
-	    var u_peg=ds_map_find_value_fixed(flags,"peg_upper");
-	    var l_peg=ds_map_find_value_fixed(flags,"peg_lower");
-	    var dub  =ds_map_find_value_fixed(flags,"twosided");
+	    var flags=linedef.flags;
+	    var u_peg=flags.pegupper;
+	    var l_peg=flags.peglower;
+	    var dub  =flags.twosided;
     
 		var startv,endv;
 
-		startv = glSeg[?"start"];
-		endv = glSeg[?"end"];
+		startv = glSeg.startv;
+		endv = glSeg.endv;
 	
 		var vcheck;
 	
@@ -35,43 +35,47 @@ function DE_buildGLSegs() {
 		    startv=startv&~VERT_IS_GL;
 		    vcheck=mapGLVerts;
 		}
-		startv = vcheck[|startv];
+		startv = vcheck[| startv ];
     
 		vcheck=mapVertexes;
 		if(endv&VERT_IS_GL){
 		    endv=endv&~VERT_IS_GL;
 		    vcheck=mapGLVerts;
 		}
-		endv = vcheck[|endv];
+		endv = vcheck[| endv ];
 	
-		sx = startv[?"x"];
-		sy = startv[?"y"];
+		sx = startv.x;
+		sy = startv.y;
 	
-		ex = endv[?"x"];
-		ey = endv[?"y"];
+		ex = endv.x;
+		ey = endv.y;
 	
 		var segOff;
-		if !glSeg[?"side"]{
-			var lVert = linedef[?"start"];
-			lVert = mapVertexes[|lVert];
-			segOff = point_distance(sx,sy,lVert[?"x"],lVert[?"y"]);
+		if !glSeg.side{
+			var lVert = linedef.startv;
+			lVert = mapVertexes[| lVert ];
+			segOff = point_distance(sx,sy,lVert.x,lVert.y);
 		}else{
-			var lVert = linedef[?"end"];
-			lVert = mapVertexes[|lVert];
-			segOff = point_distance(sx,sy,lVert[?"x"],lVert[?"y"]);
+			var lVert = linedef.endv;
+			lVert = mapVertexes[| lVert ];
+			segOff = point_distance(sx,sy,lVert.x,lVert.y);
 		}
     
 		var lSides = ["right","left"];
-		var s = lSides[glSeg[?"side"]];
+		var s = lSides[ glSeg.side ];
 	
 		s = linedef[?s];
 		var side = sides[|s];
-		var sect=side[?"sector"];
-		sect = sects[|sect];
-		var _ceiling = sect[?"ceiling"];
+		var sect=side.sector;
+		sect = sects[| sect ];
+		var _ceiling = sect.ceilingz;
+		var _floor = sect.floorz;
             
-		var bs = lSides[!glSeg[?"side"]];
-		bs = linedef[?bs];	
+		var bs = lSides[ !glSeg.side ];
+		switch bs{
+			case "right": bs = linedef.right; break;
+			case "left":  bs = linedef.left; break;
+		}
 		var back = bs;     
 		
 		/*if back!=-1{
@@ -81,39 +85,41 @@ function DE_buildGLSegs() {
 		} */
 	
 		var bside=ds_list_find_value_fixed(sides,back);
-		var bsect=ds_map_find_value(bside,"sector");
+		
+		var bsect=bside.sector;
+		
 		if bsect != undefined
 			bsect = ds_list_find_value(sects,bsect);
 		if bsect == undefined bsect = -1;
 		
             
-	    var us=side[?"X_"];
-	    var ys=side[?"Y_"];
+	    var us = side.xoff;
+	    var y_offset = side.yoff;
             
-	    var colval = sect[?"lightlevel"];
+	    var shadeTop = sect.ceilingshade * 255;
+		var shadeBot = sect.floorshade * 255;
 			
 		var ang = (point_direction(sx,sy,ex,ey)*2+90)//*2;
-		var fCon = dsin(ang)*32;
-	    var col2=make_colour_hsv(random(255),128*0,colval+fCon);
+		var fCon = dsin(ang)*45;
+		
+	    var segColTop=make_colour_hsv(0,0,shadeTop+fCon);
+	    var segColBot=make_colour_hsv(0,0,shadeBot+fCon);
             
 	    var tcd,tc;
 	    tc=0;
-	    tcd[0]="-";
-	    tcd[1]="-";
-	    tcd[2]="-";
+	    tcd[0]=side.tex_l;
+	    tcd[1]=side.tex_u;
+	    tcd[2]=side.tex_m;
             
-	    if (ds_map_find_value_fixed(side,"tex_l")!="-"){
-	        tcd[0]=ds_map_find_value_fixed(side,"tex_l");
+	    if ((side.tex_l)!="-"){
 	        tc++;
 	    }
             
-	    if (ds_map_find_value_fixed(side,"tex_u")!="-"){
-	        tcd[1]=ds_map_find_value_fixed(side,"tex_u");
+	    if ((side.tex_u)!="-"){
 	        tc++;
 	    }
             
-	    if (ds_map_find_value_fixed(side,"tex_m")!="-"){
-	        tcd[2]=ds_map_find_value_fixed(side,"tex_m");
+	    if ((side.tex_m)!="-"){
 	        tc++;
 	    }
                  
@@ -127,65 +133,72 @@ function DE_buildGLSegs() {
 			
 			var __Empty = true;
 			
-	        var bot = ds_map_find_value_fixed(sect,"floor");
-	        var top = ds_map_find_value_fixed(sect,"ceiling");
+	        var bot = sect.floorz;
+	        var top = sect.ceilingz;
 			
 			//CHRIS: Create a script to check that a texture isn't a currently known sky texture rather than having a hard coded check for F_SKY1
 	        //Let's do the bottom section of the wall first just because
-	        if tcd[0]!="-" && tcd[0]!="F_SKY1"{// and back!=-1{
-	            //trace("Lower wall:"+tcd[0]);
-                    
-	            if back!=-1{
-					bot = ds_map_find_value_fixed(sect,"floor");
-	                //bot = ds_map_find_value_fixed(bsect,"ceiling");
-					top = ds_map_find_value_fixed(bsect,"floor");
-				}
-                    
-	            //if top<=bot{
-	            //    bot=top;
-	            //}
-                    
-	            var tt,t_w,t_h;
-	            tt=ds_map_find_value_fixed(textures,tcd[0]);
-	            t_w=ds_map_find_value_fixed(tt,"width");
-	            t_h=ds_map_find_value_fixed(tt,"height");
-                    
-	            var height=abs(top-bot)/t_h;
-					
-				var v0 = 0;
+	        if tcd[0]!="-" && tcd[0]!="F_SKY1" && back!=-1{
 				
-				//Lower unpegged, push the vertical offset down the height of this wall / texture height
+				bot = sect.floorz;
+				top = bsect.floorz;
+				
+				//var ftz = ds_map_find_value_fixed(sect,"ftexz");
+				//var btz = ds_map_find_value_fixed(bsect,"ftexz");
+                    
+	            var tt,ptexwidth,ptexheight;
+	            tt = ds_map_find_value_fixed( textures, tcd[0] );
+	            ptexwidth = tt.width;
+	            ptexheight = tt.height;
+                    
+	            var height=abs(top-bot)/ptexheight;
+					
+				var ptexbot = y_offset div ptexheight;
+				
+				//Lower unpegged, v position is top / texture height
 				if l_peg{
-					
-					v0 = top/t_h;
-					
+					ptexbot += top div ptexheight;//max(ftz,btz);
+					//col2 = c_yellow;
 				}
-			
-				//repeat abs(ys){
-				//	v0 += sign(ys)/t_h;
+				
+				//ptexbot -= y_offset /ptexheight;
+				
+				//repeat abs(y_offset ){
+				//	ptexbot += sign(y_offset );
 				//}
 				
-				v0 += ys/t_h;
+				//ptexbot = ptexbot div ptexheight;
 					
-	            var v1=v0+height;
+	            var ptextop = ptexbot - height;
+				
 					
-				var u0 = segOff;
+				var ptexleft = segOff;
 					
 				repeat abs(us){
-					u0 += sign(us);
+					ptexleft += sign(us);
 				}
 					
-				u0 = u0/t_w;
-	            var u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
+				ptexleft = ptexleft / ptexwidth;
+	            var ptexright=( ptexleft + point_distance(sx,sy,ex,ey) / ptexwidth );
+				
+				var colBot,colTop;
+				
+				var __ctrans = translate( top, _floor,_ceiling, 0,1);
+				
+				colTop = merge_color(segColBot,segColTop,__ctrans);
+				
+				__ctrans = translate( bot, _floor,_ceiling, 1,0);
+				
+				colBot = merge_color(segColBot,segColTop,__ctrans);
 				
 				__Empty = false;                    
-	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,0,0,0);
-	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
-	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,ptexleft,ptexbot,colBot,1,0,0,0);
+	            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,0,0,1);
+	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,0,0,0);
                     
-	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,0,0,1);
-	            DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,0,0,1);
-	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,0,0,0);
+	            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,0,0,1);
+	            DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,0,0,1);
+	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,0,0,0);
 	            vv+=2;
 	        }
              
@@ -201,43 +214,53 @@ function DE_buildGLSegs() {
 	                top = ds_map_find_value_fixed(sect,"ceiling");
 	                bot = ds_map_find_value_fixed(bsect,"ceiling");
                             
-	                var tt,t_w,t_h;
+	                var tt,ptexwidth,ptexheight;
 	                tt=ds_map_find_value_fixed(textures,tcd[1]);
-	                t_w=ds_map_find_value_fixed(tt,"width");
-	                t_h=ds_map_find_value_fixed(tt,"height");
+	                ptexwidth=ds_map_find_value_fixed(tt,"width");
+	                ptexheight=ds_map_find_value_fixed(tt,"height");
                         
-	                var height=(abs(top-bot))/t_h;
+	                var height=(abs(top-bot))/ptexheight;
                         
-	                var v0 = 0;
+	                var ptextop = 0;
 					
-					repeat abs(ys){
-						v0 += sign(ys);
+					repeat abs(y_offset ){
+						ptextop += sign(y_offset );
 					}
 					
-					v0 = v0/t_h;
+					ptextop = ptextop/ptexheight;
 						
-					v0 -= (abs(_ceiling - bot) / t_h) * !u_peg;
+					ptextop -= (abs(_ceiling - bot) / ptexheight) * !u_peg;
 
-	                var v1=v0+height;
+	                var ptexbot=ptextop+height;
 					
-					var u0 = segOff;
+					var ptexleft = segOff;
 					
 					repeat abs(us){
-						u0 += sign(us);
+						ptexleft += sign(us);
 					}
 					
-					u0 = u0/t_w;
+					ptexleft = ptexleft/ptexwidth;
 						
-	                var u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
+	                var ptexright=(ptexleft+point_distance(sx,sy,ex,ey)/ptexwidth);
+				
+					var colBot,colTop;
+				
+					var __ctrans = translate( top, _floor,_ceiling, 0,1);
+				
+					colTop = merge_color(segColBot,segColTop,__ctrans);
+				
+					__ctrans = translate( bot, _floor,_ceiling, 1,0);
+				
+					colBot = merge_color(segColBot,segColTop,__ctrans);
                         
 					__Empty = false;                                    
-	                DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,1,0,0);
-	                DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
-	                DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+	                DE_vertexSides(buffer,sx,sy,bot,0,0,0,ptexleft,ptexbot,colBot,1,1,0,0);
+	                DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,1,0,1);
+	                DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0);
                         
-	                DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,1,0,1);
-	                DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,1,0,1);
-	                DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,1,0,0);
+	                DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,1,0,1);
+	                DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,1,0,1);
+	                DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0);
 	                vv+=2;
 	                //}
 	            }
@@ -251,12 +274,12 @@ function DE_buildGLSegs() {
 	            bot = ds_map_find_value(sect,"floor");
 				top = ds_map_find_value(sect,"ceiling");
                     
-	            var tt,t_w,t_h;
+	            var tt,ptexwidth,ptexheight;
 	            tt=ds_map_find_value_fixed(textures,tcd[2]);
-	            t_w=ds_map_find_value_fixed(tt,"width");
-	            t_h=ds_map_find_value_fixed(tt,"height");
+	            ptexwidth=ds_map_find_value_fixed(tt,"width");
+	            ptexheight=ds_map_find_value_fixed(tt,"height");
 			
-	            var v0 = 0;
+	            var ptextop = 0;
 			
 				if back!=-1{
 					
@@ -270,72 +293,76 @@ function DE_buildGLSegs() {
 					
 					bot = highest_value(bot,bbot);
 					
-					/*if u_peg{
-						var btop = ds_map_find_value(sect,"ceiling");
-						top = lowest_value(top,btop);
-						bot = top - t_h;
-					}*/
-					//else{
-					if l_peg top -= abs(bot - top) - t_h;
-					//}
+					if l_peg top -= abs(bot - top) - ptexheight;
 					
-					top += ys;
-					ys = 0;
+					top += y_offset ;
+					y_offset  = 0;
 					
 					if ds_map_find_value_fixed(bsect,"wrap middle texture") == 0{
-						bot = max(top-t_h,bot);
+						bot = max(top-ptexheight,bot);
 					}
 				
 				}
-				
-				//if l_peg top -= abs(bot - top) - t_h;
 						
 				var height=abs(top-bot);
 
-				repeat abs(ys){
-					v0 += sign(ys);
+				repeat abs(y_offset ){
+					ptextop += sign(y_offset );
 				}
 				
-				v0 = v0/t_h;
+				ptextop = ptextop/ptexheight;
 					
 				if !dub && l_peg{
 					
-					v0 -= (abs(bot - top) - t_h)/t_h;
+					ptextop -= (abs(bot - top) - ptexheight)/ptexheight;
 					
-					//v0 += (t_h-height*t_h)/t_h;
 				}
 				
 					
-	            v1=v0+height/t_h;
+	            ptexbot=ptextop+height/ptexheight;
 			
 					
-				u0 = segOff;
+				ptexleft = segOff;
 					
 				repeat abs(us){
-					u0 += sign(us);
+					ptexleft += sign(us);
 				}
 					
-				u0 = u0/t_w;
+				ptexleft = ptexleft/ptexwidth;
 							
-	            u1=(u0+point_distance(sx,sy,ex,ey)/t_w);
+	            ptexright=(ptexleft+point_distance(sx,sy,ex,ey)/ptexwidth);
+				
+				var colBot,colTop;
+				
+				var __ctrans = translate( top, _floor,_ceiling, 0,1);
+				
+				colTop = merge_color(segColBot,segColTop,__ctrans);
+				
+				__ctrans = translate( bot, _floor,_ceiling, 1,0);
+				
+				colBot = merge_color(segColBot,segColTop,__ctrans);
         
 				__Empty = false;
-	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,u0,v1,col2,1,-2,1,0);
-	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
-	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+	            DE_vertexSides(buffer,sx,sy,bot,0,0,0,ptexleft,ptexbot,colBot,1,-2,1,0);
+	            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,-2,1,1);
+	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,-2,1,0);
                     
-	            DE_vertexSides(buffer,sx,sy,top,0,0,0,u0,v0,col2,1,-2,1,1);
-	            DE_vertexSides(buffer,ex,ey,top,0,0,0,u1,v0,col2,1,-2,1,1);
-	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,u1,v1,col2,1,-2,1,0);
+	            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,-2,1,1);
+	            DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,-2,1,1);
+	            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,-2,1,0);
 	            vv+=2;
 	        }
 			
 	    vertex_end(buffer);
 		
-		if __Empty == false
+		if __Empty == false{
 			vertex_freeze(buffer);
-	
-	    ds_map_replace(glSeg,"vbuffer",buffer);
+			glSeg.vbuffer = buffer;
+		}
+		else{
+			vertex_delete_buffer(buffer);
+			glSeg.vbuffer = undefined;
+		}
 		
 	    }
 

@@ -82,11 +82,11 @@ function DE_renderGLSeg(j) {
     
 	shader_set_uniform_f(u_upTopOff,crushing);
     
-	var val=ds_map_find_value_fixed(flags,"peg_lower");
+	var val=ds_map_find_value_fixed(flags,"peglower");
 	if is_real(val)
 	shader_set_uniform_f(u_LowPeg,val);
     
-	val=ds_map_find_value_fixed(flags,"peg_upper");
+	val=ds_map_find_value_fixed(flags,"pegupper");
 	if is_real(val)
 	shader_set_uniform_f(u_UpPeg,val);
     

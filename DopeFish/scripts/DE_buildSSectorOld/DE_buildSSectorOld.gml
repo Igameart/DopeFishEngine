@@ -12,12 +12,12 @@ function DE_buildSSectorOld() {
 	var side=argument3;
 	var ss=argument4;
 
-	var glssect=ds_map_find_value_fixed(wad_levels,"glssects");
-	var glsegs=ds_map_find_value_fixed(wad_levels,"glsegs");
-	var glverts=ds_map_find_value_fixed(wad_levels,"glverts");
-	var vertexes=ds_map_find_value_fixed(wad_levels,"vertexes");
-	var linedefs=ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sidedefs=ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var glssect=ds_map_find_value_fixed(wadlevel,"glssects");
+	var glsegs=ds_map_find_value_fixed(wadlevel,"glsegs");
+	var glverts=ds_map_find_value_fixed(wadlevel,"glverts");
+	var vertexes=ds_map_find_value_fixed(wadlevel,"vertexes");
+	var linedefs=ds_map_find_value_fixed(wadlevel,"linedefs");
+	var sidedefs=ds_map_find_value_fixed(wadlevel,"sidedefs");
 
 	var off=ds_map_find_value_fixed(ds_list_find_value_fixed(glssect,ss),"start");
 	var lines=ds_list_build();

@@ -1,7 +1,7 @@
 /// @description DE_findSectorAt(x,y,sector)
 function DE_findSectorAt(argument0, argument1, argument2) {
 
-	var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
 	var secnum;
 	if argument2!=-1{
 	    secnum=argument2;

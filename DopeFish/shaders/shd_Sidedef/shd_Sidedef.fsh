@@ -39,11 +39,11 @@ float computeLightCorrection()
    
 	// Compute linear fog equation
    factor = (u_fogMaxDist/8.0 - (v_vPosition.z)) /
-            (u_fogMaxDist/8.0 + u_fogMaxDist/16.0);
+            (u_fogMaxDist/8.0);
    
 	// Clamp in the [0,1] range
 	factor = clamp( factor, 0.0, 1.0 );
-	factor = floor(factor*16.0+0.5)/16.0;
+	factor = floor(factor*8.0+0.5)/8.0;
 	return factor;            
 }
 

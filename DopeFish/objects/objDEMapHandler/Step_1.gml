@@ -14,7 +14,7 @@ Mssect	= DE_findSubSectorAt( x, y );
 
 if cMsect!=Msect{
     if !is_undefined(cMsect){
-        var sects = ds_map_find_value_fixed(wad_levels,"sectors");
+        var sects = ds_map_find_value_fixed(wadlevel,"sectors");
         secZ=ds_map_find_value_fixed(ds_list_find_value_fixed(sects,cMsect),"floor");
         Msect=cMsect;
     }
