@@ -4,7 +4,7 @@ function DE_getBlockmap( level, lump ) {
 
 	var len = ds_list_find_value_fixed(wadDirectory,lump).filepos + ds_list_find_value_fixed(wadDirectory,lump).size;
 
-	var blockmap = new blocktype;
+	var blockmap = struct_copy(blocktype);
 	var offsets = ds_list_build();
 	wadlevel.blockmap = blockmap;
 

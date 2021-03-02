@@ -5,9 +5,9 @@ function DE_getSectors(argument0, argument1) {
 	//mapSectors = sectors;
 
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -15,14 +15,18 @@ function DE_getSectors(argument0, argument1) {
 	var l = 0;
 	while(buffer_tell(wadbuff)<len){
 	
-		var sector = new sectortype;
+		var sector = struct_copy(sectortype);
 		sector.floorz			= buffer_read(wadbuff,buffer_s16);
 		sector.ceilingz			= buffer_read(wadbuff,buffer_s16);
+		
+		
 		sector.floorpicnum		= string_upper(buffer_read_string(wadbuff,8));
 		sector.ceilingpicnum	= string_upper(buffer_read_string(wadbuff,8));
 		var _light				= buffer_read(wadbuff,buffer_u16);
 		sector.ceilingshade		= _light;
 		sector.floorshade		= _light;
+		
+		
 		sector.specialtype		= buffer_read(wadbuff,buffer_u16);
 		sector.tag				= buffer_read(wadbuff,buffer_u16);
 		
@@ -32,8 +36,8 @@ function DE_getSectors(argument0, argument1) {
 			DE_addSectorToTag(l,sector.tag);
 		}
 		
-		sector.ftexz = -( LittleLong(_floor) << 8);
-		sector.ctexz = -( LittleLong(_ceiling) << 8);
+		sector.ftexz = -( LittleLong(sector.floorz) << 8);
+		sector.ctexz = -( LittleLong(sector.ceilingz) << 8);
 
 		var coltris = ds_list_build();//Create a Collision Map
 

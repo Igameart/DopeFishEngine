@@ -1,9 +1,9 @@
 function DE_getGLNodes(argument0, argument1) {
 	var level=argument0,lump=argument1+(WAD_FORMAT=="DOOM"?0:1);
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -12,7 +12,7 @@ function DE_getGLNodes(argument0, argument1) {
 	var len=pos+size;
 
 	while(buffer_tell(wadbuff)<len){
-		var glnode=new glnodetype;
+		var glnode= struct_copy(glnodetype);
 
 		var C_R,C_L;
 	

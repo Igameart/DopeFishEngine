@@ -1,10 +1,10 @@
 function DE_buildPatch(patch) {
 
-	var patch_width = ds_map_find_value(patch,"width");
-	var patch_height = ds_map_find_value(patch,"height");
-	var xOffset = ds_map_find_value_fixed(patch,"o_left");
-	var yOffset = ds_map_find_value_fixed(patch,"o_top");
-	var data = ds_map_find_value_fixed(patch,"data");
+	var patch_width		= (patch.width);
+	var patch_height	= (patch.height);
+	var xOffset			= (patch.leftoff);
+	var yOffset			= (patch.topoff);
+	var data			= (patch.contents);
 
 	//ds_map_print(patch);
 	if patch_width == undefined || patch_height == undefined return undefined
@@ -13,6 +13,7 @@ function DE_buildPatch(patch) {
 
 	surface_set_target(surf);
 	draw_clear_alpha(0,0);
+	draw_clear(c_fuchsia);
 
 	draw_set_alpha(1);
 	var pal1;
@@ -41,17 +42,15 @@ function DE_buildPatch(patch) {
 
 	return data2;
 
-
-
 }
 
 function DE_buildPatchBuffer( patch ) {
 
-	var patch_width = ds_map_find_value_fixed(patch,"width");
-	var patch_height = ds_map_find_value_fixed(patch,"height");
-	var xOffset = ds_map_find_value_fixed(patch,"o_left");
-	var yOffset = ds_map_find_value_fixed(patch,"o_top");
-	var data = ds_map_find_value_fixed(patch,"data");
+	var patch_width		= (patch.width);
+	var patch_height	= (patch.height);
+	var xOffset			= (patch.leftoff);
+	var yOffset			= (patch.topoff);
+	var data			= (patch.contents);
 
 	var surf=surface_create(patch_width,patch_height);
 

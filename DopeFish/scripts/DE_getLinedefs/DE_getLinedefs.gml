@@ -3,9 +3,9 @@ function DE_getLinedefs(argument0, argument1) {
 	var linedefs=mapLinedefs;//ds_list_build();
 	//mapLinedefs = linedefs;
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	//show_debug_message("NOTICE: Found Lump Size ["+ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"name")+"]: "+string(size));
 
@@ -15,7 +15,7 @@ function DE_getLinedefs(argument0, argument1) {
 	var line=0;
 	while(buffer_tell(wadbuff)<len){
 	    //ldef={
-	    var ldef= new linetype;//ds_map_build();
+	    var ldef = struct_copy(linetype);//ds_map_build();
 		
 	    ldef.startv	= buffer_read(wadbuff,buffer_s16);
 		
@@ -60,8 +60,8 @@ function DE_getLinedefs(argument0, argument1) {
 	        ldef.arg4	= arg[4];
 	    }
     
-		ldef.front = buffer_read(wadbuff,buffer_s16);
-		ldef.back = buffer_read(wadbuff,buffer_s16);
+		ldef.right = buffer_read(wadbuff,buffer_s16);
+		ldef.left = buffer_read(wadbuff,buffer_s16);
     
 		if ldef.specialtype != 0{
 			
@@ -85,7 +85,7 @@ function DE_getLinedefs(argument0, argument1) {
 			
 			DE_switch.specialtype = ldef.specialtype;
 			DE_switch.tag = ldef.sector_tag;
-			DE_switch.side = mapSidedefs[|front];
+			DE_switch.side = mapSidedefs[| ldef.left ];
 			
 		}
     
@@ -93,7 +93,7 @@ function DE_getLinedefs(argument0, argument1) {
     
 	    // Bit Shift flags
 	    //var flags=ds_map_find_value_fixed(ldef,"flags");
-	    var flagmap = new lineFlagType;
+	    var flagmap = struct_copy(lineFlagType);
     
 	    flagmap.blockall		= (ldef.flags & (1<<0))!=0;
 	    flagmap.blockmonsters	= (ldef.flags & (1<<1))!=0;
@@ -108,17 +108,21 @@ function DE_getLinedefs(argument0, argument1) {
 	    ldef.flags = flagmap;
     
 	    line+=1;
-	
-		var bside=ds_list_find_value_fixed(mapSidedefs,ldef.back);
-	    var bsect=bside.sector;
-		var side = ds_list_find_value_fixed(mapSidedefs,ldef.back);
-	
-	    side.bsect = bsect;
-	    ldef.bsect = bsect;
     
 	    var lSides=ds_list_build();
-	    ds_list_add(lSides,front);
-	    ds_list_add(lSides,back);
+	    ds_list_add(lSides,ldef.left);
+	
+		if ldef.right != -1{
+			var bside=ds_list_find_value(mapSidedefs,ldef.right);
+		    var backsector=bside.sector;
+		
+			var side = ds_list_find_value(mapSidedefs,ldef.right);
+	
+		    side.backsector = backsector;
+		    ldef.backsector = backsector;
+			
+			ds_list_add(lSides,ldef.right);
+		}
     
 	    ldef.sides = lSides;
 		
@@ -129,12 +133,12 @@ function DE_getLinedefs(argument0, argument1) {
 	    //show_debug_message("NOTICE: ["+level+'] LINEDEFS '+string( ds_list_size(linedefs) ));
 	}
 
-	ds_map_add(wadlevel,"linedefs",linedefs);
+	wadlevel.linedefs=linedefs;
 
 		//Now that all linedef data is loaded, parse any switches (linedefs with actions)			
 	with DE_switch_obj DE_parseLineDefType();
 
-	show_debug_message("NOTICE: ["+level+"] LINEDEFS "+string( ds_list_size(ds_map_find_value_fixed(wadlevel,"linedefs")) ));
+	show_debug_message("NOTICE: ["+level+"] LINEDEFS "+string( ds_list_size(wadlevel.linedefs)) );
 
 
 

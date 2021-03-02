@@ -21,7 +21,7 @@ function DE_getGLVerts(level, __lump) {
 
 		num=0;
 		while(buffer_tell(wadbuff)<len){
-		    var glvert = new glverttype;
+		    var glvert = struct_copy(glverttype);
 			
 		    if(wadGLVersion>1){
 		        glvert.xm=(buffer_read(wadbuff,buffer_s16));

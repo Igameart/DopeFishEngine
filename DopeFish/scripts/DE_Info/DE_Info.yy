@@ -6,7 +6,7 @@
     "path": "folders/Scripts/DopeFish/Wad Loader/Map/Load.yy",
   },
   "resourceVersion": "1.0",
-  "name": "DE_getThings",
+  "name": "DE_Info",
   "tags": [],
   "resourceType": "GMScript",
 }

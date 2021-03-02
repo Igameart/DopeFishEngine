@@ -10,7 +10,7 @@ function DE_switchRetrieveDoorSectors() {
 	
 	var SSize = ds_list_size(tagList);
 	
-	if DE_IdTypeIsRemoteDoor(type){
+	if DE_IdTypeIsRemoteDoor(specialtype){
 
 		for (var S = 0; S<SSize; S++){
 			
@@ -46,11 +46,11 @@ function DE_switchRetrieveDoorSectors() {
 	
 	}
 
-	if DE_IdTypeIsLocalDoor(type){
+	if DE_IdTypeIsLocalDoor(specialtype){
 		
 		var linedef=ds_list_find_value(mapLinedefs,line);
 	
-		var Sect=linedef.bsect;
+		var Sect=linedef.backsector;
 	
 		var secNum = Sect;
 		Sect = secs[| Sect ];

@@ -5,7 +5,7 @@ function DE_thingTypesHexen() {
 
 	// ******** MONSTERS *********
 	thing = [];                                           
-	DEThingType				[10060] = thing;
+	DEActor				[10060] = thing;
 	//41 BBC                 274C
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -16,7 +16,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Afrit"     
                                                               
 	thing = [];                                           
-	DEThingType				[8080] = thing;
+	DEActor				[8080] = thing;
 	//41 BBC                 1F90                                      
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"32"    
@@ -27,7 +27,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brown chaos serpent"     
                                                               
 	thing = [];                                           
-	DEThingType				[107] = thing;
+	DEActor				[107] = thing;
 	//41 BBC                 6B
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -38,7 +38,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Centaur"     
                                                               
 	thing = [];                                           
-	DEThingType				[114] = thing;
+	DEActor				[114] = thing;
 	//41 BBC                 72
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"22"    
@@ -49,7 +49,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dark bishop"
                                                               
 	thing = [];                                      
-	DEThingType				[254] = thing;
+	DEActor				[254] = thing;
 	//41 BBC FE
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -60,7 +60,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Death wyvern"
                                                               
 	thing = [];                                      
-	DEThingType				[10030] = thing;
+	DEActor				[10030] = thing;
 	//41 BBC 272E
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"25"
@@ -71,7 +71,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ettin"
                                                               
 	thing = [];                                      
-	DEThingType				[31] = thing;
+	DEActor				[31] = thing;
 	//41 BBC 1F
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"32"
@@ -82,7 +82,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Green chaos serpent"
                                                               
 	thing = [];                                      
-	DEThingType				[10080] = thing;
+	DEActor				[10080] = thing;
 	//41 BBC 2760                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"40"
@@ -93,7 +93,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Heresiarch"
                                                               
 	thing = [];                                      
-	DEThingType				[10200] = thing;
+	DEActor				[10200] = thing;
 	//41 BBC 27D8
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"65"
@@ -104,7 +104,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Korax"
                                                               
 	thing = [];                                      
-	DEThingType				[10102] = thing;
+	DEActor				[10102] = thing;
 	//41 BBC 2776
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -115,7 +115,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Menelkir"
                                                               
 	thing = [];                                      
-	DEThingType				[34] = thing;
+	DEActor				[34] = thing;
 	//41 BBC 22
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -126,7 +126,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Reiver"
                                                               
 	thing = [];                                      
-	DEThingType				[10011] = thing;
+	DEActor				[10011] = thing;
 	//41 BBC 271B
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -137,7 +137,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Reiver (Buried)"
                                                               
 	thing = [];                                      
-	DEThingType				[115] = thing;
+	DEActor				[115] = thing;
 	//41 BBC 73
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -148,7 +148,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Slaughtaur"
                                                               
 	thing = [];                                      
-	DEThingType				[121] = thing;
+	DEActor				[121] = thing;
 	//41 BBC 79                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"32"
@@ -159,7 +159,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalker"
                                                               
 	thing = [];                                      
-	DEThingType				[120] = thing;
+	DEActor				[120] = thing;
 	//41 BBC 78
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"32"
@@ -170,7 +170,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalker boss"
                                                               
 	thing = [];                                      
-	DEThingType				[10101] = thing;
+	DEActor				[10101] = thing;
 	//41 BBC 2775
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -181,7 +181,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Traductus"
                                                               
 	thing = [];                                      
-	DEThingType				[8020] = thing;
+	DEActor				[8020] = thing;
 	//41 BBC 1F54
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -192,7 +192,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wendigo"
                                                               
 	thing = [];                                      
-	DEThingType				[10100] = thing;
+	DEActor				[10100] = thing;
 	//41 BBC 2774
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -204,7 +204,7 @@ function DE_thingTypesHexen() {
 
 	// ******** WEAPONS *********
 	thing = [];                                         
-	DEThingType				[8040] = thing;
+	DEActor				[8040] = thing;
 	//41 BBC                 1F68
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -215,7 +215,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Arc of Death"     
                                                             
 	thing = [];                                         
-	DEThingType				[21] = thing;
+	DEActor				[21] = thing;
 	//41 BBC                 15
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -226,7 +226,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bloodscourge (Skull)"     
                                                             
 	thing = [];                                         
-	DEThingType				[23] = thing;
+	DEActor				[23] = thing;
 	//41 BBC                 17
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -237,7 +237,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bloodscourge (Stick)"     
                                                             
 	thing = [];                                         
-	DEThingType				[22] = thing;
+	DEActor				[22] = thing;
 	//41 BBC                 16
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -248,7 +248,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bloodscourge (Stub)"
                                                             
 	thing = [];                                    
-	DEThingType				[8009] = thing;
+	DEActor				[8009] = thing;
 	//41 BBC 1F49
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -259,7 +259,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Firestorm"
                                                             
 	thing = [];                                    
-	DEThingType				[53] = thing;
+	DEActor				[53] = thing;
 	//41 BBC 35
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -270,7 +270,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Frost Shards"
                                                             
 	thing = [];                                    
-	DEThingType				[123] = thing;
+	DEActor				[123] = thing;
 	//41 BBC 7B
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -281,7 +281,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hammer of Retribution"
                                                             
 	thing = [];                                    
-	DEThingType				[12] = thing;
+	DEActor				[12] = thing;
 	//41 BBC C                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -292,7 +292,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Quietus (Blade)"
                                                             
 	thing = [];                                    
-	DEThingType				[13] = thing;
+	DEActor				[13] = thing;
 	//41 BBC D
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -303,7 +303,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Quietus (Cross)"
                                                             
 	thing = [];                                    
-	DEThingType				[16] = thing;
+	DEActor				[16] = thing;
 	//41 BBC 10
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -314,7 +314,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Quietus (Hilt)"
                                                             
 	thing = [];                                    
-	DEThingType				[10] = thing;
+	DEActor				[10] = thing;
 	//41 BBC A
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -325,7 +325,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Serpent Staff"
                                                             
 	thing = [];                                    
-	DEThingType				[8010] = thing;
+	DEActor				[8010] = thing;
 	//41 BBC 1F4A
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -336,7 +336,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Timon's Axe"
                                                             
 	thing = [];                                    
-	DEThingType				[18] = thing;
+	DEActor				[18] = thing;
 	//41 BBC 12
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -347,7 +347,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wraithverge (Arc)"
                                                             
 	thing = [];                                    
-	DEThingType				[19] = thing;
+	DEActor				[19] = thing;
 	//41 BBC 13
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -358,7 +358,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wraithverge (Cross)"
                                                             
 	thing = [];                                    
-	DEThingType				[20] = thing;
+	DEActor				[20] = thing;
 	//41 BBC 14
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -370,7 +370,7 @@ function DE_thingTypesHexen() {
 
 	// ******** PICKUPS *********
 	thing = [];                        
-	DEThingType				[122] = thing;
+	DEActor				[122] = thing;
 	//41 BBC                 7A
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"8"    
@@ -381,7 +381,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Blue mana"     
                                            
 	thing = [];                        
-	DEThingType				[8004] = thing;
+	DEActor				[8004] = thing;
 	//41 BBC                 1F44
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"8"    
@@ -392,7 +392,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Combined mana"     
                                            
 	thing = [];                        
-	DEThingType				[124] = thing;
+	DEActor				[124] = thing;
 	//41 BBC                 7C
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"8"    
@@ -403,7 +403,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Green mana"     
 
 	thing = [];
-	DEThingType				[10040] = thing;
+	DEActor				[10040] = thing;
 	//41 BBC                 2738
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -414,7 +414,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Banishment Device"     
                                                                    
 	thing = [];                                                
-	DEThingType				[8002] = thing;
+	DEActor				[8002] = thing;
 	//41 BBC                 1F42
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -425,7 +425,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Boots of Speed"     
                                                                    
 	thing = [];                                                
-	DEThingType				[36] = thing;
+	DEActor				[36] = thing;
 	//41 BBC                 24
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -436,7 +436,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chaos Device"     
                                                                    
 	thing = [];                                                
-	DEThingType				[86] = thing;
+	DEActor				[86] = thing;
 	//41 BBC                 56
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -447,7 +447,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dark Servant"
                                                                    
 	thing = [];                                           
-	DEThingType				[10110] = thing;
+	DEActor				[10110] = thing;
 	//41 BBC 277E
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -458,7 +458,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Disc of Repulsion"
                                                                    
 	thing = [];
-	DEThingType				[8041] = thing;
+	DEActor				[8041] = thing;
 	//41 BBC 1F69
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -469,7 +469,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dragonskin Bracers"
                                                                    
 	thing = [];                                           
-	DEThingType				[8000] = thing;
+	DEActor				[8000] = thing;
 	//41 BBC 1F40
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -480,7 +480,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fléchette"
                                                                    
 	thing = [];                                           
-	DEThingType				[84] = thing;
+	DEActor				[84] = thing;
 	//41 BBC 54
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -491,7 +491,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Icon of the Defender"
                                                                    
 	thing = [];                                           
-	DEThingType				[8003] = thing;
+	DEActor				[8003] = thing;
 	//41 BBC 1F43
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -502,7 +502,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Krater of Might"
                                                                    
 	thing = [];                                           
-	DEThingType				[10120] = thing;
+	DEActor				[10120] = thing;
 	//41 BBC 2788                                                      
 	thing[@ DEThingDef.Version ] =		"D2"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -513,7 +513,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mystic Ambit Incant"
                                                                    
 	thing = [];                                           
-	DEThingType				[32] = thing;
+	DEActor				[32] = thing;
 	//41 BBC 20
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -524,7 +524,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mystic Urn"
                                                                    
 	thing = [];                                           
-	DEThingType				[30] = thing;
+	DEActor				[30] = thing;
 	//41 BBC 1E
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -535,7 +535,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Porkalator"
                                                                    
 	thing = [];                                           
-	DEThingType				[82] = thing;
+	DEActor				[82] = thing;
 	//41 BBC 52
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -546,7 +546,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Quartz Flask"
                                                                    
 	thing = [];                                           
-	DEThingType				[33] = thing;
+	DEActor				[33] = thing;
 	//41 BBC 21
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -557,7 +557,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Torch"
                                                                    
 	thing = [];                                           
-	DEThingType				[83] = thing;
+	DEActor				[83] = thing;
 	//41 BBC 53
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -568,7 +568,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wings of Wrath"
 
 	thing = [];                                                            
-	DEThingType				[8008] = thing;
+	DEActor				[8008] = thing;
 	//41 BBC                 1F48                                                       
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -579,7 +579,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Amulet of Warding"     
                                                                                
 	thing = [];                                                            
-	DEThingType				[81] = thing;
+	DEActor				[81] = thing;
 	//41 BBC                 51                                                         
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -590,7 +590,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Crystal Vial"     
                                                                                
 	thing = [];                                                            
-	DEThingType				[8006] = thing;
+	DEActor				[8006] = thing;
 	//41 BBC                 1F46                                                       
 	thing[@ DEThingDef.Version ] =		"D"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -601,7 +601,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Falcon Shield"     
                                                                                
 	thing = [];                                                            
-	DEThingType				[8005] = thing;
+	DEActor				[8005] = thing;
 	//41 BBC                 1F45                                                       
 	thing[@ DEThingDef.Version ] =		"C"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -612,7 +612,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mesh Armor"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8007] = thing;
+	DEActor				[8007] = thing;
 	//41 BBC 1F47                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -623,7 +623,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Platinum Helm"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8032] = thing;
+	DEActor				[8032] = thing;
 	//41 BBC 1F60                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -634,7 +634,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Axe Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8200] = thing;
+	DEActor				[8200] = thing;
 	//41 BBC 2008                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -645,7 +645,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Castle Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8031] = thing;
+	DEActor				[8031] = thing;
 	//41 BBC 1F5F                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -656,7 +656,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Cave Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9021] = thing;
+	DEActor				[9021] = thing;
 	//41 BBC 233D                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -667,7 +667,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Clock Gear (Bronze in Steel)"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9019] = thing;
+	DEActor				[9019] = thing;
 	//41 BBC 233B                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -678,7 +678,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Clock Gear (Bronze)"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9020] = thing;
+	DEActor				[9020] = thing;
 	//41 BBC 233C                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -689,7 +689,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Clock Gear (Steel in Bronze)"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9018] = thing;
+	DEActor				[9018] = thing;
 	//41 BBC 233A                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -700,7 +700,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Clock Gear (Steel)"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9007] = thing;
+	DEActor				[9007] = thing;
 	//41 BBC 232F                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -711,7 +711,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Daemon Codex"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8035] = thing;
+	DEActor				[8035] = thing;
 	//41 BBC 1F63                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -722,7 +722,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dungeon Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8034] = thing;
+	DEActor				[8034] = thing;
 	//41 BBC 1F62                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -733,7 +733,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Emerald Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9005] = thing;
+	DEActor				[9005] = thing;
 	//41 BBC 232D                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -744,7 +744,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Emerald Planet 1"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9009] = thing;
+	DEActor				[9009] = thing;
 	//41 BBC 2331                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -755,7 +755,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Emerald Planet 2"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8033] = thing;
+	DEActor				[8033] = thing;
 	//41 BBC 1F61                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -766,7 +766,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fire Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9014] = thing;
+	DEActor				[9014] = thing;
 	//41 BBC 2336                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -777,7 +777,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Flame Mask"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9015] = thing;
+	DEActor				[9015] = thing;
 	//41 BBC 2337                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -788,7 +788,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Glaive Seal"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9003] = thing;
+	DEActor				[9003] = thing;
 	//41 BBC 232B                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -799,7 +799,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Heart of D'Sparil"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9016] = thing;
+	DEActor				[9016] = thing;
 	//41 BBC 2338                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -810,7 +810,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Holy Relic"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8038] = thing;
+	DEActor				[8038] = thing;
 	//41 BBC 1F66                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -821,7 +821,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Horn Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9008] = thing;
+	DEActor				[9008] = thing;
 	//41 BBC 2330                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -832,7 +832,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Liber Oscura"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9004] = thing;
+	DEActor				[9004] = thing;
 	//41 BBC 232C                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -843,7 +843,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ruby Planet"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8037] = thing;
+	DEActor				[8037] = thing;
 	//41 BBC 1F65                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -854,7 +854,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Rusty Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9006] = thing;
+	DEActor				[9006] = thing;
 	//41 BBC 232E                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -865,7 +865,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Sapphire Planet 1"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9010] = thing;
+	DEActor				[9010] = thing;
 	//41 BBC 2332                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -876,7 +876,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Sapphire Planet 2"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9017] = thing;
+	DEActor				[9017] = thing;
 	//41 BBC 2339                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -887,7 +887,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Sigil of the Magus"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8036] = thing;
+	DEActor				[8036] = thing;
 	//41 BBC 1F64                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -898,7 +898,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Silver Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8030] = thing;
+	DEActor				[8030] = thing;
 	//41 BBC 1F5E                                                                  
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -909,7 +909,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Steel Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[8039] = thing;
+	DEActor				[8039] = thing;
 	//41 BBC 1F67                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -920,7 +920,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Swamp Key"
                                                                                
 	thing = [];                                                       
-	DEThingType				[9002] = thing;
+	DEActor				[9002] = thing;
 	//41 BBC 232A                                                                  
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -932,7 +932,7 @@ function DE_thingTypesHexen() {
 
 	// ******** BOSTACLES *********
 	thing = [];                                                      
-	DEThingType				[8100] = thing;
+	DEActor				[8100] = thing;
 	//41 BBC                 1FA4                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -943,7 +943,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Barrel"
                                                                               
 	thing = [];                                                      
-	DEThingType				[77] = thing;
+	DEActor				[77] = thing;
 	//41 BBC                 4D                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -954,7 +954,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Battle rag banner"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8065] = thing;
+	DEActor				[8065] = thing;
 	//41 BBC                 1F81                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"56"
@@ -965,7 +965,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bell"
                                                                               
 	thing = [];                                                      
-	DEThingType				[99] = thing;
+	DEActor				[99] = thing;
 	//41 BBC                 63                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -976,7 +976,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Black rock"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8061] = thing;
+	DEActor				[8061] = thing;
 	//41 BBC 1F7D                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"6"
@@ -987,7 +987,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brazier with flame"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8051] = thing;
+	DEActor				[8051] = thing;
 	//41 BBC 1F73                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -998,7 +998,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bronze gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8047] = thing;
+	DEActor				[8047] = thing;
 	//41 BBC 1F6F                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1009,7 +1009,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bronze gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[97] = thing;
+	DEActor				[97] = thing;
 	//41 BBC 61                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"17"
@@ -1020,7 +1020,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brown rock (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[98] = thing;
+	DEActor				[98] = thing;
 	//41 BBC 62                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1031,7 +1031,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brown rock (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8069] = thing;
+	DEActor				[8069] = thing;
 	//41 BBC 1F85                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1042,7 +1042,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Cauldron (lit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8070] = thing;
+	DEActor				[8070] = thing;
 	//41 BBC 1F86                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1053,7 +1053,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Cauldron (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8049] = thing;
+	DEActor				[8049] = thing;
 	//41 BBC 1F71                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1064,7 +1064,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dark lava gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8045] = thing;
+	DEActor				[8045] = thing;
 	//41 BBC 1F6D                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1075,7 +1075,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dark lava gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[24] = thing;
+	DEActor				[24] = thing;
 	//41 BBC 18                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1086,7 +1086,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Dead tree"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8062] = thing;
+	DEActor				[8062] = thing;
 	//41 BBC 1F7E                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1097,7 +1097,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Destructible tree"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8068] = thing;
+	DEActor				[8068] = thing;
 	//41 BBC                 1F84                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"11"
@@ -1108,7 +1108,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Evergreen tree"
                                                                               
 	thing = [];                                                      
-	DEThingType				[80] = thing;
+	DEActor				[80] = thing;
 	//41 BBC                 50                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -1119,7 +1119,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Gnarled tree 1"
                                                                               
 	thing = [];                                                      
-	DEThingType				[87] = thing;
+	DEActor				[87] = thing;
 	//41 BBC                 57                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -1130,7 +1130,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Gnarled tree 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8103] = thing;
+	DEActor				[8103] = thing;
 	//41 BBC                 1FA7                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1141,7 +1141,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hanging bucket"
                                                                               
 	thing = [];                                                      
-	DEThingType				[71] = thing;
+	DEActor				[71] = thing;
 	//41 BBC 47                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"6"
@@ -1152,7 +1152,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hanging corpse"
                                                                               
 	thing = [];                                                      
-	DEThingType				[76] = thing;
+	DEActor				[76] = thing;
 	//41 BBC 4C                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1163,7 +1163,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[73] = thing;
+	DEActor				[73] = thing;
 	//41 BBC 49                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1174,7 +1174,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[93] = thing;
+	DEActor				[93] = thing;
 	//41 BBC 5D                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1185,7 +1185,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice spike (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[94] = thing;
+	DEActor				[94] = thing;
 	//41 BBC 5E                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"5"
@@ -1196,7 +1196,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice spike (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[95] = thing;
+	DEActor				[95] = thing;
 	//41 BBC 5F                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1207,7 +1207,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice spike (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[96] = thing;
+	DEActor				[96] = thing;
 	//41 BBC 60                                                                   
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1218,7 +1218,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice spike (tiny)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[89] = thing;
+	DEActor				[89] = thing;
 	//41 BBC 59                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1229,7 +1229,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Icicle (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[90] = thing;
+	DEActor				[90] = thing;
 	//41 BBC 5A                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"5"
@@ -1240,7 +1240,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Icicle (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[91] = thing;
+	DEActor				[91] = thing;
 	//41 BBC 5B                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1251,7 +1251,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Icicle (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[92] = thing;
+	DEActor				[92] = thing;
 	//41 BBC 5C                                                                   
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1262,7 +1262,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Icicle (tiny)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[61] = thing;
+	DEActor				[61] = thing;
 	//41 BBC                 3D                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1273,7 +1273,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Impaled corpse"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8067] = thing;
+	DEActor				[8067] = thing;
 	//41 BBC                 1F83                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1284,7 +1284,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Iron maiden"
                                                                               
 	thing = [];                                                      
-	DEThingType				[25] = thing;
+	DEActor				[25] = thing;
 	//41 BBC                 19                                                   
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1295,7 +1295,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Leafless tree"
       
 	thing = [];                                                      
-	DEThingType				[8050] = thing;
+	DEActor				[8050] = thing;
 	//41 BBC                 1F72                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1306,7 +1306,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Light lava gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8046] = thing;
+	DEActor				[8046] = thing;
 	//41 BBC 1F6E                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1317,7 +1317,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Light lava gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[108] = thing;
+	DEActor				[108] = thing;
 	//41 BBC 6C                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"11"
@@ -1328,7 +1328,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Lynched corpse"
                                                                               
 	thing = [];                                                      
-	DEThingType				[109] = thing;
+	DEActor				[109] = thing;
 	//41 BBC 6D                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1339,7 +1339,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Lynched corpse (heartless)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8042] = thing;
+	DEActor				[8042] = thing;
 	//41 BBC 1F6A                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1350,7 +1350,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Minotaur statue (lit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8043] = thing;
+	DEActor				[8043] = thing;
 	//41 BBC 1F6B                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1361,7 +1361,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Minotaur statue (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[60] = thing;
+	DEActor				[60] = thing;
 	//41 BBC 3C                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1372,7 +1372,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy dead tree"
                                                                               
 	thing = [];                                                      
-	DEThingType				[15] = thing;
+	DEActor				[15] = thing;
 	//41 BBC F                                                                    
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1383,7 +1383,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy rock (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[26] = thing;
+	DEActor				[26] = thing;
 	//41 BBC 1A                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1394,7 +1394,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy tree 1"
                                                                               
 	thing = [];                                                      
-	DEThingType				[27] = thing;
+	DEActor				[27] = thing;
 	//41 BBC 1B                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1405,7 +1405,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy tree 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[9012] = thing;
+	DEActor				[9012] = thing;
 	//41 BBC 2334                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1416,7 +1416,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pedestal of D'Sparil"
                                                                               
 	thing = [];                                                      
-	DEThingType				[103] = thing;
+	DEActor				[103] = thing;
 	//41 BBC 67                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1427,7 +1427,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pillar with vase"
                                                                               
 	thing = [];                                                      
-	DEThingType				[105] = thing;
+	DEActor				[105] = thing;
 	//41 BBC                 69                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1438,7 +1438,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pot (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[106] = thing;
+	DEActor				[106] = thing;
 	//41 BBC                 6A                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1449,7 +1449,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pot (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[104] = thing;
+	DEActor				[104] = thing;
 	//41 BBC                 68                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1460,7 +1460,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pot (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8044] = thing;
+	DEActor				[8044] = thing;
 	//41 BBC                 1F6C                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1471,7 +1471,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Rusty gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8102] = thing;
+	DEActor				[8102] = thing;
 	//41 BBC 1FA6                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -1482,7 +1482,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Shrub (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8101] = thing;
+	DEActor				[8101] = thing;
 	//41 BBC 1FA5                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1493,7 +1493,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Shrub (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[110] = thing;
+	DEActor				[110] = thing;
 	//41 BBC 6E                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1504,7 +1504,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Sitting corpse"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8060] = thing;
+	DEActor				[8060] = thing;
 	//41 BBC 1F7C                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"5"
@@ -1515,7 +1515,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Skull with flame"
                                                                               
 	thing = [];                                                      
-	DEThingType				[52] = thing;
+	DEActor				[52] = thing;
 	//41 BBC 34                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1526,7 +1526,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalactite (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[56] = thing;
+	DEActor				[56] = thing;
 	//41 BBC 38                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"6"
@@ -1537,7 +1537,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalactite (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[57] = thing;
+	DEActor				[57] = thing;
 	//41 BBC 39                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1548,7 +1548,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalactite (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[49] = thing;
+	DEActor				[49] = thing;
 	//41 BBC 31                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1559,7 +1559,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalagmite (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[50] = thing;
+	DEActor				[50] = thing;
 	//41 BBC 32                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"6"
@@ -1570,7 +1570,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalagmite (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[51] = thing;
+	DEActor				[51] = thing;
 	//41 BBC 33                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1581,7 +1581,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalagmite (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[48] = thing;
+	DEActor				[48] = thing;
 	//41 BBC 30                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1592,7 +1592,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stalagmite pillar"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8052] = thing;
+	DEActor				[8052] = thing;
 	//41 BBC                 1F74                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1603,7 +1603,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Steel gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8048] = thing;
+	DEActor				[8048] = thing;
 	//41 BBC                 1F70                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1614,7 +1614,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Steel gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[74] = thing;
+	DEActor				[74] = thing;
 	//41 BBC                 4A                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1625,7 +1625,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stone gargoyle (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[72] = thing;
+	DEActor				[72] = thing;
 	//41 BBC                 48                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -1636,7 +1636,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stone gargoyle (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8064] = thing;
+	DEActor				[8064] = thing;
 	//41 BBC 1F80                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -1647,7 +1647,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Suit of armor"
                                                                               
 	thing = [];                                                      
-	DEThingType				[78] = thing;
+	DEActor				[78] = thing;
 	//41 BBC 4E                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1658,7 +1658,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tall tree 1"
 
 	thing = [];                                                      
-	DEThingType				[79] = thing;
+	DEActor				[79] = thing;
 	//41 BBC 4F                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"15"
@@ -1669,7 +1669,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tall tree 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[69] = thing;
+	DEActor				[69] = thing;
 	//41 BBC 45                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1680,7 +1680,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (Brian P)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[66] = thing;
+	DEActor				[66] = thing;
 	//41 BBC 42                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1691,7 +1691,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (Brian R)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[63] = thing;
+	DEActor				[63] = thing;
 	//41 BBC 3F                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1702,7 +1702,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (RIP)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[64] = thing;
+	DEActor				[64] = thing;
 	//41 BBC 40                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1713,7 +1713,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (Shane)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[67] = thing;
+	DEActor				[67] = thing;
 	//41 BBC 43                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1724,7 +1724,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (cross circle)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[65] = thing;
+	DEActor				[65] = thing;
 	//41 BBC 41                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1735,7 +1735,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (slimy)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[68] = thing;
+	DEActor				[68] = thing;
 	//41 BBC 44                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -1746,7 +1746,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tombstone (small cross)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[88] = thing;
+	DEActor				[88] = thing;
 	//41 BBC 58                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1757,7 +1757,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tree log"
                                                                               
 	thing = [];                                                      
-	DEThingType				[29] = thing;
+	DEActor				[29] = thing;
 	//41 BBC                 1D                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1768,7 +1768,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tree stump (bare)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[28] = thing;
+	DEActor				[28] = thing;
 	//41 BBC                 1C                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -1779,7 +1779,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tree stump (burned)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[116] = thing;
+	DEActor				[116] = thing;
 	//41 BBC                 74                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1790,7 +1790,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Twined torch (lit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[117] = thing;
+	DEActor				[117] = thing;
 	//41 BBC                 75                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1801,7 +1801,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Twined torch (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[5] = thing;
+	DEActor				[5] = thing;
 	//41 BBC 5                                                                    
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1812,7 +1812,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Winged statue"
                                                                               
 	thing = [];                                                      
-	DEThingType				[9011] = thing;
+	DEActor				[9011] = thing;
 	//41 BBC 2333                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"10"
@@ -1824,7 +1824,7 @@ function DE_thingTypesHexen() {
 
 	// ******** DECORATIONS *********
 	thing = [];                                                                
-	DEThingType				[119] = thing;
+	DEActor				[119] = thing;
 	//41 BBC                 77                                                             
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -1835,7 +1835,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "3 Candles (lit)"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[8066] = thing;
+	DEActor				[8066] = thing;
 	//41 BBC                 1F82                                                           
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -1846,7 +1846,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Blue candle (lit)"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[100] = thing;
+	DEActor				[100] = thing;
 	//41 BBC                 64                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1857,7 +1857,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brick rubble (large)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[102] = thing;
+	DEActor				[102] = thing;
 	//41 BBC                 66                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1868,7 +1868,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brick rubble (medium)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[101] = thing;
+	DEActor				[101] = thing;
 	//41 BBC                 65                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1879,7 +1879,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Brick rubble (small)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8504] = thing;
+	DEActor				[8504] = thing;
 	//41 BBC                 2138                                                 
 	thing[@ DEThingDef.Version ] =		"C1"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1890,7 +1890,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Candle w/o web (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8502] = thing;
+	DEActor				[8502] = thing;
 	//41 BBC                 2136                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1901,7 +1901,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Candle with web (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8072] = thing;
+	DEActor				[8072] = thing;
 	//41 BBC                 1F88                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1912,7 +1912,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chain (long)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8071] = thing;
+	DEActor				[8071] = thing;
 	//41 BBC                 1F87                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1923,7 +1923,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chain (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8074] = thing;
+	DEActor				[8074] = thing;
 	//41 BBC                 1F8A                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -1934,7 +1934,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chain with large hook"
                          
 	thing = [];                                                                
-	DEThingType				[8075] = thing;
+	DEActor				[8075] = thing;
 	//41 BBC 1F8B                                                                           
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"4"         
@@ -1945,7 +1945,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chain with small hook"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[8076] = thing;
+	DEActor				[8076] = thing;
 	//41 BBC 1F8C                                                                           
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"4"         
@@ -1956,7 +1956,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chain with spike ball"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[17] = thing;
+	DEActor				[17] = thing;
 	//41 BBC 11                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1967,7 +1967,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chandelier (lit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8063] = thing;
+	DEActor				[8063] = thing;
 	//41 BBC 1F7F                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1978,7 +1978,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Chandelier (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8507] = thing;
+	DEActor				[8507] = thing;
 	//41 BBC 213B                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1989,7 +1989,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Goblet (short)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8508] = thing;
+	DEActor				[8508] = thing;
 	//41 BBC 213C                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2000,7 +2000,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Goblet (silver)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8505] = thing;
+	DEActor				[8505] = thing;
 	//41 BBC 2139                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2011,7 +2011,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Goblet (spilled)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8506] = thing;
+	DEActor				[8506] = thing;
 	//41 BBC 213A                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2022,7 +2022,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Goblet (tall)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8503] = thing;
+	DEActor				[8503] = thing;
 	//41 BBC 2137                                                                 
 	thing[@ DEThingDef.Version ] =		"C1"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2033,7 +2033,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Gray candle (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[58] = thing;
+	DEActor				[58] = thing;
 	//41 BBC                 3A                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2044,7 +2044,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hanging moss 1"
                          
 	thing = [];                                                                
-	DEThingType				[59] = thing;
+	DEActor				[59] = thing;
 	//41 BBC                 3B                                                             
 	thing[@ DEThingDef.Version ] =		"D"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2055,7 +2055,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hanging moss 2"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[8073] = thing;
+	DEActor				[8073] = thing;
 	//41 BBC                 1F89                                                           
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"4"         
@@ -2066,7 +2066,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hook with heart"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[8077] = thing;
+	DEActor				[8077] = thing;
 	//41 BBC                 1F8D                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"4"
@@ -2077,7 +2077,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Hook with skull"
                                                                               
 	thing = [];                                                      
-	DEThingType				[10503] = thing;
+	DEActor				[10503] = thing;
 	//41 BBC                 2907                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2088,7 +2088,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Large flame"
                                                                               
 	thing = [];                                                      
-	DEThingType				[10502] = thing;
+	DEActor				[10502] = thing;
 	//41 BBC                 2906                                                 
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2099,7 +2099,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Large flame (timed)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[39] = thing;
+	DEActor				[39] = thing;
 	//41 BBC                 27                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2110,7 +2110,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Large mushroom 1"
                                                                               
 	thing = [];                                                      
-	DEThingType				[40] = thing;
+	DEActor				[40] = thing;
 	//41 BBC                 28                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2121,7 +2121,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Large mushroom 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8509] = thing;
+	DEActor				[8509] = thing;
 	//41 BBC                 213D                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2132,7 +2132,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Meat cleaver"
                                                                               
 	thing = [];                                                      
-	DEThingType				[41] = thing;
+	DEActor				[41] = thing;
 	//41 BBC                 29                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2143,7 +2143,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Medium mushroom"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8501] = thing;
+	DEActor				[8501] = thing;
 	//41 BBC 2135                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2154,7 +2154,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Metal beer stein"
 
 	thing = [];                                                                
-	DEThingType				[9] = thing;
+	DEActor				[9] = thing;
 	//41 BBC 9                                                                              
 	thing[@ DEThingDef.Version ] =		"D"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2165,7 +2165,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy rock (medium)"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[7] = thing;
+	DEActor				[7] = thing;
 	//41 BBC 7                                                                              
 	thing[@ DEThingDef.Version ] =		"D"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2176,7 +2176,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy rock (small)"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[6] = thing;
+	DEActor				[6] = thing;
 	//41 BBC 6                                                                    
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2187,7 +2187,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Mossy rock (tiny)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[111] = thing;
+	DEActor				[111] = thing;
 	//41 BBC 6F                                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2198,7 +2198,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Pool of blood"
                                                                               
 	thing = [];                                                      
-	DEThingType				[62] = thing;
+	DEActor				[62] = thing;
 	//41 BBC 3E                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2209,7 +2209,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Sleeping corpse"
                                                                               
 	thing = [];                                                      
-	DEThingType				[10501] = thing;
+	DEActor				[10501] = thing;
 	//41 BBC 2905                                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2220,7 +2220,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small flame"
                                                                               
 	thing = [];                                                      
-	DEThingType				[10500] = thing;
+	DEActor				[10500] = thing;
 	//41 BBC 2904                                                                 
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2231,7 +2231,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small flame (timed)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[42] = thing;
+	DEActor				[42] = thing;
 	//41 BBC 2A                                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2242,7 +2242,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small mushroom 1"
                                                                               
 	thing = [];                                                      
-	DEThingType				[44] = thing;
+	DEActor				[44] = thing;
 	//41 BBC                 2C                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2253,7 +2253,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small mushroom 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[45] = thing;
+	DEActor				[45] = thing;
 	//41 BBC                 2D                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2264,7 +2264,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small mushroom 3"
                          
 	thing = [];                                                                
-	DEThingType				[46] = thing;
+	DEActor				[46] = thing;
 	//41 BBC                 2E                                                             
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2275,7 +2275,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small mushroom 4"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[47] = thing;
+	DEActor				[47] = thing;
 	//41 BBC                 2F                                                             
 	thing[@ DEThingDef.Version ] =		"X"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2286,7 +2286,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Small mushroom 5"         
                                                                                         
 	thing = [];                                                                
-	DEThingType				[37] = thing;
+	DEActor				[37] = thing;
 	//41 BBC                 25                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2297,7 +2297,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tree stump 1"
                                                                               
 	thing = [];                                                      
-	DEThingType				[38] = thing;
+	DEActor				[38] = thing;
 	//41 BBC                 26                                                   
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2308,7 +2308,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Tree stump 2"
                                                                               
 	thing = [];                                                      
-	DEThingType				[54] = thing;
+	DEActor				[54] = thing;
 	//41 BBC                 36                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2319,7 +2319,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wall torch (lit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[55] = thing;
+	DEActor				[55] = thing;
 	//41 BBC                 37                                                   
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2330,7 +2330,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Wall torch (unlit)"
                                                                               
 	thing = [];                                                      
-	DEThingType				[8500] = thing;
+	DEActor				[8500] = thing;
 	//41 BBC                 2134                                                 
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2342,7 +2342,7 @@ function DE_thingTypesHexen() {
 
 	// ******** AMBIENT SOUNDS *********
 	thing = [];                                    
-	DEThingType				[1403] = thing;
+	DEActor				[1403] = thing;
 	//41 BBC                 57B                                
 	thing[@ DEThingDef.Version ] =		"D1"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2353,7 +2353,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Creak"         
                                                             
 	thing = [];                                    
-	DEThingType				[1408] = thing;
+	DEActor				[1408] = thing;
 	//41 BBC                 580                                
 	thing[@ DEThingDef.Version ] =		"D1"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2364,7 +2364,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Earth"         
                                                             
 	thing = [];                                    
-	DEThingType				[1401] = thing;
+	DEActor				[1401] = thing;
 	//41 BBC 579                                      
 	thing[@ DEThingDef.Version ] =		"D1"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2375,7 +2375,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Heavy"
                                                   
 	thing = [];                          
-	DEThingType				[1407] = thing;
+	DEActor				[1407] = thing;
 	//41 BBC 57F                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2386,7 +2386,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Ice"
                                                   
 	thing = [];                          
-	DEThingType				[1405] = thing;
+	DEActor				[1405] = thing;
 	//41 BBC 57D                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2397,7 +2397,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Lava"
                                                   
 	thing = [];                          
-	DEThingType				[1402] = thing;
+	DEActor				[1402] = thing;
 	//41 BBC 57A                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2408,7 +2408,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Metal"
                                                   
 	thing = [];                          
-	DEThingType				[1409] = thing;
+	DEActor				[1409] = thing;
 	//41 BBC 581                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2419,7 +2419,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Metal2"
                                                   
 	thing = [];                          
-	DEThingType				[1404] = thing;
+	DEActor				[1404] = thing;
 	//41 BBC 57C                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2430,7 +2430,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Silence"
                                                   
 	thing = [];                          
-	DEThingType				[1400] = thing;
+	DEActor				[1400] = thing;
 	//41 BBC 578                                      
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2441,7 +2441,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Stone"
                                                   
 	thing = [];                          
-	DEThingType				[1406] = thing;
+	DEActor				[1406] = thing;
 	//41 BBC 57E                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2452,7 +2452,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Water"
                                                   
 	thing = [];                          
-	DEThingType				[1410] = thing;
+	DEActor				[1410] = thing;
 	//41 BBC 582                                      
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2464,7 +2464,7 @@ function DE_thingTypesHexen() {
 
 	// ******** OTHER *********
 	thing = [];                                                             
-	DEThingType				[10225] = thing;
+	DEActor				[10225] = thing;
 	//41 BBC                 27F1                                                        
 	thing[@ DEThingDef.Version ] =		"C"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2475,7 +2475,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Bat spawner"         
                                                                                      
 	thing = [];                                                             
-	DEThingType				[11] = thing;
+	DEActor				[11] = thing;
 	//41 BBC                 B                                                           
 	thing[@ DEThingDef.Version ] =		"D"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -2486,7 +2486,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Deathmatch start"         
                                                                                      
 	thing = [];                                                             
-	DEThingType				[10003] = thing;
+	DEActor				[10003] = thing;
 	//41 BBC 2713                                                              
 	thing[@ DEThingDef.Version ] =		"D2"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2497,7 +2497,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fog patch (large)"
                                                                            
 	thing = [];                                                   
-	DEThingType				[10002] = thing;
+	DEActor				[10002] = thing;
 	//41 BBC 2712                                                              
 	thing[@ DEThingDef.Version ] =		"D2"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2508,7 +2508,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fog patch (medium)"
                                                                            
 	thing = [];                                                   
-	DEThingType				[10001] = thing;
+	DEActor				[10001] = thing;
 	//41 BBC 2711                                                              
 	thing[@ DEThingDef.Version ] =		"D2"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2519,7 +2519,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fog patch (small)"
                                                                            
 	thing = [];                                                   
-	DEThingType				[10000] = thing;
+	DEActor				[10000] = thing;
 	//41 BBC 2710                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2530,7 +2530,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Fog spawner"
                                                                            
 	thing = [];                                                   
-	DEThingType				[118] = thing;
+	DEActor				[118] = thing;
 	//41 BBC 76                                                                
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"32"
@@ -2541,7 +2541,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Glitter bridge"
                                                                            
 	thing = [];                                                   
-	DEThingType				[113] = thing;
+	DEActor				[113] = thing;
 	//41 BBC 71                                                                
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2552,7 +2552,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Leaf spawner"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9001] = thing;
+	DEActor				[9001] = thing;
 	//41 BBC 2329                                                              
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2563,7 +2563,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Map spot"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9013] = thing;
+	DEActor				[9013] = thing;
 	//41 BBC 2335                                                              
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2574,7 +2574,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Map spot (gravity)"
                                                                            
 	thing = [];                                                   
-	DEThingType				[1] = thing;
+	DEActor				[1] = thing;
 	//41 BBC 1                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2585,7 +2585,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 1 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[2] = thing;
+	DEActor				[2] = thing;
 	//41 BBC 2                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2596,7 +2596,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 2 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[3] = thing;
+	DEActor				[3] = thing;
 	//41 BBC 3                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2607,7 +2607,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 3 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[4] = thing;
+	DEActor				[4] = thing;
 	//41 BBC 4                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2618,7 +2618,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 4 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9100] = thing;
+	DEActor				[9100] = thing;
 	//41 BBC 238C                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2629,7 +2629,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 5 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9101] = thing;
+	DEActor				[9101] = thing;
 	//41 BBC 238D                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2640,7 +2640,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 6 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9102] = thing;
+	DEActor				[9102] = thing;
 	//41 BBC 238E                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2651,7 +2651,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 7 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[9103] = thing;
+	DEActor				[9103] = thing;
 	//41 BBC 238F                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -2662,7 +2662,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Player 8 start"
                                                                            
 	thing = [];                                                   
-	DEThingType				[8104] = thing;
+	DEActor				[8104] = thing;
 	//41 BBC 1FA8                                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"6"
@@ -2673,7 +2673,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Poisonous mushroom"
                                                                            
 	thing = [];                                                   
-	DEThingType				[3000] = thing;
+	DEActor				[3000] = thing;
 	//41 BBC BB8                                                               
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2684,7 +2684,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Polyobject anchor"
                                                                            
 	thing = [];                                                   
-	DEThingType				[3001] = thing;
+	DEActor				[3001] = thing;
 	//41 BBC BB9                                                               
 	thing[@ DEThingDef.Version ] =		"X"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2695,7 +2695,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Polyobject start spot"
                                                                            
 	thing = [];                                                   
-	DEThingType				[3002] = thing;
+	DEActor				[3002] = thing;
 	//41 BBC BBA                                                               
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2706,7 +2706,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Polyobject start spot (crush)"
                                                                            
 	thing = [];                                                   
-	DEThingType				[10090] = thing;
+	DEActor				[10090] = thing;
 	//41 BBC                 276A                                              
 	thing[@ DEThingDef.Version ] =		"C"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2717,7 +2717,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Spike Down"
                                                                            
 	thing = [];                                                   
-	DEThingType				[10091] = thing;
+	DEActor				[10091] = thing;
 	//41 BBC                 276B                                              
 	thing[@ DEThingDef.Version ] =		"D2"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2728,7 +2728,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Spike Up"
                                                                            
 	thing = [];                                                   
-	DEThingType				[14] = thing;
+	DEActor				[14] = thing;
 	//41 BBC E                                                                 
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -2739,7 +2739,7 @@ function DE_thingTypesHexen() {
 	thing[@ DEThingDef.Description ] = "Teleport landing"
                                                                            
 	thing = [];                                                   
-	DEThingType				[140] = thing;
+	DEActor				[140] = thing;
 	//41 BBC 8C                                                                
 	thing[@ DEThingDef.Version ] =		"D"
 	thing[@ DEThingDef.Radius ] =		"20"

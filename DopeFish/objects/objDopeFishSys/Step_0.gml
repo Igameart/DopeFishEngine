@@ -1,7 +1,7 @@
 /// @description 
 
 bGlow = -1;
-for (var b = 0; b<array_length_1d(buttons);b++){
+for (var b = 0; b<array_length(buttons);b++){
 	
 	var btn = buttons[b];
 	

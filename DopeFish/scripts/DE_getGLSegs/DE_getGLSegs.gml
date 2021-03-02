@@ -15,7 +15,7 @@ function DE_getGLSegs(argument0, argument1) {
 
 	while(buffer_tell(wadbuff)<len){
 		
-	var glseg = new glsegtype;
+	var glseg = struct_copy(glsegtype);
 	
 	if(wadGLVersion==3 or wadGLVersion==5){
 
@@ -24,19 +24,19 @@ function DE_getGLSegs(argument0, argument1) {
 		
 	    var val;
 	    val=real(buffer_read(wadbuff,buffer_u32));
-	    glseg.start=val;
+	    glseg.startv = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u32));
-	    glseg.end=val;
+	    glseg.endv = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u16));
-	    glseg.linedef=val;
+	    glseg.linedef = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u16));
-	    glseg.side=val;
+	    glseg.side = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u32));
-	    glseg.partner=val;
+	    glseg.partner = val;
 
 	}
 	
@@ -45,10 +45,10 @@ function DE_getGLSegs(argument0, argument1) {
 		
 	    var val;
 	    val=real(buffer_read(wadbuff,buffer_u16));
-	    glseg.start = val;
+	    glseg.startv = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u16))
-	    glseg.end = val;
+	    glseg.endv = val;
 		
 	    val=real(buffer_read(wadbuff,buffer_u16));
 	    glseg.linedef = val;

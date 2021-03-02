@@ -3,9 +3,9 @@ function DE_getSsectors(argument0, argument1) {
 
 	var ssectors=mapSSectors;//ds_list_build();
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 

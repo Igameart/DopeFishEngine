@@ -4,9 +4,9 @@ function DE_getVertexes(argument0, argument1) {
 	var vertexes=mapVertexes;//ds_list_build();
 	//mapVertexes = vertexes;
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -14,15 +14,15 @@ function DE_getVertexes(argument0, argument1) {
 
 	num=0;
 	while(buffer_tell(wadbuff)<len){
-	var vert=ds_map_build();
+	var vert = struct_copy(glverttype);
 
-	ds_map_add(vert,"x",buffer_read(wadbuff,buffer_s16));
+	vert.x=buffer_read(wadbuff,buffer_s16);
 	var YY=-buffer_read(wadbuff,buffer_s16);
-	ds_map_add(vert,"y",YY);
+	vert.y=YY;
 
 	if num=2{
-	show_debug_message("NOTICE: ["+level+"] VERTEX 0 X position "+string( (ds_map_find_value_fixed(vert,"x")) ));
-	show_debug_message("NOTICE: ["+level+"] VERTEX 0 Y position "+string( YY ));
+	show_debug_message("NOTICE: ["+level+"] VERTEX 0 X position "+string( vert.x ));
+	show_debug_message("NOTICE: ["+level+"] VERTEX 0 Y position "+string( vert.y ));
 	}
 	num+=1
 	ds_list_add(vertexes,vert);

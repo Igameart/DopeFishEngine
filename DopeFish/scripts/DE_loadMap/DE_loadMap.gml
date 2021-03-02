@@ -5,7 +5,9 @@ function DE_loadMap( _map ) {
 	var start_time=current_time;
 
 	DE_getLevel(_map);
+	
 	var LEV = DE_getLumpNum(_map);
+	
 	DE_getVertexes(_map,LEV+VERTEXESOFS);
 	DE_getGLVerts(_map,LEV+GL_VERTOFS);
 	DE_getSectors(_map,LEV+SECTORSOFS);
@@ -30,8 +32,6 @@ function DE_loadMap( _map ) {
 	DE_preload_flats();
 	DE_preload_patches();
 
-	//buffer_delete(wadbuff);
-
 	var end_time=current_time;
 
 	globalvar time_taken; time_taken=(end_time-start_time)/1000;
@@ -43,12 +43,12 @@ function DE_loadMap( _map ) {
 
 	if wadGLVersion!=-1{
 
-		///Generate the vbuffers for each GL subsector
+		///Generate the vbuffers for each GL subacksectoror
 		var gssects = mapGLSSects;
 
 		if !is_undefined(gssects){
 
-		    trace("************ NOTICE: "+string(ds_list_size(gssects))+" SubSectors");
+		    trace("************ NOTICE: "+string(ds_list_size(gssects))+" Subacksectorors");
 
 		    for (var j = 0; j<ds_list_size(gssects); j++ ){
 		        DE_buildGLSSect(j);
@@ -57,12 +57,12 @@ function DE_loadMap( _map ) {
 		}
 	}else{
 
-		///Generate the vbuffers for each subsector
+		///Generate the vbuffers for each subacksectoror
 		var ssects = mapSSectors;
 
 		if !is_undefined(ssects){
 
-		    trace("************ NOTICE: "+string(ds_list_size(ssects))+" SubSectors");
+		    trace("************ NOTICE: "+string(ds_list_size(ssects))+" Subacksectorors");
 
 		    for (var j = 0; j<ds_list_size(ssects); j++ ){
 		        DE_buildSSector(j);

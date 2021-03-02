@@ -13,7 +13,7 @@ function DE_renderSubmit() {
 		ssects = mapSSectors;
 	}
 
-	//trace("Subsectors to Render:",ds_list_size(bspSSectCache));
+	//trace("Subacksectorors to Render:",ds_list_size(bspSSectCache));
 
 	for (var j = 0; j<ds_list_size(bspSSectCache); j++ ){
     

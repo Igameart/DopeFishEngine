@@ -34,7 +34,7 @@ function DE_getFlatTextures() {
 	        buffer_seek(wadbuff,buffer_seek_start, lump.filepos);
 			
 	        var flat=ds_list_build();
-			show_debug_message("NOTICE: Found FLAT:"+n);
+			trace("NOTICE: Found FLAT:"+n);
 			
 	        repeat 4096{
 	            ds_list_add(flat,buffer_read(wadbuff,buffer_u8));

@@ -19,7 +19,7 @@ function DE_getNodes(argument0, argument1) {
 	var len=pos+size;
 	var l=0;
 	while(buffer_tell(wadbuff)<len){
-	var node=new nodetype;
+	var node= struct_copy(nodetype);
 
 
 	node.x=buffer_read(wadbuff,buffer_s16);

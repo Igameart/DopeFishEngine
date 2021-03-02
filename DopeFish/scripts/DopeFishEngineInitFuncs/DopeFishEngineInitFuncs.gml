@@ -1,12 +1,10 @@
 /// @description DopeFishEngineInit( WAD, Camera );
 
-
-
 function DE_wadDataPopulate(){
 
 	ds_data_init();
+	
 	// Some WAD defines
-	wadHeader = ds_map_build();
 	wadDirectory=ds_list_build();
 	wadDirectoryOfs = ds_map_build();
 	wadColorMaps = noone;
@@ -21,9 +19,10 @@ function DE_wadDataPopulate(){
 	wadSpriteDB = ds_map_build();
 	wadSpritesMir = ds_map_build();
 	wadSpritesDir = ds_map_build();
+	pload_pat=ds_map_build();
+	wadClasses = ds_map_build();
 	
-
-	wadlevel=ds_map_build();
+	wadlevel = {};
 	flats_=ds_map_build();
 	pload_flats=ds_map_build();
 
@@ -50,17 +49,17 @@ function DE_wadDataPopulate(){
 	mapGLsegPVISTable = ds_list_build();
 	
 	
-	ds_map_add(wadlevel,"glnodes",mapGLNodes);
-	ds_map_add(wadlevel,"glsegs",mapGLSegs);
-	ds_map_add(wadlevel,"glverts",mapGLVerts);
-	ds_map_add(wadlevel,"things",mapThings);
-	ds_map_add(wadlevel,"ssectors",mapSSectors);
-	ds_map_add(wadlevel,"glssects",mapGLSSects);
-	ds_map_add(wadlevel,"vertexes",mapVertexes);
-	ds_map_add(wadlevel,"nodes",mapGLNodes);
-	ds_map_add(wadlevel,"sidedefs",mapSidedefs);
-	ds_map_add(wadlevel,"segs",mapSegs);
-	ds_map_add(wadlevel,"sectors",mapSectors);
+	wadlevel.glnodes=mapGLNodes;
+	wadlevel.glsegs=mapGLSegs;
+	wadlevel.glverts=mapGLVerts;
+	wadlevel.things=mapThings;
+	wadlevel.ssectors=mapSSectors;
+	wadlevel.glssects=mapGLSSects;
+	wadlevel.vertexes=mapVertexes;
+	wadlevel.nodes=mapGLNodes;
+	wadlevel.sidedefs=mapSidedefs;
+	wadlevel.segs=mapSegs;
+	wadlevel.sectors=mapSectors;
 	
 	// Some BSP defines
 	bspLineCache = ds_list_build();
@@ -164,7 +163,7 @@ function DopeFishEngineInit( CameraObject ) {
 	#macro ANGLETOFINESHIFT	19	// 0x100000000 to 0x2000
 	#macro FRACBITS 16
 	#macro FRACUNIT (1<<FRACBITS)
-	#macro NF_SUBSECTOR 0x8000
+	#macro NF_SUbacksectorOR 0x8000
 
 	#macro NSDOOM "doom"
 	#macro NSHERETIC "heretic"
@@ -219,7 +218,7 @@ function DopeFishEngineInit( CameraObject ) {
 
 	globalvar wadbuff;
 
-	globalvar DEThingType;
+	globalvar DEActor;
 	
 	globalvar ideal_time; ideal_time = 1/60 * 1000000 * 5;
 
@@ -231,6 +230,7 @@ function DopeFishEngineInit( CameraObject ) {
 		file_copy("DE_GLBSP.dll",game_save_id+"DE_GLBSP.dll");
 		file_copy("glbsp.exe",game_save_id+"glbsp.exe");
 		file_copy("glvis.exe",game_save_id+"glvis.exe");
+		file_copy("wildmidi.exe",game_save_id+"wildmidi.exe");
 	}
 	
 	//globalvar wadProcessGLBSP; wadProcessGLBSP = external_define( game_save_id+"DE_GLBSP.dll", "wad_GLBSPProcess", dll_cdecl, ty_real, 0);
@@ -244,7 +244,7 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar MAP_SCALE; MAP_SCALE = 1.0;
 	globalvar MAX_THINGS; MAX_THINGS = 137;
 	globalvar NOINDEX; NOINDEX = 65536;
-	globalvar SUBSECTOR; SUBSECTOR = (1<<15);
+	globalvar SUbacksectorOR; SUbacksectorOR = (1<<15);
 	globalvar VERT_IS_GL; VERT_IS_GL = (1<<15);
 	globalvar ANIM_FPS; ANIM_FPS = 35.0;
 	globalvar FF_FRAMEMASK; FF_FRAMEMASK = $7fff;
@@ -266,7 +266,14 @@ function DopeFishEngineInit( CameraObject ) {
 
 	// Some WAD defines
 	globalvar wadHeader;
+	wadHeader = {
+		id			: "NULL",
+		numlumps	: 0,
+		infotableofs: 0
+	}
+	
 	globalvar wadDirectory;
+	globalvar wadDecorate;
 	globalvar wadDirectoryOfs;
 	globalvar wadColorMaps;
 	globalvar wadPlaypal;
@@ -280,10 +287,12 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar wadSpriteDB;
 	globalvar wadSpritesMir;
 	globalvar wadSpritesDir;
+	globalvar wadClasses;
 
 	globalvar wadlevel;
 	globalvar flats_;
 	globalvar pload_flats;
+	globalvar pload_pat;
 
 	// Some Map defines
 	globalvar DEMap;;
@@ -318,7 +327,7 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar MAP_SCALE; MAP_SCALE = 1.0;
 	globalvar MAX_THINGS; MAX_THINGS = 137;
 	globalvar NOINDEX; NOINDEX = 65536;
-	globalvar SUBSECTOR; SUBSECTOR = (1<<15);
+	globalvar SUbacksectorOR; SUbacksectorOR = (1<<15);
 	globalvar VERT_IS_GL;// VERT_IS_GL = (1<<15);
 	globalvar ANIM_FPS; ANIM_FPS = 35.0;
 	globalvar FF_FRAMEMASK; FF_FRAMEMASK = $7fff;

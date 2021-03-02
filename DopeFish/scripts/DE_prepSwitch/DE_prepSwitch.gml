@@ -1,14 +1,19 @@
 function DE_prepSwitch() {
 	var sPos = undefined;
 
-	if DE_textureIsSwitch(side[?"tex_l"]) sPos = "tex_l";
-	if DE_textureIsSwitch(side[?"tex_m"]) sPos = "tex_m";
-	if DE_textureIsSwitch(side[?"tex_u"]) sPos = "tex_u";
+	if DE_textureIsSwitch(side.lowtex)	sPos = "lowtex";
+	if DE_textureIsSwitch(side.midtex)	sPos = "midtex";
+	if DE_textureIsSwitch(side.uptex)	sPos = "uptex";
 
 	if sPos!=undefined{
 
 		switchIndex = sPos;
-		var sTex = side[?switchIndex];
+		var sTex;
+		switch sPos{
+			case "lowtex": sTex = side.lowtex; break;
+			case "midtex": sTex = side.midtex; break;
+			case "uptex": sTex = side.uptex; break;
+		}
 	
 		trace("Switch Object Has Switch Texture",sPos,sTex);
 		switchTex[0] = sTex;

@@ -1,7 +1,7 @@
 function DE_parse() {
 	/* COMMENTED OUT UNTIL ALL SCRIPTS POINTED TO ARE IMPLEMENTED
 	var filename=argument0,level=argument1,data=argument2;
-	//DE_view=new jDataView(data);
+	//DE_view= jDataView(data);
 	//DE_wad={};
 	DE_getHeader();
 	DE_getDirectory();
@@ -22,7 +22,7 @@ function DE_parse() {
 	DE_buildThings(level);
 
 	//sectors only give half the story so this builds the second half
-	DE_buildSubsectors(level);
+	DE_buildSubacksectorors(level);
 
 	show_debug_message("NOTICE: Finished Parsing "+filename+ ". Transfering Data back from Worker Thread");
 

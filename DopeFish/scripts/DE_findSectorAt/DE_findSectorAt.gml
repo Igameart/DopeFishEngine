@@ -1,12 +1,12 @@
 /// @description DE_findSectorAt(x,y,sector)
 function DE_findSectorAt(argument0, argument1, argument2) {
 
-	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
+	var sects = wadlevel.sectors;
 	var secnum;
 	if argument2!=-1{
 	    secnum=argument2;
 	    var sect=ds_list_find_value_fixed(sects,secnum);
-	    var colmap=ds_map_find_value(sect,"colmap");
+	    var colmap=sect.colmap;
     
 	    for (var i=0;i<ds_list_size(colmap);i+=6){
 	        var x0,y0,x1,y1,x2,y2;
@@ -26,7 +26,7 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 	}else{
 	    for (secnum=0;secnum<ds_list_size(sects);secnum++){
 	        var sect=ds_list_find_value_fixed(sects,secnum);
-	        var colmap=ds_map_find_value(sect,"colmap");
+	        var colmap=sect.colmap;
         
 	        for (var i=0;i<ds_list_size(colmap);i+=6){
 	            var x0,y0,x1,y1,x2,y2;
@@ -50,13 +50,13 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 
 }
 
-function DE_findSubSectorAt(x0, y0){//, ssCheck) {
+function DE_findSubacksectororAt(x0, y0){//, ssCheck) {
 
 	var sects = mapGLSSects;
 	var secnum;
 	    for (secnum=0;secnum<ds_list_size(sects);secnum++){
 	        var sect=ds_list_find_value_fixed(sects,secnum);
-	        var colmap=ds_map_find_value(sect,"colmap");
+	        var colmap=(sect.colmap);
 			
 			if (colmap != undefined){
 				//trace("Checking if inside polygon");

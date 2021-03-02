@@ -11,7 +11,7 @@ function DE_renderGLSeg(j) {
 
 	var seg = segs[| j ];
 
-	var l = seg[?"linedef"];
+	var l = seg.linedef;
 
 	if l = 65535 return;
 
@@ -22,8 +22,8 @@ function DE_renderGLSeg(j) {
 	var gverts = mapGLVerts;
 	var startv,endv;
 
-	startv = seg[?"start"];
-	endv = seg[?"end"];
+	startv = seg.startv;
+	endv = seg.endv;
 	
 	var sx,sy,ex,ey,vert,vcheck;
 	vcheck=verts;
@@ -33,8 +33,8 @@ function DE_renderGLSeg(j) {
 	}
     
 	vert=ds_list_find_value(vcheck,startv);
-	sx = ds_map_find_value(vert,"x");
-	sy = ds_map_find_value(vert,"y");
+	sx = (vert.x);
+	sy = (vert.y);
     
 	vcheck=verts;
 	if(endv&VERT_IS_GL){
@@ -43,110 +43,129 @@ function DE_renderGLSeg(j) {
 	}
     
 	vert=ds_list_find_value(vcheck,endv);
-	ex = ds_map_find_value(vert,"x");
-	ey = ds_map_find_value(vert,"y");
+	ex = (vert.x);
+	ey = (vert.y);
     
 	if !is_clockwise(sx,sy,ex,ey,DEcam.x,DEcam.y) return;
 	/**/
 
 	var lSides = ["right","left"];
-	var s = lSides[seg[?"side"]];
-
-	s = linedef[?s];
-	var side = sides[|s];
-
-	var flags = ds_map_find_value(linedef,"flags");
-    
-	var s=ds_map_find_value(side,"sector");
-	s = ds_list_find_value(sects,s);
-            
-	var bs = lSides[!seg[?"side"]];
-	bs = linedef[?bs];
-	var bside = ds_list_find_value_fixed(sides,bs);
-	var b=ds_map_find_value_fixed(bside,"sector");
-	b = ds_list_find_value_fixed(sects,b);
-
-	var zadd = ds_map_find_value(s,"lift");
-    
-	shader_set_uniform_f(u_midBotOff,zadd);
-	var crushing = ds_map_find_value_fixed(b,"crush");
-    
-	shader_set_uniform_f(u_lowBotOff,zadd);
-	shader_set_uniform_f(u_upBotOff,crushing);
-    
-	zadd = ds_map_find_value_fixed(b,"lift");
-	shader_set_uniform_f(u_lowTopOff,zadd);
-        
-	crushing = ds_map_find_value(s,"crush");
-	shader_set_uniform_f(u_midTopOff,crushing);
-    
-	shader_set_uniform_f(u_upTopOff,crushing);
-    
-	var val=ds_map_find_value_fixed(flags,"peglower");
-	if is_real(val)
-	shader_set_uniform_f(u_LowPeg,val);
-    
-	val=ds_map_find_value_fixed(flags,"pegupper");
-	if is_real(val)
-	shader_set_uniform_f(u_UpPeg,val);
-    
-
-	var vbuffer=ds_map_find_value_fixed(seg,"vbuffer");
-	var tex_l=ds_map_find_value_fixed(side,"tex_l");
-	var tex_u=ds_map_find_value_fixed(side,"tex_u");
-	var tex_m=ds_map_find_value_fixed(side,"tex_m");
-    
-    
-	if tex_l!="-" or tex_u!="-" or tex_m!="-"{
-        
-	    var vtex_l=ds_map_find_value(pload_tex,tex_l);
-	    var vtex_u=ds_map_find_value(pload_tex,tex_u);
-	    var vtex_m=ds_map_find_value(pload_tex,tex_m);
-        
-	    if is_undefined(vtex_m){
-	        vtex_m = [0,0,0];
-	    }else{
-	        shader_set_uniform_f(u_TexHM,sprite_get_height(vtex_m[0]));
-	    }
-        
-	    if !is_undefined(vtex_l){
-						
-	        if sprite_exists(vtex_l[0]){
-								
-	            shader_set_uniform_f(u_TexHL,sprite_get_height(vtex_l[0]));
-				
-				shader_set_uniform_f(shd_uLuv,vtex_l[1],vtex_l[2]);
-			
-				var tex = DE_getCompedTexture(tex_l);
-				
-	            texture_set_stage(shd_ltex,tex);
-				
-	        }
-			
-	    }else texture_set_stage(shd_ltex,0);
-        
-	    if !is_undefined(vtex_u){
-			
-	        if sprite_exists(vtex_u[0]){
-								
-	            shader_set_uniform_f(u_TexHU,sprite_get_height(vtex_u[0]));
-				
-				shader_set_uniform_f(shd_uUuv,vtex_u[1],vtex_u[2]);
-			
-				var tex = DE_getCompedTexture(tex_u);
-				
-	            texture_set_stage(shd_utex,tex);
-				
-	        }
-            
-	    }else texture_set_stage(shd_utex,0);
-			
-			shader_set_uniform_f(shd_uMuv,vtex_m[1],vtex_m[2]);
-			
-			var tex = DE_getCompedTexture(tex_m);
-			
-			vertex_submit(vbuffer,pr_trianglelist,tex);
+	var s = lSides[ seg.side ];
+	
+	switch s{
+		case "right": s = linedef.right; break;
+		case "left":  s = linedef.left; break;
 	}
+		
+	if ( s != -1 ){
+		var side = sides[| s ];
+	
+		//trace("NOTICE: Looking For Sidedef:",s,string(side));
+		var flags = linedef.flags;
+    
+		var s = side.sector;
+		s = ds_list_find_value(sects,s);
+            
+		var bs = lSides[! seg.side];
+	
+		switch bs{
+			case "right": bs = linedef.right; break;
+			case "left":  bs = linedef.left; break;
+		}
+		
+		if (bs!=-1){
+			var bside = ds_list_find_value(sides,bs);
+			var b=(bside.sector);
+			b = ds_list_find_value_fixed(sects,b);
+			var crushing = (b.crush);
+			shader_set_uniform_f(u_upBotOff,crushing);
+			zadd = (b.lift);
+			shader_set_uniform_f(u_lowTopOff,zadd);
+		}
+		
 
+		var zadd = (s.lift);
+    
+		shader_set_uniform_f(u_midBotOff,zadd);
+    
+		shader_set_uniform_f(u_lowBotOff,zadd);
+    
+        
+		crushing = (s.crush);
+		shader_set_uniform_f(u_midTopOff,crushing);
+    
+		shader_set_uniform_f(u_upTopOff,crushing);
+    
+		var val=(flags.peglower);
+	
+		if is_real(val)
+		shader_set_uniform_f(u_LowPeg,val);
+    
+		val=(flags.pegupper);
+	
+		if is_real(val)
+		shader_set_uniform_f(u_UpPeg,val);
+    
+
+		var vbuffer	= (seg.vbuffer);
+		
+		if vbuffer == undefined {trace("NOTICE: Seg Buffer Undefined",seg); return;}
+		
+		var lowtex	= (side.lowtex);
+		var uptex	= (side.uptex);
+		var midtex	= (side.midtex);
+    
+    
+		if lowtex!="-" or uptex!="-" or midtex!="-"{
+        
+		    var vlowtex	= ds_map_find_value(pload_tex,lowtex);
+		    var vuptex	= ds_map_find_value(pload_tex,uptex);
+		    var vmidtex	= ds_map_find_value(pload_tex,midtex);
+        
+		    if is_undefined(vmidtex){
+		        vmidtex = [0,0,0];
+		    }else{
+		        shader_set_uniform_f(u_TexHM,sprite_get_height(vmidtex[0]));
+		    }
+        
+		    if !is_undefined(vlowtex){
+						
+		        if sprite_exists(vlowtex[0]){
+								
+		            shader_set_uniform_f(u_TexHL,sprite_get_height(vlowtex[0]));
+				
+					shader_set_uniform_f(shd_uLuv,vlowtex[1],vlowtex[2]);
+			
+					var tex = DE_getCompedTexture(lowtex);
+				
+		            texture_set_stage(shd_ltex,tex);
+				
+		        }
+			
+		    }else texture_set_stage(shd_ltex,0);
+        
+		    if !is_undefined(vuptex){
+			
+		        if sprite_exists(vuptex[0]){
+								
+		            shader_set_uniform_f(u_TexHU,sprite_get_height(vuptex[0]));
+				
+					shader_set_uniform_f(shd_uUuv,vuptex[1],vuptex[2]);
+			
+					var tex = DE_getCompedTexture(uptex);
+				
+		            texture_set_stage(shd_utex,tex);
+				
+		        }
+            
+		    }else texture_set_stage(shd_utex,0);
+			
+				shader_set_uniform_f(shd_uMuv,vmidtex[1],vmidtex[2]);
+			
+				var tex = DE_getCompedTexture(midtex);
+			
+				vertex_submit(vbuffer,pr_trianglelist,tex);
+		}
+	}
 
 }

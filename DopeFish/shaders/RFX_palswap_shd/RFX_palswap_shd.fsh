@@ -29,7 +29,7 @@ vec3 sample3DTexture(sampler2D texture, vec3 color, float width) {
     float p_y = floor( color.g * width ) / width; //g value position
     p_x += floor( color.b * width ) / width; //b value position
     
-    vec3 result = texture2D( texture, vec2( p_x, p_y ) ).rgb; //get the new color from the LUT Texture
+    vec3 result = texture2D( texture, vec2( p_x, p_y ) ).rgb; //get the color from the LUT Texture
 	
     return result;
 }

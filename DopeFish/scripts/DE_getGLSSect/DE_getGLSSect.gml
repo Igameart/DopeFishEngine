@@ -12,7 +12,7 @@ function DE_getGLSSect(argument0, argument1) {
 	var len=pos+size;
 
 	while(buffer_tell(wadbuff)<len){
-	    var glssect = new glssecttype;
+	    var glssect = struct_copy(glssecttype);
 		
 	    if(wadGLVersion==3){
 	        glssect.count=buffer_read(wadbuff,buffer_u32)

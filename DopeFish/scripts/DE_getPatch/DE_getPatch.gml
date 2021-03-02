@@ -6,7 +6,7 @@ function DE_getPatch(argument0) {
 	var pname=argument0;
 	//var patchname=patch;
 
-	var patch=ds_map_find_value(wadPatches,pname);
+	var patch = ds_map_find_value( wadPatches,pname);
 
 	//patch isn't loaded, let's see if it can be
 	if is_undefined(patch){

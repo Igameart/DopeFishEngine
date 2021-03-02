@@ -1,15 +1,15 @@
 /// @description DE_preload_flats();
 function DE_preload_flats() {
 
-	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
+	var sects = mapSectors;//wadlevel.sectors;
 
 	for (var j = 0; j<ds_list_size(sects); j++ ){
     
 	    sect = ds_list_find_value(sects,j);
     
 	    var sect,ctex,ftex;
-	    ftex=ds_map_find_value(sect,"tex_f");
-	    ctex=ds_map_find_value(sect,"tex_c");
+	    ftex=(sect.floorpicnum);
+	    ctex=(sect.ceilingpicnum);
     
 		if is_string(ftex)
 	    if ftex!="-" and ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"

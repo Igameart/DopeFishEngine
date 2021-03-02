@@ -172,7 +172,7 @@ function __background_set_element(argument0, argument1, argument2, argument3, ar
 	layer_hspeed(__layerid, __hspeed);
 	layer_vspeed(__layerid, __vspeed);
 
-	// Construct our new background element
+	// Construct our background element
 	var __backel = layer_background_create(__layerid, __back);
 	layer_background_visible(__backel, __vis);
 	layer_background_htiled(__backel, __htiled);

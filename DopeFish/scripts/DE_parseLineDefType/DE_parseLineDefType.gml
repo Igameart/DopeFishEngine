@@ -12,11 +12,11 @@ function DE_parseLineDefType() {
 	if WAD_FORMAT == "DOOM"{//Disable hexen format for now, that requires implementing different functions
 
 			//If this Linedef triggers a door, set routine
-		if DE_IdTypeIsDoor(type) routine = DERoutines.DOOR;
+		if DE_IdTypeIsDoor(specialtype) routine = DERoutines.DOOR;
 		else
-		if DE_IdTypeIsFloor(type) routine = DERoutines.FLOOR;
+		if DE_IdTypeIsFloor(specialtype) routine = DERoutines.FLOOR;
 
-		switch type{
+		switch specialtype{
 				//Regular and extended door types:
 			case	1	: CLASS = Reg;	TRIG = ["P","R"];	LOCK = No;	SPEED = Slow;	WAIT =	4;	MONST =	Yes	; FUNC = [Open, Wait, Close];break;
 			case	117	: CLASS = Reg;	TRIG = ["P","R"];	LOCK = No;	SPEED = Fast;	WAIT =	4;	MONST =	No	; FUNC = [Open, Wait, Close];break;

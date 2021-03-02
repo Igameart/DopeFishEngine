@@ -1,13 +1,15 @@
 function DE_renderLinedef() {
 	var j = argument[0];
 
-	var lines = ds_map_find_value_fixed(wadlevel,"linedefs");
-	var sects = ds_map_find_value_fixed(wadlevel,"sectors");
+	var lines = (wadlevel.linedefs);
+	var sects = (wadlevel.sectors);
 
-	var sides = ds_map_find_value_fixed(wadlevel,"sidedefs");
-	var side = ds_list_find_value_fixed(sides,j);
+	var sides = (wadlevel.sidedefs);
+	var side = ds_list_find_value(sides,j);
+	
+	if side == undefined return undefined;
 
-	var l = ds_map_find_value_fixed(side,"linedef");
+	var l = side.linedef;
 
 	if l = 65535 return;
 
@@ -42,39 +44,39 @@ function DE_renderLinedef() {
 	
 	var flags = ds_map_find_value_fixed(l,"flags");
     
-	var s=ds_map_find_value(side,"sector");
-	var b=ds_map_find_value(side,"bsect");
+	var s=side.sector;
+	var b=side.backsector;
 	s = ds_list_find_value(sects,s);
 	b = ds_list_find_value(sects,b);
-	var zadd = ds_map_find_value(s,"lift");
+	var zadd = s.lift;
     
 	shader_set_uniform_f(u_midBotOff,zadd);
-	var crushing = ds_map_find_value(b,"crush");
+	var crushing = b.crush;
     
 	shader_set_uniform_f(u_lowBotOff,zadd);
 	shader_set_uniform_f(u_upBotOff,crushing);
     
-	zadd = ds_map_find_value(b,"lift");
+	zadd = b.lift;
 	shader_set_uniform_f(u_lowTopOff,zadd);
         
-	crushing = ds_map_find_value(s,"crush");
+	crushing = s.crush;
 	shader_set_uniform_f(u_midTopOff,crushing);
     
 	shader_set_uniform_f(u_upTopOff,crushing);
     
-	var val=ds_map_find_value_fixed(flags,"peglower");
+	var val=flags.peglower;
 	if is_real(val)
 	shader_set_uniform_f(u_LowPeg,val);
     
-	val=ds_map_find_value_fixed(flags,"pegupper");
+	val=flags.pegupper;
 	if is_real(val)
 	shader_set_uniform_f(u_UpPeg,val);
     
 
-	var vbuffer=ds_map_find_value_fixed(side,"vbuffer");
-	var tex_l=ds_map_find_value_fixed(side,"tex_l");
-	var tex_u=ds_map_find_value_fixed(side,"tex_u");
-	var tex_m=ds_map_find_value_fixed(side,"tex_m");
+	var vbuffer=side.vbuffer;
+	var tex_l=side.lowtex;
+	var tex_u=side.uptex;
+	var tex_m=side.midtex;
     
     
 	if tex_l!="-" or tex_u!="-" or tex_m!="-"{

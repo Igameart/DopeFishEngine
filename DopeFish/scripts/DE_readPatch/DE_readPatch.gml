@@ -14,28 +14,25 @@ function DE_readPatch() {
 	}
 
 	buffer_seek(wadbuff,buffer_seek_start,poff);
-	var patchDat=ds_map_build();
+	var patchDat= struct_copy(patchtype);
 
-	var patch_width=buffer_read(wadbuff,buffer_u16);
-	var patch_height=buffer_read(wadbuff,buffer_u16);
-
-	ds_map_add(patchDat,"width",patch_width);
-	ds_map_add(patchDat,"height",patch_height);
-	ds_map_add(patchDat,"o_left",buffer_read(wadbuff,buffer_s16));
-	ds_map_add(patchDat,"o_top",buffer_read(wadbuff,buffer_s16));
-	ds_map_add(patchDat,"data", 0);
+	patchDat.width=buffer_read(wadbuff,buffer_u16);
+	patchDat.height=buffer_read(wadbuff,buffer_u16);
+	
+	patchDat.leftoff	=buffer_read(wadbuff,buffer_s16);
+	patchDat.topoff		=buffer_read(wadbuff,buffer_s16);
 
 
-	var data=ds_grid_build(patch_width,patch_height+2);
+	var data=ds_grid_build(patchDat.width,patchDat.height+2);
 	ds_grid_clear(data,-1);
 
 	var offsets;
-	for(var o=0;o<patch_width;o++){
+	for(var o=0;o<patchDat.width;o++){
 		offsets[o]=buffer_read(wadbuff,buffer_u32);//this.view.getUint32();
 	}
 
 	
-	for(var w=0; w<patch_width; w++){
+	for(var w=0; w<patchDat.width; w++){
 		
 		var count=0;
 		var dummy=0;
@@ -64,8 +61,8 @@ function DE_readPatch() {
 			len=buffer_read(wadbuff,buffer_u8);
 			
 				// Clip posts that extend past the bottom
-	        if (top + oldlength > patch_height)
-	            len = patch_height - top;
+	        if (top + oldlength > patchDat.height)
+	            len = patchDat.height - top;
 			
 			dummy=buffer_read(wadbuff,buffer_u8);
 			
@@ -77,7 +74,7 @@ function DE_readPatch() {
 				
 			    var val=buffer_read(wadbuff,buffer_u8);
 				
-				if h+top<patch_height
+				if h+top<patchDat.height
 					ds_grid_set(data,w,h+top,val);
 				
 			}
@@ -90,7 +87,7 @@ function DE_readPatch() {
 
 	//data=DE_buildPatch(data,patch_width,patch_height);
 
-	ds_map_replace(patchDat,"data",data);
+	patchDat.contents = data;
 
 	var name=ds_list_find_value_fixed(wadPNames,patch);
 
