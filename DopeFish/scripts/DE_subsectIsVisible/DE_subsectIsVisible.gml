@@ -1,5 +1,5 @@
-function DE_subsectIsVisible() {
-	var subsect = argument[0];
+function DE_subacksectorIsVisible() {
+	var subacksector = argument[0];
 
 
 

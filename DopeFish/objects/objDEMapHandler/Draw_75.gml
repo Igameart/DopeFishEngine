@@ -8,9 +8,9 @@ h/=2;
 /// @description 
 /* * /
 /// Draw Sectors
-var lines = mapGLSegs;//ds_map_find_value_fixed(wad_levels,"glsegs");
-var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
-var gverts = mapGLVerts;//ds_map_find_value_fixed(wad_levels,"glverts");
+var lines = mapGLSegs;//ds_map_find_value_fixed(wadlevel,"glsegs");
+var verts = mapVertexes;//ds_map_find_value_fixed(wadlevel,"vertexes");
+var gverts = mapGLVerts;//ds_map_find_value_fixed(wadlevel,"glverts");
 
 draw_set_color(c_lime);
 draw_set_alpha(0.5);

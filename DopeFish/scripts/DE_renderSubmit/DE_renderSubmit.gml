@@ -8,12 +8,12 @@ function DE_renderSubmit() {
 
 	var ssects;
 	if wadGLVersion !=-1{
-		ssects = mapGLSSects;//ds_map_find_value_fixed(wad_levels,"glssects");
+		ssects = mapGLSSects;//ds_map_find_value_fixed(wadlevel,"glssects");
 	}else{
 		ssects = mapSSectors;
 	}
 
-	//trace("Subsectors to Render:",ds_list_size(bspSSectCache));
+	//trace("Subacksectorors to Render:",ds_list_size(bspSSectCache));
 
 	for (var j = 0; j<ds_list_size(bspSSectCache); j++ ){
     

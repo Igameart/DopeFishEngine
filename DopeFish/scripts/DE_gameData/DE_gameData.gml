@@ -1,7 +1,8 @@
 function DE_gameData() {
 	trace("Game Type:",DENAMESPACE);
 
-	DE_ThingMacros();
+	//DE_initMacros();
+	DE_Info();
 
 	switch DENAMESPACE{
 		case DEnameSpaces.DOOM:
@@ -18,6 +19,9 @@ function DE_gameData() {
 			DE_thingTypesStrife();
 		break;
 	}
-
+	
+	var __Dec = DE_getLumpOfs("DECORATE");
+	if ( __Dec>-1 )
+		DE_parseDecorate();
 
 }

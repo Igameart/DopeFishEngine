@@ -26,14 +26,14 @@ surface_set_target(mSurf)
 	
 	var spr,pos,size;
 	
-	size = array_length_1d(_GameTitles);
+	size = array_length(_GameTitles);
 	
 	pos = [mpos[2]*.2,mpos[3]*.5];
-	spr = _GameTitles[sMod(selMode-1,size)];
+	spr = _GameTitles[smod(selMode-1,size)];
 	draw_sprite_ext(spr,0,pos[0],pos[1],.75,.75,0,lgray,1);
 	
 	pos = [mpos[2]*.8,mpos[3]*.5];
-	spr = _GameTitles[sMod(selMode+1,size)];
+	spr = _GameTitles[smod(selMode+1,size)];
 	draw_sprite_ext(spr,0,pos[0],pos[1],.75,.75,0,lgray,1);
 	
 	

@@ -6,7 +6,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** MONSTERS *********
 	thing = [];                                                      
-	DEThingType[			 7] = thing;
+	DEActor[			 7] = thing;
 	//41 BBC                 7                                                    
 	thing[@ DEThingDef.Version ] =		"R"         
 	thing[@ DEThingDef.Radius ] =		"28"         
@@ -17,7 +17,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "D'Sparil"         
                                                                               
 	thing = [];                                                      
-	DEThingType[			 15] = thing;
+	DEActor[			 15] = thing;
 	//41 BBC                 F                                                    
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"16"         
@@ -28,7 +28,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Disciple of D'Sparil"         
                                                                               
 	thing = [];                                                      
-	DEThingType[			 5] = thing;
+	DEActor[			 5] = thing;
 	//41 BBC                 5                                                    
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"16"         
@@ -39,7 +39,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Fire gargoyle"         
                                                                               
 	thing = [];                                                      
-	DEThingType[			 66] = thing;
+	DEActor[			 66] = thing;
 	//41 BBC                 42                                                   
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"16"         
@@ -50,7 +50,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Gargoyle"
                                                                     
 	thing = [];                                            
-	DEThingType[			 68] = thing;
+	DEActor[			 68] = thing;
 	//41 BBC                 44                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -61,7 +61,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Golem"
                                                                     
 	thing = [];                                            
-	DEThingType[			 69] = thing;
+	DEActor[			 69] = thing;
 	//41 BBC 45                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -72,7 +72,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Golem ghost"
                                                                     
 	thing = [];                                            
-	DEThingType[			 6] = thing;
+	DEActor[			 6] = thing;
 	//41 BBC 6                                                          
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"40"
@@ -83,7 +83,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Iron lich"
                                                                     
 	thing = [];                                            
-	DEThingType[			 9] = thing;
+	DEActor[			 9] = thing;
 	//41 BBC 9                                                          
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"28"
@@ -94,7 +94,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Maulotaur"
                                                                     
 	thing = [];                                            
-	DEThingType[			 45] = thing;
+	DEActor[			 45] = thing;
 	//41 BBC 2D                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -105,7 +105,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Nitrogolem"
                                                                     
 	thing = [];                                            
-	DEThingType[			 46] = thing;
+	DEActor[			 46] = thing;
 	//41 BBC 2E                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -116,7 +116,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Nitrogolem ghost"
                                                                     
 	thing = [];                                            
-	DEThingType[			 92] = thing;
+	DEActor[			 92] = thing;
 	//41 BBC 5C                                                         
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"22"
@@ -127,7 +127,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Ophidian"
                                                                     
 	thing = [];                                            
-	DEThingType[			 90] = thing;
+	DEActor[			 90] = thing;
 	//41 BBC 5A                                                         
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -138,7 +138,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Sabreclaw"
                                                                     
 	thing = [];                                            
-	DEThingType[			 64] = thing;
+	DEActor[			 64] = thing;
 	//41 BBC 40                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"24"
@@ -149,7 +149,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Undead Warrior"
                                                                     
 	thing = [];                                            
-	DEThingType[			 65] = thing;
+	DEActor[			 65] = thing;
 	//41 BBC 41                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"24"
@@ -160,7 +160,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Undead Warrior ghost"
                                                                     
 	thing = [];                                            
-	DEThingType[			 70] = thing;
+	DEActor[			 70] = thing;
 	//41 BBC 46                                                         
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"32"
@@ -172,7 +172,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** WEAPONS *********
 	thing = [];                                           
-	DEThingType[53] = thing; 
+	DEActor[53] = thing; 
 	//41 BBC                 35
 	thing[@ DEThingDef.Version ] =		"S"          
 	thing[@ DEThingDef.Radius ] =		"20"          
@@ -183,7 +183,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Dragon Claw"          
                                                                    
 	thing = [];                                           
-	DEThingType[2001] = thing; 
+	DEActor[2001] = thing; 
 	//41 BBC                 7D1
 	thing[@ DEThingDef.Version ] =		"S"          
 	thing[@ DEThingDef.Radius ] =		"20"          
@@ -194,7 +194,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Ethereal Crossbow"          
                                                                    
 	thing = [];                                           
-	DEThingType[2002] = thing; 
+	DEActor[2002] = thing; 
 	//41 BBC                 7D2
 	thing[@ DEThingDef.Version ] =		"R"          
 	thing[@ DEThingDef.Radius ] =		"20"          
@@ -205,7 +205,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Firemace"          
                                                                    
 	thing = [];                                           
-	DEThingType[2005] = thing; 
+	DEActor[2005] = thing; 
 	//41 BBC                 7D5
 	thing[@ DEThingDef.Version ] =		"S"          
 	thing[@ DEThingDef.Radius ] =		"20"          
@@ -216,7 +216,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Gauntlets of the Necromancer"
                                                         
 	thing = [];                                
-	DEThingType[2004] = thing;
+	DEActor[2004] = thing;
 	//41 BBC 7D4                                            
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -227,7 +227,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hellstaff"
                                                         
 	thing = [];                                
-	DEThingType[2003] = thing;
+	DEActor[2003] = thing;
 	//41 BBC 7D3                                            
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -239,7 +239,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** PICKUPS *********
 	thing = [];                                             
-	DEThingType				[54] = thing;
+	DEActor				[54] = thing;
 	//41 BBC                 36
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -250,7 +250,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Claw Orb"         
                                                                      
 	thing = [];                                             
-	DEThingType				[12] = thing;
+	DEActor				[12] = thing;
 	//41 BBC                 C
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -261,7 +261,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Crystal Geode"         
                                                                      
 	thing = [];                                             
-	DEThingType				[55] = thing;
+	DEActor				[55] = thing;
 	//41 BBC                 37
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -272,7 +272,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Energy Orb"         
                                                                      
 	thing = [];                                             
-	DEThingType				[18] = thing;
+	DEActor				[18] = thing;
 	//41 BBC                 12
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -283,7 +283,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Ethereal Arrows"
                                                            
 	thing = [];                                   
-	DEThingType				[22] = thing;
+	DEActor				[22] = thing;
 	//41 BBC 16                                                
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -294,7 +294,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Flame Orb"
                                                            
 	thing = [];                                   
-	DEThingType				[21] = thing;
+	DEActor				[21] = thing;
 	//41 BBC 15                                                
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -305,7 +305,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Greater Runes"
                                                            
 	thing = [];                                   
-	DEThingType				[23] = thing;
+	DEActor				[23] = thing;
 	//41 BBC 17
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -316,7 +316,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Inferno Orb"
                                                            
 	thing = [];                                   
-	DEThingType				[20] = thing;
+	DEActor				[20] = thing;
 	//41 BBC 14                                                
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -327,7 +327,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Lesser Runes"
                                                            
 	thing = [];                                   
-	DEThingType				[13] = thing;
+	DEActor				[13] = thing;
 	//41 BBC D
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -338,7 +338,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Mace Spheres"
                                                            
 	thing = [];                                   
-	DEThingType				[16] = thing;
+	DEActor				[16] = thing;
 	//41 BBC 10                                                
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -349,7 +349,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Pile of Mace Spheres"
                                                            
 	thing = [];                                   
-	DEThingType				[19] = thing;
+	DEActor				[19] = thing;
 	//41 BBC 13
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -360,7 +360,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Quiver of Ethereal Arrows"
                                                            
 	thing = [];                                   
-	DEThingType				[10] = thing;
+	DEActor				[10] = thing;
 	//41 BBC A                                                 
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -371,7 +371,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Wand Crystal"
 
 	thing = [];               
-	DEThingType				[8] = thing;
+	DEActor				[8] = thing;
 	//41 BBC                 8
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -382,7 +382,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Bag of Holding"         
                
 	thing = [];               
-	DEThingType				[36] = thing;
+	DEActor				[36] = thing;
 	//41 BBC                 24
 	thing[@ DEThingDef.Version ] =		"R"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -393,7 +393,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Chaos Device"         
                
 	thing = [];               
-	DEThingType				[35] = thing;
+	DEActor				[35] = thing;
 	//41 BBC                 23
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -404,7 +404,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Map Scroll"         
                
 	thing = [];               
-	DEThingType				[30] = thing;
+	DEActor				[30] = thing;
 	//41 BBC                 1E            
 	thing[@ DEThingDef.Version ] =		"S"         
 	thing[@ DEThingDef.Radius ] =		"20"         
@@ -415,7 +415,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Morph Ovum"
      
 	thing = [];     
-	DEThingType				[32] = thing;
+	DEActor				[32] = thing;
 	//41 BBC 20
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -426,7 +426,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Mystic Urn"
      
 	thing = [];     
-	DEThingType				[82] = thing;
+	DEActor				[82] = thing;
 	//41 BBC 52                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -437,7 +437,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Quartz Flask"
      
 	thing = [];     
-	DEThingType				[84] = thing;
+	DEActor				[84] = thing;
 	//41 BBC 54                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -448,7 +448,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Ring of Invincibility"
      
 	thing = [];     
-	DEThingType				[75  ] = thing;
+	DEActor				[75  ] = thing;
 	//41 BBC 4B                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -459,7 +459,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Shadowsphere"
      
 	thing = [];     
-	DEThingType				[34  ] = thing;
+	DEActor				[34  ] = thing;
 	//41 BBC 22                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -470,7 +470,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Timebomb of the Ancients"
      
 	thing = [];     
-	DEThingType				[86  ] = thing;
+	DEActor				[86  ] = thing;
 	//41 BBC 56                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -481,7 +481,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Tome of Power"
      
 	thing = [];     
-	DEThingType				[33  ] = thing;
+	DEActor				[33  ] = thing;
 	//41 BBC 21                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -492,7 +492,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Torch"
      
 	thing = [];     
-	DEThingType				[83  ] = thing;
+	DEActor				[83  ] = thing;
 	//41 BBC 53                  
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -503,7 +503,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Wings of Wrath"
 
 	thing = [];                           
-	DEThingType				[81] = thing;
+	DEActor				[81] = thing;
 	//41 BBC                 51
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -514,7 +514,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Crystal Vial"     
                                               
 	thing = [];                           
-	DEThingType				[31] = thing;
+	DEActor				[31] = thing;
 	//41 BBC                 1F                        
 	thing[@ DEThingDef.Version ] =		"R"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -525,7 +525,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Enchanted Shield"     
                                               
 	thing = [];                           
-	DEThingType				[85] = thing;
+	DEActor				[85] = thing;
 	//41 BBC                 55                        
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -536,7 +536,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Silver Shield"     
                                               
 	thing = [];                           
-	DEThingType				[79] = thing;
+	DEActor				[79] = thing;
 	//41 BBC                 4F                        
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -547,7 +547,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Blue key"
                                               
 	thing = [];                      
-	DEThingType				[73] = thing;
+	DEActor				[73] = thing;
 	//41 BBC 49                                   
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -558,7 +558,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Green key"
                                               
 	thing = [];                      
-	DEThingType				[80] = thing;
+	DEActor				[80] = thing;
 	//41 BBC 50                                   
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -570,7 +570,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** OBSTACLES *********
 	thing = [];                                      
-	DEThingType				[44] = thing;
+	DEActor				[44] = thing;
 	//41 BBC                 2C
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"12"    
@@ -581,7 +581,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Barrel"     
                                                          
 	thing = [];                                      
-	DEThingType				[76] = thing;
+	DEActor				[76] = thing;
 	//41 BBC                 4C
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"16"    
@@ -592,7 +592,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Fire brazier"     
                                                          
 	thing = [];                                      
-	DEThingType				[51] = thing;
+	DEActor				[51] = thing;
 	//41 BBC                 33
 	thing[@ DEThingDef.Version ] =		"R"    
 	thing[@ DEThingDef.Radius ] =		"8"    
@@ -603,7 +603,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hanging corpse"     
                                                          
 	thing = [];                                      
-	DEThingType				[40] = thing;
+	DEActor				[40] = thing;
 	//41 BBC                 28
 	thing[@ DEThingDef.Version ] =		"R"    
 	thing[@ DEThingDef.Radius ] =		"12"    
@@ -614,7 +614,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Large stalactite"
                                                          
 	thing = [];                                 
-	DEThingType				[38] = thing;
+	DEActor				[38] = thing;
 	//41 BBC 26
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -625,7 +625,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Large stalagmite"
                                                          
 	thing = [];                                 
-	DEThingType				[27] = thing;
+	DEActor				[27] = thing;
 	//41 BBC 1B
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -636,7 +636,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Serpent torch"
                                                          
 	thing = [];                                 
-	DEThingType				[29] = thing;
+	DEActor				[29] = thing;
 	//41 BBC 1D
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -647,7 +647,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Short grey pillar"
                                                          
 	thing = [];                                 
-	DEThingType				[39] = thing;
+	DEActor				[39] = thing;
 	//41 BBC 27
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -658,7 +658,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Small stalactite"
                                                          
 	thing = [];                                 
-	DEThingType				[37] = thing;
+	DEActor				[37] = thing;
 	//41 BBC 25
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"8"
@@ -669,7 +669,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Small stalagmite"
                                                          
 	thing = [];                                 
-	DEThingType				[47] = thing;
+	DEActor				[47] = thing;
 	//41 BBC 2F
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"14"
@@ -680,7 +680,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Tall brown pillar"
                                                          
 	thing = [];                                 
-	DEThingType				[87] = thing;
+	DEActor				[87] = thing;
 	//41 BBC 57
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"12"
@@ -692,7 +692,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** DECORATIONS *********
 	thing = [];                                                
-	DEThingType				[28] = thing;
+	DEActor				[28] = thing;
 	//41 BBC                 1C
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -703,7 +703,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Chandelier"     
                                                                    
 	thing = [];                                                
-	DEThingType				[17] = thing;
+	DEActor				[17] = thing;
 	//41 BBC                 11
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -714,7 +714,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hanging skull (long rope)"     
                                                                    
 	thing = [];                                                
-	DEThingType				[24] = thing;
+	DEActor				[24] = thing;
 	//41 BBC                 18
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -725,7 +725,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hanging skull (medium rope)"     
                                                                    
 	thing = [];                                                
-	DEThingType				[25] = thing;
+	DEActor				[25] = thing;
 	//41 BBC                 19
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -736,7 +736,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hanging skull (short rope)"
                                                                    
 	thing = [];                                           
-	DEThingType				[26] = thing;
+	DEActor				[26] = thing;
 	//41 BBC 1A
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -747,7 +747,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Hanging skull (shortest rope)"
                                                                    
 	thing = [];                                           
-	DEThingType				[49] = thing;
+	DEActor				[49] = thing;
 	//41 BBC 31
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -758,7 +758,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Moss 1 string"
                                                                    
 	thing = [];                                           
-	DEThingType				[48] = thing;
+	DEActor				[48] = thing;
 	//41 BBC 30
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -769,7 +769,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Moss 2 strings"
                                                                    
 	thing = [];                                           
-	DEThingType				[50] = thing;
+	DEActor				[50] = thing;
 	//41 BBC 32
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -781,7 +781,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** AMBIENT SOUNDS *********
 	thing = [];                             
-	DEThingType				[1205] = thing;
+	DEActor				[1205] = thing;
 	//41 BBC                 4B5
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -792,7 +792,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Bells"     
                                                 
 	thing = [];                             
-	DEThingType				[1202] = thing;
+	DEActor				[1202] = thing;
 	//41 BBC                 4B2
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -803,7 +803,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Drops"     
                                                 
 	thing = [];                             
-	DEThingType				[1209] = thing;
+	DEActor				[1209] = thing;
 	//41 BBC                 4B9
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -814,7 +814,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Fast footsteps"     
                                                 
 	thing = [];                             
-	DEThingType				[1206] = thing;
+	DEActor				[1206] = thing;
 	//41 BBC                 4B6
 	thing[@ DEThingDef.Version ] =		"R"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -825,7 +825,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Growl"
                                                 
 	thing = [];                        
-	DEThingType				[1204] = thing;
+	DEActor				[1204] = thing;
 	//41 BBC 4B4                                    
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -836,7 +836,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Heart beat"
                                                 
 	thing = [];                        
-	DEThingType				[1208] = thing;
+	DEActor				[1208] = thing;
 	//41 BBC 4B8
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -847,7 +847,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Laughter"
                                                 
 	thing = [];                        
-	DEThingType				[1207] = thing;
+	DEActor				[1207] = thing;
 	//41 BBC 4B7
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -858,7 +858,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Magic"
                                                 
 	thing = [];                        
-	DEThingType				[1200] = thing;
+	DEActor				[1200] = thing;
 	//41 BBC 4B0
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -869,7 +869,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Scream"
                                                 
 	thing = [];                        
-	DEThingType				[1203] = thing;
+	DEActor				[1203] = thing;
 	//41 BBC 4B3
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -880,7 +880,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Slow footsteps"
                                                 
 	thing = [];                        
-	DEThingType				[1201] = thing;
+	DEActor				[1201] = thing;
 	//41 BBC 4B1
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -891,7 +891,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Squish"
                                                 
 	thing = [];                        
-	DEThingType				[41] = thing;
+	DEActor				[41] = thing;
 	//41 BBC 29
 	thing[@ DEThingDef.Version ] =		"R"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -902,7 +902,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Waterfall"
                                                 
 	thing = [];                        
-	DEThingType				[42] = thing;
+	DEActor				[42] = thing;
 	//41 BBC 2A
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -914,7 +914,7 @@ function DE_thingTypesHeretic() {
 
 	// ******** OTHER *********
 	thing = [];                                                
-	DEThingType				[56] = thing;
+	DEActor				[56] = thing;
 	//41 BBC                 38
 	thing[@ DEThingDef.Version ] =		"R"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -925,7 +925,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "D'Sparil teleport spot"     
                                                                    
 	thing = [];                                                
-	DEThingType				[11] = thing;
+	DEActor				[11] = thing;
 	//41 BBC                 B
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"20"    
@@ -936,7 +936,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Deathmatch start"     
                                                                    
 	thing = [];                                                
-	DEThingType				[94] = thing;
+	DEActor				[94] = thing;
 	//41 BBC                 5E
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"16"    
@@ -947,7 +947,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Key gizmo (blue)"     
                                                                    
 	thing = [];                                                
-	DEThingType				[95] = thing;
+	DEActor				[95] = thing;
 	//41 BBC                 5F                                             
 	thing[@ DEThingDef.Version ] =		"S"    
 	thing[@ DEThingDef.Radius ] =		"16"    
@@ -958,7 +958,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Key gizmo (green)"
                                                                    
 	thing = [];                                           
-	DEThingType				[96] = thing;
+	DEActor				[96] = thing;
 	//41 BBC 60                                                        
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -969,7 +969,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Key gizmo (yellow)"
                                                                    
 	thing = [];                                           
-	DEThingType				[1] = thing;
+	DEActor				[1] = thing;
 	//41 BBC 1                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -980,7 +980,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Player 1 start"
                                                                    
 	thing = [];                                           
-	DEThingType				[2] = thing;
+	DEActor				[2] = thing;
 	//41 BBC 2                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -991,7 +991,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Player 2 start"
                                                                    
 	thing = [];                                           
-	DEThingType				[3] = thing;
+	DEActor				[3] = thing;
 	//41 BBC 3                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -1002,7 +1002,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Player 3 start"
                                                                    
 	thing = [];                                           
-	DEThingType				[4] = thing;
+	DEActor				[4] = thing;
 	//41 BBC 4                                                         
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -1013,7 +1013,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Player 4 start"
                                                                    
 	thing = [];                                           
-	DEThingType				[2035] = thing;
+	DEActor				[2035] = thing;
 	//41 BBC 7F3                                                       
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"16"
@@ -1024,7 +1024,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Pod"
                                                                    
 	thing = [];                                           
-	DEThingType				[43] = thing;
+	DEActor				[43] = thing;
 	//41 BBC 2B                                                        
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1035,7 +1035,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Pod generator"
                                                                    
 	thing = [];                                           
-	DEThingType				[52] = thing;
+	DEActor				[52] = thing;
 	//41 BBC 34                                                        
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1046,7 +1046,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Teleport glitter (blue)"
                                                                    
 	thing = [];                                           
-	DEThingType				[74] = thing;
+	DEActor				[74] = thing;
 	//41 BBC 34 4A                                                     
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"
@@ -1057,7 +1057,7 @@ function DE_thingTypesHeretic() {
 	thing[@ DEThingDef.Description ] = "Teleport glitter (red)"
                                                                    
 	thing = [];                                           
-	DEThingType				[14] = thing;
+	DEActor				[14] = thing;
 	//41 BBC 34 E                                                      
 	thing[@ DEThingDef.Version ] =		"S"
 	thing[@ DEThingDef.Radius ] =		"20"

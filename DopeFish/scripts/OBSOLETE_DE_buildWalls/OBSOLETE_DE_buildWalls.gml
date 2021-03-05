@@ -5,10 +5,10 @@
 /// @param color
 function DE_buildWalls() {
 
-	var verts = mapVertexes;//ds_map_find_value_fixed(wad_levels,"vertexes");
-	var lines = mapLinedefs;//ds_map_find_value_fixed(wad_levels,"linedefs");
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
-	var sects = mapSectors;//ds_map_find_value_fixed(wad_levels,"sectors");
+	var verts = mapVertexes;//ds_map_find_value_fixed(wadlevel,"vertexes");
+	var lines = mapLinedefs;//ds_map_find_value_fixed(wadlevel,"linedefs");
+	var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
+	var sects = mapSectors;//ds_map_find_value_fixed(wadlevel,"sectors");
 
 	for (var k=0;k<ds_list_size(lines);k++) {
 
@@ -17,8 +17,8 @@ function DE_buildWalls() {
 		//ds_map_print(linedef);
     
 	    var flags=ds_map_find_value_fixed(linedef,"flags");
-	    var u_peg=ds_map_find_value_fixed(flags,"peg_upper");
-	    var l_peg=ds_map_find_value_fixed(flags,"peg_lower");
+	    var u_peg=ds_map_find_value_fixed(flags,"pegupper");
+	    var l_peg=ds_map_find_value_fixed(flags,"peglower");
     
 	    var dub  =ds_map_find_value_fixed(flags,"twosided");
 	    var sld  =ds_map_find_value_fixed(flags,"block_all");
@@ -94,10 +94,10 @@ function DE_buildWalls() {
 	            sect = ds_list_find_value_fixed(sects,sect);
 				var _ceiling = ds_map_find_value_fixed(sect,"ceiling");
 			
-	            var bsect=ds_map_find_value_fixed(bside,"sector");
-	            //ds_map_replace(side,"bsect",bsect);
-	            //ds_map_replace(linedef,"bsect",bsect);
-	            bsect = ds_list_find_value_fixed(sects,bsect);
+	            var backsector=ds_map_find_value_fixed(bside,"sector");
+	            //ds_map_replace(side,"backsector",backsector);
+	            //ds_map_replace(linedef,"backsector",backsector);
+	            backsector = ds_list_find_value_fixed(sects,backsector);
 	            ds_map_replace(side,"linedef",k);
 	            ds_map_replace(bside,"linedef",k);
             
@@ -141,8 +141,8 @@ function DE_buildWalls() {
 	                top = ds_map_find_value_fixed(sect,"ceiling");
                 
 	                if back!=-1{
-	                    bot = ds_map_find_value_fixed(bsect,"floor");
-	                    top = ds_map_find_value_fixed(bsect,"ceiling");
+	                    bot = ds_map_find_value_fixed(backsector,"floor");
+	                    top = ds_map_find_value_fixed(backsector,"ceiling");
 	                }
                 
 	                var cLine=instance_create(sx,sy,passable_collision_obj);
@@ -171,9 +171,9 @@ function DE_buildWalls() {
 	                    if back!=-1
 	                        bot = ds_map_find_value_fixed(sect,"floor");
 	                    else
-	                        bot = ds_map_find_value_fixed(bsect,"ceiling");
+	                        bot = ds_map_find_value_fixed(backsector,"ceiling");
                     
-	                    top = ds_map_find_value_fixed(bsect,"floor");
+	                    top = ds_map_find_value_fixed(backsector,"floor");
                     
 	                    //if top<=bot{
 	                    //    bot=top;
@@ -219,13 +219,13 @@ function DE_buildWalls() {
 	                    //show_debug_message("Upper wall:"+tcd[1]);
 						var _s,_b;
 						_s = ds_map_find_value_fixed(sect,"tex_c");
-						_b = ds_map_find_value_fixed(bsect,"tex_c");
+						_b = ds_map_find_value_fixed(backsector,"tex_c");
 	                    if not (_s="F_SKY1" and _s!="F_SKY" and _s!="F_SKY001" and _b="F_SKY1" and _b!="F_SKY" and _b!="F_SKY001"){
                         
 	                        if ds_map_find_value_fixed(bside,"tex_u")=="-"{
 	                            var bot, top;
 	                            top = ds_map_find_value_fixed(sect,"ceiling");
-	                            bot = ds_map_find_value_fixed(bsect,"ceiling");
+	                            bot = ds_map_find_value_fixed(backsector,"ceiling");
 	                            var height=abs(top-bot)/t_h;
                                     
 	                            var tt,t_w,t_h;
@@ -279,10 +279,10 @@ function DE_buildWalls() {
 	                    top = ds_map_find_value_fixed(sect,"ceiling");
 						
 	                    if back!=-1{
-							bbot = ds_map_find_value_fixed(bsect,"floor");
+							bbot = ds_map_find_value_fixed(backsector,"floor");
 							if (bbot>bot){
 								bot = bbot;
-								//top = ds_map_find_value_fixed(bsect,"ceiling");
+								//top = ds_map_find_value_fixed(backsector,"ceiling");
 							}
 	                    }
 						
@@ -357,10 +357,10 @@ function DE_buildWalls() {
 	            //show_debug_message("Front Sector: "+string(sect));
             
 	            sect = ds_list_find_value_fixed(sects,sect);
-	            var bsect=ds_map_find_value_fixed(bside,"sector");
-	            ds_map_replace(side,"bsect",bsect);
-	            ds_map_replace(linedef,"bsect",bsect);
-	            bsect = ds_list_find_value_fixed(sects,bsect);
+	            var backsector=ds_map_find_value_fixed(bside,"sector");
+	            ds_map_replace(side,"backsector",backsector);
+	            ds_map_replace(linedef,"backsector",backsector);
+	            backsector = ds_list_find_value_fixed(sects,backsector);
 			
 				var _ceiling = ds_map_find_value_fixed(sect,"ceiling");
 				//var _floor = ds_map_find_value_fixed(sect,"floor");
@@ -409,8 +409,8 @@ function DE_buildWalls() {
 	                top = ds_map_find_value_fixed(sect,"ceiling");
                 
 	                if back!=-1{
-	                    bot = ds_map_find_value_fixed(bsect,"floor");
-	                    top = ds_map_find_value_fixed(bsect,"ceiling");
+	                    bot = ds_map_find_value_fixed(backsector,"floor");
+	                    top = ds_map_find_value_fixed(backsector,"ceiling");
 	                }
                 
 	                var cLine=instance_create(sx,sy,passable_collision_obj);
@@ -439,12 +439,12 @@ function DE_buildWalls() {
 					
 						var _s,_b;
 						_s = ds_map_find_value_fixed(sect,"tex_c");
-						_b = ds_map_find_value_fixed(bsect,"tex_c");
+						_b = ds_map_find_value_fixed(backsector,"tex_c");
 					
 	                    if not (_s="F_SKY1" and _s!="F_SKY" and _s!="F_SKY001" and _b="F_SKY1" and _b!="F_SKY" and _b!="F_SKY001"){
 	                        var bot, top, bbot;
 	                        top = ds_map_find_value_fixed(sect,"ceiling");
-	                        bot = ds_map_find_value_fixed(bsect,"ceiling");
+	                        bot = ds_map_find_value_fixed(backsector,"ceiling");
 							bbot = ds_map_find_value_fixed(sect,"ceiling");
                             
 	                        var tt,t_w,t_h;
@@ -500,8 +500,8 @@ function DE_buildWalls() {
 	                    if back!=-1
 	                        bot = ds_map_find_value_fixed(sect,"floor");
 	                    else
-	                        bot = ds_map_find_value_fixed(bsect,"ceiling");                    
-	                    top = ds_map_find_value_fixed(bsect,"floor");
+	                        bot = ds_map_find_value_fixed(backsector,"ceiling");                    
+	                    top = ds_map_find_value_fixed(backsector,"floor");
                     
 	                    if top<=bot{
 	                        bot=top;
@@ -556,10 +556,10 @@ function DE_buildWalls() {
 	                    top = ds_map_find_value_fixed(sect,"ceiling");
                     
 	                    if back!=-1{
-							bbot = ds_map_find_value_fixed(bsect,"floor");
+							bbot = ds_map_find_value_fixed(backsector,"floor");
 							if (bbot>bot){
 								bot = bbot;
-								//top = ds_map_find_value_fixed(bsect,"ceiling");
+								//top = ds_map_find_value_fixed(backsector,"ceiling");
 							}
 	                    }
                     

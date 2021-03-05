@@ -5,9 +5,9 @@ function DE_renderBSPNode() {
 
 	if ( node&CHILD_IS_SUBSEC ){
 	
-		var subsect = node&~CHILD_IS_SUBSEC;
-		//if (DE_subsectIsVisible(subsect))
-			DE_renderAddSubsector(subsect);
+		var subacksector = node&~CHILD_IS_SUBSEC;
+		//if (DE_subacksectorIsVisible(subacksector))
+			DE_renderAddSubacksectoror(subacksector);
 		return
 	}
 

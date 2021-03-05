@@ -1,7 +1,7 @@
 
 num=0;
 
-PLAYER_HEIGHT = 55;
+//PLAYER_HEIGHT = 55;
 
 application_surface_draw_enable(false);
 
@@ -21,8 +21,8 @@ DE_loadMap(DEMap);
 
 window_set_cursor(cr_none);
 
-display_reset(2,1);
-d3d_set_culling(true);
+//display_reset(2,1);
+//d3d_set_culling(true);
 texture_set_repeat(true);	
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
@@ -39,11 +39,11 @@ xx=1;
 yy=0;
 zz=0;
 zspeed=0;
-Msect=-1;
-Mssect=-1;
+Sector=-1;
+Subsector=-1;
 secZ=0;
 
-//var things=ds_map_find_value_fixed(wad_levels,"things");
+//var things=ds_map_find_value_fixed(wadlevel,"things");
 //things=ds_list_find_value(things,0);
 
 //x=ds_map_find_value(things,"x");
@@ -59,12 +59,12 @@ cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
 cam_z=lengthdir_y(1,pitch)
 
 var cMsect;
-cMsect=DE_findSectorAt(x,y,Msect);
+cMsect=DE_findSectorAt(x,y,Sector);
 
-if cMsect!=Msect{
+if cMsect!=Sector{
     if !is_undefined(cMsect){
-        var sects = ds_map_find_value_fixed(wad_levels,"sectors");
-        z=ds_map_find_value_fixed(ds_list_find_value_fixed(sects,cMsect),"floor");
+        var sects = wadlevel.sectors;
+        z=ds_list_find_value_fixed(sects,cMsect).floorz;
     }
 };
 
@@ -74,9 +74,10 @@ center_x=display_get_width()/2
 center_y=display_get_height()/2
 display_mouse_set(center_x,center_y)
 
-cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw)
-cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
-cam_z=lengthdir_y(1,pitch)
+cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw);
+cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw);
+cam_z=lengthdir_y(1,pitch);
+global._dt = 1;
 
 mouse_free=0;
 
@@ -91,6 +92,22 @@ mass = 1.0; // 1kg
 drag = 0.1; // rho*C*Area - simplified drag for this example
 vGravity = 0;
 vFriction = 0.995;
+
+//Define Actor Flags: Move this t another object
+flags = 0;
+flags2 = 0;			// Heretic flags
+flags3 = 0;			// [RH] Hexen/Heretic actor-dependant behavior made flaggable
+flags4 = 0;			// [RH] Even more flags!
+flags5 = 0;			// OMG! We need another one.
+flags6 = 0;			// Shit! Where did all the flags go?
+flags7 = 0;			// WHO WANTS TO BET ON 8!?
+
+Height = PLAYER_HEIGHT;
+
+//CHRIS: Music Stuff, move this to another object please
+noteslist = noone;
+time = 0;
+realbpm = 0;
 
 globalvar fcol;fcol=__background_get_colour( );
 globalvar f_far;f_far=(2048*2);

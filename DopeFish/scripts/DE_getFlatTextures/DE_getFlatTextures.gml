@@ -6,7 +6,7 @@ function DE_getFlatTextures() {
 	for(l=0;l<ds_list_size(wadDirectory);l+=1){
 	
 	    var lump=ds_list_find_value_fixed(wadDirectory,l);
-	    var n=ds_map_find_value_fixed(lump,"name");
+	    var n= lump.name;
 	
 	    switch(n){
 		
@@ -31,9 +31,10 @@ function DE_getFlatTextures() {
 	
 		if(readflats){
 			
-	        buffer_seek(wadbuff,buffer_seek_start,ds_map_find_value_fixed(lump,"filepos"));
+	        buffer_seek(wadbuff,buffer_seek_start, lump.filepos);
+			
 	        var flat=ds_list_build();
-			show_debug_message("NOTICE: Found FLAT:"+n);
+			trace("NOTICE: Found FLAT:"+n);
 			
 	        repeat 4096{
 	            ds_list_add(flat,buffer_read(wadbuff,buffer_u8));

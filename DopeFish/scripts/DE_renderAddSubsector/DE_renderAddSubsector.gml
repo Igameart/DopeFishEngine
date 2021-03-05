@@ -1,4 +1,4 @@
-function DE_renderAddSubsector() {
+function DE_renderAddSubacksectoror() {
 	var ssectNum = argument[0];
 
 

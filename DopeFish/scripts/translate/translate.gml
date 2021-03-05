@@ -13,8 +13,15 @@ function translate() {
 	var min2	= argument[3]
 	var max2	= argument[4]
 	var clamps	= ( argument_count>5 )? argument[5] : false;
-
-	var val		= ((num-min1)/(max1-min1)*(max2-min2))+min2;
+	
+	//trace("Translating:",num,min1,max1,min2,max2,clamps);
+	
+	var check1 = num-min1;
+	var check2 = max1-min1;
+	
+	if check2 == 0 return min2;
+	
+	var val		= ( (check1) / (check2) * (max2-min2) ) + min2;
 	return clamps ? (min2 < max2 ? clamp(val,min2,max2) : clamp(val,max2,min2)) : val;
 
 

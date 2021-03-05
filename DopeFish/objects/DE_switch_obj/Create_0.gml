@@ -4,7 +4,7 @@ sectsComplete = 0;
 
 tag = -1;
 line = -1
-type = -1;
+specialtype = -1;
 alarm[0]=2;
 time=random(360);
 

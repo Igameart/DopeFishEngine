@@ -8,20 +8,24 @@ if keyboard_check_pressed(vk_numpad0) IDDQD = !IDDQD;
 if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 
 var cMsect;
-cMsect	= DE_findSectorAt( x, y, Msect );
+cMsect	= DE_findSectorAt( x, y, Sector );
 
-Mssect	= DE_findSubSectorAt( x, y );
+Subsector	= DE_findSubacksectororAt( x, y );
 
-if cMsect!=Msect{
-    if !is_undefined(cMsect){
-        var sects = ds_map_find_value_fixed(wad_levels,"sectors");
-        secZ=ds_map_find_value_fixed(ds_list_find_value_fixed(sects,cMsect),"floor");
-        Msect=cMsect;
+if cMsect!=Sector{
+	
+    if !is_undefined(cMsect){		
+		var secCheck = ds_list_find_value(mapGLSSects,Subsector);
+		if (secCheck != undefined){
+			secZ = mapSectors[|secCheck.sector].floorz;
+		    Sector = cMsect;
+		}
     }
+	
 };
     
 if (IDDQD == false){
-	if Msect!=-1{
+	if Sector!=-1{
 	        if z<=secZ{
 				vGravity = 0.0;
 				vFriction = 0.995;
@@ -63,6 +67,6 @@ if keyboard_check(ord("D")) verlet_motion_add_2d( yaw+270 ,spd);
 
 //speed = min(speed,6+keyboard_check(vk_shift)*4);
 
-var _dt = delta_time / 1000000;//ideal_time;
+global._dt = delta_time / 1000000;//ideal_time;
 
-repeat 15 verlet_update( _dt );
+repeat 15 verlet_update( global._dt );

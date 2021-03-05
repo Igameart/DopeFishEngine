@@ -4,7 +4,7 @@ if DE_fetchWad(WAD){
 
 	loading = false;
 
-	var wadType = wadHeader[?"id"]
+	var wadType = wadHeader.id
 	
 	if WAD_EPISODIC == false{
 		mapName = "MAP01"
@@ -33,13 +33,13 @@ if DE_fetchWad(WAD){
 	
 	_wadDat +=str+"\n\n";
 							  
-	str="wad entries:"+string(wadHeader[?"numlumps"]);
+	str="wad entries:"+string(wadHeader.numlumps);
 	
 	SL = string_length(str);
 	
 	spaces = ""; repeat (L-SL) spaces+=" ";
 	
-	str="wad entries  "+spaces+" "+string(wadHeader[?"numlumps"]);
+	str="wad entries  "+spaces+" "+string(wadHeader.numlumps);
 	
 	_wadDat+=str+"\n\n";
 							  

@@ -5,13 +5,13 @@ function DE_lineDefDefineCollision() {
 		    var linedef=ds_list_find_value(mapLinedefs,line);
 		
 			var sVert,eVert;
-			sVert = mapVertexes[| linedef[?"start"] ];
-			eVert = mapVertexes[| linedef[?"end"] ];
+			sVert = mapVertexes[| linedef.startv ];
+			eVert = mapVertexes[| linedef.endv ];
 			var x1,y1,x2,y2;
-			x1 = sVert[?"x"];
-			y1 = sVert[?"y"];
-			x2 = eVert[?"x"];
-			y2 = eVert[?"y"];
+			x1 = sVert.x;
+			y1 = sVert.y;
+			x2 = eVert.x;
+			y2 = eVert.y;
 				
 			x = x1; y = y1;
 			image_xscale = point_distance(x1,y1,x2,y2) / 8;

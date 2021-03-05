@@ -1,7 +1,7 @@
 
-if (sector[?"door height"] != undefined && sector[?"floor"] != undefined){
+if (sector.doorheight != undefined && sector.floorz != undefined){
 
-	doorHeight = sector[?"door height"] - sector[?"floor"];
+	doorHeight = sector.doorheight - sector.floorz;
 
 	doorPos = 0;
 	

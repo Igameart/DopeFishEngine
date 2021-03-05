@@ -5,9 +5,9 @@ function DE_getSectors(argument0, argument1) {
 	//mapSectors = sectors;
 
 
-	var pos=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"filepos");
+	var pos = ds_list_find_value_fixed(wadDirectory,lump).filepos;
 
-	var size=ds_map_find_value_fixed(ds_list_find_value_fixed(wadDirectory,lump),"size");
+	var size = ds_list_find_value_fixed(wadDirectory,lump).size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -15,36 +15,33 @@ function DE_getSectors(argument0, argument1) {
 	var l = 0;
 	while(buffer_tell(wadbuff)<len){
 	
-		var sector =ds_map_build();
-		var _floor = buffer_read(wadbuff,buffer_s16);
-		var _ceiling = buffer_read(wadbuff,buffer_s16);
-		var _texF = string_upper(buffer_read_string(wadbuff,8));
-		var _texC = string_upper(buffer_read_string(wadbuff,8));
-		var _light = buffer_read(wadbuff,buffer_u16);
-		var _type = buffer_read(wadbuff,buffer_u16);
-		var _tag = buffer_read(wadbuff,buffer_u16);
+		var sector = struct_copy(sectortype);
+		sector.floorz			= buffer_read(wadbuff,buffer_s16);
+		sector.ceilingz			= buffer_read(wadbuff,buffer_s16);
+		
+		
+		sector.floorpicnum		= string_upper(buffer_read_string(wadbuff,8));
+		sector.ceilingpicnum	= string_upper(buffer_read_string(wadbuff,8));
+		var _light				= buffer_read(wadbuff,buffer_u16);
+		sector.ceilingshade		= _light;
+		sector.floorshade		= _light;
+		
+		
+		sector.specialtype		= buffer_read(wadbuff,buffer_u16);
+		sector.tag				= buffer_read(wadbuff,buffer_u16);
 		
 		//If sector is not tagged -1, then we need to do something with it
 		//Save this sector to a list for quick retrieval later!
-		if ( _tag != -1 ){
-			DE_addSectorToTag(l,_tag);
+		if ( sector.tag != -1 ){
+			DE_addSectorToTag(l,sector.tag);
 		}
-
-		ds_map_add(sector,"floor",_floor);
-		ds_map_add(sector,"ceiling",_ceiling);
-		ds_map_add(sector,"height",_ceiling-_floor);
-
-		ds_map_add(sector,"tex_f",_texF);
-		ds_map_add(sector,"tex_c",_texC);
-		ds_map_add(sector,"lightlevel",_light);
-		ds_map_add(sector,"type",_type);
-		ds_map_add(sector,"tag",_tag);
-		ds_map_add(sector,"lift",0);
-		ds_map_add(sector,"crush",0);
+		
+		sector.ftexz = -( LittleLong(sector.floorz) << 8);
+		sector.ctexz = -( LittleLong(sector.ceilingz) << 8);
 
 		var coltris = ds_list_build();//Create a Collision Map
 
-		ds_map_add(sector,"colmap",coltris);//assign the Collision map
+		sector.colmap = coltris;//assign the Collision map
 	
 		ds_list_add(sectors,sector);
 		l+=1;

@@ -49,7 +49,7 @@ function DE_buildSSector(argument0) {
 	var sects = mapSectors;
 	var verts = mapVertexes;
 	var ssect = mapSSectors;
-	var sides = mapSidedefs;//ds_map_find_value_fixed(wad_levels,"sidedefs");
+	var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
 
 	ssector = ds_list_find_value_fixed(ssect,argument0);
 
@@ -62,7 +62,7 @@ function DE_buildSSector(argument0) {
 
 	colmap=ds_map_find_value(sect,"colmap");
 
-	show_debug_message("BUILDING SubSector: "+string(argument0));
+	show_debug_message("BUILDING Subacksectoror: "+string(argument0));
 
 
 	var colval = ds_map_find_value_fixed(sect,"lightlevel");
@@ -154,7 +154,7 @@ function DE_buildSSector(argument0) {
 	                        x3 = ds_list_find_value(polyX, i);
 	                        y3 = ds_list_find_value(polyY, i);
 	                        if (point_in_triangle(x0, y0, x1, y1, x2, y2, x3, y3)) { good = false; break; }
-	                        //  ...and if the new edge has no other edges crossing it...
+	                        //  ...and if the edge has no other edges crossing it...
 	                        j = (i + 1) mod n;
 	                        if ((j != A) && (j != B) && (j != C)) {
 	                            x4 = ds_list_find_value(polyX, j);

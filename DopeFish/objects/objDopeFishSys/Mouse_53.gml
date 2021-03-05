@@ -1,6 +1,6 @@
 /// @description 
 
-for (var b = 0; b<array_length_1d(buttons);b++){
+for (var b = 0; b<array_length(buttons);b++){
 	
 	var btn = buttons[b];
 	
@@ -16,7 +16,7 @@ mTyping = false;
 if point_in_rectangle(mouse_x,mouse_y,mBox.bbox_left,mBox.bbox_top,mBox.bbox_right,mBox.bbox_bottom)
 	mBox.clicked = true;
 
-for (var b = 0; b<array_length_1d(buttons);b++){
+for (var b = 0; b<array_length(buttons);b++){
 	
 	var btn = buttons[b];
 	
@@ -26,7 +26,7 @@ for (var b = 0; b<array_length_1d(buttons);b++){
 		
 }
 
-for (var b = 0; b<array_length_1d(skills);b++){
+for (var b = 0; b<array_length(skills);b++){
 	
 	var btn = skills[b];
 	
@@ -37,7 +37,7 @@ for (var b = 0; b<array_length_1d(skills);b++){
 		
 }
 
-var size = array_length_1d(_GameTitles);
+var size = array_length(_GameTitles);
 
 if mBox.clicked == true{
 	mTyping = true;
@@ -47,7 +47,7 @@ if mBox.clicked == true{
 else
 if left_button.clicked == true{
 	selMode--;
-	selMode = sMod(selMode,size);
+	selMode = smod(selMode,size);
 	//wadName = _wadName[selMode];
 	sprite_index = _GameThemes[selMode];
 	image_index = 0;
@@ -56,7 +56,7 @@ if left_button.clicked == true{
 else
 if right_button.clicked == true{
 	selMode++;
-	selMode = sMod(selMode,size);
+	selMode = smod(selMode,size);
 	//wadName = _wadName[selMode];
 	sprite_index = _GameThemes[selMode];
 	image_index = 0;

@@ -1,7 +1,7 @@
 function DE_renderWorld() {
 	texture_set_repeat(true);
 	
-	var __ssecs = mapSSecPVISTable[| DEcam.Mssect ];
+	var __ssecs = mapSSecPVISTable[| DEcam.Subsector ];
 	
 	if (__ssecs!=undefined){
 			
@@ -22,7 +22,7 @@ function DE_renderWorld() {
 
 	}
 	
-	var __glsegs = mapGLsegPVISTable[| DEcam.Mssect ];
+	var __glsegs = mapGLsegPVISTable[| DEcam.Subsector ];
 	
 	if (__glsegs!=undefined){
 		

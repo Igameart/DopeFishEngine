@@ -1,29 +1,33 @@
-/// @description 
-var cMsect;
-cMsect=DE_findSectorAt(x,y,Msect);
+/// @description
 
-if cMsect!=Msect{
+//DE_loadActorData();
+
+var cMsect;
+cMsect=DE_findSectorAt(x,y,Sector);
+
+if cMsect!=Sector{
 	
     if !is_undefined(cMsect){
-        secZ	= ds_map_find_value_fixed(ds_list_find_value_fixed(mapSectors,cMsect),"floor");
-		secC	= ds_map_find_value_fixed(ds_list_find_value_fixed(mapSectors,cMsect),"ceiling");
-		secL	= ds_map_find_value_fixed(ds_list_find_value_fixed(mapSectors,cMsect),"lightlevel");
-        Msect	= cMsect;
+        secZ	= (ds_list_find_value_fixed(mapSectors,cMsect).floorz);
+		secC	= (ds_list_find_value_fixed(mapSectors,cMsect).ceilingz);
+		secFL	= (ds_list_find_value_fixed(mapSectors,cMsect).floorshade );
+		secCL	= (ds_list_find_value_fixed(mapSectors,cMsect).ceilingshade );
+        Sector	= cMsect;
     }
 	
 	z += secZ;
 
 	if !entGrounded{
-		if !entMonster{
+		if !ISMONSTER{
 			z = secC-yOff;
 		}
 	}
 	
 	secColor = 1;
 	if secL!=undefined{
-		secColor = secL/255;
+		secColor = secFL/255;
 	}
 	
 };
 
-Mssect=DE_findSubSectorAt(x,y);//,Mssect);
+Subsector=DE_findSubacksectororAt(x,y);//,Mssect);

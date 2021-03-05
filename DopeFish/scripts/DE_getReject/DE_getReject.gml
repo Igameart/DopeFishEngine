@@ -1,12 +1,12 @@
 function DE_getReject(level, lump) {
 
-	ds_map_add(wad_levels,"reject",mapReject);
+	wadlevel.reject = mapReject;
 	
 	var __LDat = ds_list_find_value_fixed(wadDirectory,lump);
 
-	var pos=ds_map_find_value_fixed(__LDat,"filepos");
+	var pos=__LDat.filepos;
 
-	var size=ds_map_find_value_fixed(__LDat,"size");
+	var size=__LDat.size;
 
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
@@ -42,34 +42,34 @@ function DE_checkReject( __Sect1, __Sect2 ){
 
 function DE_getGLPVIS(level, lump) {
 
-	ds_map_add(wad_levels,"gl_pvis",mapPVIS);
+	wadlevel.gl_pvis = mapPVIS;
 	
 	var __LDat = ds_list_find_value_fixed(wadDirectory,lump);
 
-	var pos=ds_map_find_value_fixed(__LDat,"filepos");
+	var pos = __LDat.filepos;
 	
 	mapPVIS = pos;
 	
 	trace("COMPILING GL_PVS TABLE");
 	
-	var numsubsectors = ds_list_size(mapGLSSects);
+	var numsubacksectorors = ds_list_size(mapGLSSects);
 	
 	var __ss = 0;
-	repeat numsubsectors{
+	repeat numsubacksectorors{
 		var __list = ds_list_build();
 		var __segsList = ds_list_build();
 		mapSSecPVISTable[| __ss ] = __list;
 		mapGLsegPVISTable[| __ss ] = __segsList;
 		
 		var __sCheck = 0;
-		repeat numsubsectors{
+		repeat numsubacksectorors{
 			if (DE_checkPVS(__ss,__sCheck)==true){
 				
-				//Add this subsector to the list of subsectors visible to __ss
+				//Add this subacksectoror to the list of subacksectorors visible to __ss
 				ds_list_add(__list,__sCheck);
 				
-				//Find the glsegs in this subsector and add to list of glsegs visible to __ss
-				DE_PvisGLsegsOfSSect(ds_list_find_value_fixed(mapGLSSects,__sCheck),__segsList);
+				//Find the glsegs in this subacksectoror and add to list of glsegs visible to __ss
+				DE_PvisGLsegsOfSSect( ds_list_find_value_fixed(mapGLSSects,__sCheck),__segsList );
 				
 			}
 			__sCheck++;
@@ -83,9 +83,9 @@ function DE_getGLPVIS(level, lump) {
 
 function DE_checkPVS( view_sub, i ){
 	
-	var numsubsectors = ds_list_size(mapGLSSects);
+	var numsubacksectorors = ds_list_size(mapGLSSects);
 	
-    var __vis = mapPVIS + (((numsubsectors + 7) div 8) * view_sub);
+    var __vis = mapPVIS + (((numsubacksectorors + 7) div 8) * view_sub);
     
     if (buffer_peek(wadbuff, __vis + (i >> 3), buffer_u8 ) & (1 << (i & 7)) > 0)
     {

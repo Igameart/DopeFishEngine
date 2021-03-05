@@ -14,7 +14,12 @@ trace("Switch Object Resetting");
 	if TRIG[0] == "S"{
 
 		if switchIndex!=undefined{
-			side[?switchIndex] = switchTex[switched];
+			switch switchIndex{				
+				case "lowtex":	side.lowtex	= switchTex[switched]; break;
+				case "midtex":	side.midtex	= switchTex[switched]; break;
+				case "uptex":	side.uptex	= switchTex[switched]; break;
+			}
+			
 		}
 
 		audio_play_sound(DE_getSound("DSSWTCHX"),random(16),false);

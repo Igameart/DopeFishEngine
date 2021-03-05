@@ -12,7 +12,7 @@ function DE_preload_textures() {
 	
 	    var tex;
 	
-	    tex=ds_map_find_value(side,"tex_l");
+	    tex=side.lowtex;
 	    if tex!="-"{
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
@@ -21,7 +21,7 @@ function DE_preload_textures() {
 			}
 		}
     
-	    tex=ds_map_find_value(side,"tex_u");
+	    tex=side.uptex;
 	    if tex!="-"{
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
@@ -30,7 +30,7 @@ function DE_preload_textures() {
 			}
 		}
 	
-	    tex=ds_map_find_value(side,"tex_m");
+	    tex=side.midtex;
 	    if tex!="-"{
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
