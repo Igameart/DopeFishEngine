@@ -2,7 +2,7 @@ function DE_SetMobjState( mobj, state )
 {
     var	st;
 
-    while (!mobj.tics){
+    //while (!mobj.tics){
 		//with mobj DEtrace("Setting Mobj State To",state);
 		if (state == statenum_t.S_NULL)
 		{
@@ -12,18 +12,25 @@ function DE_SetMobjState( mobj, state )
 		}
 		
 		if mobj.seqStep >= array_length( States[? state ] ){
-			st = States[? state ][ mobj.seqStep-1 ];
+			var st = States[? state ][ array_length( States[? state ] )-1 ];
 			state = st.nextstate;
 			mobj.seqStep = 0;
+			mobj.sprFrameIndex = 0;
 		}
 		
-		st = States[? state ][ mobj.seqStep++ ];
-		mobj.state = st;
+		st = States[? state ][ mobj.seqStep ];
+		if !is_array(st){
+			
+			mobj.state = st;
+			mobj.tics = st.tics;
+			mobj.oldTics = st.tics;
+			mobj.sprite = st.sprite;
+			mobj.sprSequence = st.frame;
+			
+		}
+		
 		mobj.stateName = state;
-		mobj.tics = st.tics;
-		mobj.sprite = st.sprite;
-		mobj.sprSequence = st.frame;
-		mobj.sprFrameIndex = 0;
+		//mobj.sprFrameIndex = 0;
 		
 		// Call action functions when the state is set
 		if mobj.age>1
@@ -32,7 +39,7 @@ function DE_SetMobjState( mobj, state )
     }
 				
     return true;
-}
+//}
 
 function DE_changeMobjState( state )
 {

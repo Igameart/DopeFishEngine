@@ -185,8 +185,6 @@ function DE_getSprites() {
 				    }
 				}
 
-				//data=DE_build(data,patch_width,patch_height);
-
 				_spr.contents = data;
 			
 	            ds_map_add( wadSprites, n, _spr );

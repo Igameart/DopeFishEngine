@@ -18,7 +18,6 @@
 	gpu_set_texrepeat(false)
 		
 	if buff !=noone vertex_submit(buff,pr_trianglefan,tex);
-	//if sprite_exists(sprite_index) draw_sprite(sprite_index,0,0,0);
 		
 	gpu_set_texrepeat(__oldrep);
 	
@@ -26,7 +25,7 @@
 
 	shader_reset();
 	
-	d3d_transform_set_transform( x, y, z, 90, 90-DEcam.yaw,0);
+	d3d_transform_set_transform( x, y, z, 90, DEcam.yaw-90,0);
 	
 	if is_struct(sprite_structure){
 	
@@ -39,7 +38,7 @@
 	
 		var x1,z1,x2,z2;
 	
-		x1 = (TexW-xOff)+2;
+		x1 = (TexW-xOff);
 		x2 = x1-TexW;
 		z1 = TexH-yOff;
 		z2 = z1 - TexH;
@@ -47,7 +46,7 @@
 		draw_rectangle_color(x1,z1,x2,z2,c_orange,c_orange,c_yellow,c_yellow,true);
 	}
 	
-	draw_line_width_color(0,0,0,-Height-4,2,c_orange,c_lime);
+	draw_line_width_color(0,0,0,-64,2,c_orange,c_lime);
 	
 	d3d_transform_set_identity();
 	

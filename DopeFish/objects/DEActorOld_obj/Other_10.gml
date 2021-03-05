@@ -1,6 +1,5 @@
 /// @description Init Actor Vars
-momx = 0;
-momy = 0;
+
 age = 0;
 Scale = 0;
 Health = 0;
@@ -100,7 +99,6 @@ velx = 0;
 vely = 0;
 velz = 0;	// velocity
 tics = 4;				// state tic counter
-oldTics = tics;
 state = 0;
 Damage = 0;			// For missiles and monster railgun
 projectileKickback = 0;

@@ -40,7 +40,7 @@ yy=0;
 zz=0;
 zspeed=0;
 Sector=-1;
-Mssect=-1;
+Subsector=-1;
 secZ=0;
 
 //var things=ds_map_find_value_fixed(wadlevel,"things");
@@ -74,9 +74,10 @@ center_x=display_get_width()/2
 center_y=display_get_height()/2
 display_mouse_set(center_x,center_y)
 
-cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw)
-cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
-cam_z=lengthdir_y(1,pitch)
+cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw);
+cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw);
+cam_z=lengthdir_y(1,pitch);
+global._dt = 1;
 
 mouse_free=0;
 

@@ -6,14 +6,12 @@ function DE_buildPatch(patch) {
 	var yOffset			= (patch.topoff);
 	var data			= (patch.contents);
 
-	//ds_map_print(patch);
-	if patch_width == undefined || patch_height == undefined return undefined
+	if patch_width == 0 || patch_height == 0 return undefined
 	
 	var surf=surface_create(patch_width,patch_height);
 
 	surface_set_target(surf);
 	draw_clear_alpha(0,0);
-	draw_clear(c_fuchsia);
 
 	draw_set_alpha(1);
 	var pal1;

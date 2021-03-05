@@ -2,6 +2,24 @@
 #macro FLAG_NO_CHANGE = -1;
 #macro MAXPLAYERS = 8;
 
+#macro INT_MAX +2147483647
+#macro INT_MIN -2147483648
+
+#macro VIEWHEIGHT   (41*FRACUNIT)
+#macro GRAVITY      FRACUNIT
+#macro MAXMOVE      (30*FRACUNIT)
+#macro ONFLOORZ     INT_MIN
+#macro ONCEILINGZ   INT_MAX
+#macro ITEMQUESIZE  128
+#macro FLOATSPEED   (FRACUNIT*4)
+#macro STOPSPEED    (FRACUNIT/16)
+#macro OVERDRIVE	6
+#macro MAXGEAR		(OVERDRIVE+16)
+
+#macro CF_NOCLIP   1
+#macro CF_GODMODE   2
+#macro CF_NOMOMENTUM   4
+
 enum EStateUseFlags
 {
 	SUF_ACTOR = 1,

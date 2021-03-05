@@ -10,19 +10,19 @@ if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 var cMsect;
 cMsect	= DE_findSectorAt( x, y, Sector );
 
-Mssect	= DE_findSubacksectororAt( x, y );
+Subsector	= DE_findSubacksectororAt( x, y );
 
-//if cMsect!=Msect{
+if cMsect!=Sector{
 	
-    //if !is_undefined(cMsect){		
-		var secCheck = ds_list_find_value(mapGLSSects,Mssect);
+    if !is_undefined(cMsect){		
+		var secCheck = ds_list_find_value(mapGLSSects,Subsector);
 		if (secCheck != undefined){
 			secZ = mapSectors[|secCheck.sector].floorz;
 		    Sector = cMsect;
 		}
-    //}
+    }
 	
-//};
+};
     
 if (IDDQD == false){
 	if Sector!=-1{
@@ -67,6 +67,6 @@ if keyboard_check(ord("D")) verlet_motion_add_2d( yaw+270 ,spd);
 
 //speed = min(speed,6+keyboard_check(vk_shift)*4);
 
-var _dt = delta_time / 1000000;//ideal_time;
+global._dt = delta_time / 1000000;//ideal_time;
 
-repeat 15 verlet_update( _dt );
+repeat 15 verlet_update( global._dt );

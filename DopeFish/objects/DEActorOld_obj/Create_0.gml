@@ -57,5 +57,5 @@ entInteruptAnim	= false;
 entSpriteMap	= ds_map_build();
 
 movedir		= 0;
-Angle		= 0;
 Direction	= 0;
+Angle	= 0;
