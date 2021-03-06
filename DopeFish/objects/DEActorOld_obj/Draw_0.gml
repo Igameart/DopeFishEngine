@@ -25,7 +25,7 @@
 
 	shader_reset();
 	
-	d3d_transform_set_transform( x, y, z, 90, DEcam.yaw-90,0);
+	d3d_transform_set_transform( x, y, z, 90, 90-DEcam.yaw,0);
 	
 	if is_struct(sprite_structure){
 	

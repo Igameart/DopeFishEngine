@@ -1,26 +1,3 @@
-/*
-// parser:
-#macro txr_parse_tokens;
-global.txr_parse_tokens_val;
-global.txr_parse_tokens = ds_list_build();
-enum txr_token {
-    eof = 0, // <end of file>
-    op = 1, // + - * / % div
-    par_open = 2, // (
-    par_close = 3, // )
-    number = 4, // 37
-    ident = 5, // some
-}
-enum txr_op {
-    mul  = 0x01, // *
-    fdiv = 0x02, // /
-    fmod = 0x03, // %
-    idiv = 0x04, // div
-    add  = 0x10, // +
-    sub  = 0x11, // -
-    maxp = 0x20 // maximum priority
-}*/
-
 
 function dchar(str,pos){
 	return string_char_at(str,pos);
@@ -65,7 +42,12 @@ function DE_defineSequence( list, token, code ){
 		if script != undefined{
 			var asset = asset_get_index(script);
 			if script_get_name(asset) == script{
-				DEtrace("Sequence Callback Found:",script);
+				var argz = "";
+				if ds_list_size( code )>0{
+					repeat ds_list_size( code ) argz += getToken(code);
+				}
+				if argz == "" argz += "None"
+				DEtrace("Sequence Callback Found:",script,"Arguments: "+argz );
 				act = struct_copy(actionf_t);
 				act.acp1 = asset_get_index(script);
 			}
@@ -256,8 +238,6 @@ function DE_parseLine( str ){
 						var stateList = global.currentActor.States[? global.DEstatesPos ];
 					
 						DE_defineSequence( stateList, token, code );
-						
-						//ds_list_print(stateList);
 					
 					}
 				break;

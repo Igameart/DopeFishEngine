@@ -59,13 +59,27 @@ function string_split_as_code(s){
 	var tmp = "";
 	var inquotes = false;
 	
+	var bracketed = 0;
+	
 	repeat sl {
 		
 		var smpl = string_char_at(s,p);
 		
 		if smpl == "\"" inquotes = !inquotes;
 		
-		if ( string_pos(smpl,d) == 0 || inquotes == true || smpl == "{" || smpl == "}"){
+		if smpl == "("{
+			if bracketed == 0{
+				ds_list_add(r,tmp);
+				tmp = "";
+			}
+			bracketed++;
+		}
+		
+		if bracketed > 0{
+			tmp += smpl;
+			if smpl == ")" bracketed--;
+		}else
+		if ( string_pos(smpl,d) == 0 || inquotes == true || smpl == "{" || smpl == "}" ){
 			tmp += smpl;
 		}else		
 		if tmp!="" && tmp!=" "{

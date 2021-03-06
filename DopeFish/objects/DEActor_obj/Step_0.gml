@@ -20,7 +20,7 @@ if ( tics <= 0 ){
 		seqStep++;
 		//tics = 0;
 	}		
-	DEtrace("Actor Frame Advancing",tics,sprFrameIndex,array_length(sprSequence),sprSequence);
+	//DEtrace("Actor Frame Advancing",tics,sprFrameIndex,array_length(sprSequence),sprSequence);
 
 }
 

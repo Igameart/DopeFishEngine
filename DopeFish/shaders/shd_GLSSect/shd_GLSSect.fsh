@@ -36,13 +36,13 @@ float computeLightCorrection()
 	float factor;
    
 	// Compute linear fog equation
-   factor = (u_fogMaxDist/8.0 - (v_vPosition.z)) /
-            (u_fogMaxDist/8.0);
+   factor = (u_fogMaxDist/16.0 - (v_vPosition.z)) /
+            (u_fogMaxDist/16.0);
    
 	// Clamp in the [0,1] range
 	factor = clamp( factor, 0.0, 1.0 );
 	factor = floor(factor*8.0+0.5)/8.0;
-	return factor;            
+	return factor * 0.5;            
 }
 
 void main()
@@ -50,7 +50,7 @@ void main()
     float fogger = computeLinearFogFactor();
 	float lighten = computeLightCorrection();
     vec4 vcol = v_vColour + lighten;
-	vcol.rgb = min(vcol.rgb,vec3(1.0));
+	//vcol.rgb = min(vcol.rgb,vec3(1.0));
     //vcol.a=1.0;
     vec4 col;
 	

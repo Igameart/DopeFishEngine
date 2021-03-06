@@ -391,6 +391,8 @@ function A_Look( mobj ){
 		return 0;
 		
 	this.target = targ;
+	with this
+	if distance_to_object(targ) < 75
 	if ( SightCheck(this, targ))//, SF_SEEPASTBLOCKEVERYTHING)
 		return seeyou(this);
 

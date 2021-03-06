@@ -24,7 +24,7 @@ void main()
     
 	V[0].xyz = vec3(1., 0., 0.);
 	
-    gl_Position = gm_Matrices[MATRIX_PROJECTION] * V * object_space_pos;
+    gl_Position = gm_Matrices[MATRIX_PROJECTION] * V * (object_space_pos);
     
     v_vPosition = (gm_Matrices[MATRIX_WORLD_VIEW] * object_space_pos);
     v_vColour = in_Colour;

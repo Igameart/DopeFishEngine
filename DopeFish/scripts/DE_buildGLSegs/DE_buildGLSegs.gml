@@ -84,6 +84,10 @@ function DE_buildGLSegs() {
 				case "left":  bs = linedef.left; break;
 			}
 			var back = bs;     
+            
+		    var shadeTop = sect.ceilingshade;
+			var shadeBot = sect.floorshade;
+			
 		
 			/*if back!=-1{
 				var bside = sides[|bs];			
@@ -103,11 +107,7 @@ function DE_buildGLSegs() {
             
 		    var us			= side.xoff;
 		    var y_offset	= side.yoff;
-            
-		    var shadeTop = sect.ceilingshade * 255;
-			var shadeBot = sect.floorshade * 255;
-			
-			var ang = (point_direction(sx,sy,ex,ey)*2+90)//*2;
+			var ang = ( point_direction(sx,sy,ex,ey) * 2 + 90 )//*2;
 			var fCon = dsin(ang)*45;
 		
 		    var segColTop=make_colour_hsv(0,0,shadeTop+fCon);

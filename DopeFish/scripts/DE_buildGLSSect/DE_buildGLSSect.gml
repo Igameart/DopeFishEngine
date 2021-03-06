@@ -24,17 +24,16 @@ function DE_buildGLSSect(argument0) {
 
 
 	var colval = (sect.ceilingshade);
-	var colCeiling=make_colour_hsv(random(255),128*0,colval);//make_colour_hsv(255,0,colval);
+	var colCeiling = make_colour_hsv(random(255),128*0,colval);//make_colour_hsv(255,0,colval);
 	
 	colval = (sect.floorshade);
-	var colFloor=make_colour_hsv(random(255),128*0,colval);//make_colour_hsv(255,0,colval);
+	var colFloor = make_colour_hsv(random(255),128*0,colval);//make_colour_hsv(255,0,colval);
 	
 	var fheight = (sect.floorz);
 	var cheight = (sect.ceilingz);
 	
 	var ftex = (sect.floorpicnum);
 	var ctex = (sect.ceilingpicnum);
-
 
 	polygon.ceilingpicnum	= ftex;
 	polygon.floorpicnum		= ctex;

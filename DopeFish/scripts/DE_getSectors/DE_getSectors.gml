@@ -22,7 +22,7 @@ function DE_getSectors(argument0, argument1) {
 		
 		sector.floorpicnum		= string_upper(buffer_read_string(wadbuff,8));
 		sector.ceilingpicnum	= string_upper(buffer_read_string(wadbuff,8));
-		var _light				= buffer_read(wadbuff,buffer_u16);
+		var _light				= buffer_read(wadbuff,buffer_s16);
 		sector.ceilingshade		= _light;
 		sector.floorshade		= _light;
 		
