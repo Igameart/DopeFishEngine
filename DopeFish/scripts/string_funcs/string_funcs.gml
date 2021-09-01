@@ -1,3 +1,21 @@
+
+function string_space_upper(_string){
+	var _prev = "";
+	for (i = 1; i < (string_length(_string)+1); i++) {
+		var _str = string_char_at(_string,i);
+		if string_is_upper(_str) && !string_is_upper(_prev){//Is upper case and last letter is lower case
+			_string = string_insert(" ",_string,i);
+		}
+		_prev = _str;
+	}
+	return _string;
+}
+
+function string_is_upper(_string){
+	if _string == string_upper(_string) return true;
+	return false;
+}
+
 function split(_string, _split) {
 	var _pos=string_pos(_split,_string);
 
@@ -38,18 +56,62 @@ function string_split_on_delimiter(){
 	} else r = ds_list_build();
 	var p = string_pos(d, s), o = 1;
 	var dl = string_length(d);
+	
 	if (dl) while (p) {
-	    ds_list_add(r, string_copy(s, o, p - o));
+		
+		var _str = string_copy(s, o, p - o);
+		
+		if _str != d && _str != ""{
+			if string_pos(d,_str) == 1 _str = string_delete(_str,1,dl);
+			ds_list_add(r, _str);
+		}
 	    o = p + dl;
 	    p = string_pos_ext(d, s, o);
+	
 	}
+	
 	ds_list_add(r, string_delete(s, 1, o - 1));
+	return r;
+}
+
+function string_split_on_newline(s){
+DEtrace("Splitting String Into Code",s);
+	var d = "/n";
+	var a = "/r/n";
+	var r = ds_list_create();
+	
+	var p = 1;
+	
+	var sl = string_length(s);
+	
+	var tmp = "";
+	
+	repeat sl {
+		
+		var smpl = string_char_at(s,p);
+		
+		if ( smpl != d && smpl != a ){
+				tmp += smpl;
+			}else{
+				ds_list_add(r,tmp);
+				tmp = "";
+			}
+		p++;
+	}
+	
+	if tmp!="" && tmp!=" " && tmp!="\r\n" && tmp!= "\n"{
+		ds_list_add(r,tmp);
+	}
+	tmp = "";
+	
 	return r;
 }
 
 function string_split_as_code(s){
 	
-	var d = " ,(){};";
+	//DEtrace("Splitting String Into Code",s);
+	var d = " ,(){}[];";
+	var a = "{}[];";
 	var r = ds_list_create();
 	
 	var p = 1;
@@ -61,37 +123,72 @@ function string_split_as_code(s){
 	
 	var bracketed = 0;
 	
+	var prev = "";
+	
+	var commentBlock = false;
+	
 	repeat sl {
 		
 		var smpl = string_char_at(s,p);
 		
-		if smpl == "\"" inquotes = !inquotes;
+		var next = string_char_at(s,p+1);
 		
-		if smpl == "("{
-			if bracketed == 0{
+		if inquotes == false
+			if smpl+next == "//" continue;
+		
+		if commentBlock == false{
+			if inquotes == false{
+				if smpl+next = "/*" commentBlock = true;
+				if prev+smpl == "*/"{
+					smpl =""
+					commentBlock = false;
+				}
+			}
+		}
+		
+		if commentBlock == true{
+		}
+		
+		if commentBlock == false{
+		
+			if smpl == "[" || smpl == "]" || smpl == ";"{
+				
+				if tmp!="" && tmp!=" "
+					ds_list_add(r,tmp);
+					
+				ds_list_add(r,smpl);
+				tmp = "";
+				smpl = "";
+			}
+		
+			if smpl == "\"" && prev != "\\" inquotes = !inquotes;
+		
+			if smpl == "(" && inquotes == false{
+				if bracketed == 0{
+					ds_list_add(r,tmp);
+					tmp = "";
+				}
+				bracketed++;
+			}
+		
+			if bracketed > 0 && inquotes == false{
+				tmp += smpl;
+				if smpl == ")" bracketed--;
+			}else
+			if ( string_pos(smpl,d) == 0 || inquotes == true || string_pos(smpl,a) ){
+				tmp += smpl;
+			}else		
+			if tmp!="" && tmp!=" " && tmp!="\r\n" && tmp!= "\n"{
 				ds_list_add(r,tmp);
 				tmp = "";
 			}
-			bracketed++;
-		}
-		
-		if bracketed > 0{
-			tmp += smpl;
-			if smpl == ")" bracketed--;
-		}else
-		if ( string_pos(smpl,d) == 0 || inquotes == true || smpl == "{" || smpl == "}" ){
-			tmp += smpl;
-		}else		
-		if tmp!="" && tmp!=" "{
-			ds_list_add(r,tmp);
-			tmp = "";
 		}
 		
 		p++;
-		
+		prev = smpl;
 	}
 	
-	if tmp!="" && tmp!=" "{
+	if tmp!="" && tmp!=" " && tmp!="\r\n" && tmp!= "\n"{
 		ds_list_add(r,tmp);
 		tmp = "";
 	}

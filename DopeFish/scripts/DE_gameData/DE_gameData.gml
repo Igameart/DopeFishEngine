@@ -20,8 +20,6 @@ function DE_gameData() {
 		break;
 	}
 	
-	var __Dec = DE_getLumpOfs("DECORATE");
-	if ( __Dec>-1 )
-		DE_parseDecorate();
+	DE_parseDecorate();
 
 }

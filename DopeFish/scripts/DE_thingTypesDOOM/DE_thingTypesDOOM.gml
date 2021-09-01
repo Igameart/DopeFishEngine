@@ -13,7 +13,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "BSPI"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Arachnotron"
+	thing[@ DEThingDef.Description ]= "CC_ARACH"
 
 	thing = [];
 	DEActor[64] = thing;
@@ -23,7 +23,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "VILE"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Arch-vile"
+	thing[@ DEThingDef.Description ]= "CC_ARCH"
 
 	thing = [];
 	DEActor[3003] = thing;
@@ -33,7 +33,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "BOSS"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Baron of Hell"
+	thing[@ DEThingDef.Description ]= "CC_BARON"
 
 	thing = [];
 	DEActor[3005] = thing;
@@ -43,7 +43,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "HEAD"
 	thing[@ DEThingDef.Sequence ]= "A+"
 	thing[@ DEThingDef.Class ]= "MO*^"
-	thing[@ DEThingDef.Description ]= "Cacodemon"
+	thing[@ DEThingDef.Description ]= "CC_CACO"
 
 	thing = [];
 	DEActor[72] = thing;
@@ -63,7 +63,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "CYBR"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Cyberdemon"
+	thing[@ DEThingDef.Description ]= "CC_CYBER"
 
 	thing = [];
 	DEActor[3002] = thing;
@@ -73,7 +73,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "SARG"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Demon"
+	thing[@ DEThingDef.Description ]= "CC_DEMON"
 
 	thing = [];
 	DEActor[65] = thing;
@@ -84,7 +84,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "CPOS"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Heavy weapon dude" 
+	thing[@ DEThingDef.Description ]= "CC_HEAVY" 
 
 	thing = [];
 	DEActor[69] = thing;
@@ -95,7 +95,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "BOS2"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Hell knight" 
+	thing[@ DEThingDef.Description ]= "CC_HELL" 
 
 	thing = [];
 	DEActor[3001] = thing;
@@ -106,7 +106,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "TROO"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Imp"
+	thing[@ DEThingDef.Description ]= "CC_IMP"
 
 	thing = [];
 	DEActor[3006] = thing;
@@ -117,7 +117,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "SKUL"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "M1O*^"
-	thing[@ DEThingDef.Description ]= "Lost soul" 
+	thing[@ DEThingDef.Description ]= "CC_LOST" 
 
 	thing = [];
 	DEActor[67] = thing;
@@ -128,7 +128,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "FATT"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Mancubus" 
+	thing[@ DEThingDef.Description ]= "CC_MANCU" 
 
 	thing = [];
 	DEActor[71] = thing;
@@ -139,7 +139,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "PAIN"
 	thing[@ DEThingDef.Sequence ]= "A+"
 	thing[@ DEThingDef.Class ]= "MO*^"
-	thing[@ DEThingDef.Description ]= "Pain elemental" 
+	thing[@ DEThingDef.Description ]= "CC_PAIN" 
 
 	thing = [];
 	DEActor[66] = thing;
@@ -150,7 +150,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "SKEL"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Revenant" 
+	thing[@ DEThingDef.Description ]= "CC_REVEN" 
 
 	thing = [];
 	DEActor[9] = thing;
@@ -161,7 +161,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "SPOS"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Shotgun guy"
+	thing[@ DEThingDef.Description ]= "CC_SHOTGUN"
 
 	thing = [];
 	DEActor[58] = thing;
@@ -183,7 +183,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "SPID"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Spiderdemon" 
+	thing[@ DEThingDef.Description ]= "CC_SPIDER" 
 
 	thing = [];
 	DEActor[84] = thing;
@@ -205,7 +205,7 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sprite ]= "POSS"
 	thing[@ DEThingDef.Sequence ]= "AB+"
 	thing[@ DEThingDef.Class ]= "MO*"
-	thing[@ DEThingDef.Description ]= "Zombieman"
+	thing[@ DEThingDef.Description ]= "CC_ZOMBIE"
 
 	// ******** WEAPONS *********
 	thing = [];

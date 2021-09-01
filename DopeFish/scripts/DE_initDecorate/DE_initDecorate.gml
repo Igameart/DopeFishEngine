@@ -15,7 +15,7 @@ DEparseMode = "NULL";
 globalvar ACTORstruct;
 ACTORstruct = {
 	Scale : 1, 
-	Health : DEFAULT_HEALTH, 
+	Health : DEFAULT_HEALTH,
 	Reactiontime : 8, 
 	Radius : 20, 
 	RenderRadius : 0, 

@@ -88,10 +88,12 @@ function DE_getDirectory() {
         
 	}
 	
-	var __Dec = DE_getLumpOfs("DECORATE");
-	if ( __Dec>-1 ){
-		DE_getDecorateScript();
-	};
+	DE_getDecorateScript();
+	DE_getLanguageData();
+	
+	DE_parseLanguage();
+	
+	DE_getMapInfo();
 	
 	if WAD_ISGL == false{
 		var __question = show_question("WARNING: GL Nodes not present. The map will not display correctly without them. Build them now?");
@@ -186,6 +188,10 @@ function DE_getLumpNum(lump) {
 
 function DE_getDecorateScript(){
 	var lpos = DE_getLumpOfs( "DECORATE" );
+	
+	if lpos == -1 return false;
+	
+	trace("NOTICE: Wad Contains Decorate Scripting");
 
 	var len = ds_list_find_value_fixed(wadDirectory, DE_getLumpNum( "DECORATE" ) ).size;
 
@@ -199,6 +205,46 @@ function DE_getDecorateScript(){
 	
 	wadDecorate = string_split_on_delimiter(str,"\r\n");
 	
-	//ds_list_print(wadDecorate);
+}
+
+function DE_getLanguageData(){
+	var lpos = DE_getLumpOfs( "LANGUAGE" );
+	
+	if lpos == -1 return false;
+	
+	trace("NOTICE: Wad Contains Language Data");
+
+	var len = ds_list_find_value_fixed(wadDirectory, DE_getLumpNum( "LANGUAGE" ) ).size;
+
+	var __tmp = buffer_create(len,buffer_fixed,1);
+
+	buffer_copy(wadbuff,lpos,len,__tmp,0);
+	
+	var str = buffer_read(__tmp,buffer_text);
+	
+	buffer_delete(__tmp);
+	
+	wadLanguage = string_split_on_delimiter(str,"\r\n")
+	
+}
+
+function DE_getMapInfo(){
+	var lpos = DE_getLumpOfs( "MAPINFO" );
+	
+	if lpos == -1 return false;
+	
+	trace("NOTICE: Wad Contains MapInfo");
+
+	var len = ds_list_find_value_fixed(wadDirectory, DE_getLumpNum( "MAPINFO" ) ).size;
+
+	var __tmp = buffer_create(len,buffer_fixed,1);
+
+	buffer_copy(wadbuff,lpos,len,__tmp,0);
+	
+	var str = buffer_read(__tmp,buffer_text);
+	
+	buffer_delete(__tmp);
+	
+	wadMapInfo = string_split_on_delimiter(str,"\r\n");
 	
 }

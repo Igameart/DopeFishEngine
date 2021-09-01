@@ -7,6 +7,7 @@ function DE_wadDataPopulate(){
 	// Some WAD defines
 	wadDirectory=ds_list_build();
 	wadDirectoryOfs = ds_map_build();
+	wadLocalization = ds_map_build();
 	wadColorMaps = noone;
 	wadPlaypal = noone;
 	wadPatches = ds_map_build();
@@ -273,7 +274,9 @@ function DopeFishEngineInit( CameraObject ) {
 	}
 	
 	globalvar wadDirectory;
-	globalvar wadDecorate;
+	globalvar wadDecorate; wadDecorate = noone;
+	globalvar wadLanguage; wadLanguage = noone;
+	globalvar wadMapInfo; wadMapInfo = noone;
 	globalvar wadDirectoryOfs;
 	globalvar wadColorMaps;
 	globalvar wadPlaypal;
@@ -288,6 +291,7 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar wadSpritesMir;
 	globalvar wadSpritesDir;
 	globalvar wadClasses;
+	globalvar wadLocalization;
 
 	globalvar wadlevel;
 	globalvar flats_;

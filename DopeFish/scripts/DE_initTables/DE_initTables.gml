@@ -1,20 +1,20 @@
 // Binary Angle Measument, BAM.
-#macro ANG45		0x20000000
-#macro ANG90		0x40000000
-#macro ANG180		0x80000000
-#macro ANG270		0xc0000000
+//#macro ANG45		0x20000000
+//#macro ANG90		0x40000000
+//#macro ANG180		0x80000000
+//#macro ANG270		0xc0000000
 
 #macro ANGLE_45		0x20000000
 #macro ANGLE_90		0x40000000
 #macro ANGLE_180	0x80000000
 #macro ANGLE_270	0xc0000000
-#macro ANGLE_MAX	0xffffffff
+//#macro ANGLE_MAX	0xffffffff
 #macro ANGLE_1		ANGLE_45/45
 #macro ANGLE_60		ANGLE_180/3
 
 
-#macro SLOPERANGE	2048
-#macro SLOPEBITS	11
+//#macro SLOPERANGE	2048
+//#macro SLOPEBITS	11
 #macro DBITS		FRACBITS-SLOPEBITS
 
 function DE_initTables() {

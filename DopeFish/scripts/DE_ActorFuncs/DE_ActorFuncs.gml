@@ -170,6 +170,16 @@ function DE_loadActorData( TYPE ){
 		struct_extract(ACTORstruct);
 
 		name = thing[ DEThingDef.Description ];
+		
+		if wadLocalization != undefined{//There's a language lump, let's check for this entry
+			var _langDat = wadLocalization[? "enu" ];
+			var _tmpName = _langDat[? name ];
+			if _tmpName != undefined{
+				_tmpName = _tmpName[0];
+				DEtrace("Found Name In Language Lump",_tmpName);
+				name = _tmpName;
+			}
+		}
 
 		sprite = thing[ DEThingDef.Sprite ];
 		
@@ -208,6 +218,9 @@ function DE_loadActorData( TYPE ){
 		struct_extract(thing);
 		
 		//DEtrace(thing);
+		
+		name = string_space_upper(class);
+		DEtrace("Custom Class Defined: ",name);
 		
 		image_xscale = Radius/4;
 		image_yscale = image_xscale;
@@ -377,7 +390,7 @@ function DE_actorFetchSequenceStruct(){
 	stateList = thing.States;
 	var count = ds_map_size(stateList);
 	key = ds_map_find_first(stateList);
-	DEtrace("Actor is custom");
+	//DEtrace("Actor is custom");
 	//ds_map_print(stateList);
 	
 	repeat count{
@@ -499,5 +512,5 @@ function DE_actorFetchSequenceStruct(){
 		}
 	}
 	
-	ds_map_print(entSpriteMap);
+	//ds_map_print(entSpriteMap);
 }
