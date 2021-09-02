@@ -10,10 +10,10 @@ function DE_getThings(level, lump) {
 	buffer_seek(wadbuff,buffer_seek_start,pos);
 
 	var len=pos+size;
-	var __l=0;
+	//var __l=0;
 	while(buffer_tell(wadbuff)<len){
 	
-		var thing =ds_map_build();
+		//var thing =ds_map_build();
 	
 		var ID,X,Y,Z,ANGLE,TYPE,FLAGS,ACTION,ARG1,ARG2,ARG3,ARG4,ARG5;
 			ID = 0;
@@ -108,7 +108,7 @@ function DE_getThings(level, lump) {
 		l+=1;
 
 	};
-	trace("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
+	DEtrace("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
 	//ds_map_print(DESprites);
 
 
@@ -161,6 +161,8 @@ function parseClassDat(class){
 
 function DE_loadActorData( TYPE ){
 	
+	if TYPE == undefined return null;
+	
 	thingType = TYPE;
 	
 	thing = DEActor[ thingType ];
@@ -171,7 +173,7 @@ function DE_loadActorData( TYPE ){
 
 		name = thing[ DEThingDef.Description ];
 		
-		if wadLocalization != undefined{//There's a language lump, let's check for this entry
+		if wadLocalization[? "enu" ] != undefined{//There's a language lump, let's check for this entry
 			var _langDat = wadLocalization[? "enu" ];
 			var _tmpName = _langDat[? name ];
 			if _tmpName != undefined{
