@@ -91,6 +91,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"756e75d1-6ef8-41b5-bab0-002df532792b","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Hexen Theme",
     "path": "folders/Sprites/DopeFish Engine/Testbed/Hexen Theme.yy",

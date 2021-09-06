@@ -91,6 +91,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a7da85aa-fdc6-4474-a218-fb82e18ea49f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Doom Theme",
     "path": "folders/Sprites/DopeFish Engine/Testbed/Doom Theme.yy",

@@ -49,7 +49,7 @@ function DE_buildWallsCollisions() {
 	        var ex = vert.x;
 	        var ey = vert.y;
         
-	        var cLine=instance_create_depth(sx,sy,0,sliding_collision_obj);
+	        var cLine=instance_create_depth(sx,sy,0,objDESlideCollider);
 	        cLine.x2=ex;
 	        cLine.y2=ey;
 	        with cLine event_user(0);
@@ -139,7 +139,7 @@ function DE_buildWallsCollisions() {
 	                    top = backsector.ceilingz;
 	                }
                 
-	                var cLine=instance_create(sx,sy,passable_collision_obj);
+	                var cLine=instance_create(sx,sy,objDEPassableCollider);
 	                cLine.x2=ex;
 	                cLine.y2=ey;
 	                cLine.bot=bot;
@@ -229,7 +229,7 @@ function DE_buildWallsCollisions() {
 	                    top = backsector.ceilingz;
 	                }
                 
-	                var cLine=instance_create(sx,sy,passable_collision_obj);
+	                var cLine=instance_create(sx,sy,objDEPassableCollider);
 	                cLine.x2=ex;
 	                cLine.y2=ey;
 	                cLine.bot=bot;

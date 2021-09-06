@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"391ebd54-e4cc-4eb8-bdab-9c361788e8b9","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Game Titles",
     "path": "folders/Sprites/DopeFish Engine/Testbed/Game Titles.yy",

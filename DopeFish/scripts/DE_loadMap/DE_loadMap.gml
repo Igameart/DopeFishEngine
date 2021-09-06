@@ -8,6 +8,8 @@ function DE_loadMap( _map ) {
 	
 	var LEV = DE_getLumpNum(_map);
 	
+	if LEV == undefined return false;
+	
 	DE_getVertexes(_map,LEV+VERTEXESOFS);
 	DE_getGLVerts(_map,LEV+GL_VERTOFS);
 	DE_getSectors(_map,LEV+SECTORSOFS);

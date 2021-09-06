@@ -135,7 +135,7 @@ function P_TryMove( actor, X, Y, dropoff){
 		var xx = X + lengthdir_x(speed,angle);
 		var yy = Y + lengthdir_y(speed,angle);
 		
-		if place_meeting(xx,yy,sliding_collision_obj) return false;
+		if place_meeting(xx,yy,objDESlideCollider) return false;
 		
 		x=xx;
 		y=yy;

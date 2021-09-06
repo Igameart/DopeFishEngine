@@ -49,7 +49,7 @@ function DE_glbspProcessWad(sourceWad, destWad){
 	DE_wadBuffer_Recycle();
 	DE_wadDataPopulate();
 	
-	with objDopeFishSys{
+	with objDEWadLab{
 		
 		WAD = destWad;
 		wadName = WAD;

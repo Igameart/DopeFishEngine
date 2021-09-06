@@ -7,16 +7,16 @@ function __global_object_depths() {
 	// insert the generated arrays here
 	global.__objectDepths[0] = 0; // control_obj
 	global.__objectDepths[1] = 11; // objDEMapHandler
-	global.__objectDepths[2] = 0; // sliding_collision_obj
-	global.__objectDepths[3] = 0; // passable_collision_obj
-	global.__objectDepths[4] = 0; // DE_switch_obj
+	global.__objectDepths[2] = 0; // objDESlideCollider
+	global.__objectDepths[3] = 0; // objDEPassableCollider
+	global.__objectDepths[4] = 0; // ojbDESwitch
 
 
 	global.__objectNames[0] = "control_obj";
 	global.__objectNames[1] = "objDEMapHandler";
-	global.__objectNames[2] = "sliding_collision_obj";
-	global.__objectNames[3] = "passable_collision_obj";
-	global.__objectNames[4] = "DE_switch_obj";
+	global.__objectNames[2] = "objDESlideCollider";
+	global.__objectNames[3] = "objDEPassableCollider";
+	global.__objectNames[4] = "ojbDESwitch";
 
 
 	// create another array that has the correct entries

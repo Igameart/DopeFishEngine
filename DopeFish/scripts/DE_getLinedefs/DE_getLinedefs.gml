@@ -71,7 +71,7 @@ function DE_getLinedefs(argument0, argument1) {
 			//else if WAD_FORMAT = "HEXEN"
 			//trace("Created Switch Type "+string(type)+" with Tag "+string(arg)+" From Linedef "+string(line));
 	        
-			var DE_switch=instance_create_depth(0,0,0,DE_switch_obj);
+			var DE_switch=instance_create_depth(0,0,0,ojbDESwitch);
 			DE_switch.line = line;
 			
 			var v1 = ldef.startv;
@@ -136,7 +136,7 @@ function DE_getLinedefs(argument0, argument1) {
 	wadlevel.linedefs=linedefs;
 
 		//Now that all linedef data is loaded, parse any switches (linedefs with actions)			
-	with DE_switch_obj DE_parseLineDefType();
+	with ojbDESwitch DE_parseLineDefType();
 
 	show_debug_message("NOTICE: ["+level+"] LINEDEFS "+string( ds_list_size(wadlevel.linedefs)) );
 

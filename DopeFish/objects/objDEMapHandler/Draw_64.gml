@@ -1,7 +1,7 @@
 
 var w,h;
 
-w = display_get_gui_width()*0+ surface_get_width(application_surface);
+w = display_get_gui_width()*0+surface_get_width(application_surface);
 h = display_get_gui_height()*0+surface_get_height(application_surface);
 
 RFXnoMask = true;
@@ -10,7 +10,7 @@ if RFX2wide
 	d3d_transform_add_translation(-w/2,0,0);
 
 
-RFX_draw_view();//application_surface,0,0);
+RFX_draw_view();
 
 var _str = wad +": " + DEMap + "\nLoading time: "+string(time_taken)+"s.";
 

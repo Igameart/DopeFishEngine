@@ -198,7 +198,7 @@ function P_LookForPlayers ( actor, allaround, params)
 
 function SightCheck(t1,t2){
 	
-	return collision_line(t1.x,t1.y,t2.x,t2.y,sliding_collision_obj,true,false) == noone;
+	return collision_line(t1.x,t1.y,t2.x,t2.y,objDESlideCollider,true,false) == noone;
 	
 }
 

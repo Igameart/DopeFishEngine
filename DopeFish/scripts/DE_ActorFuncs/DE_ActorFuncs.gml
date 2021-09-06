@@ -13,7 +13,7 @@ function DE_getThings(level, lump) {
 	//var __l=0;
 	while(buffer_tell(wadbuff)<len){
 	
-		//var thing =ds_map_build();
+		var thing =ds_map_build();
 	
 		var ID,X,Y,Z,ANGLE,TYPE,FLAGS,ACTION,ARG1,ARG2,ARG3,ARG4,ARG5;
 			ID = 0;
@@ -46,7 +46,7 @@ function DE_getThings(level, lump) {
 			ARG5 = buffer_read(wadbuff,buffer_u8)
 		}
 	
-		/*ds_map_add(thing,"ID",ID)
+		ds_map_add(thing,"ID",ID)
 		ds_map_add(thing,"x",X)
 		ds_map_add(thing,"y",Y)
 		ds_map_add(thing,"z",Z)
@@ -59,7 +59,7 @@ function DE_getThings(level, lump) {
 		ds_map_add(thing,"action argument 3",ARG3)
 		ds_map_add(thing,"action argument 4",ARG4)
 		ds_map_add(thing,"action argument 5",ARG5)
-		ds_list_add(mapThings,thing);*/
+		ds_list_add(mapThings,thing);
 
 		//CONTINUE HERE
 	
@@ -75,11 +75,12 @@ function DE_getThings(level, lump) {
 		
 		if is_array(__thing)
 		if ( __thing[ DEThingDef.Description ] == "Player 1 start" ){
+			if !instance_exists(DEcam) DEcam = instance_create(X,Z,DEcam);
 			with DEcam{
 				x = X;
 				y = Z;
-				yaw = ANGLE-90;
-				direction = ANGLE-90;
+				yaw = ANGLE;
+				direction = ANGLE;
 			}
 		}
 	
@@ -93,14 +94,16 @@ function DE_getThings(level, lump) {
 		if addThing == true{
 			var _3Dspr;
 			
-			if is_array(DEActor[TYPE])	_3Dspr = instance_create_depth(X,Z,0,DEActorOld_obj);
+			if is_array(DEActor[TYPE])	_3Dspr = instance_create_depth(X,Z,0,objDEActorBasic);
 			
-			if is_struct(DEActor[TYPE]) _3Dspr = instance_create_depth(X,Z,0,DEActor_obj);
+			if is_struct(DEActor[TYPE]) _3Dspr = instance_create_depth(X,Z,0,objDEActorStruct);
 			
 			with _3Dspr{
+				
 				Direction = ANGLE;
 				Angle = 0;
 				DE_loadActorData(TYPE);
+				
 			}
 			
 		}

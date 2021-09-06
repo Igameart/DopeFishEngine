@@ -98,7 +98,7 @@ function LittleLong(x)
 	return swap16(x);
 }
 
-function DopeFishEngineInit( CameraObject ) {
+function DopeFishEngineInit( _OBJ ) {
 
 	enum BBOX
 	{
@@ -215,7 +215,7 @@ function DopeFishEngineInit( CameraObject ) {
 
 	gc_enable(true);
 
-	globalvar DEcam; DEcam = CameraObject;
+	globalvar DEcam; DEcam = _OBJ;
 
 	globalvar wadbuff;
 
@@ -343,6 +343,9 @@ function DopeFishEngineInit( CameraObject ) {
 	globalvar WAD_EPISODIC; WAD_EPISODIC = true;
 	globalvar WAD_ISGL; WAD_ISGL = false;
 	globalvar DE_alphabetCheck; DE_alphabetCheck = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+	display_reset(0,1);
+	gpu_set_tex_filter(false);
 
 	verlet_init();
 

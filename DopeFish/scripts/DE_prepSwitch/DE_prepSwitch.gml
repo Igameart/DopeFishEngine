@@ -1,5 +1,7 @@
 function DE_prepSwitch() {
 	var sPos = undefined;
+	
+	if !is_struct(side) return false;
 
 	if DE_textureIsSwitch(side.lowtex)	sPos = "lowtex";
 	if DE_textureIsSwitch(side.midtex)	sPos = "midtex";

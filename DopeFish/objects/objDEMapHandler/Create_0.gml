@@ -1,14 +1,12 @@
 
 num=0;
 
-//PLAYER_HEIGHT = 55;
-
 application_surface_draw_enable(false);
 
 dtex=sprite_get_texture(RFXbayerdith_spr,0);
-RFX_init(2,dtex,256,false,0.75);
-//RFX_set_palswap(sprite_get_texture(RFXpalettes_spr,6));
-RFX_set_coldepth( 36 );
+RFX_init(3,dtex,256/3,false,0.975);
+//RFX_set_palswap(sprite_get_texture(RFXpalettes_spr,2));
+RFX_set_coldepth( 24 );
 //RFXenabled = false;
 
 surface_resize(application_surface,display_get_gui_width()/RFXPixelScale[0],display_get_gui_height()/RFXPixelScale[1]);
@@ -16,13 +14,13 @@ surface_resize(application_surface,display_get_gui_width()/RFXPixelScale[0],disp
 view_wport[0] = display_get_gui_width()/RFXscale;
 view_hport[0] = display_get_gui_height()/RFXscale;
 
-
 DE_loadMap(DEMap);
 
 window_set_cursor(cr_none);
 
-//display_reset(2,1);
-//d3d_set_culling(true);
+
+display_reset(2,1);
+d3d_set_culling(true);
 texture_set_repeat(true);	
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
@@ -35,74 +33,13 @@ gpu_set_tex_mip_bias(-1.5);
 gpu_set_tex_max_mip(8);
 gpu_set_tex_max_aniso(16);
 
-xx=1;
-yy=0;
-zz=0;
-zspeed=0;
-Sector=-1;
-Subsector=-1;
-secZ=0;
+globalvar worldGravity;
+worldGravity = 3.;
 
-//var things=ds_map_find_value_fixed(wadlevel,"things");
-//things=ds_list_find_value(things,0);
-
-//x=ds_map_find_value(things,"x");
-//y=ds_map_find_value(things,"z");
-z=0;
-
-//yaw=ds_map_find_value(things,"angle");
-yaw = 0;
-direction=yaw;
-pitch=0;
-cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw)
-cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw)
-cam_z=lengthdir_y(1,pitch)
-
-var cMsect;
-cMsect=DE_findSectorAt(x,y,Sector);
-
-if cMsect!=Sector{
-    if !is_undefined(cMsect){
-        var sects = wadlevel.sectors;
-        z=ds_list_find_value_fixed(sects,cMsect).floorz;
-    }
-};
-
-
-// camera
-center_x=display_get_width()/2
-center_y=display_get_height()/2
-display_mouse_set(center_x,center_y)
-
-cam_x=lengthdir_x(lengthdir_x(1,pitch),yaw);
-cam_y=lengthdir_y(lengthdir_x(1,pitch),yaw);
-cam_z=lengthdir_y(1,pitch);
 global._dt = 1;
 
-mouse_free=0;
-
 time=0;
-
-IDDQD = false;
-NOCLIP = false;
-
-vel = [ 0.0, 0.0, 0.0 ]; // 2m/s along x-axis
-acc = [ 0.0, 0.0, 0.0 ]; // no acceleration at first
-mass = 1.0; // 1kg
-drag = 0.1; // rho*C*Area - simplified drag for this example
-vGravity = 0;
-vFriction = 0.995;
-
-//Define Actor Flags: Move this t another object
-flags = 0;
-flags2 = 0;			// Heretic flags
-flags3 = 0;			// [RH] Hexen/Heretic actor-dependant behavior made flaggable
-flags4 = 0;			// [RH] Even more flags!
-flags5 = 0;			// OMG! We need another one.
-flags6 = 0;			// Shit! Where did all the flags go?
-flags7 = 0;			// WHO WANTS TO BET ON 8!?
-
-Height = PLAYER_HEIGHT;
+time_taken = 0;
 
 //CHRIS: Music Stuff, move this to another object please
 noteslist = noone;

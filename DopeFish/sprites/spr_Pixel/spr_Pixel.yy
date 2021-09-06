@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ff1a1336-a022-48dc-b809-26fd6c4c9f8d","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "DopeFish Engine",
     "path": "folders/Sprites/DopeFish Engine.yy",

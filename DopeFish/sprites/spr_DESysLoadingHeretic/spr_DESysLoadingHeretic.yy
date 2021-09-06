@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1901b104-5d00-4fbf-9af6-593fec1f3858","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Heretic Theme",
     "path": "folders/Sprites/DopeFish Engine/Testbed/Heretic Theme.yy",

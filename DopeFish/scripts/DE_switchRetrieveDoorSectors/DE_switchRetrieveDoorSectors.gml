@@ -22,7 +22,7 @@ function DE_switchRetrieveDoorSectors() {
 	
 			if dCheck == undefined{
 		
-				var door = instance_create_depth(0,0,0,objDoorHandler);
+				var door = instance_create_depth(0,0,0,objDEDoorHandler);
 				trace("Created Door For Sector:",tagSec);
 				
 				ds_list_add(taggedSectors,door);
@@ -60,7 +60,7 @@ function DE_switchRetrieveDoorSectors() {
 		//If is undefined, we've not created a controller for this sector, let's do it now
 		if dCheck == undefined{
 		
-			var door = instance_create_depth(0,0,0,objDoorHandler);
+			var door = instance_create_depth(0,0,0,objDEDoorHandler);
 			
 			trace("Created Door For Sector:",secNum);
 			
