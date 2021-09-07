@@ -1,7 +1,9 @@
 /// @description DE_IdTypeIsDoor(type number);
 /// @param type number
-function DE_IdTypeIsFloor(argument0) {
-	var T=(argument0);
+function DE_IdTypeIsFloor(T) {	
+	
+	//DEtrace("Checking Special Type as Floor",T);
+	
 	if T ==	 60	
 	|| T ==	 23	
 	|| T ==	 82	

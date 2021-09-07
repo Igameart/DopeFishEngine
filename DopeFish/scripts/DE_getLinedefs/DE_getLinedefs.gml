@@ -59,9 +59,13 @@ function DE_getLinedefs(argument0, argument1) {
 	        ldef.arg3	= arg[3];
 	        ldef.arg4	= arg[4];
 	    }
-    
-		ldef.right = buffer_read(wadbuff,buffer_s16);
-		ldef.left = buffer_read(wadbuff,buffer_s16);
+
+		var front,back;
+		front = buffer_read(wadbuff,buffer_s16);
+		back = buffer_read(wadbuff,buffer_s16);
+
+		ldef.right = front;//buffer_read(wadbuff,buffer_s16);
+		ldef.left = back;//buffer_read(wadbuff,buffer_s16);
     
 		if ldef.specialtype != 0{
 			
@@ -83,9 +87,17 @@ function DE_getLinedefs(argument0, argument1) {
 			DE_switch.x = mean(v1.x,v2.x);
 			DE_switch.y = mean(v1.y,v2.y);
 			
+			//with DE_switch{
+			//	image_angle=point_direction(x,y,v2.x,v2.y);
+			//	direction=image_angle;
+			//	image_xscale=point_distance(x,y,v2.x,v2.y)/sprite_get_width(sprite_index);
+			//	image_yscale=1;//0.25;
+			//	visible = true;
+			//}
+			
 			DE_switch.specialtype = ldef.specialtype;
 			DE_switch.tag = ldef.sector_tag;
-			DE_switch.side = mapSidedefs[| ldef.left ];
+			DE_switch.side = mapSidedefs[| front ];
 			
 		}
     
@@ -110,19 +122,21 @@ function DE_getLinedefs(argument0, argument1) {
 	    line+=1;
     
 	    var lSides=ds_list_build();
-	    ds_list_add(lSides,ldef.left);
+	    ds_list_add(lSides,front);
+	    ds_list_add(lSides,back);
 	
-		if ldef.right != -1{
-			var bside=ds_list_find_value(mapSidedefs,ldef.right);
+		if back != -1{
+			var bside=ds_list_find_value(mapSidedefs,back);
 		    var backsector=bside.sector;
-		
-			var side = ds_list_find_value(mapSidedefs,ldef.right);
-	
-		    side.backsector = backsector;
+			
+			trace("Line Back Data",back,"ldef",ldef);
+			
+		    bside.backsector = backsector;
 		    ldef.backsector = backsector;
 			
-			ds_list_add(lSides,ldef.right);
+			//ds_list_add(lSides,ldef.left);
 		}
+			//ds_list_add(lSides,ldef.right);
     
 	    ldef.sides = lSides;
 		

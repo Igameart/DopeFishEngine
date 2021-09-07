@@ -1,6 +1,6 @@
 function DE_isLineDoor(line){
 	
-	var back = line.right;
+	var back = line.left;
 		
 	if back!=-1{
 		var sides = mapSidedefs;//ds_map_find_value_fixed(wadlevel,"sidedefs");
@@ -23,7 +23,7 @@ function DE_isLineDoor(line){
 			if DE_IdTypeIsDoor(dTag)
 			{
 				
-				var front = line.left;
+				var front = line.right;
 				
 				if (front!=-1){
 		
@@ -41,8 +41,8 @@ function DE_isLineDoor(line){
 		
 					DoorSec.doorheight = DoorH;
 				
-					trace("Linedef is on Door, Door Tag is:",DoorSec.tag);
-					trace("Sector Number:",back.sector);
+					DEtrace("Linedef is on Door, Door Tag is:",DoorSec.tag);
+					DEtrace("Sector Number:",back.sector);
 				}
 			}
 		}

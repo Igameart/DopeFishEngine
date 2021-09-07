@@ -55,7 +55,7 @@ function DE_decorateDefineSequence( list, token, code ){
 					repeat ds_list_size( code ) argz += getToken(code);
 				}
 				if argz == "" argz += "None"
-				DEtrace("Sequence Callback Found:",script,"Arguments: "+argz );
+				trace("Sequence Callback Found:",script,"Arguments: "+argz );
 				act = struct_copy(actionf_t);
 				act.acp1 = asset_get_index(script);
 			}
@@ -64,28 +64,28 @@ function DE_decorateDefineSequence( list, token, code ){
 		var dmisc1 = 0,dmisc2 = 0;
 		
 		var struct = newState_t(sprite,frames,tics,act,goto,dmisc1,dmisc2);
-		DEtrace("Created New State Structure",struct);
+		trace("Created New State Structure",struct);
 		array_push(list,struct);
 	
 	}else{
 		var goto = undefined;
 		switch token{
 			case "loop":
-				DEtrace("Defining sequence goto",global.DEstatesPos);
+				trace("Defining sequence goto",global.DEstatesPos);
 				goto = global.DEstatesPos
 			break;
 			case "goto":
 				goto = getToken(code);
-				DEtrace("Defining sequence goto",goto);
+				trace("Defining sequence goto",goto);
 			break;
 			case "stop":
-				DEtrace("Sequence has no goto and ends here");
+				trace("Sequence has no goto and ends here");
 				goto = null;
 			break;
 		}
 		
 		list[ array_length(list)-1 ].nextstate = goto;
-		DEtrace("State Structure Next State Defined:",list[ array_length(list)-1 ]);
+		trace("State Structure Next State Defined:",list[ array_length(list)-1 ]);
 	}	
 }
 
@@ -96,7 +96,7 @@ function DE_actorSaveProperty( code, token ){
 		with global.currentActor{
 			switch token{
 				case "Monster":
-				DEtrace("Setting Flags For Monster");
+				trace("Setting Flags For Monster");
 				SHOOTABLE = true;
 				COUNTKILL = true;
 				SOLID = true;
@@ -109,7 +109,7 @@ function DE_actorSaveProperty( code, token ){
 				break;
 				
 				case "Projectile":
-				DEtrace("Setting Flags For Projectile");
+				trace("Setting Flags For Projectile");
 				NOBLOCKMAP = true;
 				NOGRAVITY = true;
 				DROPOFF = true;
@@ -149,7 +149,7 @@ function DE_actorSaveProperty( code, token ){
 		}
 	}
 	
-	DEtrace("Setting Actor Property",string_letters(token),entry);
+	trace("Setting Actor Property",string_letters(token),entry);
 	variable_struct_set(global.currentActor,string_letters(token),entry);
 	
 }
@@ -157,7 +157,7 @@ function DE_actorSaveProperty( code, token ){
 function DE_isStringLabel( _string ){
 	
 	var _val = string_pos("\"$",_string) == 1;
-	//if _val DEtrace("Var is Label:",_string);
+	//if _val trace("Var is Label:",_string);
 	return _val;
 }
 
@@ -229,12 +229,12 @@ function DE_fetchLocalizationByLabel( _string ){
 	var tmpString = string_replace( _string,"\$","");
 	tmpString = string_copy(tmpString,2,string_length(tmpString)-2);
 	
-	//DEtrace("Fetching Label", tmpString );
+	//trace("Fetching Label", tmpString );
 	
 	var _langDat = wadLocalization[? "enu" ];
 	var _tmpDat = _langDat[? tmpString ];
 	
-	//DEtrace("Label Found",_tmpDat);
+	//trace("Label Found",_tmpDat);
 	
 	return _tmpDat;
 }
@@ -271,13 +271,13 @@ function DE_parseLine( str, lump ){
 								wadLocalization[? token ] = global.currentActor;
 							}
 						}until ds_list_size(code)==0;
-						DEtrace("Configuring Localizations: ", entries );
+						trace("Configuring Localizations: ", entries );
 					}
 					var first = string_char_at(token,1);
 					if first!=""
 					if first == "$" || isdigit(first) || isalpha(first){
 						
-						DEtrace("Adding Localization Entry : < "+token+" >");
+						trace("Adding Localization Entry : < "+token+" >");
 						var Name = token;
 						global.currentEntry = [];
 						global.currentActor[? Name ] = global.currentEntry;
@@ -295,13 +295,13 @@ function DE_parseLine( str, lump ){
 									_str += "\n"+entry;
 									array_push(global.currentEntry,entry);
 									
-									DEtrace("Loading Localization Data",entry);
+									trace("Loading Localization Data",entry);
 								}until ds_list_size(code) < 1;
 								
 							}else{//Multi Line Entry: Hard Mode
 								global.currentData = Name;
 								DEparseMode = Name;
-								//DEtrace("Multi Line Entry",global.currentData);
+								//trace("Multi Line Entry",global.currentData);
 							}
 						}
 					}
@@ -312,13 +312,13 @@ function DE_parseLine( str, lump ){
 						global.currentData += "\n"+token;
 						array_push(global.currentEntry,token);
 									
-						//DEtrace("Loading Localization Data",token);
+						//trace("Loading Localization Data",token);
 						
 						if ds_list_size(code)>0{//Let's check for multiple entries on each line still
 							do{
 								var entry = getToken(code);
 								if entry == ";"{
-									DEtrace("Loading Localization Data",global.currentData);
+									trace("Loading Localization Data",global.currentData);
 									DEparseMode = "NULL";
 									exit;
 								}
@@ -329,7 +329,7 @@ function DE_parseLine( str, lump ){
 						}
 					}else{
 						
-						DEtrace("Loading Localization Data",global.currentData);
+						trace("Loading Localization Data",global.currentData);
 						DEparseMode = "NULL";
 						
 					}
@@ -342,18 +342,18 @@ function DE_parseLine( str, lump ){
 					case "ACTOR":
 			
 						if isalpha(token){
-							DEtrace("Adding New Class To Actor Database",token);
+							trace("Adding New Class To Actor Database",token);
 							global.currentActor.class = token;
 							wadClasses[? token ] = global.currentActor;
 						}
 				
 						if isdigit( token ){
-							DEtrace("Assigning Class Id Number",real(token));
+							trace("Assigning Class Id Number",real(token));
 							DEActor[ real(token) ] = global.currentActor;
 						}
 				
 						if token == "{"{
-							DEtrace("Setting Parse Mode To Actor Default");
+							trace("Setting Parse Mode To Actor Default");
 							DE_advanceParseMode("ACTORDEFAULT");
 						}
 					
@@ -382,7 +382,7 @@ function DE_parseLine( str, lump ){
 						
 							global.currentActor.States[? global.DEstatesPos ] = [];
 						
-							DEtrace("Defining Actor State:", global.DEstatesPos);
+							trace("Defining Actor State:", global.DEstatesPos);
 						}else{
 					
 							var stateList = global.currentActor.States[? global.DEstatesPos ];

@@ -111,7 +111,7 @@ function DE_getThings(level, lump) {
 		l+=1;
 
 	};
-	DEtrace("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
+	trace("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
 	//ds_map_print(DESprites);
 
 
@@ -181,7 +181,7 @@ function DE_loadActorData( TYPE ){
 			var _tmpName = _langDat[? name ];
 			if _tmpName != undefined{
 				_tmpName = _tmpName[0];
-				DEtrace("Found Name In Language Lump",_tmpName);
+				trace("Found Name In Language Lump",_tmpName);
 				name = _tmpName;
 			}
 		}
@@ -222,10 +222,10 @@ function DE_loadActorData( TYPE ){
 		
 		struct_extract(thing);
 		
-		//DEtrace(thing);
+		//trace(thing);
 		
 		name = string_space_upper(class);
-		DEtrace("Custom Class Defined: ",name);
+		trace("Custom Class Defined: ",name);
 		
 		image_xscale = Radius/4;
 		image_yscale = image_xscale;
@@ -290,7 +290,7 @@ function get_entity_data(){
 	
 	if ds_map_size( __sprFrames ) > 1 entAnimated = true;
 	
-	//DEtrace("Loaded sprite",sprite,sprSequence);
+	//trace("Loaded sprite",sprite,sprSequence);
 	
 	var seq = sprSequence;
 	var __FI = 0;
@@ -308,7 +308,7 @@ function get_entity_data(){
 			
 			if __sprName != undefined{
 				
-				//DEtrace( "NOTICE: Looking for sprite data:", sprite, __F+__A, __sprName );
+				//trace( "NOTICE: Looking for sprite data:", sprite, __F+__A, __sprName );
 				
 				var __sprDat = wadSprites[? __sprName ];
 	
@@ -336,7 +336,7 @@ function get_entity_data(){
 			
 				if __sprName != undefined{
 				
-					//DEtrace( "NOTICE: Looking for sprite data:", sprite, __F+string(__A), __sprName );
+					//trace( "NOTICE: Looking for sprite data:", sprite, __F+string(__A), __sprName );
 				
 					var __sprDat = wadSprites[? __sprName ];
 	
@@ -395,14 +395,14 @@ function DE_actorFetchSequenceStruct(){
 	stateList = thing.States;
 	var count = ds_map_size(stateList);
 	key = ds_map_find_first(stateList);
-	//DEtrace("Actor is custom");
+	//trace("Actor is custom");
 	//ds_map_print(stateList);
 	
 	repeat count{
 		var list;
 		var sIndex = 0;
 		list = stateList[? key];
-		DEtrace("Building Actor State",key);
+		trace("Building Actor State",key);
 		lSize = array_length(list);
 		key = ds_map_find_next(stateList,key);
 		
@@ -436,7 +436,7 @@ function DE_actorFetchSequenceStruct(){
 			
 					if __sprName != undefined{
 				
-						//DEtrace( "NOTICE: Found sprite data:", sprite, __F+__A, __sprName );
+						//trace( "NOTICE: Found sprite data:", sprite, __F+__A, __sprName );
 				
 						var __sprDat = wadSprites[? __sprName ];
 	
@@ -446,7 +446,7 @@ function DE_actorFetchSequenceStruct(){
 						}
 						
 						if DESprites[? __sprName ] == undefined{
-							DEtrace("Building Sprite",__sprName);
+							trace("Building Sprite",__sprName);
 							var __spr = DE_buildPatch(__sprDat);
 							DESprites[? __sprName] = __spr;
 				
@@ -465,13 +465,13 @@ function DE_actorFetchSequenceStruct(){
 			
 						if __sprName != undefined{
 				
-							//DEtrace( "NOTICE: Found Directional sprite data:", sprite, __F+string(__A), __sprName );
+							//trace( "NOTICE: Found Directional sprite data:", sprite, __F+string(__A), __sprName );
 				
 							var __sprDat = wadSprites[? __sprName ];
 	
 							if __sprDat != undefined
 							if DESprites[? __sprName ] == undefined{
-								DEtrace("Building Directional Sprite",__sprName);
+								trace("Building Directional Sprite",__sprName);
 								var __spr = DE_buildPatch( __sprDat );
 								DESprites[? __sprName] = __spr;
 				
@@ -497,13 +497,13 @@ function DE_actorFetchSequenceStruct(){
 	
 						if __sprDat != undefined
 						if DESprites[? __sprName ] == undefined{
-							DEtrace("Building Sprite",__sprName);
+							trace("Building Sprite",__sprName);
 							var __spr = DE_buildPatch(__sprDat);
 							DESprites[? __sprName] = __spr;
 							entSpriteMap[? __F+(__A) ] = __spr;
 				
 						}else{
-							DEtrace("Sprite Pre-built",__sprName);
+							trace("Sprite Pre-built",__sprName);
 							entSpriteMap[? __F+(__A) ] = DESprites[? __sprName ];
 						}
 			

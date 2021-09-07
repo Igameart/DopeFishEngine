@@ -18,7 +18,7 @@ function slide_on_line(argument0, argument1, argument2, argument3) {
 		do{
 		    x+=lengthdir_x(.1,dir);
 		    y+=lengthdir_y(.1,dir);
-		    verlet_motion_add_2d(dir,speed);
+		    verlet_motion_add_2d(dir+90,speed);
 		} until !collision_line(x1,y1,x2,y2,id,1,0);
 		
 		//Try this code

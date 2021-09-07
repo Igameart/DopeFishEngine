@@ -15,6 +15,7 @@ switch state{
 		sector.crush = doorPos;
 		
 		if doorPos > doorHeight{
+			DEtrace("Door Is Open Now",doorPos,doorHeight);
 			active = false;
 			sector.crush = doorHeight;
 			stateAdvance = true;
@@ -25,7 +26,7 @@ switch state{
 	case "Close":
 		doorPos -= doorSpeed*DT;
 		doorPos = clamp(doorPos,0,doorHeight);
-		sector.crush=doorPos;
+		sector.crush = doorPos;
 		
 		if doorPos == 0{
 			stateAdvance = true;

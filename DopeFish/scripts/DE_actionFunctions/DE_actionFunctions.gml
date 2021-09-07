@@ -3,11 +3,11 @@ function DE_SetMobjState( mobj, state )
     var	st;
 
     //while (!mobj.tics){
-		//with mobj DEtrace("Setting Mobj State To",state);
+		//with mobj trace("Setting Mobj State To",state);
 		if (state == statenum_t.S_NULL)
 		{
 		    //instance_destroy(mobj);
-			DEtrace("Mobj State Is Null");
+			trace("Mobj State Is Null");
 		    return false;
 		}
 		
@@ -501,7 +501,7 @@ function seeyou(this){
 	if (this.target)// && this.SeeState)
 	{
 		with this{
-			DEtrace("I see you",visible,x,y);
+			trace("I see you",visible,x,y);
 			DE_changeMobjState( "See" );
 		}
 	}

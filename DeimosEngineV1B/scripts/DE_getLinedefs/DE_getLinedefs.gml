@@ -115,7 +115,7 @@ function DE_getLinedefs(argument0, argument1) {
 	
 		var bside=ds_list_find_value_fixed(mapSidedefs,back);
 	    var bsect=ds_map_find_value_fixed(bside,"sector");
-		var side = ds_list_find_value_fixed(mapSidedefs,back);
+		var side = bside;//ds_list_find_value_fixed(mapSidedefs,back);
 	
 	    ds_map_replace(side,"bsect",bsect);
 	    ds_map_replace(ldef,"bsect",bsect);

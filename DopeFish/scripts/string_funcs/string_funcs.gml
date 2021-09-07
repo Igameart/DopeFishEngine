@@ -75,7 +75,7 @@ function string_split_on_delimiter(){
 }
 
 function string_split_on_newline(s){
-DEtrace("Splitting String Into Code",s);
+trace("Splitting String Into Code",s);
 	var d = "/n";
 	var a = "/r/n";
 	var r = ds_list_create();
@@ -109,7 +109,7 @@ DEtrace("Splitting String Into Code",s);
 
 function string_split_as_code(s){
 	
-	//DEtrace("Splitting String Into Code",s);
+	//trace("Splitting String Into Code",s);
 	var d = " ,(){}[];";
 	var a = "{}[];";
 	var r = ds_list_create();

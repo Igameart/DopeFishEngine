@@ -5,7 +5,7 @@ function DE_switchSetDoorState(_state) {
 	
 	var _doors = ds_list_size(taggedSectors);
 
-	trace("Switch Activates",_doors,"Door Sectors");
+	DEtrace("Switch Activates",_doors,"Door Sectors");
 
 	for (var Door = 0; Door < _doors; Door++){
 		

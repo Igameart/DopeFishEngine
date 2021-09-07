@@ -9,16 +9,18 @@ if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 var cMsect;
 cMsect	= DE_findSectorAt( x, y, Sector );
 
-Subsector	= DE_findSubacksectororAt( x, y );
+Subsector= DE_findSubacksectororAt( x, y );
 
 if cMsect!=Sector{
 	
-    if !is_undefined(cMsect){		
+    if !is_undefined(cMsect){
+		
 		var secCheck = ds_list_find_value(mapGLSSects,Subsector);
+		
 		if (secCheck != undefined){
 			var _sec = mapSectors[|secCheck.sector];
-			secF = _sec.floorz;
-			secC = _sec.ceilingz;
+			secF = DE_FindSectorFloorHeight(_sec);//.floorz;
+			secC = DE_FindSectorCeilingHeight(_sec);//.ceilingz;
 		    Sector = cMsect;
 		}
     }

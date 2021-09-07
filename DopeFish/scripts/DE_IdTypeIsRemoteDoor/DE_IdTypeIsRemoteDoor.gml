@@ -1,5 +1,4 @@
-function DE_IdTypeIsRemoteDoor() {
-	var T = argument[0];
+function DE_IdTypeIsRemoteDoor(T) {
 
 	if T ==  4
 	|| T == 29

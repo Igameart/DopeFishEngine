@@ -14,24 +14,24 @@ function DE_switchRetrieveDoorSectors() {
 
 		for (var S = 0; S<SSize; S++){
 			
-			var tagSec = tagList[|S];
+			var tagSec = tagList[| S ];
 			
-			var Sect = secs[|tagSec];
+			var Sect = secs[| tagSec ];
 		
 			var dCheck = mapDoors[? tagSec ];
 	
 			if dCheck == undefined{
 		
 				var door = instance_create_depth(0,0,0,objDEDoorHandler);
-				trace("Created Door For Sector:",tagSec);
-				
+				DEtrace("Created Door For Sector:",tagSec);
+			
 				ds_list_add(taggedSectors,door);
 				door.tag = this.tag;
 				door.wait = WAIT;
 				door.funcs = FUNC;
 				door.doorSpeed = SPEED;
 				door.sector = Sect;
-				door.repeatable = ( TRIG[1] == "R" );
+				door.repeatable = (TRIG[1] == "R");
 				this.repeatable = door.repeatable;
 				with door event_user(0);
 				
@@ -39,8 +39,8 @@ function DE_switchRetrieveDoorSectors() {
 				
 			}else{
 				//if ds_list_find_index(taggedSectors,dCheck) == undefined
-					ds_list_add(taggedSectors,dCheck);
-				trace("Remote Door For Sector Already Exists:",dCheck.tag);
+					ds_list_add(this.taggedSectors,dCheck);
+				DEtrace("Remote Door For Sector Already Exists:",dCheck.tag);
 			}
 		}
 	
@@ -53,7 +53,7 @@ function DE_switchRetrieveDoorSectors() {
 		var Sect=linedef.backsector;
 	
 		var secNum = Sect;
-		Sect = secs[| Sect ];
+		Sect = secs[|Sect]
 		
 		var dCheck = mapDoors[? secNum ]
 		
@@ -62,7 +62,7 @@ function DE_switchRetrieveDoorSectors() {
 		
 			var door = instance_create_depth(0,0,0,objDEDoorHandler);
 			
-			trace("Created Door For Sector:",secNum);
+			DEtrace("Created Door For Sector:",secNum);
 			
 			ds_list_add(taggedSectors,door);
 			door.tag = this.tag;

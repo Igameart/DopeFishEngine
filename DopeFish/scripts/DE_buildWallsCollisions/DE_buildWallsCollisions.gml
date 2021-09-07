@@ -142,8 +142,9 @@ function DE_buildWallsCollisions() {
 	                var cLine=instance_create(sx,sy,objDEPassableCollider);
 	                cLine.x2=ex;
 	                cLine.y2=ey;
-	                cLine.bot=bot;
-	                cLine.top=top;
+					cLine.sector = backsector;
+	                //cLine.bot=bot;
+	                //cLine.top=top;
 	                with cLine event_user(0);
 	            }
 	        }
@@ -232,8 +233,7 @@ function DE_buildWallsCollisions() {
 	                var cLine=instance_create(sx,sy,objDEPassableCollider);
 	                cLine.x2=ex;
 	                cLine.y2=ey;
-	                cLine.bot=bot;
-	                cLine.top=top;
+					cLine.sector = backsector;
 	                with cLine event_user(0);
                 
 	            }

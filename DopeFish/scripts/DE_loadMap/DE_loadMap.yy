@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Main",
-    "path": "folders/Scripts/DopeFish/Main.yy",
+    "name": "Map Data",
+    "path": "folders/Scripts/DopeFish/Main/Map Data.yy",
   },
   "resourceVersion": "1.0",
   "name": "DE_loadMap",

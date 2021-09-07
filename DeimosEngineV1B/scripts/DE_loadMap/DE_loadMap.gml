@@ -11,7 +11,7 @@ function DE_loadMap( _map ) {
 	DE_getSectors(_map,LEV+SECTORSOFS);
 	DE_getSidedefs(_map,LEV+SIDEDEFOFS);
 	DE_getLinedefs(_map,LEV+LINEDEFOFS);
-	DE_getLinedefs(_map,LEV+LINEDEFOFS);
+	//DE_getLinedefs(_map,LEV+LINEDEFOFS);
 	//DE_getReject(_map,LEV+REJECTOFS);
 
 	if wadGLVersion!=-1{

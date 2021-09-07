@@ -12,22 +12,27 @@ if switched == false{
 		exit;
 	}
 	
-	if _ready == true{
-		if TRIG[0] == "S" || TRIG[0] == "P"
-			if keyboard_check_pressed(ord("F")){
+	if _ready == true
+		switch TRIG[0]{
+		case "S":
+		case "P":
+		if keyboard_check_pressed(ord("F")){
+				
+			trace("Interacting");
 			
-				if TRIG[0] == "S"{
-					trace("Flipping Switch");
-					sndPlaying = DE_getSound("DSSWTCHN");
-					audio_play_sound(sndPlaying,random(16),false);
-				}			
+			if TRIG[0] == "S"{
+				trace("Flipping Switch");
+				sndPlaying = DE_getSound("DSSWTCHN");
+				audio_play_sound(sndPlaying,random(16),false);
+			}			
 		
-				event_user(0);
-			}
-		
-		if TRIG[0] == "W"{
 			event_user(0);
 		}
+		break;
+		
+		case "W":
+			event_user(0);
+		break;
 	
 	}
 }

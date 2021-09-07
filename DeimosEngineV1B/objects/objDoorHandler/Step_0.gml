@@ -14,6 +14,8 @@ switch state{
 		
 		sector[? "crush" ] = doorPos;
 		
+		show_debug_message(string(doorPos));
+		
 		if doorPos > doorHeight{
 			active = false;
 			sector[? "crush" ] = doorHeight;

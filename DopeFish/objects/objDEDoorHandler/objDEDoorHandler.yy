@@ -4,7 +4,7 @@
     "path": "sprites/line_coll_spr/line_coll_spr.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,

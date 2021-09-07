@@ -1,7 +1,9 @@
 /// @description DE_IdTypeIsDoor(type number);
 /// @param type number
-function DE_IdTypeIsDoor(argument0) {
-	var T=(argument0);
+function DE_IdTypeIsDoor(T) {
+	
+	//DEtrace("Checking Special Type as Door",T);
+	
 	if T == 1	
 	|| T == 117	
 	|| T == 63	
@@ -49,7 +51,10 @@ function DE_IdTypeIsDoor(argument0) {
 	|| T == 137
 	|| T == $3c00
 	|| T == $3800
-	|| T == $4000 return true;
+	|| T == $4000{
+		DEtrace("Type Is Door",T);
+		return true;
+	}
 
 	return false;
 

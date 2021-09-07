@@ -15,15 +15,17 @@ function DE_lineDefDefineCollision() {
 				
 			x = x1; y = y1;
 			image_xscale = point_distance(x1,y1,x2,y2) / 8;
-			image_yscale = 0.25;
+			image_yscale = 1;//0.25;
 			image_angle = point_direction(x1,y1,x2,y2);
+			direction = image_angle;
+			//visible = true;
 		
 			if TRIG[0] == "P" || TRIG[0] == "S" {//Push or Switch, extend collision range
 			
 				sprite_index = sprite_duplicate(sprite_index);
 				image_yscale = 4;		
 				//This is hacky, replace with proper line collisions
-				sprite_set_offset(sprite_index,0,-8);
+				sprite_set_offset(sprite_index,0,-4);
 			
 			}
 		

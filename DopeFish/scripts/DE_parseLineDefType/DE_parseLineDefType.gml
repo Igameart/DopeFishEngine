@@ -138,12 +138,14 @@ function DE_parseLineDefType() {
 	switch routine {
 		
 		case DERoutines.DOOR:
-			trace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+			DEtrace("Door Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
 			DE_switchRetrieveDoorSectors();
+			routine = DERoutines.DOOR;
 		break;
 		
 		case DERoutines.FLOOR:
-			trace("Floor Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
+			instance_destroy();
+			//DEtrace("Floor Type Defined:",CLASS,TRIG,LOCK,SPEED,WAIT,MONST,FUNC)
 			//DE_switchRetrieveDoorSectors();
 		break;
 		
