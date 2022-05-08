@@ -73,8 +73,6 @@ function DE_getLinedefs(argument0, argument1) {
 			
 			trace("Created Switch Type "+string(ldef.specialtype)+" with Tag "+string(ldef.sector_tag)+" From Linedef "+string(line));
 			//else if WAD_FORMAT = "HEXEN"
-			
-			trace("Created Switch Type "+string(ldef.specialtype));//+" with Tag "+string(arg)+" From Linedef "+string(line));
 	        
 			var DE_switch=instance_create_depth(0,0,0,ojbDESwitch);
 			DE_switch.line = line;
@@ -85,15 +83,15 @@ function DE_getLinedefs(argument0, argument1) {
 			v1 = mapVertexes[| v1 ];
 			v2 = mapVertexes[| v2 ];
 			
-			DE_switch.x = mean(v1.x,v2.x);
-			DE_switch.y = mean(v1.y,v2.y);
+			DE_switch.x =v1.x;// mean(v1.x,v2.x);
+			DE_switch.y = v1.y;//mean(v1.y,v2.y);
 			
 			//with DE_switch{
 			//	image_angle=point_direction(x,y,v2.x,v2.y);
 			//	direction=image_angle;
 			//	image_xscale=point_distance(x,y,v2.x,v2.y)/sprite_get_width(sprite_index);
 			//	image_yscale=1;//0.25;
-			//	visible = true;
+			//	//visible = true;
 			//}
 			
 			DE_switch.specialtype = ldef.specialtype;

@@ -1,4 +1,5 @@
 taggedSectors = ds_list_build();
+
 taggedSectNum = 0;
 sectsComplete = 0;
 

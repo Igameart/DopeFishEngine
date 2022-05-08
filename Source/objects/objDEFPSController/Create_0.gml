@@ -34,3 +34,13 @@ flags6 = 0;			// Shit! Where did all the flags go?
 flags7 = 0;			// WHO WANTS TO BET ON 8!?
 
 Height = PLAYER_HEIGHT;
+
+wep_spr = DE_buildSprite( "PISGA0" );
+stbar_spr = DE_buildGraphic( "STBAR" );
+
+//alarm[0] = 1;
+
+bob = 0;
+
+weave = 0;
+

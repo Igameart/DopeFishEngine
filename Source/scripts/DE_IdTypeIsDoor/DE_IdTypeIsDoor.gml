@@ -52,7 +52,7 @@ function DE_IdTypeIsDoor(T) {
 	|| T == $3c00
 	|| T == $3800
 	|| T == $4000{
-		//DEtrace("Type Is Door",T);
+		DEtrace("Type Is Door",T);
 		return true;
 	}
 

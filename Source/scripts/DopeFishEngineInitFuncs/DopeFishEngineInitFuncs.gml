@@ -99,6 +99,10 @@ function LittleLong(x)
 }
 
 function DopeFishEngineInit( _OBJ ) {
+	
+	math_set_epsilon(0.00001);
+	
+	//gml_release_mode(false);
 
 	enum BBOX
 	{

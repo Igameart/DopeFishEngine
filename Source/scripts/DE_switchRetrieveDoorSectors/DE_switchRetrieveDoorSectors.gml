@@ -31,8 +31,8 @@ function DE_switchRetrieveDoorSectors() {
 				door.funcs = FUNC;
 				door.doorSpeed = SPEED;
 				door.sector = Sect;
-				door.repeatable = (TRIG[1] == "R");
-				this.repeatable = door.repeatable;
+				door.repeatable = this.repeatable;
+				
 				with door event_user(0);
 				
 				mapDoors[? tagSec] = door;

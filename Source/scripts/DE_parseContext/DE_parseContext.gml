@@ -195,6 +195,7 @@ function DE_retreatParseMode(){
 }
 
 function DE_parseDecoratePrep(){
+	trace("Loading Decorate Lump");
 	if wadDecorate == noone return false;
 	DEparseMode = "NULL";
 	global.parseModeList = [];
@@ -207,6 +208,7 @@ function DE_parseDecoratePrep(){
 }
 
 function DE_parseMapInfoPrep(){
+	trace("Loading Mapinfo Lump");
 	if wadMapInfo == noone return false;
 	DEparseMode = "NULL";
 	DEtrace("Parsing Map Info");
@@ -220,6 +222,7 @@ function DE_parseMapInfoPrep(){
 }
 
 function DE_parseLanguagePrep(){
+	trace("Loading Lanugage Lump");
 	if wadLanguage == noone return false;
 	DEparseMode = "NULL";
 	global.parseModeList = [];

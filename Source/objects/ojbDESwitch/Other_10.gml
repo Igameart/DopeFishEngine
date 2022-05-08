@@ -18,8 +18,10 @@ if switched == false{
 
 	switch routine{
 		case DERoutines.DOOR:
+		
 			DEtrace("Switching Open Door");
 			DE_switchSetDoorState( FUNC[0] );
+			
 		break;
 	}
 	

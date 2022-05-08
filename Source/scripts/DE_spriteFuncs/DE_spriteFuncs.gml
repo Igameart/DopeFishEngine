@@ -92,6 +92,111 @@ function DE_parseSpriteName( __sprDB, __name ){
 	
 }
 
+function DE_buildSprite( __sprName ){
+	
+	var __sprDat = wadSprites[? __sprName ];
+	
+	if __sprDat == undefined{
+		trace("Cannot find sprite",__sprName);
+		return noone;
+	}
+				
+	if DESprites[? __sprName ] == undefined{
+				
+		var __spr = DE_buildPatch(__sprDat);
+		return __spr;
+		
+	}else return DESprites[? __sprName ];
+}
+
+function DE_buildGraphic( __sprName ){
+				
+	if DESprites[? __sprName ] == undefined{
+		
+		var bPos = buffer_tell(wadbuff);
+		
+		var l = DE_getLumpNum( __sprName );
+		
+		if is_undefined(l) return noone;
+		
+		var lump = ds_list_find_value_fixed(wadDirectory,l);
+	
+		var goff=DE_getLumpOfs(__sprName);
+	
+		buffer_seek(wadbuff,buffer_seek_start,lump.filepos);
+				
+		var __sprDB = wadSpriteDB[? __sprName ];
+				
+		if __sprDB == undefined{
+					
+			trace("NOTICE: creating database for SPRITE:", __sprName);
+					
+			__sprDB = struct_copy(sprdbtype);
+			__sprDB.frames = ds_map_build();
+			__sprDB.directional = false;
+					
+			wadSpriteDB[? __sprName ] = __sprDB;
+					
+		}
+							
+		var _spr = struct_copy(patchtype);			
+
+		var spr_width	= buffer_read(wadbuff,buffer_u16);
+		var spr_height	= buffer_read(wadbuff,buffer_u16);
+		var spr_left	= buffer_read(wadbuff,buffer_s16);
+		var spr_top		= buffer_read(wadbuff,buffer_s16);
+
+		_spr.width	= spr_width;
+		_spr.height	= spr_height;
+		_spr.leftoff= spr_left;
+		_spr.topoff	= spr_top;
+		
+		var data=ds_grid_build(spr_width,spr_height);
+		ds_grid_clear(data,-1);
+
+		var offsets;
+		for(var o=0;o<spr_width;o++){
+			offsets[o]=buffer_read(wadbuff,buffer_u32);
+		}
+
+		var pixcount=0;
+		var dummy=0;
+			
+		for(var w=0;w<spr_width;w++){
+			buffer_seek(wadbuff,buffer_seek_start,goff+offsets[w]);
+
+			var rowstart=0;
+			while((rowstart)!=255){
+					
+				rowstart=buffer_read(wadbuff,buffer_u8)
+				if rowstart=255 break;
+        
+				pixcount=buffer_read(wadbuff,buffer_u8);
+					
+				dummy=buffer_read(wadbuff,buffer_u8);
+					        
+				for(var h=0;h<pixcount;h+=1){
+					var val=buffer_read(wadbuff,buffer_u8);
+					ds_grid_set(data,w,rowstart+h,val);
+				}
+        
+				dummy=buffer_read(wadbuff,buffer_u8);
+			}
+		}
+	
+		_spr.contents = data;
+
+		var __gfxDat = _spr;
+				
+		var __spr = DE_buildPatch(__gfxDat);
+		
+		buffer_seek(wadbuff,buffer_seek_start,bPos);
+		
+		return __spr;
+		
+	}else return DESprites[? __sprName ];
+}
+
 function DE_getSprites() {
 
 	globalvar wadSprites;

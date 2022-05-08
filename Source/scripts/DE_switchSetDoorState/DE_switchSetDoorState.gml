@@ -54,9 +54,10 @@ function DE_switchSetDoorState(_state) {
 }
 
 function DE_switchCheckIfReady(){
+	
 	var _ready = 0;
 	
-	var _doors = ds_list_size(taggedSectors);
+	var _doors = ds_list_size( taggedSectors );
 
 	for (var Door = 0; Door < _doors; Door++){
 		
