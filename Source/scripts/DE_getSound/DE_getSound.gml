@@ -1,6 +1,8 @@
 function DE_getSound(sndnum) {
 
 	var snd = wadSounds[? sndnum];
+	
+	trace("Playing sound", sndnum);
 
 	if snd == undefined{
 	
@@ -11,7 +13,7 @@ function DE_getSound(sndnum) {
 
 		var sampleRate=buffer_read(wadbuff,buffer_u16);
 		var numSamples=buffer_read(wadbuff,buffer_u32);
-
+		
 		snd = audio_create_buffer_sound( wadbuff, buffer_u8, sampleRate, buffer_tell(wadbuff) + 16, numSamples-32, audio_mono);
 		wadSounds[? sndnum] = snd;
 

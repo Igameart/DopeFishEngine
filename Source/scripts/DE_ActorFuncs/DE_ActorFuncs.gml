@@ -112,7 +112,6 @@ function DE_getThings(level, lump) {
 
 	};
 	trace("NOTICE: ["+level+"] THINGS "+string( ds_list_size(mapThings) ));
-	//ds_map_print(DESprites);
 
 
 }
@@ -396,8 +395,6 @@ function DE_actorFetchSequenceStruct(){
 	var count = ds_map_size(stateList);
 	key = ds_map_find_first(stateList);
 	//trace("Actor is custom");
-	//ds_map_print(stateList);
-	
 	repeat count{
 		var list;
 		var sIndex = 0;
@@ -516,6 +513,4 @@ function DE_actorFetchSequenceStruct(){
 			}
 		}
 	}
-	
-	//ds_map_print(entSpriteMap);
 }

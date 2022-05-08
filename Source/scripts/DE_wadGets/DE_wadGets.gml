@@ -24,6 +24,15 @@ function DE_getFile( e ) {
 	        case "wad":
 		        trace("SUCCESS: Retrieved Map:"+file);
 		        wadbuff = buffer_load(file);
+				var size = buffer_get_size(wadbuff)
+				var tmpbuff = buffer_create(size, buffer_fixed, 1);
+				
+				buffer_copy(wadbuff, 0, size, tmpbuff, 0);
+				
+				buffer_delete(wadbuff);
+				
+				wadbuff = tmpbuff;
+				
 		        return true;
 	        break;
 	        default:

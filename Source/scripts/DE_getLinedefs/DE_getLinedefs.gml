@@ -73,7 +73,8 @@ function DE_getLinedefs(argument0, argument1) {
 			
 			trace("Created Switch Type "+string(ldef.specialtype)+" with Tag "+string(ldef.sector_tag)+" From Linedef "+string(line));
 			//else if WAD_FORMAT = "HEXEN"
-			//trace("Created Switch Type "+string(type)+" with Tag "+string(arg)+" From Linedef "+string(line));
+			
+			trace("Created Switch Type "+string(ldef.specialtype));//+" with Tag "+string(arg)+" From Linedef "+string(line));
 	        
 			var DE_switch=instance_create_depth(0,0,0,ojbDESwitch);
 			DE_switch.line = line;

@@ -222,7 +222,6 @@ function DE_parseMapInfoPrep(){
 function DE_parseLanguagePrep(){
 	if wadLanguage == noone return false;
 	DEparseMode = "NULL";
-	//ds_list_print(wadLanguage);
 	global.parseModeList = [];
 	global.currentData = "";
 	var pos = 0;

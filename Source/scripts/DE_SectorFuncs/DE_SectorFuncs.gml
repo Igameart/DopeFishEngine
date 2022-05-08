@@ -147,7 +147,6 @@ function DE_findSubsectorAt(x0, y0){//, ssCheck) {
 			
 			if (colmap != undefined){
 				//trace("Checking if inside polygon");
-				//ds_list_print(colmap);
 			
 				if point_in_polygon(-x0,y0,colmap) == true return secnum;
 			}

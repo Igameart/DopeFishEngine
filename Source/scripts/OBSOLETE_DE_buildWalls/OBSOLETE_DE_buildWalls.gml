@@ -13,8 +13,6 @@ function DE_buildWalls() {
 	for (var k=0;k<ds_list_size(lines);k++) {
 
 	    var linedef = ds_list_find_value_fixed(lines,k);
-	
-		//ds_map_print(linedef);
     
 	    var flags=ds_map_find_value_fixed(linedef,"flags");
 	    var u_peg=ds_map_find_value_fixed(flags,"pegupper");
@@ -28,8 +26,6 @@ function DE_buildWalls() {
 	    right=ds_map_find_value_fixed(linedef,"right");
     
 	
-		//ds_map_print(flags);
-	
 		//Do Colllision
 	    if sld or !dub{
 		
@@ -37,14 +33,12 @@ function DE_buildWalls() {
     
 	        var startv=ds_map_find_value_fixed(linedef,"start");
 	        var vert=ds_list_find_value_fixed(verts,startv);
-			//ds_map_print(vert);
 		
 	        var sx = ds_map_find_value_fixed(vert,"x");
 	        var sy = ds_map_find_value_fixed(vert,"y");
         
 	        startv=ds_map_find_value_fixed(linedef,"end");
 	        vert=ds_list_find_value_fixed(verts,startv);
-			//ds_map_print(vert);
 		
 	        var ex = ds_map_find_value_fixed(vert,"x");
 	        var ey = ds_map_find_value_fixed(vert,"y");
