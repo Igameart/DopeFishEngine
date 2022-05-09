@@ -8,13 +8,13 @@ if switched == false{
 	
 	var _ready = DE_switchCheckIfReady();
 	
-	if _ready == true{
+	if _ready == true && switched == false{
 		switch TRIG[0]{
 			case "S":
 			case "P":
 			if keyboard_check_pressed(ord("F")){
 				
-				trace("Interacting");
+				//trace("Interacting");
 			
 				if TRIG[0] == "S"{
 					trace("Flipping Switch");
@@ -32,10 +32,10 @@ if switched == false{
 				event_user(0);
 			break;
 		}
-		
-		if ( repeatable == false ){
-			switched = true;
-			exit;
-		}
+	
+	if (switchCount > 0 && _ready == true && repeatable == false ){
+		switched = true;
+		exit;
+	}
 	}
 }

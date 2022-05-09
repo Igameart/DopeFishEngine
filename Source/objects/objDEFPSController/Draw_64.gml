@@ -1,18 +1,17 @@
 /// @description 
+var filter = gpu_get_tex_filter();
+gpu_set_tex_filter(false);
 var ww,hh;
 
 ww = surface_get_width(application_surface);
 hh = surface_get_height(application_surface);
 
-//surface_set_target(application_surface);
-
-var _scale = 1;
-if RFXenabled _scale *= RFXscale;
-
 var ss = ww / 320;
+var diff = 200 - (hh / ss);
 
-draw_sprite_ext(wep_spr,0,0,0*_scale + bob,ss/_scale,ss/_scale,0,c_white,1);
+if sprite_exists(wep_spr)
+	draw_sprite_ext(wep_spr,0,0,(-diff+bob)*ss,ss,ss,0,c_white,1);
 
-draw_sprite_ext(stbar_spr,0,0,hh-32*ss/_scale,ss/_scale,ss/_scale,0,c_white,1);
+DE_drawStatusBar();
 
-//surface_reset_target();
+gpu_set_tex_filter(filter);

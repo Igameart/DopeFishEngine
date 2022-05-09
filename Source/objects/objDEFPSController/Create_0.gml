@@ -17,6 +17,41 @@ mouse_free=0;
 IDDQD = false;
 NOCLIP = false;
 
+randomize();
+
+keyslot = [choose(0,1),choose(0,1),choose(0,1),choose(0,1),choose(0,1),choose(0,1)];
+
+weaponslot = [];
+var w = 0;
+weaponslot[w++] = 1;
+repeat 6 weaponslot[w++] = choose(0,1);
+
+ammo1 = irandom(99);
+armor = irandom(99);
+frags = irandom(99);
+
+armorclass = irandom(99);
+
+mpColor = choose(0,1,2,3);
+
+HP = irandom(50)+50;
+maxHP = 100;
+
+Clip = 0;
+Shell = 1;
+RocketAmmo = 2;
+Cell = 3;
+
+ammo[Clip] = 20;
+ammo[Shell] = 30;
+ammo[RocketAmmo] = 40;
+ammo[Cell] = 50;
+
+ammocapacity[Clip] = 400;
+ammocapacity[Shell] = 100;
+ammocapacity[RocketAmmo] = 100;
+ammocapacity[Cell] = 600;
+
 vel = [ 0.0, 0.0, 0.0 ]; // 2m/s along x-axis
 acc = [ 0.0, 0.0, 0.0 ]; // no acceleration at first
 mass = 1.0; // 1kg
@@ -35,8 +70,21 @@ flags7 = 0;			// WHO WANTS TO BET ON 8!?
 
 Height = PLAYER_HEIGHT;
 
-wep_spr = DE_buildSprite( "PISGA0" );
-stbar_spr = DE_buildGraphic( "STBAR" );
+
+switch DENAMESPACE{
+	case DEnameSpaces.DOOM:
+		wep_spr = DE_buildSprite( "PISGA0" );
+		//stbar_spr = DE_buildGraphic( "STBAR" );
+	break;
+	case DEnameSpaces.HERETIC:
+		wep_spr = DE_buildSprite( "GWNDA0" );
+		//stbar_spr = [ DE_buildGraphic( "BARBACK" ), DE_buildGraphic( "STATBAR" ) ];
+	break;
+	case DEnameSpaces.HEXEN:
+		wep_spr = DE_buildSprite( "PISGA0" );
+		//stbar_spr = DE_buildGraphic( "STBAR" );
+	break;
+}
 
 //alarm[0] = 1;
 

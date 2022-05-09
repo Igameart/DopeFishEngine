@@ -31,6 +31,8 @@ routine = noone;
 
 switched = false;
 
+switchCount = 0;
+
 switchIndex = undefined;
 
 switchTex = undefined;

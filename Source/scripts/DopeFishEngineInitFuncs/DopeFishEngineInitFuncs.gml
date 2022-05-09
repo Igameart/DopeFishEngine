@@ -121,6 +121,14 @@ function DopeFishEngineInit( _OBJ ) {
 		HEXEN,
 		STRIFE
 	}
+	
+	enum DEgameModes{
+		singleplayer,
+		cooperative,
+		deathmatch,
+		teamgame
+	}
+	
 	enum DERoutines{
 		DOOR,
 		FLOOR
@@ -245,6 +253,7 @@ function DopeFishEngineInit( _OBJ ) {
 	// Some Logic defines
 	globalvar DESkillLevel;	DESkillLevel = 0;
 	globalvar DENetPlay;	DENetPlay = 0;
+	globalvar DEGameMode;
 	globalvar DENAMESPACE; DENAMESPACE = DEnameSpaces.DOOM;
 
 	// Some WAD defines

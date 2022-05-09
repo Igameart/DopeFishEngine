@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "BSP",
-    "path": "folders/Scripts/DopeFish/Main/Draw/Level Geometry/BSP.yy",
+    "name": "UI",
+    "path": "folders/Scripts/DopeFish/Main/Draw/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "DE_renderAddLine",
+  "name": "DE_StatusBarElements",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -38,7 +38,7 @@ function DE_getSectorFromSSect(GLSSECT) {
         
 		        side = ds_list_find_value(sides,side);
 				
-				trace("NOTICE: Getting Side Sector:", line.side, mline.left, mline.right, side );
+				//trace("NOTICE: Getting Side Sector:", line.side, mline.left, mline.right, side );
 				
 		        sector = ( side.sector );
 		        return sector;
@@ -96,41 +96,50 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 	    secnum=argument2;
 	    var sect=ds_list_find_value_fixed(sects,secnum);
 	    var colmap=sect.colmap;
+		
+		//if point_in_polygon(argument0,argument1,colmap) == true{
+		//	return sect.sector;
+		//}
     
-	    for (var i=0;i<ds_list_size(colmap);i+=6){
-	        var x0,y0,x1,y1,x2,y2;
-	        x0=ds_list_find_value(colmap,i);
-	        y0=ds_list_find_value(colmap,i+1);
-	        x1=ds_list_find_value(colmap,i+2);
-	        y1=ds_list_find_value(colmap,i+3);
-	        x2=ds_list_find_value(colmap,i+4);
-	        y2=ds_list_find_value(colmap,i+5);
+		//if point_in_boundaries(argument0,argument1,sect){
+		    for (var i=0;i<ds_list_size(colmap);i+=6){
+		        var x0,y0,x1,y1,x2,y2;
+		        x0=ds_list_find_value(colmap,i);
+		        y0=ds_list_find_value(colmap,i+1);
+		        x1=ds_list_find_value(colmap,i+2);
+		        y1=ds_list_find_value(colmap,i+3);
+		        x2=ds_list_find_value(colmap,i+4);
+		        y2=ds_list_find_value(colmap,i+5);
         
-	        if point_in_triangle(argument0,argument1,x0,y0,x1,y1,x2,y2){
-	            return secnum;
-	        }
+		        if point_in_triangle(argument0,argument1,x0,y0,x1,y1,x2,y2){
+		            return secnum;
+		        }
         
-	    }
+		    //}
+		}
     
 	}else{
 	    for (secnum=0;secnum<ds_list_size(sects);secnum++){
 	        var sect=ds_list_find_value_fixed(sects,secnum);
 	        var colmap=sect.colmap;
-        
-	        for (var i=0;i<ds_list_size(colmap);i+=6){
-	            var x0,y0,x1,y1,x2,y2;
-	            x0=ds_list_find_value(colmap,i);
-	            y0=ds_list_find_value(colmap,i+1);
-	            x1=ds_list_find_value(colmap,i+2);
-	            y1=ds_list_find_value(colmap,i+3);
-	            x2=ds_list_find_value(colmap,i+4);
-	            y2=ds_list_find_value(colmap,i+5);
+			
+			//if point_in_polygon(argument0,argument1,colmap) == true return sect.sector;
+			//if point_in_boundaries(argument0,argument1,sect){
+		        for (var i=0;i<ds_list_size(colmap);i+=6){
+		            var x0,y0,x1,y1,x2,y2;
+		            x0=ds_list_find_value(colmap,i);
+		            y0=ds_list_find_value(colmap,i+1);
+		            x1=ds_list_find_value(colmap,i+2);
+		            y1=ds_list_find_value(colmap,i+3);
+		            x2=ds_list_find_value(colmap,i+4);
+		            y2=ds_list_find_value(colmap,i+5);
             
-	            if point_in_triangle(argument0,argument1,x0,y0,x1,y1,x2,y2){
-	                return secnum;
-	            }
+		            if point_in_triangle(argument0,argument1,x0,y0,x1,y1,x2,y2){
+		                return secnum;
+		            }
             
-	        }
+		        }
+			//}
 	    }
 	}
 	return -1;
@@ -138,20 +147,51 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 }
 
 function DE_findSubsectorAt(x0, y0){//, ssCheck) {
+	
+	var ssCheck = undefined;
+	if argument_count>2 ssCheck = argument[2];
 
-	var sects = mapGLSSects;
-	var secnum;
-	    for (secnum=0;secnum<ds_list_size(sects);secnum++){
-	        var sect=ds_list_find_value_fixed(sects,secnum);
-	        var colmap=(sect.colmap);
+	if !is_undefined(ssCheck) && ssCheck != -1{
+		var __ssecs = mapSSecPVISTable[| DEcam.Subsector ];
+	
+		if (__ssecs!=undefined){
 			
-			if (colmap != undefined){
-				//trace("Checking if inside polygon");
+			var __ss = 0;
+		
+			repeat ds_list_size(__ssecs){
+				var __ssec = __ssecs[| __ss++ ];
+				
+				var sect = ds_list_find_value_fixed(mapGLSSects,__ssec);
+				
+				if point_in_boundaries(x0,y0,sect){
+				
+					var colmap=(sect.colmap);
 			
-				if point_in_polygon(-x0,y0,colmap) == true return secnum;
+					if (colmap != undefined){
+						//trace("Checking if inside polygon");
+			
+						if point_in_polygon(-x0,y0,colmap) == true return __ssec;
+					}
+				}
 			}
+			shader_reset();
 
-	    }
+		}
+	}else{
+		var sects = mapGLSSects;
+		var secnum;
+		for (secnum=0;secnum<ds_list_size(sects);secnum++){
+		    var sect=ds_list_find_value_fixed(sects,secnum);
+				
+			if point_in_boundaries(x0,y0,sect){
+			    var colmap=(sect.colmap);
+				if (colmap != undefined){
+					//trace("Checking if inside polygon");
+					if point_in_polygon(-x0,y0,colmap) == true return secnum;
+				}
+			}
+		}
+	}
 	return -1;
 
 }

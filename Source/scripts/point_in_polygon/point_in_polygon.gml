@@ -16,11 +16,13 @@ function point_in_polygon( x0, y0, polygon ){
     var n, i, polyX, polyY, x1, y1, x2, y2;
     inside = false;
     n = ds_list_size(polygon) div 2;
+	
     for (i=0; i<n; i+=1)
     {
         polyX[i] = ds_list_find_value(polygon, 2*i);
         polyY[i] = ds_list_find_value(polygon, 2*i+1);
     }
+	
     polyX[n] = polyX[0];
     polyY[n] = polyY[0];
     for (i=0; i<n; i+=1)
@@ -30,7 +32,7 @@ function point_in_polygon( x0, y0, polygon ){
         x2 = polyX[i+1];
         y2 = polyY[i+1];
 		
-		draw_line_width_color(x1,y1,x2,y2,6,c_orange,c_orange);
+		//draw_line_width_color(x1,y1,x2,y2,6,c_orange,c_orange);
         
         if ((y2 > y0) != (y1 > y0)) 
         {
@@ -67,4 +69,10 @@ function draw_ssect_polygon( ssectNum ){
 		
 		draw_line_width_color(x1,y1,x2,y2,6,c_orange,c_orange);      
     }
+}
+
+function point_in_boundaries(xx,yy,subsect){
+	
+	return ( xx > subsect.bbox_left && xx < subsect.bbox_right && yy > subsect.bbox_top && yy < subsect.bbox_bottom);
+	
 }

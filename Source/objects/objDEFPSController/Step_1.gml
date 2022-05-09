@@ -7,18 +7,20 @@ if keyboard_check_pressed(vk_numpad0) IDDQD = !IDDQD;
 if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 
 var cMsect;
-cMsect	= DE_findSectorAt( x, y, Sector );
+cMsect	= -1;// DE_findSectorAt( x, y, Sector );
 
-Subsector= DE_findSubsectorAt( x, y );
+Subsector= DE_findSubsectorAt( x, y, Subsector );
+
+var secCheck = ds_list_find_value(mapGLSSects,Subsector);
+
+if is_struct(secCheck)
+	cMsect = (secCheck.sector);
 
 if cMsect!=Sector{
 	
     if !is_undefined(cMsect){
-		
-		var secCheck = ds_list_find_value(mapGLSSects,Subsector);
-		
 		if (secCheck != undefined){
-			var _sec = mapSectors[|secCheck.sector];
+			var _sec = mapSectors[| secCheck.sector];
 			secF = DE_FindSectorFloorHeight(_sec);//.floorz;
 			secC = DE_FindSectorCeilingHeight(_sec);//.ceilingz;
 		    Sector = cMsect;
@@ -95,8 +97,6 @@ if keyboard_check(ord("A")) verlet_motion_add_2d( yaw+90  ,spd);
 if keyboard_check(ord("S")) verlet_motion_add_2d( yaw+180 ,spd);
 if keyboard_check(ord("D")) verlet_motion_add_2d( yaw+270 ,spd);
 
-//speed = min(speed,6+keyboard_check(vk_shift)*4);
-
 global._dt = delta_time / 1000000;//ideal_time;
 
 repeat 15 verlet_update( global._dt );
@@ -104,7 +104,7 @@ repeat 15 verlet_update( global._dt );
 
 
 if vel[2] >0{
-if z+Height+HeadRoom >= secC{
+if z+Height+HeadRoom > secC{
 	jumping = false;
 	vel[2] = 0;
 	vGravity = worldGravity;

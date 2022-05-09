@@ -11,7 +11,7 @@ function DE_glbspPreProcess( sourceWad ){
 	
 	var str = "chdir /"+__drive+" "+__path+"\nglbsp.exe "+__path+"tmp1.wad -o "+__path+"tmp2.wad";
 	str += "\nping 127.0.0.1 -n 2 > nul";
-	str += "\n"+ "glvis.exe "+__path+"tmp2.wad";
+	str += "\n"+ "glvis.exe "+__path+"tmp2.wad -v -noreject";
 	
 	file_text_write_string(file,str);
 	file_text_close(file);

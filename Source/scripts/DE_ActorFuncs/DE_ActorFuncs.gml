@@ -81,6 +81,7 @@ function DE_getThings(level, lump) {
 				y = Z;
 				yaw = ANGLE;
 				direction = ANGLE;
+				depth = other.depth + 1;
 			}
 		}
 	

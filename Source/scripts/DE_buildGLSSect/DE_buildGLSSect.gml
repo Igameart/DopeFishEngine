@@ -53,6 +53,8 @@ function DE_buildGLSSect(argument0) {
     
 	var k = 0,startx,starty;
 	
+	var x1=pointer_null,x2=pointer_null,y1=pointer_null,y2=pointer_null;
+	
 	repeat (count) {
 	    var __line = ds_list_find_value_fixed(lines,k+start);
             
@@ -69,6 +71,12 @@ function DE_buildGLSSect(argument0) {
 	    sx = vert.x;
 	    sy = vert.y;
 		
+		if x1 == pointer_null || sx < x1 x1 = sx;
+		if x2 == pointer_null || sx > x2 x2 = sx;
+		
+		if y1 == pointer_null || sy < y1 y1 = sy;
+		if y2 == pointer_null || sy > y2 y2 = sy;
+		
 		if (k == 0){
 			startx = sx;
 			starty = sy;
@@ -80,7 +88,12 @@ function DE_buildGLSSect(argument0) {
 		ds_list_add( __glColMap, -sx,sy );
 			
 	    k++;
-	}  
+	}
+	
+	polygon.bbox_left = x1;
+	polygon.bbox_right = x2;
+	polygon.bbox_top = y1;
+	polygon.bbox_bottom = y2;
 	
 	ds_list_add( __glColMap, -startx,starty );
     

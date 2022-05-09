@@ -1660,6 +1660,10 @@ sectortype = {
 	ceilingpal		: -1,
 	ceilingxpanning : 0,
 	ceilingypanning : 0,
+	bbox_left : pointer_null,
+	bbox_right : pointer_null,
+	bbox_top : pointer_null,
+	bbox_bottom : pointer_null,
 	ftexz			: 0,
 	ctexz			: 0,
 	floorpicnum		: -1,
@@ -1689,6 +1693,10 @@ glssecttype ={
 	start	: 0,
 	colmap	: noone,
 	sector	: -1,
+	bbox_left : pointer_null,
+	bbox_right : pointer_null,
+	bbox_top : pointer_null,
+	bbox_bottom : pointer_null,
 	ceilingpicnum	: "-",
 	floorpicnum		: "-"
 }

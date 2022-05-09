@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Render",
-    "path": "folders/Scripts/DopeFish/Main/Render.yy",
+    "name": "Level Geometry",
+    "path": "folders/Scripts/DopeFish/Main/Draw/Level Geometry.yy",
   },
   "resourceVersion": "1.0",
   "name": "DE_renderSSect",

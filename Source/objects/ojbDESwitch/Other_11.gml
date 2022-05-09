@@ -5,7 +5,7 @@
 //ds_list_print(taggedSectors);
 
 //But only if all linked sectors have completed actions (add 1 to account for the required negative value of sectsComplete)
-if sectsComplete >= ds_list_size(taggedSectors){
+//if sectsComplete >= ds_list_size(taggedSectors){
 	
 	trace("Switch Object Resetting");
 	
@@ -23,4 +23,4 @@ if sectsComplete >= ds_list_size(taggedSectors){
 		if TRIG[0] == "S"	//Only play the unswitch sound if this is a switch
 			audio_play_sound(DE_getSound("DSSWTCHX"),random(16),false);
 	}
-}
+//}

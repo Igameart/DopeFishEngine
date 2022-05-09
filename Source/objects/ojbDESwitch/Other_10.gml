@@ -5,6 +5,7 @@ if switched == false{
 	//DEtrace( "Performing Action For Switch",routine );
 	
 	switched = true;
+	switchCount++;
 	
 	if TRIG[0] == "S" || TRIG[0] == "P"{
 

@@ -29,10 +29,7 @@ global._dt = 1;
 
 time=0;
 
-//CHRIS: Music Stuff, move this to another object please
-noteslist = noone;
 time = 0;
-realbpm = 0;
 
 globalvar fcol;fcol=__background_get_colour( );
 globalvar f_far;f_far=(2048*2);
