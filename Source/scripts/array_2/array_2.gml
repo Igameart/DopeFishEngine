@@ -30,3 +30,5 @@ function array_replace(_arr,_old,_new){
  
 	_arr [@ _pos] = _new;
 }
+
+

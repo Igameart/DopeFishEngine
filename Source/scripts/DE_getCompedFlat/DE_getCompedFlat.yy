@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Level Geometry",
-    "path": "folders/Scripts/DopeFish/Main/Draw/Level Geometry.yy",
+    "name": "DopeFish22",
+    "path": "DopeFish22.yyp",
   },
   "resourceVersion": "1.0",
   "name": "DE_getCompedFlat",

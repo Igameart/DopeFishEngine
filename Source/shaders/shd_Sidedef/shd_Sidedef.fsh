@@ -11,8 +11,9 @@ varying float v_vMiddle;
 //varying float v_eyeDist;
 varying vec4 v_vPosition;
 
-uniform sampler2D tex_L;
-uniform sampler2D tex_U;
+uniform vec4 tex_L;
+uniform vec4 tex_M;
+uniform vec4 tex_U;
 
 uniform vec2 u_Luv;
 uniform vec2 u_Uuv;
@@ -22,9 +23,11 @@ uniform vec4 u_fogColor;
 uniform float u_fogMaxDist;
 uniform float u_fogMinDist;
 
-varying vec2 vResL;
-varying vec2 vResM;
-varying vec2 vResU;
+uniform vec2 u_sectAtlas;
+
+//varying vec2 vResL;
+//varying vec2 vResM;
+//varying vec2 vResU;
 
 vec4 smoothTex2D( sampler2D tex, vec2 tUV, vec2 tRes ){
 	
@@ -78,33 +81,42 @@ void main()
     if (v_vMiddle==0.0){
         if (v_vTIndex==0.0){
 			vec2 UV = (v_vTexcoord);
-			if (UV != vec2(1.0,1.0)){
+			
+			/*if (UV != vec2(1.0,1.0)){
 				UV =  floor(UV);
 				vec2 rmn = v_vTexcoord - UV;
-				rmn *= u_Luv;
+				//rmn *= u_Luv;
 				UV += rmn;
-			}
-			col = smoothTex2D( tex_L, UV, vResL );
+			}*/
+		
+		
+			UV = (tex_L.xy/u_sectAtlas) + (tex_L.zw/u_sectAtlas) * fract(UV);
+			col = smoothTex2D( gm_BaseTexture, UV, u_sectAtlas );
 		}
         else{
 			vec2 UV = (v_vTexcoord);
-			if (UV != vec2(1.0,1.0)){
+			/*if (UV != vec2(1.0,1.0)){
 				UV =  floor(UV);
 				vec2 rmn = v_vTexcoord - UV;
-				rmn *= u_Uuv;
+				//rmn *= u_Uuv;
 				UV += rmn;
-			}
-			col = smoothTex2D( tex_U, UV, vResU );
+			}*/
+		
+			UV = (tex_U.xy/u_sectAtlas) + (tex_U.zw/u_sectAtlas) * fract(UV);
+			col = smoothTex2D( gm_BaseTexture, UV, u_sectAtlas );
 		}
     }else{
 		vec2 UV = (v_vTexcoord);
-		if (UV != vec2(1.0,1.0)){
+		/*if (UV != vec2(1.0,1.0)){
 			UV =  floor(UV);
 			vec2 rmn = v_vTexcoord - UV;
-			rmn *= u_Muv;
+			//rmn *= u_Muv;
 			UV += rmn;
-		}
-		col = smoothTex2D( gm_BaseTexture, UV, vResM );
+		}*/
+		
+		UV = (tex_M.xy/u_sectAtlas) + (tex_M.zw/u_sectAtlas) * fract(UV);
+		
+		col = smoothTex2D( gm_BaseTexture, UV , u_sectAtlas );
 		
 	}
 

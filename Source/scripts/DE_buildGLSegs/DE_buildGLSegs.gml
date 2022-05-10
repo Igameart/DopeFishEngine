@@ -148,7 +148,7 @@ function DE_buildGLSegs() {
 				//CHRIS: Create a script to check that a texture isn't a currently known sky texture rather than having a hard coded check for F_SKY1
 		        //Let's do the bottom section of the wall first just because
 		        if tcd[0]!="-" && tcd[0]!="F_SKY1" && back!=-1{
-		            trace("building lower wall:"+tcd[0]);
+		            //trace("building lower wall:"+tcd[0]);
 				
 					bot = sect.floorz;
 					top = backsector.floorz;
@@ -212,7 +212,7 @@ function DE_buildGLSegs() {
              
 				//Top Section
 		        if tcd[1]!="-" and back!=-1 && tcd[1]!="F_SKY1"{
-		            trace("building upper wall:"+tcd[1]);
+		            //trace("building upper wall:"+tcd[1]);
 			
 					var _s,_b;
 					_s = sect.ceilingpicnum;
@@ -277,7 +277,7 @@ function DE_buildGLSegs() {
 		
 				//Middle section
 		        if tcd[2]!="-" && tcd[2]!="F_SKY1"{
-		            trace("building middle wall:"+tcd[2]);
+		            //trace("building middle wall:"+tcd[2]);
 		            var bot, top;
                         
 		            bot = sect.floorz;

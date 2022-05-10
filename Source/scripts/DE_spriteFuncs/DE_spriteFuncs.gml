@@ -196,7 +196,7 @@ function DE_buildGraphic( __sprName ){
 		buffer_seek(wadbuff,buffer_seek_start,bPos);
 		
 		gpu_set_tex_filter(filter);
-		display_reset(4,1);
+		display_reset(8,1);
 		
 		DESprites[? __sprName ] = __spr;
 		

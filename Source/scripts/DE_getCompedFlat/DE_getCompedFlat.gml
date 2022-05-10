@@ -2,7 +2,7 @@ function DE_getFlatTexture(t_name) {
 
 	if t_name!="-" and t_name!="F_SKY1" and t_name!="F_SKY" and t_name!="F_SKY001"	{
 
-		var tex = wadCompedFlats[? t_name ];
+		/*var tex = wadCompedFlats[? t_name ];
 
 		if tex == undefined{
 			
@@ -18,9 +18,11 @@ function DE_getFlatTexture(t_name) {
 			tex = sprite_get_texture(sprite,0);
 			wadCompedFlats[? t_name ] = tex;
 	
-		}
+		}*/
+		
+		var tFlat = pload_flats[? t_name ];
 
-		return tex;
+		return tFlat;
 
 	} else return -1;
 

@@ -3,7 +3,7 @@ function DE_buildTexture() {
 
 	var tdat = ds_map_find_value(pload_tex,t_name);
 
-	if tdat == undefined{
+	if tdat == undefined || tdat == -1{
 		if !is_undefined(ds_map_find_value(textures,t_name)){
 
 				
@@ -47,15 +47,18 @@ function DE_buildTexture() {
                 
 		    surface_reset_target();
 			
-			var spr = sprite_create_from_surface(surf,0,0,t_w,t_h,false,false,0,0);
+			//var spr = sprite_create_from_surface(surf,0,0,t_w,t_h,false,false,0,0);
+			
+			var spr = tpageTextures.insertSurface(surf);
+			//trace("Added Texture To Atlas", t_name);
 		
 			wadCompedTextures[? t_name] = sprite_get_texture(spr,0);
 				
-			var sprDat = sprite_get_uvs(spr,0);
-			var tdat = [spr,sprDat[TexUVS.Left],sprDat[TexUVS.Top]];
+			//var sprDat = sprite_get_uvs(spr,0);
+			//var tdat = [spr,sprDat[TexUVS.Left],sprDat[TexUVS.Top]];
 				
-		    ds_map_replace(pload_tex,t_name,tdat);
-			surface_free(surf);
+		    pload_tex[? t_name] = spr;
+			//surface_free(surf);
             
 		}
 	}

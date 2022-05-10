@@ -8,8 +8,6 @@ function DE_renderGLSeg(j) {
 	var lines = mapLinedefs;
 	var sects = mapSectors;	
 	var sides = mapSidedefs;
-	
-	var texDims = [ 0,0, 0,0, 0,0 ];
 
 	var seg = segs[| j ];
 
@@ -62,7 +60,6 @@ function DE_renderGLSeg(j) {
 	if ( s != -1 ){
 		var side = sides[| s ];
 	
-		//trace("NOTICE: Looking For Sidedef:",s,string(side));
 		var flags = linedef.flags;
     
 		var s = side.sector;
@@ -127,65 +124,31 @@ function DE_renderGLSeg(j) {
 		    var vuptex	= pload_tex[? uptex ];
 		    var vmidtex	= pload_tex[? midtex];
         
-		    if is_undefined(vmidtex){
-		        vmidtex = [0,0,0];
-		    }else{
-		        shader_set_uniform_f(u_TexHM,sprite_get_height(vmidtex[0]));
+		    if !is_undefined(vmidtex) && vmidtex != -1{
+				var tex = vmidtex.images;
+				if is_struct(tex){
+					shader_set_uniform_f(shd_mtex,(tex.left+1),(tex.top+1),(tex.width-2),(tex.height-2));
+			        shader_set_uniform_f(u_TexHM,tex.height-2);
+				}
 		    }
         
-		    if !is_undefined(vlowtex){
-						
-		        if sprite_exists(vlowtex[0]){
-								
-		            shader_set_uniform_f(u_TexHL,sprite_get_height(vlowtex[0]),);
-				
-					shader_set_uniform_f(shd_uLuv,vlowtex[1],vlowtex[2]);
-			
-					var tex = DE_getCompedTexture(lowtex);
-					
-					texDims[0] = ( 1/texture_get_texel_width(tex) );
-					texDims[1] = ( 1/texture_get_texel_height(tex) );
-				
-		            texture_set_stage(shd_ltex,tex);
-				
-		        }
-			
-		    }else texture_set_stage(shd_ltex,0);
-        
-		    if !is_undefined(vuptex){
-			
-		        if sprite_exists(vuptex[0]){
-								
-		            shader_set_uniform_f(u_TexHU,sprite_get_height(vuptex[0]));
-				
-					shader_set_uniform_f(shd_uUuv,vuptex[1],vuptex[2]);
-			
-					var tex = DE_getCompedTexture(uptex);
-					
-					texDims[4] = ( 1/texture_get_texel_width(tex) );
-					texDims[5] = ( 1/texture_get_texel_height(tex) );
-				
-		            texture_set_stage(shd_utex,tex);
-				
-		        }
-            
-		    }else texture_set_stage(shd_utex,0);
-			
-				if midtex!="-"{
-			
-					shader_set_uniform_f(shd_uMuv,vmidtex[1],vmidtex[2]);
-			
-					var tex = DE_getCompedTexture(midtex);
-				
-					texDims[2] = ( 1/texture_get_texel_width(tex) );
-					texDims[3] = ( 1/texture_get_texel_height(tex) );
-				
-					//DEtrace(midtex, texDims[2], texDims[3] );
-					
+		    if !is_undefined(vlowtex) && vlowtex != -1{
+				var tex = vlowtex.images;
+				if is_struct(tex){
+					shader_set_uniform_f(shd_ltex,(tex.left+1),(tex.top+1),(tex.width-2),(tex.height-2));
+					shader_set_uniform_f(u_TexHL,tex.height-2);
 				}
+		    }
+        
+		    if !is_undefined(vuptex) && vuptex != -1{				
+				var tex = vuptex.images;
+				if is_struct(tex){
+					shader_set_uniform_f(shd_utex,(tex.left+1),(tex.top+1),(tex.width-2),(tex.height-2));
+					shader_set_uniform_f(u_TexHU,tex.height-2);
+				}
+		    }
 			
-				shader_set_uniform_f_array(SuRes,texDims);
-				vertex_submit(vbuffer,pr_trianglelist,tex);
+			vertex_submit(vbuffer,pr_trianglelist, tTextures );
 		}
 	}
 

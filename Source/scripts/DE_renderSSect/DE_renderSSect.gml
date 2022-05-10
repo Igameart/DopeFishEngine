@@ -4,7 +4,7 @@ function DE_renderSSect( __ssec ) {
 	
 	var ssect = ds_list_find_value_fixed(mapGLSSects,__ssec);
 
-	var vbuffer,ctex,ftex,ttex,sect,zadd,crushing;
+	var vbuffer,ctex,ftex,tex,sect,zadd,crushing;
 	ttex=0;
 	
 	vbuffer = ssect.vbuffer;
@@ -28,26 +28,25 @@ function DE_renderSSect( __ssec ) {
 		shader_set_uniform_f(u_sectTopOff,crushing);
 
 		if ftex!="-" && ftex != undefined{
-			ttex = DE_getFlatTexture(ftex);
-			
-			if ttex == -1{
-				ttex = sprite_get_texture(spr_empty,0);
-				//trace("Floor flat does not exist for sector",sect,ftex);
+			tex = DE_getFlatTexture(ftex);
+			if tex != -1{
+				tex = tex.images;
+				if is_struct(tex){
+					shader_set_uniform_f(u_sectFloorTex,(tex.left+1),(tex.top+1),(64),(64));
+				}
 			}
 		}
     
 		if ctex!="-" && ctex != undefined{
-			var tex = DE_getFlatTexture(ctex);
-			
-			if tex == -1{
-				tex = sprite_get_texture(spr_empty,0);
-				//trace("Ceiling flat does not exist for sector",sect,ctex);
+			tex = DE_getFlatTexture(ctex);
+			if tex != -1{
+				tex = tex.images;
+				if is_struct(tex){
+					shader_set_uniform_f(u_sectCeilTex,(tex.left+1),(tex.top+1),(64),(64));
+				}
 			}
-				
-			texture_set_stage(shd_ctex,tex);
 		}
-		
-		vertex_submit(vbuffer,pr_trianglelist,ttex);
+		vertex_submit(vbuffer,pr_trianglelist,tFlats);
 	}
 
 

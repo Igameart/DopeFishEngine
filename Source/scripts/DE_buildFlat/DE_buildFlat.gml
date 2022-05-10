@@ -22,10 +22,10 @@ function DE_buildFlat(argument0) {
 	}
 
 	surface_reset_target();
+	
+	var spr = tpageFlats.insertSurface(surf);//, 1, 64, 64);
 
-	var spr=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,0,0);
-
-	surface_free(surf);
+	//var spr=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,0,0);
 
 	return spr;
 

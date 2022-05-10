@@ -16,19 +16,67 @@ uniform float u_fogMinDist;
 
 uniform float u_hightlight;
 
-uniform sampler2D tex_C;
+uniform vec4 u_sectFloorTex;
+uniform vec4 u_sectCeilTex;
+uniform vec2 u_sectAtlas;
 
-vec4 smoothTex2D( sampler2D tex, vec2 UV ){
+//uniform sampler2D tex_C;
+vec4 smoothTex2D( sampler2D tex, vec2 tUV){//, vec2 tRes ){
 	
-	vec2 alpha = .5 * vec2(abs(dFdx(UV.x)), abs(dFdy(UV.y)));//+0.06;
+	vec2 UV = tUV * u_sectAtlas;
+	
+	vec2 alpha = .45 * vec2(abs(dFdx(UV.x)), abs(dFdy(UV.y)));//+0.06;
 
 	vec2 x = fract(UV);
 	vec2 x_ = clamp(.5 / alpha * x, 0., 0.5) +
 				clamp(.5 / alpha * (x - 1.) + .5, 0., .5);
 			
-	vec2 texCoord = (floor(UV) + x_) / vec2(64.,64.);
+	vec2 texCoord = (floor(UV) + x_) / u_sectAtlas;
 
 	return texture2D( tex, texCoord );
+	
+}
+
+vec4 fourTapSample(vec2 tileOffset, //Tile offset in the atlas 
+                  vec2 tileUV, //Tile coordinate (as above)
+                  vec2 tileSize) //Size of a tile in atlas
+				  {
+	//Initialize accumulators
+	vec4 color = vec4(0.0);
+	float totalWeight = 0.0;
+
+	for(int dx=-1; dx<1; ++dx){
+		for(int dy=-1; dy<1; ++dy) {
+			//Compute coordinate in 2x2 tile patch
+			vec2 tileCoord = 2.0 * fract(0.5 * ((tileUV) + vec2(dx,dy)));
+
+			//Weight sample based on distance to center
+			float w = pow(1.0 - max(abs(tileCoord.x-1.0), abs(tileCoord.y-1.0)), 16.0);
+
+			//Compute atlas coord
+			vec2 atlasUV = tileOffset + tileCoord * tileSize;
+
+			//Sample and accumulate
+			color += w * texture2D(gm_BaseTexture, atlasUV);
+			totalWeight += w;
+	  }
+  }
+
+  //Return weighted color
+  return color / totalWeight;
+}
+
+vec2 smoothUV( vec2 UV ){
+	
+	vec2 alpha = .5 * vec2(abs(dFdx(UV.x)), abs(dFdy(UV.y)))+0.01;
+
+	vec2 x = fract(UV);
+	vec2 x_ = clamp(.5 / alpha * x, 0., 0.5) +
+				clamp(.5 / alpha * (x - 1.) + .5, 0., .5);
+			
+	vec2 texCoord = ( floor(UV) + x_ ) / (64.);
+
+	return texCoord;
 	
 }
 
@@ -65,23 +113,29 @@ void main()
     float fogger = computeLinearFogFactor();
 	float lighten = computeLightCorrection();
     vec4 vcol = v_vColour + lighten;
-	//vcol.rgb = min(vcol.rgb,vec3(1.0));
-    //vcol.a=1.0;
     vec4 col;
 	
+	//float aspect = u_sectAtlas.y / u_sectAtlas.x;
 	
-	/*#extension GL_EXT_frag_depth : require
-	#ifdef GL_EXT_frag_depth
-		float vDepth = length(v_vPosition.xyz)+12.0*0.0;
-		float dDiff = u_fogMaxDist - 0.2;
-		gl_FragDepthEXT = 0.2/dDiff + vDepth/(dDiff);
-	#endif*/
+	vec2 uv = fract(smoothUV(v_vTexcoord));
+	//uv.y /= aspect;
     
 	//If Floor
     if (v_vTIndex == 0.0){
-        col = smoothTex2D( gm_BaseTexture, v_vTexcoord );
-	}else{//Is Ceiling
-        col = smoothTex2D( tex_C, v_vTexcoord );
+		
+		
+		uv = (u_sectFloorTex.xy/u_sectAtlas) + (u_sectFloorTex.zw/u_sectAtlas) * fract(uv);
+		
+		col = texture2D( gm_BaseTexture, uv, 0.0 );
+		//col = fourTapSample( u_sectFloorTex.xy, v_vTexcoord, u_sectFloorTex.zw );
+		
+	}else{//If Ceiling
+		
+		//uv = u_sectCeilTex.xy + (( uv )) * u_sectCeilTex.zw / vec2(64.0);
+		uv = (u_sectCeilTex.xy/u_sectAtlas) + (u_sectCeilTex.zw/u_sectAtlas) * fract(uv);
+		
+        col = texture2D( gm_BaseTexture, uv, -3.0 );
+		//col = fourTapSample(u_sectCeilTex.xy, ( uv ), u_sectCeilTex.zw);
 	}
         
     fogger = floor(fogger*16.0+0.5)/16.0;
