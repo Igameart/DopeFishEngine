@@ -175,16 +175,7 @@ function DE_loadActorData( TYPE ){
 		struct_extract(ACTORstruct);
 
 		name = thing[ DEThingDef.Description ];
-		
-		if wadLocalization[? "enu" ] != undefined{//There's a language lump, let's check for this entry
-			var _langDat = wadLocalization[? "enu" ];
-			var _tmpName = _langDat[? name ];
-			if _tmpName != undefined{
-				_tmpName = _tmpName[0];
-				trace("Found Name In Language Lump",_tmpName);
-				name = _tmpName;
-			}
-		}
+		name = DE_fetchLocalizationByLabel(name);
 
 		sprite = thing[ DEThingDef.Sprite ];
 		

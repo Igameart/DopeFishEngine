@@ -10,7 +10,7 @@ function DE_buildPatch(patch,pname) {
 	
 	var asset = asset_get_index( assetName );
 	
-	trace("Looking for internal patch",assetName);
+	//trace("Looking for internal patch",assetName);
 	
 	var data2;
 

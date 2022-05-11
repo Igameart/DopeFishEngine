@@ -10,7 +10,7 @@ function DE_buildFlat(argument0,pname) {
 	
 	var asset = asset_get_index( assetName );
 	
-	trace("Looking for internal flat",assetName);
+	//trace("Looking for internal flat",assetName);
 	
 	/*if DETexInternal && asset > -1 {
 		

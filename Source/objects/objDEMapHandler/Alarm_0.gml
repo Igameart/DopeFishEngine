@@ -1,2 +1,6 @@
 /// @description Start Music
-DE_musLumpProcess( DE_getLevelMusic() );
+
+var song = DE_getLevelMusic();
+//var song = DE_fetchMusicByLabel(wadGameInfo.titlemusic);
+
+DE_musLumpProcess( song );

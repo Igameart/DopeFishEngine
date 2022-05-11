@@ -23,6 +23,8 @@ function DE_gameData() {
 	DE_parseDecoratePrep();
 	DE_parseMapInfoPrep();
 	DE_loadFontDefs();
+	
+	trace("Game Info Title Music:", DE_fetchMusicByLabel(wadGameInfo.titlemusic) );
 
 }
 

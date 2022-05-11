@@ -9,9 +9,7 @@ if DEparseMode == "MAPINFO"
 	switch DEparseMode{
 				
 		case "GAMEINFO":
-			
 			DE_parseMapInfoGameInfo( token, code );
-					
 		break;
 				
 	}
@@ -33,11 +31,12 @@ function DE_parseMapInfoGameInfo( token, code ){
 									
 			}until ds_list_size(code) < 1;
 			DE_setStructProperty(wadGameInfo,Name,global.currentEntry);
+			trace("Setting GameInfo Property",Name,global.currentEntry);
 		}else{
 			var entry = getToken(code);
 			
 			entry = DE_propertyProcess(entry);
-			
+			trace("Setting GameInfo Property",Name,entry);
 			DE_setStructProperty(wadGameInfo,Name,entry);
 		}
 	}

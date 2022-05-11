@@ -2176,6 +2176,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/gamedata","resourceVersion":"1.0","name":"animdefs.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/gamedata","resourceVersion":"1.0","name":"fontdefs.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/gamedata","resourceVersion":"1.0","name":"decaldef.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/gamedata","resourceVersion":"1.0","name":"language.enu","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2022.3.0.625",

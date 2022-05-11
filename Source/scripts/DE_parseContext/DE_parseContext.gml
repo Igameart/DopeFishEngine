@@ -208,6 +208,7 @@ function DE_parseDecoratePrep(){
 }
 
 function DE_parseMapInfoPrep(){
+	
 	trace("Loading Mapinfo Lump");
 	if wadMapInfo == noone return false;
 	DEparseMode = "NULL";
@@ -219,6 +220,7 @@ function DE_parseMapInfoPrep(){
 		DE_parseLine(str,"MAPINFO");
 		pos++;
 	}
+	
 }
 
 function DE_parseLanguagePrep(){
@@ -235,17 +237,29 @@ function DE_parseLanguagePrep(){
 	}
 }
 
+function DE_fetchMusicByLabel( _string ){
+	var entry = DE_fetchLocalizationByLabel(_string);
+	entry = "D_"+string_upper(entry);
+	return entry;
+}
+
 function DE_fetchLocalizationByLabel( _string ){
-	
+	if is_array(_string){
+		_string = _string[ floor(random( array_length(_string) - 0.5 ) ) ]; 
+	}
 	var tmpString = string_replace( _string,"\$","");
-	tmpString = string_copy(tmpString,2,string_length(tmpString)-2);
+	tmpString = string_copy(tmpString,1,string_length(tmpString));
 	
-	//trace("Fetching Label", tmpString );
+	trace("Fetching Label", tmpString );
 	
 	var _langDat = wadLocalization[? "enu" ];
 	var _tmpDat = _langDat[? tmpString ];
 	
 	//trace("Label Found",_tmpDat);
+	
+	if is_array(_tmpDat){
+		_tmpDat = _tmpDat[ floor(random( array_length(_tmpDat) - 0.5 ) ) ]; 
+	}
 	
 	return _tmpDat;
 }

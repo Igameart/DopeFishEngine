@@ -242,26 +242,26 @@ function DE_drawswitchableimage(){//Draw an image into gui space
 		
 	}
 	
-	var __sprName;
+	var __sprName = "nullimage";
 	
 	if is_string(__key){
-		__spr[0] = argument[1];
-		__spr[1] = argument[2];
+		__spr[0] = argument[2];
+		__spr[1] = argument[1];
 		xx = argument[3];
 		yy = argument[4];
 		
 		switch __key{
 			case "invulnerable":
-				__sprName = __spr[!IDDQD];
+				__sprName = __spr[ IDDQD ];
 			break;
 		}
 	}else{
 		if is_real(__key){
-			__spr[0] = argument[1];
-			__spr[1] = argument[2];
+			__spr[0] = argument[2];
+			__spr[1] = argument[1];
 			xx = argument[3];
 			yy = argument[4];
-			__sprName = __spr[__key];
+			__sprName = __spr[ __key ];
 		}else
 		if is_array(__key){
 			
@@ -651,8 +651,13 @@ function DE_drawDoomStatusBar(){
 		DE_drawnumber(2, HUDFONT_DOOM, "untranslated", frags, 0, 138, 171 - offset);
 		DE_drawimage( "STFB"+string(mpColor), 143, 169 - offset);
 	}
-		
-	DE_drawimage( "STFST01", 143, 168- offset );
+	
+	//if !IDDQD
+	//	DE_drawimage( "STFST01", 143, 168- offset );
+	//else
+	//	DE_drawimage( "STFGOD0", 143, 168- offset );
+	
+	DE_drawswitchableimage( [ IDDQD, NOCLIP ], "STFST01", "STFEVL0", "STFKILL0", "STFGOD0", 143, 168- offset );
 }
 
 function DE_drawHereticStatusBar(){

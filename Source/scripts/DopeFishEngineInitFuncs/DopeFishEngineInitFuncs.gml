@@ -104,7 +104,7 @@ function DopeFishEngineInit( _OBJ ) {
 	
 	//gml_release_mode(false);
 	
-	globalvar DETexInternal; DETexInternal = true;
+	globalvar DETexInternal; DETexInternal = false;
 
 	enum BBOX
 	{

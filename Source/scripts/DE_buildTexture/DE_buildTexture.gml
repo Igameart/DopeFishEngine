@@ -7,7 +7,7 @@ function DE_buildTexture() {
 	
 	var asset = asset_get_index( assetName );
 	
-	trace("Looking for internal texture",assetName);
+	//trace("Looking for internal texture",assetName);
 	
 
 	var tdat = ds_map_find_value(pload_tex,t_name);
