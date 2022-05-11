@@ -148,6 +148,8 @@ function DE_findSectorAt(argument0, argument1, argument2) {
 
 function DE_findSubsectorAt(x0, y0){//, ssCheck) {
 	
+	if !instance_exists(DEcam) return -1;
+	
 	var ssCheck = undefined;
 	if argument_count>2 ssCheck = argument[2];
 

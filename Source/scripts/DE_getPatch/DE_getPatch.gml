@@ -17,7 +17,7 @@ function DE_getPatch(argument0) {
 		//if !is_undefined(patch){
 		//show_debug_message("NOTICE: Building patch "+patchname+" width: "+string(patch_width)+","+string(patch_height));
 	
-		var data2=DE_buildPatch(patch);//data,patch_width,patch_height);
+		var data2=DE_buildPatch(patch, pname);//data,patch_width,patch_height);
 	
 		//sprite_save(data2,0,patchname+".png");
 		return data2;

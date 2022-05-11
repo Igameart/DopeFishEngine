@@ -319,7 +319,7 @@ function get_entity_data(){
 				
 				if DESprites[? __sprName ] == undefined{
 				
-					var __spr = DE_buildPatch(__sprDat);
+					var __spr = DE_buildPatch(__sprDat, __sprName);
 					DESprites[? __sprName] = __spr;
 					entSpriteMap[? __F+__A2 ] = __spr;
 				
@@ -343,7 +343,7 @@ function get_entity_data(){
 					if __sprDat != undefined
 					if DESprites[? __sprName ] == undefined{
 				
-						var __spr = DE_buildPatch( __sprDat );
+						var __spr = DE_buildPatch( __sprDat, __sprName );
 						DESprites[? __sprName] = __spr;
 				
 					}
@@ -368,7 +368,7 @@ function get_entity_data(){
 				if __sprDat != undefined
 				if DESprites[? __sprName ] == undefined{
 				
-					var __spr = DE_buildPatch(__sprDat);
+					var __spr = DE_buildPatch(__sprDat, __sprName);
 					DESprites[? __sprName] = __spr;
 					entSpriteMap[? __F+(__A) ] = __spr;
 				
@@ -445,7 +445,7 @@ function DE_actorFetchSequenceStruct(){
 						
 						if DESprites[? __sprName ] == undefined{
 							trace("Building Sprite",__sprName);
-							var __spr = DE_buildPatch(__sprDat);
+							var __spr = DE_buildPatch(__sprDat, __sprName);
 							DESprites[? __sprName] = __spr;
 				
 						}
@@ -470,7 +470,7 @@ function DE_actorFetchSequenceStruct(){
 							if __sprDat != undefined
 							if DESprites[? __sprName ] == undefined{
 								trace("Building Directional Sprite",__sprName);
-								var __spr = DE_buildPatch( __sprDat );
+								var __spr = DE_buildPatch( __sprDat, __sprName );
 								DESprites[? __sprName] = __spr;
 				
 							}
@@ -496,7 +496,7 @@ function DE_actorFetchSequenceStruct(){
 						if __sprDat != undefined
 						if DESprites[? __sprName ] == undefined{
 							trace("Building Sprite",__sprName);
-							var __spr = DE_buildPatch(__sprDat);
+							var __spr = DE_buildPatch(__sprDat, __sprName);
 							DESprites[? __sprName] = __spr;
 							entSpriteMap[? __F+(__A) ] = __spr;
 				

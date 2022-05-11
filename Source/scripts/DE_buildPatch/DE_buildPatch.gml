@@ -1,10 +1,18 @@
-function DE_buildPatch(patch) {
+function DE_buildPatch(patch,pname) {
 
 	var patch_width		= (patch.width);
 	var patch_height	= (patch.height);
 	var xOffset			= (patch.leftoff);
 	var yOffset			= (patch.topoff);
 	var data			= (patch.contents);
+	
+	var assetName = (pname)+"_p_spr";
+	
+	var asset = asset_get_index( assetName );
+	
+	trace("Looking for internal patch",assetName);
+	
+	var data2;
 
 	if patch_width == 0 || patch_height == 0 return undefined
 	
@@ -17,25 +25,30 @@ function DE_buildPatch(patch) {
 	var pal1;
 	var pal2=ds_list_find_value(wadPlaypal,0);
 	
-	for(var h=0;h<patch_height;h++){
-	    for(var w=0;w<patch_width;w++){
+	if DETexInternal && asset > -1 {
+		trace( "NOTICE: Found Internal patch:", assetName );
+		draw_sprite(asset,0,0,0);
+	}else{
+	
+		for(var h=0;h<patch_height;h++){
+		    for(var w=0;w<patch_width;w++){
 		
-	        pal1=ds_grid_get(data,w,h);
+		        pal1=ds_grid_get(data,w,h);
 		
-			if pal1!=undefined
-	        if pal1>=0{
-		            //var col = DE_ColorMapGetColor(pal1);
-					var col = ds_list_find_value(pal2,pal1);
-					if col!=undefined
-			            draw_point_color(w,h,col);
-	        }
-	    }
+				if pal1!=undefined
+		        if pal1>=0{
+			            //var col = DE_ColorMapGetColor(pal1);
+						var col = ds_list_find_value(pal2,pal1);
+						if col!=undefined
+				            draw_point_color(w,h,col);
+		        }
+		    }
+		}
 	}
 
 	surface_reset_target();
 
-	var data2=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,xOffset,yOffset);
-
+	data2=sprite_create_from_surface(surf,0,0,patch_width,patch_height,0,0,xOffset,yOffset);
 	surface_free(surf);
 
 	return data2;

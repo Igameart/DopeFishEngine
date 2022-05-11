@@ -21,14 +21,23 @@ function DE_preload_textures() {
 		if is_undefined(pload_tex[? tex]){
 			unique++;
 			pload_tex[? tex] = -1;
-			var tt	= ds_map_find_value_fixed(textures,tex);
-			tArea += tt.width * tt.height;
-			if DE_textureIsSwitch(tex){
-				var sTex = wadSwitchTextures[?tex];
+			//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(tex)+"_spr")){
+				var tt	= ds_map_find_value_fixed(textures,tex);
+				tArea += tt.width * tt.height;
+			//}else{
+			//	tArea += sprite_get_width(asset_get_index( string_lower(tex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(tex)+"_spr"));
+			//}
+			
+			var sTex = wadSwitchTextures[?tex];
+			if DE_textureIsSwitch(tex) && !is_undefined(sTex){
 				unique++;
 				pload_tex[? sTex] = -1;
-				var tt	= ds_map_find_value_fixed(textures,sTex);
-				tArea += tt.width * tt.height;
+				//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(sTex)+"_spr")){
+					var tt	= ds_map_find_value_fixed(textures,sTex);
+					tArea += tt.width * tt.height;
+				//}else{
+				//	tArea += sprite_get_width(asset_get_index( string_lower(sTex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(sTex)+"_spr"));
+				//}
 			}
 		}
 		}
@@ -38,14 +47,22 @@ function DE_preload_textures() {
 		if is_undefined(pload_tex[? tex]){
 			unique++;
 			pload_tex[? tex] = -1;
-			var tt	= ds_map_find_value_fixed(textures,tex);
-			tArea += tt.width * tt.height;
-			if DE_textureIsSwitch(tex){
-				var sTex = wadSwitchTextures[?tex];
+			//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(tex)+"_spr")){
+				var tt	= ds_map_find_value_fixed(textures,tex);
+				tArea += tt.width * tt.height;
+			//}else{
+			//	tArea += sprite_get_width(asset_get_index( string_lower(tex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(tex)+"_spr"));
+			//}
+			var sTex = wadSwitchTextures[?tex];
+			if DE_textureIsSwitch(tex) && !is_undefined(sTex){
 				unique++;
 				pload_tex[? sTex] = -1;
-				var tt	= ds_map_find_value_fixed(textures,sTex);
-				tArea += tt.width * tt.height;
+				//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(sTex)+"_spr")){
+					var tt	= ds_map_find_value_fixed(textures,sTex);
+					tArea += tt.width * tt.height;
+				//}else{
+				//	tArea += sprite_get_width(asset_get_index( string_lower(sTex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(sTex)+"_spr"));
+				//}
 			}
 		}
 		}
@@ -55,14 +72,22 @@ function DE_preload_textures() {
 		if is_undefined(pload_tex[? tex]){
 			unique++;
 			pload_tex[? tex] = -1;
-			var tt	= ds_map_find_value_fixed(textures,tex);
-			tArea += tt.width * tt.height;
-			if DE_textureIsSwitch(tex){
-				var sTex = wadSwitchTextures[?tex];
+			//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(tex))){
+				var tt	= ds_map_find_value_fixed(textures,tex);
+				tArea += tt.width * tt.height;
+			//}else{
+			//	tArea += sprite_get_width(asset_get_index( string_lower(tex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(tex)+"_spr"));
+			//}
+			var sTex = wadSwitchTextures[?tex];
+			if DE_textureIsSwitch(tex) && !is_undefined(sTex){
 				unique++;
 				pload_tex[? sTex] = -1;
-				var tt	= ds_map_find_value_fixed(textures,sTex);
-				tArea += tt.width * tt.height;
+				//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(sTex)+"_spr")){
+					var tt	= ds_map_find_value_fixed(textures,sTex);
+					tArea += tt.width * tt.height;
+				//}else{
+				//	tArea += sprite_get_width( asset_get_index( string_lower(sTex)+"_spr")) * sprite_get_height(asset_get_index( string_lower(sTex)+"_spr"));
+				//}
 			}
 		}
 		}
