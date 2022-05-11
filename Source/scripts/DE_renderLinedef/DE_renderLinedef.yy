@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Level Geometry",
-    "path": "folders/Scripts/DopeFish/Main/Draw/Level Geometry.yy",
+    "name": "BSP",
+    "path": "folders/Scripts/DopeFish/Main/Render/BSP.yy",
   },
   "resourceVersion": "1.0",
   "name": "DE_renderLinedef",
