@@ -103,7 +103,7 @@ function DE_buildSprite( __sprName ){
 				
 	if DESprites[? __sprName ] == undefined{
 				
-		var __spr = DE_buildPatch(__sprDat);
+		var __spr = DE_buildPatch(__sprDat,__sprName);
 		return __spr;
 		
 	}else return DESprites[? __sprName ];
@@ -191,7 +191,7 @@ function DE_buildGraphic( __sprName ){
 
 		var __gfxDat = _spr;
 				
-		var __spr = DE_buildPatch(__gfxDat);
+		var __spr = DE_buildPatch(__gfxDat,__sprName);
 		
 		buffer_seek(wadbuff,buffer_seek_start,bPos);
 		

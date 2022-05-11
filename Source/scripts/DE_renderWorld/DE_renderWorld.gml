@@ -2,6 +2,8 @@ function DE_renderWorld() {
 	
 	texture_set_repeat(false);
 	
+	if !instance_exists(DEcam) return -1;
+	
 	var __ssecs = mapSSecPVISTable[| DEcam.Subsector ];
 	
 	if (__ssecs!=undefined){

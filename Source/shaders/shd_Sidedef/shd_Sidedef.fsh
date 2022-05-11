@@ -92,6 +92,7 @@ void main()
 		
 			UV = (tex_L.xy/u_sectAtlas) + (tex_L.zw/u_sectAtlas) * fract(UV);
 			col = smoothTex2D( gm_BaseTexture, UV, u_sectAtlas );
+			col.a = texture2D( gm_BaseTexture, UV).a;// , u_sectAtlas );
 		}
         else{
 			vec2 UV = (v_vTexcoord);
@@ -104,6 +105,7 @@ void main()
 		
 			UV = (tex_U.xy/u_sectAtlas) + (tex_U.zw/u_sectAtlas) * fract(UV);
 			col = smoothTex2D( gm_BaseTexture, UV, u_sectAtlas );
+			col.a = texture2D( gm_BaseTexture, UV).a;// , u_sectAtlas );
 		}
     }else{
 		vec2 UV = (v_vTexcoord);
@@ -117,10 +119,13 @@ void main()
 		UV = (tex_M.xy/u_sectAtlas) + (tex_M.zw/u_sectAtlas) * fract(UV);
 		
 		col = smoothTex2D( gm_BaseTexture, UV , u_sectAtlas );
+		col.a = texture2D( gm_BaseTexture, UV).a;// , u_sectAtlas );
 		
 	}
 
-	if (col.a < 0.1) discard;
+	col.a = floor(col.a+0.5);
+
+	if (col.a < 0.5) discard;
 	
 	/*#extension GL_EXT_frag_depth : require
 	#ifdef GL_EXT_frag_depth
@@ -135,7 +140,7 @@ void main()
 	//vcol.rgb = min(vcol.rgb,vec3(1.0));
     
     gl_FragColor=( col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
-    gl_FragColor.a = col.a * vcol.a; 
+    //gl_FragColor.a = texture2D( gm_BaseTexture, UV).a; 
     
 }
 

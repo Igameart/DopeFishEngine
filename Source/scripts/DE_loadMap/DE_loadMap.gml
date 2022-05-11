@@ -37,7 +37,7 @@ function DE_loadMap( _map ) {
 
 	var end_time=current_time;
 
-	globalvar time_taken; time_taken=(end_time-start_time)/1000;
+	time_taken=(end_time-start_time)/1000;
 
 	globalvar pload_tex;
 	pload_tex=ds_map_build();

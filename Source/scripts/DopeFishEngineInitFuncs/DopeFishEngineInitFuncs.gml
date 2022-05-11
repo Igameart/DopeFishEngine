@@ -103,6 +103,8 @@ function DopeFishEngineInit( _OBJ ) {
 	math_set_epsilon(0.00001);
 	
 	//gml_release_mode(false);
+	
+	globalvar DETexInternal; DETexInternal = true;
 
 	enum BBOX
 	{
@@ -228,6 +230,8 @@ function DopeFishEngineInit( _OBJ ) {
 	gc_enable(true);
 
 	globalvar DEcam; DEcam = _OBJ;
+	
+	globalvar time_taken; time_taken = 0;
 
 	globalvar wadbuff;
 
