@@ -1,6 +1,7 @@
 # DopeFish Engine
 
-![image](https://user-images.githubusercontent.com/5240715/167331052-f0d0f805-5b05-4882-bff3-abc54fedfc37.png)
+
+![FishLogoSmall](https://user-images.githubusercontent.com/5240715/168164710-65b48336-0fd4-4211-9573-36af3308af45.png)
 
 
 DopeFish is the only full GML Doom/Heretic map loading system for GMS2.3+ (so far as I'm aware)
