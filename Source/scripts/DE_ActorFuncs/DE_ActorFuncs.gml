@@ -233,9 +233,9 @@ function DE_loadActorData( TYPE ){
 function record_vBuffers(__spDat,__sprite, __isMirr){
 
 	TexW = __spDat.width;
-	TexH = __spDat.height;
+	TexH = __spDat.height*1.2;
 	xOff = __spDat.leftoff;
-	yOff = __spDat.topoff;
+	yOff = __spDat.topoff*1.2;
 	
 	yOff = max(yOff, sprite_get_height(__sprite) );
 	

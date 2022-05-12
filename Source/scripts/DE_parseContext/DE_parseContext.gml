@@ -18,7 +18,7 @@ function getToken( list ){
 	var token = list[| 0];
 	if token!=undefined{
 		ds_list_delete(list,0);
-		trace("Getting Token",token);
+		//trace("Getting Token",token);
 	}
 	return token;
 	
@@ -162,6 +162,7 @@ function DE_isStringLabel( _string ){
 }
 
 function DE_advanceParseMode(token){
+	
 	if token == undefined{
 		
 		DEparseMode = "NULL";
@@ -172,7 +173,12 @@ function DE_advanceParseMode(token){
 			global.currentActor = struct_copy(ACTORstruct);
 		break;
 		case "map":
-			//global.currentActor = struct_copy(MAPINFOstruct);
+			global.currentActor = struct_copy(MAPINFOstruct);
+		break;
+		case "episode":
+			global.currentActor = struct_copy(wadEpisode);
+			ds_list_add(wadGameInfo.episodes,global.currentActor );	
+			//trace("Discovered New Episode");
 		break;
 		case "":
 			
@@ -181,17 +187,21 @@ function DE_advanceParseMode(token){
 	
 	array_push(global.parseModeList,DEparseMode);
 	DEparseMode = string_upper(token);
-	DEtrace("Advancing Parse Mode",DEparseMode);
+	//DEtrace("Advancing Parse Mode",DEparseMode);
 }
 
 function DE_retreatParseMode(){
 	
 	array_delete(global.parseModeList,array_length(global.parseModeList),1);
 	
+	if DEparseMode == "EPISODEDEFAULT"{
+		trace("Episode Content",string(global.currentActor));
+	}
+	
 	DEparseMode = array_pop(global.parseModeList);
 	if DEparseMode == undefined DEparseMode = "NULL";
 	
-	trace("Retreating Parse Mode",DEparseMode);
+	//trace("Retreating Parse Mode",DEparseMode);
 }
 
 function DE_parseDecoratePrep(){
@@ -248,6 +258,11 @@ function DE_fetchLocalizationByLabel( _string ){
 		_string = _string[ floor(random( array_length(_string) - 0.5 ) ) ]; 
 	}
 	var tmpString = string_replace( _string,"\$","");
+	
+	if string_char_at(tmpString,1) == "*"{
+		tmpString = string_copy(tmpString,2,string_length(tmpString));
+	}
+	
 	tmpString = string_copy(tmpString,1,string_length(tmpString));
 	
 	trace("Fetching Label", tmpString );

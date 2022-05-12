@@ -12,43 +12,12 @@ if bGlow > -1{
 	
 }
 
-
-if !surface_exists(mSurf){
-	
-	mSurf = surface_create(mpos[2],mpos[3]);
-	
+if wadGameInfo.titlepage != undefined{
+	var pos;
+	pos = [ mpos[0]+mpos[2]*.5-16, mpos[1]+mpos[3]*.5-8];
+	var scale = 1;
+	DE_drawimage_ext(wadGameInfo.titlepage,pos[0]-150*scale, pos[1]-120*scale,scale,scale*1.2);
 }
-
-	
-surface_set_target(mSurf)
-
-	draw_clear_alpha(c_black,0);
-	
-	var spr,pos,size;
-	
-	size = array_length(_GameTitles);
-	
-	pos = [mpos[2]*.2,mpos[3]*.5];
-	spr = _GameTitles[smod(selMode-1,size)];
-	draw_sprite_ext(spr,0,pos[0],pos[1],.75,.75,0,lgray,1);
-	
-	pos = [mpos[2]*.8,mpos[3]*.5];
-	spr = _GameTitles[smod(selMode+1,size)];
-	draw_sprite_ext(spr,0,pos[0],pos[1],.75,.75,0,lgray,1);
-	
-	
-	pos = [mpos[2]*.5,mpos[3]*.5];
-	spr = _GameTitles[selMode];
-	draw_sprite_ext(spr,0,pos[0]-10,pos[1],1,1,0,c_black,0.25);
-	draw_sprite_ext(spr,0,pos[0]+10,pos[1],1,1,0,c_black,0.25);
-	draw_sprite_ext(spr,0,pos[0]-20,pos[1],1,1,0,c_black,0.125);
-	draw_sprite_ext(spr,0,pos[0]+20,pos[1],1,1,0,c_black,0.125);
-	
-	draw_sprite_ext(spr,0,pos[0],pos[1],1,1,0,c_white,1);
-
-surface_reset_target();
-
-draw_surface(mSurf,mpos[0],mpos[1]);
 
 draw_set_font(_GamesFonts[selMode]);
 	
@@ -65,11 +34,6 @@ xx = processwad_button.bbox_left;
 ww = xx - processwad_button.bbox_right;
 yy = processwad_button.bbox_top;
 hh = yy - processwad_button.bbox_bottom;
-
-//pBIndex = 0;
-//pButton = spr_DESysButtonDoom;
-
-//draw_sprite_ext(pButton,pBIndex,pTextPos[0],pTextPos[1],4,4,0,c_white,1);
 
 draw_text_transformed(pTextPos[0], pTextPos[1]-4,"process wad",2,2,0);
 

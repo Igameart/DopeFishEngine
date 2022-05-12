@@ -6,7 +6,7 @@ include "mapinfo/doomcommon.txt"
 clearepisodes
 episode map01
 {
-	name  = "$TXT_PLUT_EP"
+	name  = "The Plutonia Experiment"
 	key  = "t"
 }
 

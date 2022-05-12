@@ -173,11 +173,12 @@ function DE_getLumpOfs(lump) {
 	
 	var ofs = wadDirectoryOfs[? lump ];
 	
-	trace("NOTICE: Lump["+lump+"] located at ",ofs);
-	
 	if ofs != undefined{
+	
+		trace("NOTICE: Lump["+lump+"] located at ",ofs);
 		return ofs;
-	}
+	}else
+	trace("NOTICE: Lump["+lump+"] NOT FOUND!");
 	
 	return -1;
 	
@@ -238,14 +239,10 @@ function DE_getDecorateScript(){
 
 function DE_getMapInfo(){
 	
-	if wadGameInfo.mapinfo == undefined{
 	
-		var lpos = DE_getLumpOfs( "MAPINFO" );
-	
-		if lpos == -1{
-			return false;
-			DEtrace("NOTICE: Wad Contains No MapInfo");
-		}
+	var lpos = DE_getLumpOfs( "MAPINFO" );
+		
+	if lpos > -1{
 	
 		DEtrace("NOTICE: Wad Contains MapInfo");
 
@@ -261,6 +258,10 @@ function DE_getMapInfo(){
 	
 		wadMapInfo = string_split_on_delimiter_includes(str,"\r\n");
 	}else{
+		
+		DEtrace("NOTICE: Wad Contains No MapInfo");
+		DE_getExternalMapInfo();
+		
 		var _file = working_directory + "gamedata/"+ wadGameInfo.mapinfo;
 		
 		wadMapInfo = ds_list_build();

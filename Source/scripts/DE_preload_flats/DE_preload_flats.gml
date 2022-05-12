@@ -40,7 +40,7 @@ function DE_preload_flats() {
 	var scaley = scalex;
 	
 	
-	var tpArea = scalex * scaley;
+	//var tpArea = scalex * scaley;
 	var done = false;
 	
 	do{

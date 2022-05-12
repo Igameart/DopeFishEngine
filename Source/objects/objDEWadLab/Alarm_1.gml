@@ -1,6 +1,8 @@
 /// @description Fetch Wad
 
 if DE_fetchWad(WAD){
+	
+	draw_set_font(_GamesFonts[selMode]);
 
 	loading = false;
 
@@ -13,11 +15,15 @@ if DE_fetchWad(WAD){
 	_wadDat = ""
 
 	if wadType == "PWAD"{
-		_wadDat = "* warning *\n\nunsupported format! \n\n* "+wadType+" *\n\n may fail \nin this version\n of dopefish!\n\n";
+		_wadDat = "* warning *\n\n* "+wadType+"s may fail *\nin this version\n of dopefish!\n\n";
 	}
 
 	_wadDat += "wad stats\n\n"
 	_wadDat+= "* * * * * * * * * *\n\n"
+	
+	var _tmpName = string_wordwrap_width(wadGameInfo.name,164,"\n",true);
+	
+	_wadDat += _tmpName+"\n\n";
 			
 	var L = 16+1;
 	var SL = 0;

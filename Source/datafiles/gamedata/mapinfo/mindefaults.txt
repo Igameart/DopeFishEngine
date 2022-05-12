@@ -27,16 +27,12 @@ gameinfo
 	intermissioncounter = true
 	dimcolor = "6f 00 6b"
 	dimamount = 0.8
-	bluramount = 0.0
-	menuslidercolor = "Orange"
 	definventorymaxamount = 25
 	defaultrespawntime = 12
 	defaultdropstyle = 1
 	endoom = "ENDOOM"
 	pickupcolor = "c0 c0 c0"
 	quitmessages = "Do you want to quit?"
-	normforwardmove = 0x19, 0x32
-	normsidemove = 0x18, 0x28
 
 	menufontcolor_title = "purple"
 	menufontcolor_label = "default"
@@ -55,9 +51,8 @@ gameinfo
 	defaultendsequence = "Inter_Cast"
 	maparrow = "maparrows/arrow.txt", "maparrows/ddtarrow.txt"
 	statscreen_mapnamefont = "BigFont"
-	statscreen_finishedfont = "BigFont"
-	statscreen_enteringfont = "BigFont"
-	messageboxclass = "MessageBoxMenu"
+	statscreen_finishedpatch = "WIF"
+	statscreen_enteringpatch = "WIENTER"
 }
 
 DoomEdNums

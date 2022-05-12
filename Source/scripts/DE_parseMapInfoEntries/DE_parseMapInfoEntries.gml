@@ -3,7 +3,6 @@
 function DE_parseMapInfo( token, code ){
 
 if DEparseMode == "MAPINFO"
-//if (token == "gameinfo" )
 	DE_advanceParseMode(token);
 	
 	switch DEparseMode{
@@ -11,14 +10,44 @@ if DEparseMode == "MAPINFO"
 		case "GAMEINFO":
 			DE_parseMapInfoGameInfo( token, code );
 		break;
+		case "EPISODE":
+			DE_parseMapInfoEpisode( token, code );
+		break;
+		case "EPISODEDEFAULT":
+			DE_parseMapInfoEpisodeDefault( token, code);
+		break;
 				
 	}
 }
 
-function DE_parseMapInfoGameInfo( token, code ){
+function DE_parseMapInfoEpisode( token, code ){
+	
+	var _token = getToken(code);
+	
+	if token == "{"{
+		DEparseMode = "EPISODEDEFAULT";//Silently advance to a new parse mode, do not add to stack so retreating works properly.
+	}else{
+	
+		global.currentActor.maplump = string_upper(token);
+		//trace("Episode Starting Map",string_upper(token));
+		
+		if !is_undefined(_token){
+			if isalpha(_token){
+				if token == "teaser"{
+					global.currentActor.teaserlump = string_upper(_token);
+					//trace("Episode Teaser Map",string_upper(_token));
+				}
+			}
+		}
+	}
+}
+
+function DE_parseMapInfoEpisodeDefault( token, code ){
 	
 	var Name = token;
+	
 	var _token = getToken(code);
+	
 	if _token == "="{
 		if ds_list_size(code) > 1 {//Single Line Multi Entry: Easy Mode
 			global.currentEntry = [];
@@ -30,8 +59,39 @@ function DE_parseMapInfoGameInfo( token, code ){
 				array_push(global.currentEntry,entry);
 									
 			}until ds_list_size(code) < 1;
+			DE_setStructProperty(global.currentActor,Name,global.currentEntry);
+			trace("Setting Episode Property",Name,global.currentEntry);
+		}else{
+			var entry = getToken(code);
+			
+			entry = DE_propertyProcess(entry);
+			trace("Setting Episode Property",Name,entry);
+			DE_setStructProperty(global.currentActor,Name,entry);
+		}
+	}
+
+}
+
+function DE_parseMapInfoGameInfo( token, code ){
+	
+	var Name = token;
+	var _token = getToken(code);
+	if _token == "="{
+		if ds_list_size(code) > 1 {//Single Line Multi Entry: Easy Mode
+			
+			global.currentEntry = [];
+			do{
+				var entry = getToken(code);
+				
+				entry = DE_propertyProcess(entry);
+				
+				array_push(global.currentEntry,entry);
+									
+			}until ds_list_size(code) < 1;
+			
 			DE_setStructProperty(wadGameInfo,Name,global.currentEntry);
 			trace("Setting GameInfo Property",Name,global.currentEntry);
+			
 		}else{
 			var entry = getToken(code);
 			

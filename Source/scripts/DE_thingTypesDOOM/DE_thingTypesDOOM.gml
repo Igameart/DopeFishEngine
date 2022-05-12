@@ -88,68 +88,6 @@ function DE_levelMusicDOOM(){
 
 function DE_thingTypesDOOM() {
 	
-	/*with wadGameInfo {
-		titlepage  =  "TITLEPIC";
-		creditpage  =  "CREDIT";
-		titlemusic  =  "$MUSIC_DM2TTL";
-		titletime  =  11;
-		advisorytime  =  0;
-		pagetime  =  5;
-		chatsound  =  "misc/chat";
-		finalemusic  =  "$MUSIC_READ_M";
-		finaleflat  =  "SLIME16";
-		finalepage  =  "CREDIT";
-		infopage  =  ["HELP","CREDIT"];
-		quitsound  =  "menu/quit2";
-		borderflat  =  "GRNROCK";
-		//border  =  DoomBorder;
-		telefogheight  =  0;
-		defkickback  =  100;
-		skyflatname  =  "F_SKY1";
-		translator  =  "xlat/doom.txt";
-		//mapinfo  =  "mapinfo/doom2.txt";
-		defaultbloodcolor  =  "680000";
-		defaultbloodparticlecolor  =  "ff0000";
-		backpacktype  =  "Backpack";
-		armoricons  =  ["ARM1A0",0.5,"ARM2A0"];
-		statusbar  =  "sbarinfo/doom.txt";
-		intermissionmusic  =  "$MUSIC_DM2INT";
-		intermissioncounter  =  true;
-		weaponslot  =  [1,"Fist","Chainsaw"];
-		weaponslot  =  [2,"Pistol"];
-		weaponslot  =  [3,"Shotgun","SuperShotgun"];
-		weaponslot  =  [4,"Chaingun"];
-		weaponslot  =  [5,"RocketLauncher"];
-		weaponslot  =  [6,"PlasmaRifle"];
-		weaponslot  =  [7,"BFG9000"];
-		dimcolor  =  "ffd700";
-		dimamount  =  0.2;
-		definventorymaxamount  =  25;
-		defaultrespawntime  =  12;
-		defaultdropstyle  =  1;
-		endoom  =  "ENDOOM";
-		pickupcolor  =  "d6ba45";
-		quitmessages  =  ["$QUITMSG","$QUITMSG1","$QUITMSG2","$QUITMSG3","$QUITMSG4","$QUITMSG5","$QUITMSG6","$QUITMSG7","$QUITMSG8","$QUITMSG9","$QUITMSG10","$QUITMSG11","$QUITMSG12","$QUITMSG13","$QUITMSG14"];
-																																								
-		menufontcolor_title  =  "RED";
-		menufontcolor_label  =  "UNTRANSLATED";
-		menufontcolor_value  =  "GRAY";
-		menufontcolor_action  =  "GRAY";
-		menufontcolor_header  =  "GOLD";
-		menufontcolor_highlight  =  "YELLOW";
-		menufontcolor_selection  =  "BRICK";
-		menubackbutton  =  "M_BACK_D";
-		playerclasses  =  "DoomPlayer";
-		pausesign  =  "M_PAUSE";
-		gibfactor  =  1;
-	}*/
-	
-	if ( DE_getLumpOfs("MAPINFO") == -1)// If we don't have a mapinfo lump, load from text file.
-	if ( string_count("DOOM2",string_upper(wadName))>0 )
-		wadGameInfo.mapinfo = "mapinfo/doom2.txt"
-	else
-		wadGameInfo.mapinfo = "mapinfo/doom1.txt"
-	
 	var thing;
 
 	// **** Doom, Doom II, Final Doom **** //
@@ -1506,7 +1444,5 @@ function DE_thingTypesDOOM() {
 	thing[@ DEThingDef.Sequence ] =	"-"
 	thing[@ DEThingDef.Class ] =		""
 	thing[@ DEThingDef.Description ]= "Teleport landing"
-
-	DE_getMapInfo();
 	
 }

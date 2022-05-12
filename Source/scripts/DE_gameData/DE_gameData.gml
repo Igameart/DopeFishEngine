@@ -1,21 +1,19 @@
 function DE_gameData() {
-	trace("Game Type:",DENAMESPACE);
 
-	//DE_initMacros();
 	DE_Info();
 
-	switch DENAMESPACE{
-		case DEnameSpaces.DOOM:
+	switch wadGameInfo.game{
+		case "Doom":
 			DE_thingTypesDOOM();
 			DE_switchTypesDoom();
 		break;
-		case DEnameSpaces.HERETIC:
+		case "Heretic":
 			DE_thingTypesHeretic();
 		break;
-		case DEnameSpaces.HEXEN:
+		case "Hexen":
 			DE_thingTypesHexen();
 		break;
-		case DEnameSpaces.STRIFE:
+		case "Strife":
 			DE_thingTypesStrife();
 		break;
 	}
@@ -24,23 +22,23 @@ function DE_gameData() {
 	DE_parseMapInfoPrep();
 	DE_loadFontDefs();
 	
-	trace("Game Info Title Music:", DE_fetchMusicByLabel(wadGameInfo.titlemusic) );
+	//trace("Game Info Title Music:", DE_fetchMusicByLabel(wadGameInfo.titlemusic) );
 
 }
 
 function DE_getLevelMusic(){
 	
-	switch DENAMESPACE{
-		case DEnameSpaces.DOOM:
+	switch wadGameInfo.game{
+		case "Doom":
 			return DE_levelMusicDOOM();
 		break;
-		case DEnameSpaces.HERETIC:
+		case "Heretic":
 			return DE_levelMusicHeretic();
 		break;
-		case DEnameSpaces.HEXEN:
+		case "Hexen":
 			return DE_levelMusicHexen();
 		break;
-		case DEnameSpaces.STRIFE:
+		case "Strife":
 			return DE_levelMusicDOOM();
 		break;
 		

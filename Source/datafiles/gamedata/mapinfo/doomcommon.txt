@@ -21,12 +21,12 @@ gameinfo
 	defkickback = 100
 	skyflatname = "F_SKY1"
 	translator = "xlat/doom.txt"
+	mapinfo = "mapinfo/doom2.txt"
 	defaultbloodcolor = "68 00 00"
 	defaultbloodparticlecolor = "ff 00 00"
 	backpacktype = "Backpack"
 	armoricons = "ARM1A0", 0.5, "ARM2A0"
-	//statusbar = "sbarinfo/doom.txt"
-	statusbarclass = "DoomStatusBar"
+	statusbar = "sbarinfo/doom.txt"
 	intermissionmusic = "$MUSIC_DM2INT"
 	intermissioncounter = true
 	weaponslot = 1, "Fist", "Chainsaw"
@@ -36,16 +36,15 @@ gameinfo
 	weaponslot = 5, "RocketLauncher"
 	weaponslot = 6, "PlasmaRifle"
 	weaponslot = 7, "BFG9000"
-	dimcolor = "30 26 00"
-	dimamount = 0.5
-	bluramount = 0.0
-	menuslidercolor = "Orange"
+	dimcolor = "ff d7 00"
+	dimamount = 0.2
 	definventorymaxamount = 25
 	defaultrespawntime = 12
 	defaultdropstyle = 1
 	endoom = "ENDOOM"
 	pickupcolor = "d7 ba 45"
-	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7", "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14"
+	quitmessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+				   "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14"
 				   
 	menufontcolor_title = "RED"
 	menufontcolor_label = "UNTRANSLATED"
@@ -64,14 +63,8 @@ gameinfo
 	defaultendsequence = "Inter_Cast"
 	maparrow = "maparrows/arrow.txt", "maparrows/ddtarrow.txt"
 	statscreen_mapnamefont = "BigFont"
-	statscreen_finishedfont = "BigFont", "red"
-	statscreen_enteringfont = "BigFont", "red"
-	statscreen_coop = "CoopStatusScreen"
-	statscreen_dm = "DeathmatchStatusScreen"
-	statscreen_single = "DoomStatusScreen"
-	messageboxclass = "MessageBoxMenu"
-	normforwardmove = 0x19, 0x32
-	normsidemove = 0x18, 0x28
+	statscreen_finishedpatch = "WIF"
+	statscreen_enteringpatch = "WIENTER"
 }
 
 spawnnums

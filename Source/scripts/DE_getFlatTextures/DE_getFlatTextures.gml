@@ -49,6 +49,23 @@ function DE_getFlatTextures() {
 
 	show_debug_message("NOTICE: Found "+string(ds_map_size(flats_))+" FLATS.");
 
+}
 
+function DE_getRawScreen(lump) {
+	
+	var _ofs = DE_getLumpOfs(lump);
+	
+	if _ofs == -1 return noone;
+			
+	buffer_seek(wadbuff,buffer_seek_start, _ofs);
+			
+	var flat=ds_list_build();
+	trace("NOTICE: Found LUMP: "+lump);
+			
+	repeat 320*200{
+	    ds_list_add(flat,buffer_read(wadbuff,buffer_u8));
+	}
+	
+	return flat;
 
 }
