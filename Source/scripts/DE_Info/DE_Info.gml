@@ -1340,7 +1340,476 @@ function newState_t( sprite, frames, tics, action, nextState, misc1, misc2 ){
 	    raisestate : 0,
 
 	}
+	
+globalvar IWADS;
+IWADS  = [	
+	"bfgdoom2.wad"	,
+	"doom2bfg.wad"	,
+	"doom2f.wad"	,
+	"doom2.wad"		,
+	"plutonia.wad"	,
+	"tnt.wad"		,
+	"bfgdoom.wad"	,
+	"doombfg.wad"	,
+	"doomu.wad"		,
+	"doom.wad"		,
+	"doom1.wad"		,
+	"heretic.wad"	,
+	"hereticsr.wad"	,
+	"heretic1.wad"	,
+	"hexen.wad"		,
+	"hexdd.wad"		,
+	"hexendemo.wad"	,
+	"hexdemo.wad"	,
+	"strife1.wad"	,
+	"strife0.wad"	,
+	"strife.wad"	,
+	"freedoom1.wad"	,
+	"freedoom2.wad"	,
+	"freedoomu.wad"	,
+	"freedoom.wad"	,
+	"freedm.wad"	,
+	"blasphem.wad"	,
+	"blasphemer.wad",
+	"chex.wad"		,
+	"chex3.wad"		,
+	"action2.wad"	,
+	"harm1.wad"		,
+	"hacx.wad"		,
+	"hacx2.wad"		,
+	"square1.pk3"	,
+	"delaweare.wad"]
 
+function DE_getIwadName(){
+	
+	for (var I = 0; I<array_length(IWADS); I++){
+		var check = IWADS[30-I];
+		if string_count(check,wad)>0{
+			return check;
+		}
+	}
+	
+}
+
+function DE_wadMustContain( array ){
+	
+	trace("Checking for Lumps",array);
+	
+	for (var I = 0; I<array_length(array); I++){
+	var check = array[ I ];
+		
+		if DE_getLumpOfs(check) == -1{
+			return false;
+		}
+	}
+			
+	return true;
+	
+}
+
+function DE_getExternalMapInfo(){
+	
+	if ( DE_getLumpOfs("MAPINFO") > -1) return;// If we don't have a mapinfo lump, load from text file.
+	
+	for (var I = 0; I<31; I++){
+		switch I{
+			case 0:
+			if DE_wadMustContain( ["TITLEMAP", "ROVEA0", "GRLURD01", "SQOUI01"] ){
+			wadGameInfo.name = "Delaweare";
+			wadGameInfo.autoname = "delaweare";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Delaweare";
+			wadGameInfo.mapinfo = "mapinfo/doom2.txt";
+			wadGameInfo.bannercolors = ["00 00 00", "ff ff ff" ]
+			return;} break;
+
+
+			case 1:
+			if DE_wadMustContain( ["SQU-IWAD", "E1A1"] ){
+			wadGameInfo.name = "The Adventures of Square";
+			wadGameInfo.autoname = "square.square";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Square";
+			wadGameInfo.mapinfo = "mapinfo/mindefaults.txt";
+			wadGameInfo.bannercolors = ["ff ff ff", "80 00 80" ]
+			return;} break;
+
+
+			case 2:
+			if DE_wadMustContain( ["SQU-SWE1", "E1A1"] ){
+			wadGameInfo.name = "The Adventures of Square (Square-ware)";
+			wadGameInfo.autoname = "square.squareware";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Square";
+			wadGameInfo.mapinfo = "mapinfo/mindefaults.txt";
+			wadGameInfo.bannercolors = ["ff ff ff", "80 00 80" ]
+			return;} break;
+
+
+			case 3:
+			if DE_wadMustContain( ["MAP01", "0HAWK01", "0CARA3", "0NOSE1"] ){
+			wadGameInfo.name = "Harmony";
+			wadGameInfo.autoname = "harmony";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Harmony";
+			wadGameInfo.mapinfo = "mapinfo/hacxharm.txt";
+		
+			wadGameInfo.bannercolors = ["6e b4 d6", "45 4f 7e" ]
+			return;} break;
+
+
+			case 4:
+			if DE_wadMustContain( ["MAP01", "HACX-E"] ){
+			wadGameInfo.name = "Hacx 2.0";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Hacx";
+			wadGameInfo.autoname = "hacx.hacx2";
+			wadGameInfo.mapinfo = "mapinfo/hacxharm.txt";
+		
+			wadGameInfo.bannercolors = ["ff ff ff", "00 88 22" ]
+			return;} break;
+
+
+			case 5:
+			if DE_wadMustContain( ["MAP01", "HACX-R"] ){
+			wadGameInfo.name = "Hacx: Twitch'n Kill";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Hacx";
+			wadGameInfo.autoname = "hacx.hacx1";
+			wadGameInfo.mapinfo = "mapinfo/hacxharm.txt";
+		
+			wadGameInfo.bannercolors = ["00 00 a8", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 6:
+			if DE_wadMustContain( ["MAP01", "AD2LIB"] ){
+			wadGameInfo.name = "Action Doom 2: Urban Brawl";
+			wadGameInfo.autoname = "urbanbrawl";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "UrbanBrawl";
+			wadGameInfo.mapinfo = "mapinfo/urbanbrawl.txt";
+		
+			wadGameInfo.bannercolors = ["a8 a8 00", "a8 00 00" ]
+			return;} break;
+
+
+			case 7:
+			if DE_wadMustContain( ["E1M1", "CYCLA1", "FLMBA1", "MAPINFO"] ){
+			wadGameInfo.name = "Chex(R) break Quest 3";
+			wadGameInfo.autoname = "chex.chex3";
+			wadGameInfo.game = "Chex";
+			wadGameInfo.config = "Chex";
+			wadGameInfo.mapinfo = "mapinfo/chex.txt";
+			wadGameInfo.compatibility = ["NoTextcolor"];
+		
+			wadGameInfo.bannercolors = ["ff ff 00", "00 c0 00" ]
+			return;} break;
+
+
+			case 8:
+			if DE_wadMustContain( ["E1M1", "E4M1", "W94_1", "POSSH0M0"] ){
+			wadGameInfo.name = "Chex(R) break Quest";
+			wadGameInfo.autoname = "chex.chex1";
+			wadGameInfo.game = "Chex";
+			wadGameInfo.config = "Chex";
+			wadGameInfo.mapinfo = "mapinfo/chex.txt";
+		
+			wadGameInfo.bannercolors = ["ff ff 00", "00 c0 00" ]
+			return;} break;
+
+
+			case 9:
+			if DE_wadMustContain( ["MAP01", "MAP33", "ENDSTRF"] ){
+			wadGameInfo.name = "Strife: Quest for the Sigil";
+			wadGameInfo.autoname = "strife";
+			wadGameInfo.game = "Strife";
+			wadGameInfo.config = "Strife";
+			wadGameInfo.mapinfo = "mapinfo/strife.txt";
+		
+			wadGameInfo.bannercolors = ["d0 ad 99", "00 6b 65" ];
+			Load = "voices.wad"
+			return;} break;
+
+
+			case 10:
+			if DE_wadMustContain( ["MAP33", "ENDSTRF", "INVCURS"] ){
+			wadGameInfo.name = "Strife: Teaser (New Version) break";
+			wadGameInfo.game = "Strife";
+			wadGameInfo.config = "Strife";
+			wadGameInfo.autoname = "strifeteaser2";
+			wadGameInfo.mapinfo = "mapinfo/strife.txt";
+			wadGameInfo.compatibility = ["Shareware", "Teaser2"];
+		
+			wadGameInfo.bannercolors = ["d0 ad 99", "00 6b 65" ]
+			return;} break;
+
+
+			case 11:
+			if DE_wadMustContain( ["MAP33", "ENDSTRF"] ){
+			wadGameInfo.name = "Strife: Teaser (Old Version) break";
+			wadGameInfo.game = "Strife";
+			wadGameInfo.config = "Strife";
+			wadGameInfo.autoname = "strifeteaser1";
+			wadGameInfo.mapinfo = "mapinfo/strife.txt";
+			wadGameInfo.compatibility = ["Shareware"];
+		
+			wadGameInfo.bannercolors = ["d0 ad 99", "00 6b 65" ]
+			return;} break;
+
+
+			case 12:
+			if DE_wadMustContain( ["TITLE", "MAP01", "MAP40", "WINNOWR"] ){
+			wadGameInfo.name = "Hexen: Beyond Heretic";
+			wadGameInfo.game = "Hexen";
+			wadGameInfo.config = "Hexen";
+			wadGameInfo.autoname = "hexen.hexen";
+			wadGameInfo.mapinfo = "mapinfo/hexen.txt";
+			wadGameInfo.compatibility = ["Poly1"];
+		
+			wadGameInfo.bannercolors = ["f0 f0 f0", "6b 3c 18" ]
+			return;} break;
+			;
+
+			case 13:
+			if DE_wadMustContain( ["TITLE", "MAP60", "CLUS1MSG"] ){
+			wadGameInfo.name = "Hexen: Deathkings of the Dark Citadel";
+			wadGameInfo.autoname = "hexen.deathkings";
+			wadGameInfo.game = "Hexen";
+			wadGameInfo.config = "Hexen";
+			wadGameInfo.mapinfo = "mapinfo/hexen.txt";
+			wadGameInfo.compatibility = ["Poly1", "Poly2"];
+		
+			wadGameInfo.bannercolors = ["f0 f0 f0", "6b 3c 18" ];
+			Required = "Hexen: Beyond Heretic"
+			return;} break;
+
+
+			case 14:
+			if DE_wadMustContain( ["TITLE", "MAP01", "WINNOWR"] ){
+			wadGameInfo.name = "Hexen: Demo Version";
+			wadGameInfo.game = "Hexen";
+			wadGameInfo.config = "Hexen";
+			wadGameInfo.mapinfo = "mapinfo/hexen.txt";
+			wadGameInfo.compatibility = ["Shareware"];
+		
+			wadGameInfo.bannercolors = ["f0 f0 f0", "6b 3c 18" ]
+			return;} break;
+			;
+
+			case 15:
+			if DE_wadMustContain( ["E1M1", "E2M1", "TITLE", "BLASPHEM"] ){
+			wadGameInfo.name = "Blasphemer";
+			wadGameInfo.autoname = "blasphemer";
+			wadGameInfo.game = "Heretic";
+			wadGameInfo.config = "Heretic";
+			wadGameInfo.mapinfo = "mapinfo/heretic.txt";
+		
+			wadGameInfo.bannercolors = ["73 00 00", "00 00 00" ]
+			return;} break;
+
+
+			case 16:
+			if DE_wadMustContain( ["E1M1", "E2M1", "TITLE", "MUS_E1M1", "EXTENDED"] ){
+			wadGameInfo.name = "Heretic: Shadow of the Serpent Riders";
+			wadGameInfo.autoname = "heretic.shadow";
+			wadGameInfo.game = "Heretic";
+			wadGameInfo.config = "Heretic";
+			wadGameInfo.mapinfo = "mapinfo/heretic.txt";
+			wadGameInfo.compatibility = ["Extended"];
+		
+			wadGameInfo.bannercolors = ["fc fc 00", "a8 00 00" ]
+			return;} break;
+
+
+			case 17:
+			if DE_wadMustContain( ["E1M1", "E2M1", "TITLE", "MUS_E1M1"] ){
+			wadGameInfo.name = "Heretic";
+			wadGameInfo.game = "Heretic";
+			wadGameInfo.config = "Heretic";
+			wadGameInfo.autoname = "heretic.heretic";
+			wadGameInfo.mapinfo = "mapinfo/heretic.txt";
+		
+			wadGameInfo.bannercolors = ["fc fc 00", "a8 00 00" ]
+			return;} break;
+
+
+			case 18:
+			if DE_wadMustContain( ["E1M1", "TITLE", "MUS_E1M1"] ){
+			wadGameInfo.name = "Heretic Shareware";
+			wadGameInfo.game = "Heretic";
+			wadGameInfo.config = "Heretic";
+			wadGameInfo.mapinfo = "mapinfo/hereticsw.txt";
+			wadGameInfo.compatibility = ["Shareware"];
+		
+			wadGameInfo.bannercolors = ["fc fc 00", "a8 00 00" ]
+			return;} break;
+
+
+			case 19:
+			if DE_wadMustContain( ["MAP01", "FREEDM"] ){
+			wadGameInfo.name = "FreeDM";
+			wadGameInfo.autoname = "doom.freedoom.freedm";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom2.txt";
+		
+			wadGameInfo.bannercolors = ["32 54 43", "c6 dc d1" ]
+			return;} break;
+
+
+			case 20:
+			if DE_wadMustContain( ["MAP01", "FREEDOOM"] ){
+			wadGameInfo.name = "Freedoom: Phase 2";
+			wadGameInfo.autoname = "doom.freedoom.phase2";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom2.txt";
+		
+			wadGameInfo.bannercolors = ["32 54 43", "c6 dc d1" ]
+			return;} break;
+
+
+			case 21:
+			if DE_wadMustContain( ["E1M1", "E2M1", "E3M1", "FREEDOOM"] ){
+			wadGameInfo.name = "Freedoom: Phase 1";
+			wadGameInfo.autoname = "doom.freedoom.phase1";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom1.txt";
+		
+			wadGameInfo.bannercolors = ["32 54 43", "c6 dc d1" ]
+			return;} break;
+			;
+
+			case 22:
+			if DE_wadMustContain( ["E1M1", "FREEDOOM"] ){
+			wadGameInfo.name = "Freedoom: Demo Version";
+			wadGameInfo.autoname = "doom.freedoom.demo";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom1.txt";
+		
+			wadGameInfo.bannercolors = ["32 54 43", "c6 dc d1" ]
+			return;} break;
+			;
+
+			case 23:
+			if DE_wadMustContain( ["E1M1","E2M1","E2M2","E2M3","E2M4","E2M5","E2M6","E2M7","E2M8","E2M9",
+				          "E3M1","E3M2","E3M3","E3M4","E3M5","E3M6","E3M7","E3M8","E3M9",
+				          "DPHOOF","BFGGA0","HEADA1","CYBRA1","SPIDA1D1", "E4M2",
+				          "DMENUPIC", "M_ACPT", "M_CAN", "M_EXITO", "M_CHG"] ){
+			wadGameInfo.name = "DOOM: BFG Edition";
+			wadGameInfo.autoname = "doom.doom1.bfg";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/ultdoom.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["54 54 54", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 24:
+			if DE_wadMustContain( ["E1M1","E2M1","E2M2","E2M3","E2M4","E2M5","E2M6","E2M7","E2M8","E2M9",
+				          "E3M1","E3M2","E3M3","E3M4","E3M5","E3M6","E3M7","E3M8","E3M9",
+				          "DPHOOF","BFGGA0","HEADA1","CYBRA1","SPIDA1D1", "E4M2"] ){
+			wadGameInfo.name = "The Ultimate DOOM";
+			wadGameInfo.autoname = "doom.doom1.ultimate";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/ultdoom.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["54 54 54", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 25:
+			if DE_wadMustContain( ["E1M1","E2M1","E2M2","E2M3","E2M4","E2M5","E2M6","E2M7","E2M8","E2M9",
+				          "E3M1","E3M2","E3M3","E3M4","E3M5","E3M6","E3M7","E3M8","E3M9",
+				          "DPHOOF","BFGGA0","HEADA1","CYBRA1","SPIDA1D1"] ){
+			wadGameInfo.name = "DOOM Registered";
+			wadGameInfo.autoname = "doom.doom1.registered";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom1.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["54 54 54", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 26:
+			if DE_wadMustContain( ["E1M1"] ){
+			wadGameInfo.name = "DOOM Shareware";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom1.txt";
+			wadGameInfo.compatibility = ["Shareware", "Shorttex"];
+		
+			wadGameInfo.bannercolors = ["54 54 54", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 27:
+			if DE_wadMustContain( ["MAP01", "REDTNT2"] ){
+			wadGameInfo.name = "Final Doom: TNT - Evilution";
+			wadGameInfo.autoname = "doom.doom2.tnt";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/tnt.txt";
+			wadGameInfo.compatibility = ["Shorttex", "Stairs"];
+		
+			wadGameInfo.bannercolors = ["a8 00 00", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 28:
+			if DE_wadMustContain( ["MAP01", "CAMO1"] ){
+			wadGameInfo.name = "Final Doom: Plutonia Experiment";
+			wadGameInfo.autoname = "doom.doom2.plutonia";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/plutonia.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["a8 00 00", "a8 a8 a8" ]
+			return;} break;
+
+
+			case 29:
+			if DE_wadMustContain( ["MAP01", "DMENUPIC", "M_ACPT", "M_CAN", "M_EXITO", "M_CHG"] ){
+			wadGameInfo.name = "DOOM 2: BFG Edition";
+			wadGameInfo.autoname = "doom.doom2.bfg";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom2bfg.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["a8 00 00", "a8 a8 a8" ];
+			Load = "nerve.wad"
+			return;} break;
+
+
+			// Doom 2 must be last to be checked becaude MAP01 is its only requirement
+			case 30:
+			if DE_wadMustContain( ["MAP01"] ){
+			wadGameInfo.name = "DOOM 2: Hell on Earth";
+			wadGameInfo.autoname = "doom.doom2.commercial";
+			wadGameInfo.game = "Doom";
+			wadGameInfo.config = "Doom";
+			wadGameInfo.mapinfo = "mapinfo/doom2.txt";
+			wadGameInfo.compatibility = ["Shorttex"];
+		
+			wadGameInfo.bannercolors = ["a8 00 00", "a8 a8 a8" ]
+			return;} break;
+
+		}
+	}
+
+	
+}
 
 
 function DE_Info(){

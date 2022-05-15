@@ -110,7 +110,7 @@ function string_split_on_delimiter_includes(){//Same as above, but check for inc
 }
 
 function string_split_on_newline(s){
-trace("Splitting String Into Code",s);
+//trace("Splitting String Into Code",s);
 	var d = "/n";
 	var a = "/r/n";
 	var r = ds_list_create();
@@ -244,5 +244,57 @@ function string_split_as_code(s){
 		tmp = "";
 	}
 	
+	//trace("Results",ds_list_to_string(r));
 	return r;
+}
+
+function ds_list_to_string( list ){
+	var str = "- ";
+	for (var i=0; i<ds_list_size(list);i++)
+		str += string(list[| i])+" - ";
+	
+	return str;
+}
+
+function string_wordwrap_width(_text_current,_width,_break,_split)
+//
+//  Returns a given string, word wrapped to a pixel width,
+//  with line break characters inserted between words.
+//  Uses the currently defined font to determine text width.
+//
+//      string      text to word wrap, string
+//      width       maximum pixel width before a line break, real
+//      break       line break characters to insert into text, string
+//      split       split words that are longer than the maximum, bool
+//
+/// GMLscripts.com/license
+{
+    var pos_space, pos_current, text_output;
+    pos_space = -1;
+    pos_current = 1;
+    if (is_real(_break)) _break = "#";
+    text_output = "";
+    while (string_length(_text_current) >= pos_current) {
+        if (string_width(string_copy(_text_current,1,pos_current)) > _width) {
+            //if there is a space in this line then we can break there
+            if (pos_space != -1) {
+                text_output += string_copy(_text_current,1,pos_space) + string(_break);
+                //remove the text we just looked at from the current text string
+                _text_current = string_copy(_text_current,pos_space+1,string_length(_text_current)-(pos_space));
+                pos_current = 1;
+                pos_space = -1;
+            } else if (_split) {
+                //if not, we can force line breaks
+                text_output += string_copy(_text_current,1,pos_current-1) + string(_break);
+                //remove the text we just looked at from the current text string
+                _text_current = string_copy(_text_current,pos_current,string_length(_text_current)-(pos_current-1));
+                pos_current = 1;
+                pos_space = -1;
+            }
+        }
+        pos_current += 1;
+        if (string_char_at(_text_current,pos_current) == " ") pos_space = pos_current;
+    }
+    if (string_length(_text_current) > 0) text_output += _text_current;
+    return text_output;
 }

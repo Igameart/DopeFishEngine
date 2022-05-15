@@ -2,7 +2,6 @@ include "mapinfo/doom2.txt"
 
 gameinfo
 {
-	swapmenu = true
 	cursorpic = "cursor"
 }
 

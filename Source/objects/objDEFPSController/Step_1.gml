@@ -7,14 +7,15 @@ if keyboard_check_pressed(vk_numpad0) IDDQD = !IDDQD;
 if keyboard_check_pressed(vk_numpad1) NOCLIP = !NOCLIP;
 
 var cMsect;
-cMsect	= -1;// DE_findSectorAt( x, y, Sector );
+//cMsect	= -1;// DE_findSectorAt( x, y, Sector );
+cMsect	= DE_findSectorAt( x, y, Sector );
 
 Subsector= DE_findSubsectorAt( x, y, Subsector );
 
 var secCheck = ds_list_find_value(mapGLSSects,Subsector);
 
-if is_struct(secCheck)
-	cMsect = (secCheck.sector);
+/*if is_struct(secCheck)
+	cMsect = (secCheck.sector);*/
 
 if cMsect!=Sector{
 	

@@ -29,6 +29,7 @@ var val;
 with inst_6947FA70{
 	val[0] = x;
 	val[1] = y;
+	
 	val[2] = sprite_width;
 	val[3] = sprite_height;
 	
@@ -36,8 +37,6 @@ with inst_6947FA70{
 }
 
 mpos = val;
-
-mSurf = noone;
 			//Left, Right, Load, MP, Launch
 buttons = [inst_5A8DA713,inst_1338FB89,inst_15DD26E5,inst_D1817CC,inst_67966260,inst_464A517];
 skills = [inst_2D34AE31, inst_7AA1B0CC, inst_1D5158D7, inst_145E0FB4, inst_1890535B];
@@ -98,7 +97,6 @@ WAD = "";
 
 function launch_map(){
 	DENAMESPACE = selMode;
-	DE_gameData();
 	
 	loading = true;
 	alarm[2]=2;

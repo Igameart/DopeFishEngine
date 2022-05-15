@@ -36,10 +36,8 @@ gameinfo
 	weaponslot = 5, "ZorchPropulsor"
 	weaponslot = 6, "PhasingZorcher"
 	weaponslot = 7, "LAZDevice"
-	dimcolor = "1a 30 00"
-	dimamount = 0.5
-	bluramount = 0.0
-	menuslidercolor = "Orange"
+	dimcolor = "ff d7 00"
+	dimamount = 0.2
 	definventorymaxamount = 25
 	defaultrespawntime = 12
 	defaultdropstyle = 1
@@ -65,14 +63,8 @@ gameinfo
 	defaultendsequence = "Inter_Pic1"
 	maparrow = "maparrows/arrow.txt", "maparrows/ddtarrow.txt"
 	statscreen_mapnamefont = "BigFont"
-	statscreen_finishedfont = "BigFont", "green"
-	statscreen_enteringfont = "BigFont", "green"
-	statscreen_coop = "CoopStatusScreen"
-	statscreen_dm = "DeathmatchStatusScreen"
-	statscreen_single = "DoomStatusScreen"
-	messageboxclass = "MessageBoxMenu"
-	normforwardmove = 0x19, 0x32
-	normsidemove = 0x18, 0x28
+	statscreen_finishedpatch = "WIF"
+	statscreen_enteringpatch = "WIENTER"
 }
 
 DoomEdNums
@@ -189,7 +181,7 @@ clearepisodes
 episode e1m1
 {
 	picname = "M_EPI1"
-	name = "$TXT_CHEX_EP"
+	name = "Chex Quest"
 	key = "k"
 }
 

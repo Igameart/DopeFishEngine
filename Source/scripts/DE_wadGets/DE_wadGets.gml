@@ -101,7 +101,7 @@ function DE_getDirectory() {
         
 	}
 	
-	DE_getDecorateScript();
+	//DE_getDecorateScript();
 	DE_getLanguageData();
 	DE_parseLanguagePrep();
 	
@@ -173,11 +173,12 @@ function DE_getLumpOfs(lump) {
 	
 	var ofs = wadDirectoryOfs[? lump ];
 	
-	trace("NOTICE: Lump["+lump+"] located at ",ofs);
-	
 	if ofs != undefined{
+	
+		//trace("NOTICE: Lump["+lump+"] located at ",ofs);
 		return ofs;
-	}
+	}else
+	//trace("NOTICE: Lump["+lump+"] NOT FOUND!");
 	
 	return -1;
 	
@@ -218,7 +219,7 @@ function DE_getDecorateScript(){
 	
 		wadDecorate = string_split_on_delimiter(str,"\r\n");
 	}else{
-		var _file = program_directory +"gamedata\\"+ wadGameInfo.decorate;
+		var _file = program_directory +"gamedata/"+ wadGameInfo.decorate;
 		
 		file=file_text_open_read(_file);
 		
@@ -238,14 +239,10 @@ function DE_getDecorateScript(){
 
 function DE_getMapInfo(){
 	
-	if wadGameInfo.mapinfo == undefined{
 	
-		var lpos = DE_getLumpOfs( "MAPINFO" );
-	
-		if lpos == -1{
-			return false;
-			DEtrace("NOTICE: Wad Contains No MapInfo");
-		}
+	var lpos = DE_getLumpOfs( "MAPINFO" );
+		
+	if lpos > -1{
 	
 		DEtrace("NOTICE: Wad Contains MapInfo");
 
@@ -261,7 +258,11 @@ function DE_getMapInfo(){
 	
 		wadMapInfo = string_split_on_delimiter_includes(str,"\r\n");
 	}else{
-		var _file = working_directory + "gamedata\\"+ wadGameInfo.mapinfo;
+		
+		DEtrace("NOTICE: Wad Contains No MapInfo");
+		DE_getExternalMapInfo();
+		
+		var _file = working_directory + "gamedata/"+ wadGameInfo.mapinfo;
 		
 		wadMapInfo = ds_list_build();
 		
@@ -303,9 +304,9 @@ function DE_checkIncludes( _str ){
 		var file = getToken(r);
 		file = string_copy(file,2,string_length(file)-2);
 		
-		DEtrace("Including File:",working_directory + "gamedata\\" + file);
+		DEtrace("Including File:",working_directory + "gamedata/" + file);
 		ds_list_destroy(r);
-		return working_directory + "gamedata\\" + file;
+		return working_directory + "gamedata/" + file;
 	}else{
 		ds_list_destroy(r);
 		return "NULL";
@@ -313,22 +314,35 @@ function DE_checkIncludes( _str ){
 }
 
 function DE_getLanguageData(){
+	
 	var lpos = DE_getLumpOfs( "LANGUAGE" );
 	
-	if lpos == -1 return false;
+	if lpos > -1{
 	
-	trace("NOTICE: Wad Contains Language Data");
+		trace("NOTICE: Wad Contains Language Data");
 
-	var len = ds_list_find_value_fixed(wadDirectory, DE_getLumpNum( "LANGUAGE" ) ).size;
+		var len = ds_list_find_value_fixed(wadDirectory, DE_getLumpNum( "LANGUAGE" ) ).size;
 
-	var __tmp = buffer_create(len,buffer_fixed,1);
+		var __tmp = buffer_create(len,buffer_fixed,1);
 
-	buffer_copy(wadbuff,lpos,len,__tmp,0);
+		buffer_copy(wadbuff,lpos,len,__tmp,0);
 	
-	var str = buffer_read(__tmp,buffer_text);
+		var str = buffer_read(__tmp,buffer_text);
 	
-	buffer_delete(__tmp);
+		buffer_delete(__tmp);
 	
-	wadLanguage = string_split_on_delimiter(str,"\r\n")
+		wadLanguage = string_split_on_delimiter(str,"\r\n")
+	} else {
+		var _file = working_directory + "gamedata/language.enu";
+		
+		if file_exists(_file){
+		
+			wadLanguage = ds_list_build();
+		
+			DEtrace("NOTICE: Loading Externally Defined Language",_file);
+		
+			DE_loadTextData( _file, wadLanguage );
+		}
+	}
 	
 }

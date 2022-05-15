@@ -31,7 +31,8 @@ function DE_loadMap( _map ) {
 	}
 
 	DE_getThings(_map,LEV+THINGSOFS);
-
+	
+	display_reset(0,1);//Disable AA
 	DE_preload_flats();
 	DE_preload_patches();
 

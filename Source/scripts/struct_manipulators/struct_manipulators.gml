@@ -2,6 +2,11 @@
 /// @param	{struct}	source
 /// @description Copies source and returns a new struct
 function struct_copy( source){
+	
+	if !is_struct(source){
+		throw("Struct does not exist:"+string(source));
+	}
+	
 	var srcNames = variable_struct_get_names( source);
 	var ret = {};
 	for( var i = 0; i < array_length( srcNames); ++i){

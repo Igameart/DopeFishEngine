@@ -1,8 +1,6 @@
 /// @description DopeFishEngineInit( WAD, Camera );
 
 function DE_wadDataPopulate(){
-
-	ds_data_init();
 	
 	// Some WAD defines
 	wadDirectory=ds_list_build();
@@ -15,7 +13,7 @@ function DE_wadDataPopulate(){
 	wadFlatTextures = noone;
 	wadCompedTextures = ds_map_build();
 	wadCompedFlats = ds_map_build();
-	wadSwitchTextures = noone;
+	wadSwitchTextures = ds_map_build();
 	wadSounds = ds_map_build();
 	wadSpriteDB = ds_map_build();
 	wadSpritesMir = ds_map_build();
@@ -103,8 +101,10 @@ function DopeFishEngineInit( _OBJ ) {
 	math_set_epsilon(0.00001);
 	
 	//gml_release_mode(false);
+
+	ds_data_init();
 	
-	globalvar DETexInternal; DETexInternal = true;
+	globalvar DETexInternal; DETexInternal = false;
 
 	enum BBOX
 	{
@@ -296,6 +296,15 @@ function DopeFishEngineInit( _OBJ ) {
 	wadGameInfo = {
 		decorate : undefined,
 		mapinfo : undefined,
+		name : undefined,
+		config : undefined,
+		autoname : undefined,
+		game : undefined,
+		bannercolors : undefined,
+		compatibility : [undefined],
+		
+		episodes : ds_list_build(),
+		maps : ds_map_build(),
 		
 		backpacktype : undefined,
 		chatsound : undefined,
@@ -388,6 +397,40 @@ function DopeFishEngineInit( _OBJ ) {
 		hidepartimes : undefined
 	}
 	
+	wadGameInfo.name = "Defaulting to Doom";
+	wadGameInfo.autoname = "doom";
+	wadGameInfo.game = "Doom";
+	wadGameInfo.config = "Doom";
+	wadGameInfo.mapinfo = "mapinfo/5.txt";
+	wadGameInfo.compatibility = ["Shorttex"];
+	
+	globalvar wadEpisode;	
+	wadEpisode = {
+		maplump : undefined,
+		teaserlump : undefined,
+		picname : undefined,
+		key : undefined,
+	}
+	
+	globalvar MAPINFOstruct;
+	MAPINFOstruct = {
+		lumpname : "",
+		name : "",
+		levelnum : 0,
+		warptrans : 0,
+		next : "",
+		secret : "",
+		music : "",
+		cdtrack : -1,
+		cluster : 0,
+		sky1 : ["",0],
+		sky2 : ["",0],
+		doublesky : false,
+		lightning : false,
+		skybox : undefined,
+		gravity : 0		
+	}
+	
 	globalvar wadDirectory;
 	globalvar wadDecorate; wadDecorate = noone;
 	globalvar wadLanguage; wadLanguage = noone;
@@ -455,6 +498,14 @@ function DopeFishEngineInit( _OBJ ) {
 	globalvar DE_texFilter; DE_texFilter = false;
 	globalvar DE_alphabetCheck; DE_alphabetCheck = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
+
+	globalvar wadSprites;
+	wadSprites=ds_map_build();
+
+	globalvar DESprites;
+	DESprites = ds_map_build();
+	
+	
 	display_reset(0,1);
 	gpu_set_tex_filter(false);
 	

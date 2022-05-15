@@ -175,16 +175,7 @@ function DE_loadActorData( TYPE ){
 		struct_extract(ACTORstruct);
 
 		name = thing[ DEThingDef.Description ];
-		
-		if wadLocalization[? "enu" ] != undefined{//There's a language lump, let's check for this entry
-			var _langDat = wadLocalization[? "enu" ];
-			var _tmpName = _langDat[? name ];
-			if _tmpName != undefined{
-				_tmpName = _tmpName[0];
-				trace("Found Name In Language Lump",_tmpName);
-				name = _tmpName;
-			}
-		}
+		name = DE_fetchLocalizationByLabel(name);
 
 		sprite = thing[ DEThingDef.Sprite ];
 		
@@ -242,9 +233,9 @@ function DE_loadActorData( TYPE ){
 function record_vBuffers(__spDat,__sprite, __isMirr){
 
 	TexW = __spDat.width;
-	TexH = __spDat.height;
+	TexH = __spDat.height*1.2;
 	xOff = __spDat.leftoff;
-	yOff = __spDat.topoff;
+	yOff = __spDat.topoff*1.2;
 	
 	yOff = max(yOff, sprite_get_height(__sprite) );
 	

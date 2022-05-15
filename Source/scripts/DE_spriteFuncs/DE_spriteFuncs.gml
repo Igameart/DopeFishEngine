@@ -48,7 +48,7 @@ function DE_spriteCreateVBuffer(__x1, __y1, __z1, __x2, __y2, __z2, __tex, __isM
 
 function DE_parseSpriteName( __sprDB, __name ){
 	
-	trace("NOTICE: Parsing Sprite Info",__name);
+	//trace("NOTICE: Parsing Sprite Info",__name);
 	
 	var __fDat = __sprDB.frames;
 	
@@ -58,7 +58,7 @@ function DE_parseSpriteName( __sprDB, __name ){
 	if __sprDB.directional == false
 	if __sprNFO[| 1] != 0{
 		
-		trace("NOTICE: Sprite "+__name, "Is Directional");
+		//trace("NOTICE: Sprite "+__name, "Is Directional");
 		__sprDB.directional = true;
 		
 	}
@@ -72,7 +72,7 @@ function DE_parseSpriteName( __sprDB, __name ){
 		var __Angle	= __sprNFO[| num++];
 		
 		if __mirrored{
-			trace("NOTICE: Sprite Frame "+__name, __Frame + __Angle, "Is Mirrored");
+			//trace("NOTICE: Sprite Frame "+__name, __Frame + __Angle, "Is Mirrored");
 			
 			var __tName = string_copy(__name,1,4) + __Frame + __Angle;
 			wadSpritesMir[? __tName ] = true;
@@ -114,6 +114,7 @@ function DE_buildGraphic( __sprName ){
 	if is_undefined(DESprites[? __sprName ]){
 		
 		var filter = gpu_get_tex_filter();
+		
 		display_reset(0,1);
 		
 		var bPos = buffer_tell(wadbuff);
@@ -132,7 +133,7 @@ function DE_buildGraphic( __sprName ){
 				
 		if __sprDB == undefined{
 					
-			trace("NOTICE: creating database for GRAPHIC:", __sprName);
+			//trace("NOTICE: creating database for GRAPHIC:", __sprName);
 					
 			__sprDB = struct_copy(sprdbtype);
 			__sprDB.frames = ds_map_build();
@@ -148,11 +149,22 @@ function DE_buildGraphic( __sprName ){
 		var spr_height	= buffer_read(wadbuff,buffer_u16);
 		var spr_left	= buffer_read(wadbuff,buffer_s16);
 		var spr_top		= buffer_read(wadbuff,buffer_s16);
+		
+		#region Raw Screen format
+		if spr_width == 0 || spr_height == 0{
+			buffer_seek(wadbuff,buffer_seek_start,bPos);
+			var __dat = DE_getRawScreen(__sprName);
+			DESprites[? __sprName ] = DE_buildRawScreen(__dat,__sprName);
+			return DESprites[? __sprName ];
+		}
+		#endregion
 
 		_spr.width	= spr_width;
 		_spr.height	= spr_height;
 		_spr.leftoff= spr_left;
 		_spr.topoff	= spr_top;
+		
+		trace("Preparing to build patch",_spr);
 		
 		var data=ds_grid_build(spr_width,spr_height);
 		ds_grid_clear(data,-1);
@@ -190,13 +202,16 @@ function DE_buildGraphic( __sprName ){
 		_spr.contents = data;
 
 		var __gfxDat = _spr;
+		
+		trace("Building Patch For Graphic",__sprName);
 				
 		var __spr = DE_buildPatch(__gfxDat,__sprName);
+		
+		trace("Built Patch For Graphic",__sprName, __spr);
 		
 		buffer_seek(wadbuff,buffer_seek_start,bPos);
 		
 		gpu_set_tex_filter(filter);
-		display_reset(8,1);
 		
 		DESprites[? __sprName ] = __spr;
 		
@@ -207,12 +222,13 @@ function DE_buildGraphic( __sprName ){
 
 function DE_drawimage(){//Draw an image into gui space
 	var __sprName = argument[0], xx = argument[1], yy = argument[2];
-	 
+	var _iscale = 1;
 	if argument_count>3{
-		
+		_iscale = argument[3];
 	}
 	
 	var spr = DESprites[? __sprName ];
+	
 	if is_undefined(spr){
 		spr = DE_buildGraphic(__sprName);
 	}
@@ -223,15 +239,21 @@ function DE_drawimage(){//Draw an image into gui space
 	ww = surface_get_width(application_surface);
 	hh = surface_get_height(application_surface);
 
-	//surface_set_target(application_surface);
-
-	var _scale = 1;
-	//if RFXenabled _scale *= RFXscale;
-
 	var ss = ww / 320;
 	
-	draw_sprite_ext(spr,0,xx*ss/_scale,(yy)*ss/_scale,ss/_scale,ss/_scale,0,c_white,1);
+	var _scale = [1,1.2];
 	
+	draw_sprite_ext(spr,0,xx*ss,(yy*1.2)*ss,ss*_scale[0]*_iscale,ss*_scale[1]*_iscale,0,c_white,1);
+}
+
+function DE_drawimage_ext(__sprName, xx, yy, xscale, yscale){//Draw an image
+	var spr = DESprites[? __sprName ];
+	
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+	
+	draw_sprite_ext(spr,0,xx,yy,xscale,yscale,0,c_white,1);
 }
 
 function DE_drawswitchableimage(){//Draw an image into gui space
@@ -242,26 +264,26 @@ function DE_drawswitchableimage(){//Draw an image into gui space
 		
 	}
 	
-	var __sprName;
+	var __sprName = "nullimage";
 	
 	if is_string(__key){
-		__spr[0] = argument[1];
-		__spr[1] = argument[2];
+		__spr[0] = argument[2];
+		__spr[1] = argument[1];
 		xx = argument[3];
 		yy = argument[4];
 		
 		switch __key{
 			case "invulnerable":
-				__sprName = __spr[!IDDQD];
+				__sprName = __spr[ IDDQD ];
 			break;
 		}
 	}else{
 		if is_real(__key){
-			__spr[0] = argument[1];
-			__spr[1] = argument[2];
+			__spr[0] = argument[2];
+			__spr[1] = argument[1];
 			xx = argument[3];
 			yy = argument[4];
-			__sprName = __spr[__key];
+			__sprName = __spr[ __key ];
 		}else
 		if is_array(__key){
 			
@@ -304,17 +326,11 @@ function DE_drawswitchableimage(){//Draw an image into gui space
 
 	var ss = ww / 320;
 	
-	draw_sprite_ext(spr,0,xx*ss/_scale,(yy)*ss/_scale,ss/_scale,ss/_scale,0,c_white,1);
+	draw_sprite_ext(spr,0,xx*ss/_scale,(yy)*ss/_scale*1.2,ss/_scale,ss/_scale*1.2,0,c_white,1);
 	
 }
 
 function DE_getSprites() {
-
-	globalvar wadSprites;
-	wadSprites=ds_map_build();
-
-	globalvar DESprites;
-	DESprites = ds_map_build();
 
 	var readSprites=false;
 	
@@ -344,7 +360,7 @@ function DE_getSprites() {
 				
 				if __sprDB == undefined{
 					
-					trace("NOTICE: creating database for SPRITE:", __sprName);
+					//trace("NOTICE: creating database for SPRITE:", __sprName);
 					
 					__sprDB = struct_copy(sprdbtype);
 					__sprDB.frames = ds_map_build();
@@ -445,7 +461,7 @@ function DE_drawimage_tiledx(){
 	}until xx < 0;
 	
 	for (i=xx; i<=320; i+=sw){
-		draw_sprite_ext(spr,0,(i)*ss/_scale,yy*ss/_scale,ss/_scale,ss/_scale,0,c_white,1);
+		draw_sprite_ext(spr,0,(i)*ss/_scale,yy*ss/_scale*1.2,ss/_scale,ss/_scale*1.2,0,c_white,1);
 	}
 	
 }
@@ -556,21 +572,26 @@ function DE_drawshader( width, height, dir, flip, xx, yy){
 	var ss = ww / 320;
 	
 	gpu_set_blendmode(bm_subtract);
-	draw_rectangle_color(xx*ss,yy*ss,(xx+width)*ss,(yy+height)*ss, col1, col2, col3, col4, false);
+	draw_rectangle_color(xx*ss,yy*ss*1.2,(xx+width)*ss,(yy+height)*ss*1.2, col1, col2, col3, col4, false);
 	gpu_set_blendmode(bm_normal);
 	
 }
 
 function DE_drawStatusBar(){
-	switch DENAMESPACE{
-		case DEnameSpaces.DOOM:
+	
+	switch wadGameInfo.game{
+		case "Doom":
+		case "Chex":
 		DE_drawDoomStatusBar();
 		break;
-		case DEnameSpaces.HERETIC:
+		case "Heretic":
 		DE_drawHereticStatusBar();
 		break;
-		case DEnameSpaces.HEXEN:
+		case "Hexen":
 		DE_drawHexenStatusBar();
+		break;
+		case "Strife":
+		DE_drawStrifeStatusBar();
 		break;
 	}
 }
@@ -598,6 +619,79 @@ function DE_drawnumber(){
 	}
 }
 
+
+function DE_drawStrifeStatusBar(){
+	/*******************************************************************************
+	 *                         DEFAULT STRIFE STATUS BAR
+	 *******************************************************************************/
+
+	var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	var ss = ww / 320;
+	
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
+	
+	var offset = diff;
+	
+	
+	DE_drawimage( "INVBACK", 0, 168 - offset);
+	DE_drawimage( "INVTOP",  0, 160 - offset);
+	
+	// health
+	DE_drawnumber( 3, HUDFONT_STRIFE_GREEN, "untranslated", HP, 0, 78, 162 - offset, 1);
+	
+	
+	
+	/*IfHealth 21
+	{
+		DrawBar "invhpg", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpg", "invhpbck", Health, Horizontal, 49, 175;
+	}
+	
+	IfHealth Not 21
+	{
+		DrawBar "invhpy", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpy", "invhpbck", Health, Horizontal, 49, 175;
+	}
+	
+	IfHealth Not 11
+	{
+		DrawBar "invhpr", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpr", "invhpbck", Health, Horizontal, 49, 175;
+	}
+
+	IfHealth 101
+	{
+		DrawBar "invhpb2", "invhpg2", Health (200), Horizontal, Reverse, 49, 172;
+		DrawBar "invhpb2", "invhpg2", Health (200), Horizontal, Reverse, 49, 175;
+	}*/
+
+	
+	
+	// armor
+	DE_drawimage( "I_SHD1", 2, 177 - offset);
+	DE_drawnumber( 3, HUDFONT_STRIFE_YELLOW, "untranslated", armor, 0, 26, 191 - offset, 1);
+	
+	// ammo
+	//usesammo
+	//{
+		DE_drawimage( "BBOXA0", 290, 181);
+		DE_drawnumber( 3, HUDFONT_STRIFE_GREEN, "untranslated", ammo1, 0, 310, 162 - offset, 1);
+	//}
+	
+	// sigil
+	var Sigil = "I_SGL"+sigil;
+	DE_drawimage( Sigil, 253, 175 - offset);
+	
+	// inventory
+	//DE_drawinventorybar Strife, alwaysshow|noarrows|alwaysshowcounter|noartibox, 6, HUDFONT_STRIFE_YELLOW, 48, 182, 72, 191, Untranslated, 1;
+	
+}
+
+
 function DE_drawDoomStatusBar(){
 	/*******************************************************************************
 	 *                         DEFAULT DOOM STATUS BAR
@@ -612,9 +706,11 @@ function DE_drawDoomStatusBar(){
 
 	var ss = ww / 320;
 	
-	var diff = 200 - (hh / ss);
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
 	var offset = diff;
+	
+	if DE_getLumpOfs("STBAR") ==-1 return;
 	
 	DE_drawimage("STBAR", 0, 168- offset );
 	DE_drawimage("STTPRCNT", 90, 171- offset );
@@ -651,18 +747,19 @@ function DE_drawDoomStatusBar(){
 		DE_drawnumber(2, HUDFONT_DOOM, "untranslated", frags, 0, 138, 171 - offset);
 		DE_drawimage( "STFB"+string(mpColor), 143, 169 - offset);
 	}
-		
-	DE_drawimage( "STFST01", 143, 168- offset );
+	
+	//if !IDDQD
+	//	DE_drawimage( "STFST01", 143, 168- offset );
+	//else
+	//	DE_drawimage( "STFGOD0", 143, 168- offset );
+	
+	DE_drawswitchableimage( [ IDDQD, NOCLIP ], "STFST01", "STFEVL0", "STFKILL0", "STFGOD0", 143, 168- offset );
 }
 
 function DE_drawHereticStatusBar(){
 	/*******************************************************************************
 	*                       DEFAULT HERETIC STATUS BAR
 	*******************************************************************************/
-
-	var height = 42;
-	var protrusion = [ 0.7, 8];
-	var monospacefonts = [true, "0", "center"];
 	
 	var ww,hh;
 
@@ -671,7 +768,7 @@ function DE_drawHereticStatusBar(){
 
 	var ss = ww / 320;
 	
-	var diff = 200 - (hh / ss);
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
 	var offset = diff;
 	
@@ -747,7 +844,7 @@ function DE_drawHexenStatusBar(){
 
 	var ss = ww / 320;
 	
-	var diff = 200 - (hh / ss);
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
 	var offset = diff;
 	

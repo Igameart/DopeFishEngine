@@ -18,7 +18,7 @@ function getToken( list ){
 	var token = list[| 0];
 	if token!=undefined{
 		ds_list_delete(list,0);
-		trace("Getting Token",token);
+		//trace("Getting Token",token);
 	}
 	return token;
 	
@@ -131,7 +131,7 @@ function DE_actorSaveProperty( code, token ){
 			if ( ds_list_size(code) == 1 ){//Code is ``variable entry`` so set struct var to the info that follows
 				var entry = getToken(code);
 				
-				if DE_isStringLabel(entry){
+				if DE_isLookupLabel(entry){
 					entry = DE_fetchLocalizationByLabel(entry);
 					entry = entry[0];
 				}
@@ -154,7 +154,7 @@ function DE_actorSaveProperty( code, token ){
 	
 }
 
-function DE_isStringLabel( _string ){
+function DE_isLookupLabel( _string ){
 	
 	var _val = string_pos("\"$",_string) == 1;
 	//if _val trace("Var is Label:",_string);
@@ -162,6 +162,7 @@ function DE_isStringLabel( _string ){
 }
 
 function DE_advanceParseMode(token){
+	
 	if token == undefined{
 		
 		DEparseMode = "NULL";
@@ -172,7 +173,14 @@ function DE_advanceParseMode(token){
 			global.currentActor = struct_copy(ACTORstruct);
 		break;
 		case "map":
-			//global.currentActor = struct_copy(MAPINFOstruct);
+			global.currentActor = struct_copy(MAPINFOstruct);
+			ds_list_add(wadGameInfo.maps,global.currentActor );	
+			trace("Discovered New Map");
+		break;
+		case "episode":
+			global.currentActor = struct_copy(wadEpisode);
+			ds_list_add(wadGameInfo.episodes,global.currentActor );	
+			//trace("Discovered New Episode");
 		break;
 		case "":
 			
@@ -181,17 +189,21 @@ function DE_advanceParseMode(token){
 	
 	array_push(global.parseModeList,DEparseMode);
 	DEparseMode = string_upper(token);
-	DEtrace("Advancing Parse Mode",DEparseMode);
+	//DEtrace("Advancing Parse Mode",DEparseMode);
 }
 
 function DE_retreatParseMode(){
 	
 	array_delete(global.parseModeList,array_length(global.parseModeList),1);
 	
+	if DEparseMode == "EPISODEDEFAULT"{
+		trace("Episode Content",string(global.currentActor));
+	}
+	
 	DEparseMode = array_pop(global.parseModeList);
 	if DEparseMode == undefined DEparseMode = "NULL";
 	
-	trace("Retreating Parse Mode",DEparseMode);
+	//trace("Retreating Parse Mode",DEparseMode);
 }
 
 function DE_parseDecoratePrep(){
@@ -208,6 +220,7 @@ function DE_parseDecoratePrep(){
 }
 
 function DE_parseMapInfoPrep(){
+	
 	trace("Loading Mapinfo Lump");
 	if wadMapInfo == noone return false;
 	DEparseMode = "NULL";
@@ -219,6 +232,7 @@ function DE_parseMapInfoPrep(){
 		DE_parseLine(str,"MAPINFO");
 		pos++;
 	}
+	
 }
 
 function DE_parseLanguagePrep(){
@@ -235,17 +249,35 @@ function DE_parseLanguagePrep(){
 	}
 }
 
+function DE_fetchMusicByLabel( _string ){
+	var entry = DE_fetchLocalizationByLabel(_string);
+	if string_count("D_",entry) == 0
+		entry = "D_"+string_upper(entry);
+	return entry;
+}
+
 function DE_fetchLocalizationByLabel( _string ){
-	
+	if is_array(_string){
+		_string = _string[ floor(random( array_length(_string) - 0.5 ) ) ]; 
+	}
 	var tmpString = string_replace( _string,"\$","");
-	tmpString = string_copy(tmpString,2,string_length(tmpString)-2);
 	
-	//trace("Fetching Label", tmpString );
+	if string_char_at(tmpString,1) == "*"{
+		tmpString = string_copy(tmpString,2,string_length(tmpString));
+	}
+	
+	tmpString = string_copy(tmpString,1,string_length(tmpString));
+	
+	trace("Fetching Label", tmpString );
 	
 	var _langDat = wadLocalization[? "enu" ];
 	var _tmpDat = _langDat[? tmpString ];
 	
 	//trace("Label Found",_tmpDat);
+	
+	if is_array(_tmpDat){
+		_tmpDat = _tmpDat[ floor(random( array_length(_tmpDat) - 0.5 ) ) ]; 
+	}
 	
 	return _tmpDat;
 }

@@ -50,5 +50,27 @@ function DE_renderWorld() {
 		shader_reset();
 
 	}
+	
+	/*var __glsegs = mapGLSegs;
+	
+	if (__glsegs!=undefined){
+		
+		shader_set(shd_Sidedef);
+		shader_set_uniform_f(u_fogColorS,color_get_red((fcol))/255,color_get_green((fcol))/255,color_get_blue((fcol))/255,1);
+		shader_set_uniform_f(u_fogMaxDistS,f_far*0.9);
+		shader_set_uniform_f(u_fogMinDistS,f_near);
+		
+		shader_set_uniform_f(u_sideAtlasScale, tpageTextures.width, tpageTextures.height );
+			
+		var __gls = 0;
+			
+		repeat ds_list_size(__glsegs){
+			var __glseg = __glsegs[| __gls++ ];
+			DE_renderGLSeg( __glseg );
+		}
+		
+		shader_reset();
+
+	}*/
 		
 }

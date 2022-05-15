@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_DESysHeretic",
-    "path": "sprites/spr_DESysHeretic/spr_DESysHeretic.yy",
+    "name": "spr_DESysDoom",
+    "path": "sprites/spr_DESysDoom/spr_DESysDoom.yy",
   },
   "solid": false,
   "visible": true,

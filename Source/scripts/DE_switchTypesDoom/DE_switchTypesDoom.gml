@@ -1,5 +1,4 @@
 function DE_switchTypesDoom() {
-	wadSwitchTextures = ds_map_create();
 
 	wadSwitchTextures[?"SW1BLUE" ] = "SW2BLUE";
 	wadSwitchTextures[?"SW1BRCOM"] = "SW2BRCOM";

@@ -17,7 +17,7 @@ function DE_preload_textures() {
 	    var tex;
 	
 	    tex=side.lowtex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 		if is_undefined(pload_tex[? tex]){
 			unique++;
 			pload_tex[? tex] = -1;
@@ -43,7 +43,7 @@ function DE_preload_textures() {
 		}
     
 	    tex=side.uptex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 		if is_undefined(pload_tex[? tex]){
 			unique++;
 			pload_tex[? tex] = -1;
@@ -68,8 +68,9 @@ function DE_preload_textures() {
 		}
 	
 	    tex=side.midtex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 		if is_undefined(pload_tex[? tex]){
+			trace( "Finding Texture Dims", tex );
 			unique++;
 			pload_tex[? tex] = -1;
 			//if !DETexInternal || !sprite_exists(asset_get_index( string_lower(tex))){
@@ -117,7 +118,7 @@ function DE_preload_textures() {
 	    var tex;
 	
 	    tex=side.lowtex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
 				var sTex = wadSwitchTextures[?tex];
@@ -126,7 +127,7 @@ function DE_preload_textures() {
 		}
     
 	    tex=side.uptex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
 				var sTex = wadSwitchTextures[?tex];
@@ -135,7 +136,7 @@ function DE_preload_textures() {
 		}
 	
 	    tex=side.midtex;
-	    if tex!="-"{
+	    if tex!="-" && !DE_textureIsSky(tex){
 			DE_buildTexture(tex);
 			if DE_textureIsSwitch(tex){
 				var sTex = wadSwitchTextures[?tex];
