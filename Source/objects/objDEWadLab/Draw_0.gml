@@ -12,11 +12,23 @@ if bGlow > -1{
 	
 }
 
+
 if wadGameInfo.titlepage != undefined{
 	var pos;
 	pos = [ mpos[0]+mpos[2]*.5-16, mpos[1]+mpos[3]*.5-8];
 	var scale = 1;
-	DE_drawimage_ext(wadGameInfo.titlepage,pos[0]-150*scale, pos[1]-120*scale,scale,scale*1.2);
+	
+	draw_sprite_ext(spr_missingTitlePage,0,pos[0]-150*scale-32, pos[1]-120*scale,scale,scale*1.2,0,c_black,0.25);
+	draw_sprite_ext(spr_missingTitlePage,0,pos[0]-150*scale+32, pos[1]-120*scale,scale,scale*1.2,0,c_black,0.25);
+	draw_sprite_ext(spr_missingTitlePage,0,pos[0]-150*scale-16, pos[1]-120*scale,scale,scale*1.2,0,c_black,0.25);
+	draw_sprite_ext(spr_missingTitlePage,0,pos[0]-150*scale+16, pos[1]-120*scale,scale,scale*1.2,0,c_black,0.25);
+	
+	if DE_getLumpOfs(wadGameInfo.titlepage)>-1{
+		DE_drawimage_ext(wadGameInfo.titlepage,pos[0]-150*scale, pos[1]-120*scale,scale,scale*1.2);
+	}else{
+		draw_sprite_ext(spr_missingTitlePage,0,pos[0]-150*scale, pos[1]-120*scale,scale,scale*1.2,0,c_white,1);
+	}
+	
 }
 
 draw_set_font(_GamesFonts[selMode]);

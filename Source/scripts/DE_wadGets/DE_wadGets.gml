@@ -101,7 +101,7 @@ function DE_getDirectory() {
         
 	}
 	
-	DE_getDecorateScript();
+	//DE_getDecorateScript();
 	DE_getLanguageData();
 	DE_parseLanguagePrep();
 	
@@ -175,10 +175,10 @@ function DE_getLumpOfs(lump) {
 	
 	if ofs != undefined{
 	
-		trace("NOTICE: Lump["+lump+"] located at ",ofs);
+		//trace("NOTICE: Lump["+lump+"] located at ",ofs);
 		return ofs;
 	}else
-	trace("NOTICE: Lump["+lump+"] NOT FOUND!");
+	//trace("NOTICE: Lump["+lump+"] NOT FOUND!");
 	
 	return -1;
 	

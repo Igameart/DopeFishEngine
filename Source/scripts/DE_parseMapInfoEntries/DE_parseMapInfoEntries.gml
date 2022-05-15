@@ -14,10 +14,40 @@ if DEparseMode == "MAPINFO"
 			DE_parseMapInfoEpisode( token, code );
 		break;
 		case "EPISODEDEFAULT":
-			DE_parseMapInfoEpisodeDefault( token, code);
+			DE_parseProperties( token, code );
+		break;
+		case "MAP":
+			DE_parseMapInfoMap( token, code );
+		break;
+		case "MAPDEFAULT":
+			DE_parseProperties( token, code );
 		break;
 				
 	}
+}
+
+function DE_parseMapInfoMap( token, code ){
+	
+	if token == "{"{
+		wadGameInfo.maps[? global.currentActor.lumpname ] = global.currentActor;
+		//trace("NOTICE: Map Name",global.currentActor.lumpname, global.currentActor.name);
+		DEparseMode = "MAPDEFAULT";//Silently advance to a new parse mode, do not add to stack so retreating works properly.
+	}else{
+		global.currentActor.lumpname = (token);
+		var _token = getToken(code);
+		if !is_undefined(_token){
+		if DE_isLookupLabel(_token){
+			global.currentActor.name = (_token);
+		}else
+			global.currentActor.name = (_token);
+			if _token == "lookup"{
+				_token = getToken(code);
+				global.currentActor.name = "$"+(_token);
+			}
+			trace(global.currentActor.name);
+		}
+	}
+
 }
 
 function DE_parseMapInfoEpisode( token, code ){
@@ -40,6 +70,36 @@ function DE_parseMapInfoEpisode( token, code ){
 			}
 		}
 	}
+}
+
+function DE_parseProperties( token, code ){
+	
+	var Name = token;
+	
+	var _token = getToken(code);
+	
+	if _token == "="{
+		if ds_list_size(code) > 1 {//Single Line Multi Entry: Easy Mode
+			global.currentEntry = [];
+			do{
+				var entry = getToken(code);
+				
+				entry = DE_propertyProcess(entry);
+				
+				array_push(global.currentEntry,entry);
+									
+			}until ds_list_size(code) < 1;
+			DE_setStructProperty(global.currentActor,Name,global.currentEntry);
+			trace("Setting Property",DEparseMode,Name,global.currentEntry);
+		}else{
+			var entry = getToken(code);
+			
+			entry = DE_propertyProcess(entry);
+			trace("Setting Property",DEparseMode,Name,entry);
+			DE_setStructProperty(global.currentActor,Name,entry);
+		}
+	}
+
 }
 
 function DE_parseMapInfoEpisodeDefault( token, code ){
@@ -127,7 +187,7 @@ function DE_propertyProcess( entry ){
 		//if surrounded in quotations, remove them for ease of use.
 		if string_char_at( entry, 1 ) == "\"" && string_char_at(entry,len) == "\"" {
 			entry = string_copy(entry,2,string_length(entry)-2);
-			trace("Processing Property For String Entry",entry);
+			//trace("Processing Property For String Entry",entry);
 		}
 		
 	}

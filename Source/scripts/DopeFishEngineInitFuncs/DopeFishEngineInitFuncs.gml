@@ -397,6 +397,13 @@ function DopeFishEngineInit( _OBJ ) {
 		hidepartimes : undefined
 	}
 	
+	wadGameInfo.name = "Defaulting to Doom";
+	wadGameInfo.autoname = "doom";
+	wadGameInfo.game = "Doom";
+	wadGameInfo.config = "Doom";
+	wadGameInfo.mapinfo = "mapinfo/5.txt";
+	wadGameInfo.compatibility = ["Shorttex"];
+	
 	globalvar wadEpisode;	
 	wadEpisode = {
 		maplump : undefined,

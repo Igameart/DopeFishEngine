@@ -4,6 +4,7 @@ function DE_gameData() {
 
 	switch wadGameInfo.game{
 		case "Doom":
+		case "Chex":
 			DE_thingTypesDOOM();
 			DE_switchTypesDoom();
 		break;
@@ -28,8 +29,18 @@ function DE_gameData() {
 
 function DE_getLevelMusic(){
 	
+	var mus;
+	mus = wadGameInfo.maps[? DEMap ].music;
+	
+	if DE_isLookupLabel(mus)
+		mus = DE_fetchMusicByLabel(mus);
+		
+	return mus;
+	
+	/*
 	switch wadGameInfo.game{
 		case "Doom":
+		case "Chex":
 			return DE_levelMusicDOOM();
 		break;
 		case "Heretic":
@@ -42,7 +53,7 @@ function DE_getLevelMusic(){
 			return DE_levelMusicDOOM();
 		break;
 		
-	}
+	}*/
 }
 
 function DE_loadFontDefs(){
@@ -151,4 +162,61 @@ IntermissionFont_Doom = ds_map_build();
 	IntermissionFont_Doom[? "9"] = "WINUM9";
 	IntermissionFont_Doom[? "-"] = "WIMINUS";
 	IntermissionFont_Doom[? "/"] = "WISLASH";
+
+	globalvar INDEXFONT_STRIFE;
+	INDEXFONT_STRIFE = ds_map_build();
+	   INDEXFONT_STRIFE[? "0"] = "INVFONY0";
+	   INDEXFONT_STRIFE[? "1"] = "INVFONY1";
+	   INDEXFONT_STRIFE[? "2"] = "INVFONY2";
+	   INDEXFONT_STRIFE[? "3"] = "INVFONY3";
+	   INDEXFONT_STRIFE[? "4"] = "INVFONY4";
+	   INDEXFONT_STRIFE[? "5"] = "INVFONY5";
+	   INDEXFONT_STRIFE[? "6"] = "INVFONY6";
+	   INDEXFONT_STRIFE[? "7"] = "INVFONY7";
+	   INDEXFONT_STRIFE[? "8"] = "INVFONY8";
+	   INDEXFONT_STRIFE[? "9"] = "INVFONY9";
+
+	globalvar HUDFONT_STRIFE;
+	HUDFONT_STRIFE = ds_map_build();
+	   HUDFONT_STRIFE[? "0"] = "INVFONG0";
+	   HUDFONT_STRIFE[? "1"] = "INVFONG1";
+	   HUDFONT_STRIFE[? "2"] = "INVFONG2";
+	   HUDFONT_STRIFE[? "3"] = "INVFONG3";
+	   HUDFONT_STRIFE[? "4"] = "INVFONG4";
+	   HUDFONT_STRIFE[? "5"] = "INVFONG5";
+	   HUDFONT_STRIFE[? "6"] = "INVFONG6";
+	   HUDFONT_STRIFE[? "7"] = "INVFONG7";
+	   HUDFONT_STRIFE[? "8"] = "INVFONG8";
+	   HUDFONT_STRIFE[? "9"] = "INVFONG9";
+
+	globalvar HUDFONT_STRIFE_GREEN;
+	HUDFONT_STRIFE_GREEN = ds_map_build();
+
+	HUDFONT_STRIFE_GREEN[? "%"] = "INVFONG%";
+	HUDFONT_STRIFE_GREEN[? "0"] = "INVFONG0";
+	HUDFONT_STRIFE_GREEN[? "1"] = "INVFONG1";
+	HUDFONT_STRIFE_GREEN[? "2"] = "INVFONG2";
+	HUDFONT_STRIFE_GREEN[? "3"] = "INVFONG3";
+	HUDFONT_STRIFE_GREEN[? "4"] = "INVFONG4";
+	HUDFONT_STRIFE_GREEN[? "5"] = "INVFONG5";
+	HUDFONT_STRIFE_GREEN[? "6"] = "INVFONG6";
+	HUDFONT_STRIFE_GREEN[? "7"] = "INVFONG7";
+	HUDFONT_STRIFE_GREEN[? "8"] = "INVFONG8";
+	HUDFONT_STRIFE_GREEN[? "9"] = "INVFONG9";
+
+
+	globalvar HUDFONT_STRIFE_YELLOW;
+	HUDFONT_STRIFE_YELLOW = ds_map_build();
+
+	HUDFONT_STRIFE_YELLOW[? "%"] = "INVFONY%";
+	HUDFONT_STRIFE_YELLOW[? "0"] = "INVFONY0";
+	HUDFONT_STRIFE_YELLOW[? "1"] = "INVFONY1";
+	HUDFONT_STRIFE_YELLOW[? "2"] = "INVFONY2";
+	HUDFONT_STRIFE_YELLOW[? "3"] = "INVFONY3";
+	HUDFONT_STRIFE_YELLOW[? "4"] = "INVFONY4";
+	HUDFONT_STRIFE_YELLOW[? "5"] = "INVFONY5";
+	HUDFONT_STRIFE_YELLOW[? "6"] = "INVFONY6";
+	HUDFONT_STRIFE_YELLOW[? "7"] = "INVFONY7";
+	HUDFONT_STRIFE_YELLOW[? "8"] = "INVFONY8";
+	HUDFONT_STRIFE_YELLOW[? "9"] = "INVFONY9";
 }

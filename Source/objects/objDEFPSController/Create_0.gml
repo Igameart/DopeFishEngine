@@ -42,6 +42,8 @@ Shell = 1;
 RocketAmmo = 2;
 Cell = 3;
 
+sigil = choose("1","2","3","4","5");
+
 ammo[Clip] = 20;
 ammo[Shell] = 30;
 ammo[RocketAmmo] = 40;
@@ -73,6 +75,7 @@ Height = PLAYER_HEIGHT;
 
 switch wadGameInfo.game{
 	case "Doom":
+	case "Chex":
 		wep_spr = DE_buildSprite( "PISGA0" );
 		//stbar_spr = DE_buildGraphic( "STBAR" );
 	break;

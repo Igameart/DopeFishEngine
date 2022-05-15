@@ -131,7 +131,7 @@ function DE_actorSaveProperty( code, token ){
 			if ( ds_list_size(code) == 1 ){//Code is ``variable entry`` so set struct var to the info that follows
 				var entry = getToken(code);
 				
-				if DE_isStringLabel(entry){
+				if DE_isLookupLabel(entry){
 					entry = DE_fetchLocalizationByLabel(entry);
 					entry = entry[0];
 				}
@@ -154,7 +154,7 @@ function DE_actorSaveProperty( code, token ){
 	
 }
 
-function DE_isStringLabel( _string ){
+function DE_isLookupLabel( _string ){
 	
 	var _val = string_pos("\"$",_string) == 1;
 	//if _val trace("Var is Label:",_string);
@@ -174,6 +174,8 @@ function DE_advanceParseMode(token){
 		break;
 		case "map":
 			global.currentActor = struct_copy(MAPINFOstruct);
+			ds_list_add(wadGameInfo.maps,global.currentActor );	
+			trace("Discovered New Map");
 		break;
 		case "episode":
 			global.currentActor = struct_copy(wadEpisode);
@@ -249,7 +251,8 @@ function DE_parseLanguagePrep(){
 
 function DE_fetchMusicByLabel( _string ){
 	var entry = DE_fetchLocalizationByLabel(_string);
-	entry = "D_"+string_upper(entry);
+	if string_count("D_",entry) == 0
+		entry = "D_"+string_upper(entry);
 	return entry;
 }
 

@@ -13,6 +13,7 @@ function DE_getSectorFromSSect(GLSSECT) {
 		
 		if !is_struct(polygon){
 			trace("ERROR","GLSSect Not Found",GLSSECT);
+			return -1;
 		}
 		var count,start,sector;
 		count=polygon.count;
@@ -54,6 +55,7 @@ function DE_getSectorFromSSect(GLSSECT) {
 		
 		if !is_struct(polygon){
 			trace("ERROR","GLSSect Not Found",GLSSECT);
+			return -1;
 		}
 
 		var count,start,sector;

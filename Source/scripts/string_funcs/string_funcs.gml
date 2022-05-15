@@ -244,7 +244,16 @@ function string_split_as_code(s){
 		tmp = "";
 	}
 	
+	//trace("Results",ds_list_to_string(r));
 	return r;
+}
+
+function ds_list_to_string( list ){
+	var str = "- ";
+	for (var i=0; i<ds_list_size(list);i++)
+		str += string(list[| i])+" - ";
+	
+	return str;
 }
 
 function string_wordwrap_width(_text_current,_width,_break,_split)

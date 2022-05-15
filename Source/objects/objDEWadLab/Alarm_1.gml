@@ -18,12 +18,18 @@ if DE_fetchWad(WAD){
 		_wadDat = "* warning *\n\n* "+wadType+"s may fail *\nin this version\n of dopefish!\n\n";
 	}
 
-	_wadDat += "wad stats\n\n"
+	//_wadDat += "wad stats\n\n"
+	
+	if !is_undefined(wadGameInfo.name){
+		var _tmpName = string_wordwrap_width(wadGameInfo.name,164,"\n",true);
+		_wadDat += _tmpName+"\n\n";
+	}
+	
+	if !is_undefined(wadGameInfo.game){
+		var _tmpName = (wadGameInfo.game);
+		_wadDat += _tmpName+"\n\n";
+	}
 	_wadDat+= "* * * * * * * * * *\n\n"
-	
-	var _tmpName = string_wordwrap_width(wadGameInfo.name,164,"\n",true);
-	
-	_wadDat += _tmpName+"\n\n";
 			
 	var L = 16+1;
 	var SL = 0;

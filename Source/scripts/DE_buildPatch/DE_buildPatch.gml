@@ -45,7 +45,7 @@ function DE_buildPatch(patch,pname) {
 		        }
 		    }
 		}
-		trace("Drawn",pix,"pixels onto patch",pname);
+		//trace("Drawn",pix,"pixels onto patch",pname);
 	}
 
 	surface_reset_target();

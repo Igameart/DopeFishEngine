@@ -48,7 +48,7 @@ function DE_spriteCreateVBuffer(__x1, __y1, __z1, __x2, __y2, __z2, __tex, __isM
 
 function DE_parseSpriteName( __sprDB, __name ){
 	
-	trace("NOTICE: Parsing Sprite Info",__name);
+	//trace("NOTICE: Parsing Sprite Info",__name);
 	
 	var __fDat = __sprDB.frames;
 	
@@ -58,7 +58,7 @@ function DE_parseSpriteName( __sprDB, __name ){
 	if __sprDB.directional == false
 	if __sprNFO[| 1] != 0{
 		
-		trace("NOTICE: Sprite "+__name, "Is Directional");
+		//trace("NOTICE: Sprite "+__name, "Is Directional");
 		__sprDB.directional = true;
 		
 	}
@@ -72,7 +72,7 @@ function DE_parseSpriteName( __sprDB, __name ){
 		var __Angle	= __sprNFO[| num++];
 		
 		if __mirrored{
-			trace("NOTICE: Sprite Frame "+__name, __Frame + __Angle, "Is Mirrored");
+			//trace("NOTICE: Sprite Frame "+__name, __Frame + __Angle, "Is Mirrored");
 			
 			var __tName = string_copy(__name,1,4) + __Frame + __Angle;
 			wadSpritesMir[? __tName ] = true;
@@ -133,7 +133,7 @@ function DE_buildGraphic( __sprName ){
 				
 		if __sprDB == undefined{
 					
-			trace("NOTICE: creating database for GRAPHIC:", __sprName);
+			//trace("NOTICE: creating database for GRAPHIC:", __sprName);
 					
 			__sprDB = struct_copy(sprdbtype);
 			__sprDB.frames = ds_map_build();
@@ -360,7 +360,7 @@ function DE_getSprites() {
 				
 				if __sprDB == undefined{
 					
-					trace("NOTICE: creating database for SPRITE:", __sprName);
+					//trace("NOTICE: creating database for SPRITE:", __sprName);
 					
 					__sprDB = struct_copy(sprdbtype);
 					__sprDB.frames = ds_map_build();
@@ -581,6 +581,7 @@ function DE_drawStatusBar(){
 	
 	switch wadGameInfo.game{
 		case "Doom":
+		case "Chex":
 		DE_drawDoomStatusBar();
 		break;
 		case "Heretic":
@@ -588,6 +589,9 @@ function DE_drawStatusBar(){
 		break;
 		case "Hexen":
 		DE_drawHexenStatusBar();
+		break;
+		case "Strife":
+		DE_drawStrifeStatusBar();
 		break;
 	}
 }
@@ -615,6 +619,79 @@ function DE_drawnumber(){
 	}
 }
 
+
+function DE_drawStrifeStatusBar(){
+	/*******************************************************************************
+	 *                         DEFAULT STRIFE STATUS BAR
+	 *******************************************************************************/
+
+	var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	var ss = ww / 320;
+	
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
+	
+	var offset = diff;
+	
+	
+	DE_drawimage( "INVBACK", 0, 168 - offset);
+	DE_drawimage( "INVTOP",  0, 160 - offset);
+	
+	// health
+	DE_drawnumber( 3, HUDFONT_STRIFE_GREEN, "untranslated", HP, 0, 78, 162 - offset, 1);
+	
+	
+	
+	/*IfHealth 21
+	{
+		DrawBar "invhpg", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpg", "invhpbck", Health, Horizontal, 49, 175;
+	}
+	
+	IfHealth Not 21
+	{
+		DrawBar "invhpy", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpy", "invhpbck", Health, Horizontal, 49, 175;
+	}
+	
+	IfHealth Not 11
+	{
+		DrawBar "invhpr", "invhpbck", Health, Horizontal, 49, 172;
+		DrawBar "invhpr", "invhpbck", Health, Horizontal, 49, 175;
+	}
+
+	IfHealth 101
+	{
+		DrawBar "invhpb2", "invhpg2", Health (200), Horizontal, Reverse, 49, 172;
+		DrawBar "invhpb2", "invhpg2", Health (200), Horizontal, Reverse, 49, 175;
+	}*/
+
+	
+	
+	// armor
+	DE_drawimage( "I_SHD1", 2, 177 - offset);
+	DE_drawnumber( 3, HUDFONT_STRIFE_YELLOW, "untranslated", armor, 0, 26, 191 - offset, 1);
+	
+	// ammo
+	//usesammo
+	//{
+		DE_drawimage( "BBOXA0", 290, 181);
+		DE_drawnumber( 3, HUDFONT_STRIFE_GREEN, "untranslated", ammo1, 0, 310, 162 - offset, 1);
+	//}
+	
+	// sigil
+	var Sigil = "I_SGL"+sigil;
+	DE_drawimage( Sigil, 253, 175 - offset);
+	
+	// inventory
+	//DE_drawinventorybar Strife, alwaysshow|noarrows|alwaysshowcounter|noartibox, 6, HUDFONT_STRIFE_YELLOW, 48, 182, 72, 191, Untranslated, 1;
+	
+}
+
+
 function DE_drawDoomStatusBar(){
 	/*******************************************************************************
 	 *                         DEFAULT DOOM STATUS BAR
@@ -632,6 +709,8 @@ function DE_drawDoomStatusBar(){
 	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
 	var offset = diff;
+	
+	if DE_getLumpOfs("STBAR") ==-1 return;
 	
 	DE_drawimage("STBAR", 0, 168- offset );
 	DE_drawimage("STTPRCNT", 90, 171- offset );
