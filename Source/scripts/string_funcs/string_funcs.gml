@@ -144,7 +144,7 @@ function string_split_on_newline(s){
 
 function string_split_as_code(s){
 	
-	//trace("Splitting String Into Code",s);
+	trace("Splitting String Into Code",s);
 	var d = " ,(){}[];";
 	var a = "{}[];";
 	var r = ds_list_create();

@@ -99,6 +99,10 @@ function DE_parseProperties( token, code ){
 			DE_setStructProperty(global.currentActor,Name,entry);
 		}
 	}
+	if (_token == undefined){ //Single Entry properties default to trueentry = DE_propertyProcess(entry);
+		trace("Setting Property",DEparseMode,Name,"TRUE");
+		DE_setStructProperty(global.currentActor,Name,true);
+	}
 
 }
 
@@ -187,7 +191,7 @@ function DE_propertyProcess( entry ){
 		//if surrounded in quotations, remove them for ease of use.
 		if string_char_at( entry, 1 ) == "\"" && string_char_at(entry,len) == "\"" {
 			entry = string_copy(entry,2,string_length(entry)-2);
-			//trace("Processing Property For String Entry",entry);
+			trace("Processing Property For String Entry",entry);
 		}
 		
 	}
