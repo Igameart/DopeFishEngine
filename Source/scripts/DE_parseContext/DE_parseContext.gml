@@ -156,7 +156,7 @@ function DE_actorSaveProperty( code, token ){
 
 function DE_isLookupLabel( _string ){
 	
-	var _val = string_pos("\"$",_string) == 1;
+	var _val = string_pos("\"$",_string) == 1 || string_pos("$",_string) == 1;
 	//if _val trace("Var is Label:",_string);
 	return _val;
 }
@@ -251,8 +251,6 @@ function DE_parseLanguagePrep(){
 
 function DE_fetchMusicByLabel( _string ){
 	var entry = DE_fetchLocalizationByLabel(_string);
-	if string_count("D_",entry) == 0
-		entry = "D_"+string_upper(entry);
 	return entry;
 }
 
@@ -273,7 +271,7 @@ function DE_fetchLocalizationByLabel( _string ){
 	var _langDat = wadLocalization[? "enu" ];
 	var _tmpDat = _langDat[? tmpString ];
 	
-	//trace("Label Found",_tmpDat);
+	trace("Label Found",_tmpDat);
 	
 	if is_array(_tmpDat){
 		_tmpDat = _tmpDat[ floor(random( array_length(_tmpDat) - 0.5 ) ) ]; 

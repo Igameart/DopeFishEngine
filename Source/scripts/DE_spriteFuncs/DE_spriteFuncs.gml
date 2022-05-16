@@ -246,6 +246,18 @@ function DE_drawimage(){//Draw an image into gui space
 	draw_sprite_ext(spr,0,xx*ss,(yy*1.2)*ss,ss*_scale[0]*_iscale,ss*_scale[1]*_iscale,0,c_white,1);
 }
 
+
+function DE_drawimage_stretched(){//Draw an image into gui space
+	var __sprName = argument[0], xx = argument[1], yy = argument[2], ww = argument[3], hh = argument[4];
+	
+	var spr = DESprites[? __sprName ];
+	
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+		draw_sprite_stretched( spr, 0, xx, yy, ww, hh );
+}
+
 function DE_drawimage_ext(__sprName, xx, yy, xscale, yscale){//Draw an image
 	var spr = DESprites[? __sprName ];
 	

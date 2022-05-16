@@ -1,5 +1,5 @@
-/// @description DE_preload_flats();
-function DE_preload_flats() {
+/// @description DE_preloadFlats();
+function DE_preloadFlats() {
 
 	var sects = mapSectors;//wadlevel.sectors;
 	
@@ -16,7 +16,7 @@ function DE_preload_flats() {
 	    ctex=(sect.ceilingpicnum);
     
 		if is_string(ftex)
-	    if ftex!="-" and ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"
+	    if ftex!="-"// and !DE_textureIsSky(ftex)//!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"
 	    if is_undefined( pload_flats[? ftex ] ){
 			pload_flats[? ftex ] = -1;
 			unique++;
@@ -24,7 +24,7 @@ function DE_preload_flats() {
 		
 		if is_string(ctex)
 	    if ctex!=ftex
-	    if ctex!="-" and ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"
+	    if ctex!="-"// and !DE_textureIsSky(ctex)//ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"
 	    if is_undefined(pload_flats[? ctex ]){
 			pload_flats[? ctex ] = -1;
 			unique++;
@@ -59,7 +59,7 @@ function DE_preload_flats() {
 	    ctex=(sect.ceilingpicnum);
     
 		if is_string(ftex)
-	    if ftex!="-" and ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"
+	    if ftex!="-"// and !DE_textureIsSky(ftex)//ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"
 	    if is_undefined( pload_flats[? ftex ] ) || pload_flats[? ftex ] = -1{
 	        //trace("building floor flat: '"+ftex+"'");
 		
@@ -76,7 +76,7 @@ function DE_preload_flats() {
 		
 		if is_string(ctex)
 	    if ctex!=ftex
-	    if ctex!="-" and ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"
+	    if ctex!="-"// and !DE_textureIsSky(ctex)//ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"
 	    if is_undefined(pload_flats[? ctex ]) || pload_flats[? ctex ] = -1{
 	        //trace("building ceiling flat: '"+ctex+"'");
 		

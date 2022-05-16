@@ -4,7 +4,7 @@ function DE_getCompedTexture() {
 	var tex = wadCompedTextures[? t_name ];
 
 	if t_name != "-"
-	if ((t_name!="F_SKY1" and t_name!="F_SKY" and t_name!="F_SKY001") or (t_name!="F_SKY1" and t_name!="F_SKY" and t_name!="F_SKY001")){
+	if (!DE_textureIsSky(t_name) or !DE_textureIsSky(t_name)){
 
 		if tex == undefined{
 			trace("Comped Texture Does Not Exist:",t_name);

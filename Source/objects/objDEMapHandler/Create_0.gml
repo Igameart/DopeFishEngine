@@ -7,6 +7,8 @@ window_set_cursor(cr_none);
 
 alarm[0]=1;//Load music after loading everything else
 
+cam2D = camera_create();
+
 display_reset(8,1);
 d3d_set_culling(true);
 gpu_set_tex_filter(DE_texFilter);
@@ -82,4 +84,5 @@ globalvar u_TexHU;u_TexHU=shader_get_uniform(shd_Sidedef,"u_TexHU");
 globalvar u_TexHL;u_TexHL=shader_get_uniform(shd_Sidedef,"u_TexHL");
 globalvar u_TexHM;u_TexHM=shader_get_uniform(shd_Sidedef,"u_TexHM");
 
+skyhandler = instance_create_depth(0,0,0,objDESkyHandler);
 rfxcontrol = instance_create_depth(0,0,0,objRFXScreen);

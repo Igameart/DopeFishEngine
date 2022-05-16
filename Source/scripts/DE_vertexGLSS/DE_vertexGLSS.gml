@@ -12,13 +12,16 @@
 /// @param  alpha
 /// @param texture index
 /// @param  Top?
-function DE_vertexGLSS(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11) {
-	vertex_position_3d(argument0,argument1,argument2,argument3);
-	vertex_normal(argument0,argument4,argument5,argument6);
-	vertex_texcoord(argument0,real(argument7),real(argument8));
-	vertex_colour(argument0,argument9,argument10);
-	vertex_texcoord(argument0,real(argument11),-1);
-	vertex_texcoord(argument0,-1,-1);
+function DE_vertexGLSS(buffer, xx, yy, zz, nx, ny, nz, u, v, color, alpha, texIndex ) {
+	var isSky = 0;
+	if argument_count>12 isSky = argument[12];
+	
+	vertex_position_3d(buffer,xx,yy,zz);
+	vertex_normal(buffer,nx,ny,nz);
+	vertex_texcoord(buffer,real(u),real(v));
+	vertex_colour(buffer,color,alpha);
+	vertex_texcoord(buffer,real(texIndex),isSky);
+	vertex_texcoord(buffer,-1,-1);
 
 
 

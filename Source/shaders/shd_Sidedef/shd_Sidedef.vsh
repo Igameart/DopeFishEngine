@@ -15,6 +15,7 @@ varying float v_vTIndex;
 varying float v_vMiddle;
 //varying float v_eyeDist;
 varying vec4 v_vPosition;
+varying float v_isSky;
 
 uniform vec2 u_lowOff;
 //uniform float u_lowTopOff;
@@ -46,6 +47,7 @@ void main()
     v_vTIndex = in_TextureCoord2.x;
     v_vMiddle = in_TextureCoord2.y;
     float isTop = in_TextureCoord3.x;
+	v_isSky = in_TextureCoord3.y;
 	
 	vResL = vec2(uRes[0],uRes[1]);
 	
@@ -102,7 +104,8 @@ void main()
     
     v_vPosition = (gm_Matrices[MATRIX_WORLD_VIEW] * object_space_pos);
 	
-    v_vColour = in_Colour;
+    v_vColour.rgb = in_Colour.rgb;
+	v_vColour.a = 1.0;
     
     v_vTexcoord = vtcoord;
     

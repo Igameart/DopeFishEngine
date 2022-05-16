@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Build",
-    "path": "folders/Scripts/DopeFish/Wad Loader/Map/Build.yy",
+    "name": "Graphics",
+    "path": "folders/Scripts/DopeFish/Wad Loader/Graphics.yy",
   },
   "resourceVersion": "1.0",
-  "name": "OBSOLETE_DE_buildWalls",
+  "name": "DE_skyFuncs",
   "tags": [],
   "resourceType": "GMScript",
 }
