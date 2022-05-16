@@ -94,11 +94,11 @@ Converted string - line 88: 'TEXTURE2' -> "TEXTURE2"
 Converting GML script: ${project_dir}\scripts\DE_preload_textures\DE_preload_textures.gml
 Converted description /// @description DE_preload_textures()
 
-Converting GML script: ${project_dir}\scripts\DE_preload_patches\DE_preload_patches.gml
+Converting GML script: ${project_dir}\scripts\DE_preloadPatches\DE_preloadPatches.gml
 Converted description /// @description DE_preload_textures()
 
-Converting GML script: ${project_dir}\scripts\DE_preload_flats\DE_preload_flats.gml
-Converted description /// @description DE_preload_flats();
+Converting GML script: ${project_dir}\scripts\DE_preloadFlats\DE_preloadFlats.gml
+Converted description /// @description DE_preloadFlats();
 
 Converting GML script: ${project_dir}\scripts\DE_buildGLSSect\DE_buildGLSSect.gml
 Converted description /// @description DE_buildGLSSect(GLSSECT)/// @param GLSSECT

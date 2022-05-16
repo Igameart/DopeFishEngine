@@ -147,7 +147,7 @@ function DE_buildGLSegs() {
 			
 				//CHRIS: Create a script to check that a texture isn't a currently known sky texture rather than having a hard coded check for F_SKY1
 		        //Let's do the bottom section of the wall first just because
-		        if tcd[0]!="-" && tcd[0]!="F_SKY1" && back!=-1{
+		        if tcd[0]!="-" /*&& !DE_textureIsSky(tcd[0]) */&& back!=-1{
 		            //trace("building lower wall:"+tcd[0]);
 				
 					bot = sect.floorz;
@@ -211,26 +211,29 @@ function DE_buildGLSegs() {
 		        }
              
 				//Top Section
-		        if tcd[1]!="-" and back!=-1 && tcd[1]!="F_SKY1"{
+		        if tcd[1]!="-" and back!=-1{// && !DE_textureIsSky(tcd[1]){
 		            //trace("building upper wall:"+tcd[1]);
 			
 					var _s,_b;
 					_s = sect.ceilingpicnum;
 					_b = backsector.ceilingpicnum;
+					
+					var sky = DE_textureIsSky(tcd[1]);
 			
-		            if not (_s="F_SKY1" and _s!="F_SKY" and _s!="F_SKY001" and _b="F_SKY1" and _b!="F_SKY" and _b!="F_SKY001"){
-		                var bot, top;
-		                top = sect.ceilingz;
-		                bot = backsector.ceilingz;
+		            if !( DE_textureIsSky(_s) and DE_textureIsSky(_b) ){
+					
+			            var bot, top;
+			            top = sect.ceilingz;
+			            bot = backsector.ceilingz;
                             
-		                var tt,ptexwidth,ptexheight;
-		                tt=ds_map_find_value_fixed(textures,tcd[1]);
-		                ptexwidth=tt.width;
-		                ptexheight=tt.height;
+			            var tt,ptexwidth,ptexheight;
+			            tt=ds_map_find_value_fixed(textures,tcd[1]);
+			            ptexwidth=tt.width;
+			            ptexheight=tt.height;
                         
-		                var height=(abs(top-bot))/ptexheight;
+			            var height=(abs(top-bot))/ptexheight;
                         
-		                var ptextop = 0;
+			            var ptextop = 0;
 					
 						repeat abs(y_offset ){
 							ptextop += sign(y_offset );
@@ -240,7 +243,7 @@ function DE_buildGLSegs() {
 						
 						ptextop -= (abs(_ceiling - bot) / ptexheight) * !u_peg;
 
-		                var ptexbot=ptextop+height;
+			            var ptexbot=ptextop+height;
 					
 						var ptexleft = segOff;
 					
@@ -250,7 +253,7 @@ function DE_buildGLSegs() {
 					
 						ptexleft = ptexleft/ptexwidth;
 						
-		                var ptexright=(ptexleft+point_distance(sx,sy,ex,ey)/ptexwidth);
+			            var ptexright=(ptexleft+point_distance(sx,sy,ex,ey)/ptexwidth);
 				
 						var colBot,colTop;
 				
@@ -263,20 +266,30 @@ function DE_buildGLSegs() {
 						colBot = merge_color(segColBot,segColTop,__ctrans);
                         
 						__Empty = false;                                    
-		                DE_vertexSides(buffer,sx,sy,bot,0,0,0,ptexleft,ptexbot,colBot,1,1,0,0);
-		                DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,1,0,1);
-		                DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0);
-                        
-		                DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,1,0,1);
-		                DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,1,0,1);
-		                DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0);
-		                vv+=2;
-		                //}
+			            DE_vertexSides(buffer,sx,sy,bot,0,0,0,ptexleft, ptexbot,colBot,1,1,0,0,sky);
+			            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft, ptextop,colTop,1,1,0,1,sky);
+			            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0,sky);
+			            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft, ptextop,colTop,1,1,0,1,sky);
+			            DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,1,0,1,sky);
+			            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,1,0,0,sky);
+						
+						if DE_textureIsSky(sect.ceilingpicnum){//Ceiling is sky, let's extend the wall to near infinity to clip geo behind it with sky texture
+				            DE_vertexSides(buffer,sx,sy,top+65535,0,0,0,ptexleft, ptextop,colTop,1,1,0,1,1);
+				            DE_vertexSides(buffer,ex,ey,top+65535,0,0,0,ptexright,ptextop,colTop,1,1,0,1,1);
+				            DE_vertexSides(buffer,ex,ey,top,0,0,0,		ptexright,ptexbot,colBot,1,1,0,0,1);
+							
+				            DE_vertexSides(buffer,sx,sy,top,0,0,0,		ptexleft, ptexbot,colBot,1,1,0,0,1);
+				            DE_vertexSides(buffer,sx,sy,top+65535,0,0,0,ptexleft, ptextop,colTop,1,1,0,1,1);
+				            DE_vertexSides(buffer,ex,ey,top,0,0,0,		ptexright,ptexbot,colBot,1,1,0,0,1);
+						}
+						
+			            vv+=2;
+			            //}
 		            }
 		        }
 		
 				//Middle section
-		        if tcd[2]!="-" && tcd[2]!="F_SKY1"{
+		        if tcd[2]!="-" && !DE_textureIsSky(tcd[2]){
 		            //trace("building middle wall:"+tcd[2]);
 		            var bot, top;
                         
@@ -375,6 +388,19 @@ function DE_buildGLSegs() {
 		            DE_vertexSides(buffer,sx,sy,top,0,0,0,ptexleft,ptextop,colTop,1,-2,1,1);
 		            DE_vertexSides(buffer,ex,ey,top,0,0,0,ptexright,ptextop,colTop,1,-2,1,1);
 		            DE_vertexSides(buffer,ex,ey,bot,0,0,0,ptexright,ptexbot,colBot,1,-2,1,0);
+					
+					//If wall isn't double sided, then this is the top, check for ceiling sky and extend if neccessary
+					if backsector == - 1
+					if DE_textureIsSky(sect.ceilingpicnum){//Ceiling is sky, let's extend the wall to near infinity to clip geo behind it with sky texture
+		            DE_vertexSides(buffer,sx,sy,top+65535,0,0,0,ptexleft, ptextop,colTop,1,-2,1,1,1);
+		            DE_vertexSides(buffer,ex,ey,top+65535,0,0,0,ptexright,ptextop,colTop,1,-2,1,1,1);
+		            DE_vertexSides(buffer,ex,ey,top,0,0,0,		ptexright,ptexbot,colBot,1,-2,1,0,1);
+					
+		            DE_vertexSides(buffer,sx,sy,top,0,0,0,		ptexleft, ptexbot,colBot,1,-2,1,0,1);
+		            DE_vertexSides(buffer,sx,sy,top+65535,0,0,0,ptexleft, ptextop,colTop,1,-2,1,1,1);
+		            DE_vertexSides(buffer,ex,ey,top,0,0,0,		ptexright,ptexbot,colBot,1,-2,1,0,1);
+					}
+					
 		            vv+=2;
 		        }
 			

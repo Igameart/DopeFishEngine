@@ -35,7 +35,12 @@ function DE_getLevelMusic(){
 	if DE_isLookupLabel(mus)
 		mus = DE_fetchMusicByLabel(mus);
 		
-	return mus;
+	if string_count("D_",mus) == 0
+		mus = "D_"+(mus);
+		
+	trace("Level Music:", (mus) );
+		
+	return string_upper(mus);
 	
 	/*
 	switch wadGameInfo.game{

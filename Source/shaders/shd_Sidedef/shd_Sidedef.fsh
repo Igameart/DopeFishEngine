@@ -10,6 +10,11 @@ varying float v_vTIndex;
 varying float v_vMiddle;
 //varying float v_eyeDist;
 varying vec4 v_vPosition;
+varying float v_isSky;
+
+varying float v_isTop;
+varying float v_isTopSky;
+varying float v_origZ;
 
 uniform vec4 tex_L;
 uniform vec4 tex_M;
@@ -24,6 +29,8 @@ uniform float u_fogMaxDist;
 uniform float u_fogMinDist;
 
 uniform vec2 u_sectAtlas;
+uniform sampler2D u_skySampler;
+uniform vec2 u_res;
 
 //varying vec2 vResL;
 //varying vec2 vResM;
@@ -141,6 +148,11 @@ void main()
     
     gl_FragColor=( col * vcol ) * fogger + u_fogColor * (1.0 - fogger);
     //gl_FragColor.a = texture2D( gm_BaseTexture, UV).a; 
+	
+	if (v_isSky > 0.5){
+		vec2 uv = gl_FragCoord.xy / u_res;
+		gl_FragColor = texture2D( u_skySampler, uv );	
+	}
     
 }
 

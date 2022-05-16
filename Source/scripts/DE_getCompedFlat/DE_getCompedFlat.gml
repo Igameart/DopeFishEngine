@@ -1,6 +1,6 @@
 function DE_getFlatTexture(t_name) {
 
-	if t_name!="-" and t_name!="F_SKY1" and t_name!="F_SKY" and t_name!="F_SKY001"	{
+	if t_name!="-" and !DE_textureIsSky(t_name)	{
 
 		/*var tex = wadCompedFlats[? t_name ];
 
@@ -30,7 +30,7 @@ function DE_getFlatTexture(t_name) {
 
 function DE_getFlat(t_name) {
 
-	if t_name!="-" and t_name!="F_SKY1" and t_name!="F_SKY" and t_name!="F_SKY001"	{
+	if t_name!="-" and !DE_textureIsSky(t_name)	{
 	
 		var sprite = ds_map_find_value(pload_flats,t_name);
 	

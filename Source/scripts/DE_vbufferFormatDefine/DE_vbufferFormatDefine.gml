@@ -8,6 +8,7 @@ function DE_vbufferFormatDefine() {
 	vertex_format_add_colour();
 	vertex_format_add_texcoord();
 	vertex_format_add_texcoord();
+	
 	DE_vFormat = vertex_format_end();
 
 

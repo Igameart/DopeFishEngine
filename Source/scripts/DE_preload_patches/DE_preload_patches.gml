@@ -1,5 +1,5 @@
 /// @description DE_preload_textures()
-function DE_preload_patches() {
+function DE_preloadPatches() {
 
 	var sides = wadlevel.sidedefs;
 
@@ -124,8 +124,23 @@ function DE_preload_patches() {
 			}
 	    }
 	}
-	show_debug_message("NOTICE: Loaded All Patches In Level");
+	trace("NOTICE: Loaded All Patches In Level");
 
+}
 
+function DE_loadPatch(pname) {
+				
+	if is_undefined(ds_map_find_value(pload_pat,pname)){
+					
+	    var patch=DE_getPatch(pname);
+		
+	    ds_map_replace(pload_pat,pname,patch);
+		
+		trace("NOTICE: Load Patch",pname);
+		
+		return patch;
+		
+	}
+	            
 
 }

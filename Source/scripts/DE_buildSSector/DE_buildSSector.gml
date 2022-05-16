@@ -79,7 +79,7 @@ function DE_buildSSector(argument0) {
 	var vbuffer = vertex_create_buffer();
 	vertex_begin(vbuffer,DE_vFormat);
     
-	if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001")){
+	if (!DE_textureIsSky(ftex) or !DE_textureIsSky(ctex)){
     
     
 	    show_debug_message("STILL BUILDING Sector: "+string(argument0));
@@ -168,17 +168,25 @@ function DE_buildSSector(argument0) {
                 
 	                    ds_list_add(colmap,-x0,y0,-x1,y1,-x2,y2);
 	                    //show_debug_message("STILL BUILDING Sector: "+string(argument0));
-	                    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
+	                    if (!DE_textureIsSky(ftex)){
 	                        DE_vertexGLSS(vbuffer,-x0,y0,fheight,0,0,0,-x0/64,y0/64,col,1,0);
 	                        DE_vertexGLSS(vbuffer,-x1,y1,fheight,0,0,0,-x1/64,y1/64,col,1,0);
 	                        DE_vertexGLSS(vbuffer,-x2,y2,fheight,0,0,0,-x2/64,y2/64,col,1,0);
-	                    }
+	                    }else{
+	                        DE_vertexGLSS(vbuffer,-x0,y0,fheight,0,0,0,-x0/64,y0/64,col,1,0,1);
+	                        DE_vertexGLSS(vbuffer,-x1,y1,fheight,0,0,0,-x1/64,y1/64,col,1,0,1);
+	                        DE_vertexGLSS(vbuffer,-x2,y2,fheight,0,0,0,-x2/64,y2/64,col,1,0,1);							
+						}
                     
-	                    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
+	                    if (!DE_textureIsSky(ctex)){
 	                        DE_vertexGLSS(vbuffer,-x1,y1,cheight,0,0,0,x1/64,y1/64,col,1,1);
 	                        DE_vertexGLSS(vbuffer,-x0,y0,cheight,0,0,0,x0/64,y0/64,col,1,1);
 	                        DE_vertexGLSS(vbuffer,-x2,y2,cheight,0,0,0,x2/64,y2/64,col,1,1);
-	                    }
+	                    }else{
+	                        DE_vertexGLSS(vbuffer,-x1,y1,cheight,0,0,0,x1/64,y1/64,col,1,1,1);
+	                        DE_vertexGLSS(vbuffer,-x0,y0,cheight,0,0,0,x0/64,y0/64,col,1,1,1);
+	                        DE_vertexGLSS(vbuffer,-x2,y2,cheight,0,0,0,x2/64,y2/64,col,1,1,1);
+						}
                     
 	                    ds_list_delete(polyX, B);
 	                    ds_list_delete(polyY, B);
@@ -194,12 +202,12 @@ function DE_buildSSector(argument0) {
 	                        -ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),
 	                         -ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2));
 
-	    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
+	    if (!DE_textureIsSky(ftex)){
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,col,1,0);
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,col,1,0);
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,col,1,0);
 	    }
-	    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
+	    if (!DE_textureIsSky(ctex)){
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),cheight,0,0,0,ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,col,1,1);
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),cheight,0,0,0,ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,col,1,1);
 	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),cheight,0,0,0,ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,col,1,1);

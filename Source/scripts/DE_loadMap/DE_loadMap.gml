@@ -33,8 +33,9 @@ function DE_loadMap( _map ) {
 	DE_getThings(_map,LEV+THINGSOFS);
 	
 	display_reset(0,1);//Disable AA
-	DE_preload_flats();
-	DE_preload_patches();
+	DE_preloadFlats();
+	DE_preloadPatches();
+	DE_loadSkyTextures();
 
 	var end_time=current_time;
 
@@ -69,7 +70,7 @@ function DE_loadMap( _map ) {
 		    trace("************ NOTICE: "+string(ds_list_size(ssects))+" Subsectors");
 
 		    for (var j = 0; j<ds_list_size(ssects); j++ ){
-		        DE_buildSSector(j);
+		        //DE_buildSSector(j);
 		    }
 	
 		}

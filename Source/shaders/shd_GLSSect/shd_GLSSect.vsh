@@ -12,6 +12,7 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying float v_vTIndex;
 varying vec4 v_vPosition;
+varying float v_isSky;
 
 uniform float u_sectBotOff;
 uniform float u_sectTopOff;
@@ -34,5 +35,6 @@ void main()
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord * vec2(64.,64.);
     v_vTIndex = in_TextureCoord2.x;
+	v_isSky = floor(in_TextureCoord2.y+.05);
 }
 

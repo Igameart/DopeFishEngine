@@ -34,6 +34,9 @@ function DE_buildGLSSect(argument0) {
 	
 	var ftex = (sect.floorpicnum);
 	var ctex = (sect.ceilingpicnum);
+	
+	if DE_textureIsSky(ftex) fheight -= 1024;
+	if DE_textureIsSky(ctex) cheight += 1024;
 
 	polygon.ceilingpicnum	= ftex;
 	polygon.floorpicnum		= ctex;
@@ -97,7 +100,7 @@ function DE_buildGLSSect(argument0) {
 	
 	ds_list_add( __glColMap, -startx,starty );
     
-	if ((ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001") or (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001")){
+	//if (!DE_textureIsSky(ftex) or !DE_textureIsSky(ctex)){
 		
 	    // 1. For (n - 3) vertices
 	    //n = polygonSize;
@@ -143,17 +146,17 @@ function DE_buildGLSSect(argument0) {
 			
 	                    ds_list_add(colmap,-x0,y0,-x1,y1,-x2,y2);
 	                    //trace("STILL BUILDING Sector: "+string(argument0));
-	                    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
-	                        DE_vertexGLSS(vbuffer,-x0,y0,fheight,0,0,0,-x0/64,y0/64,colFloor,1,0);
-	                        DE_vertexGLSS(vbuffer,-x1,y1,fheight,0,0,0,-x1/64,y1/64,colFloor,1,0);
-	                        DE_vertexGLSS(vbuffer,-x2,y2,fheight,0,0,0,-x2/64,y2/64,colFloor,1,0);
-	                    }
+	                    //if (!DE_textureIsSky(ftex)){
+	                        DE_vertexGLSS(vbuffer,-x0,y0,fheight,0,0,0,-x0/64,y0/64,colFloor,1,0,DE_textureIsSky(ftex));
+	                        DE_vertexGLSS(vbuffer,-x1,y1,fheight,0,0,0,-x1/64,y1/64,colFloor,1,0,DE_textureIsSky(ftex));
+	                        DE_vertexGLSS(vbuffer,-x2,y2,fheight,0,0,0,-x2/64,y2/64,colFloor,1,0,DE_textureIsSky(ftex));
+	                    //}
                     
-	                    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
-	                        DE_vertexGLSS(vbuffer,-x1,y1,cheight,0,0,0,x1/64,y1/64,colCeiling,1,1);
-	                        DE_vertexGLSS(vbuffer,-x0,y0,cheight,0,0,0,x0/64,y0/64,colCeiling,1,1);
-	                        DE_vertexGLSS(vbuffer,-x2,y2,cheight,0,0,0,x2/64,y2/64,colCeiling,1,1);
-	                    }
+	                    //if (!DE_textureIsSky(ctex)){
+	                        DE_vertexGLSS(vbuffer,-x1,y1,cheight,0,0,0,x1/64,y1/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	                        DE_vertexGLSS(vbuffer,-x0,y0,cheight,0,0,0,x0/64,y0/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	                        DE_vertexGLSS(vbuffer,-x2,y2,cheight,0,0,0,x2/64,y2/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	                    //}
                     
 	                    ds_list_delete(polyX, B);
 	                    ds_list_delete(polyY, B);
@@ -176,16 +179,16 @@ function DE_buildGLSSect(argument0) {
 	                        -ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),
 	                         -ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2));
 
-	    if (ftex!="F_SKY1" and ftex!="F_SKY" and ftex!="F_SKY001"){
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,colFloor,1,0);
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,colFloor,1,0);
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,colFloor,1,0);
-	    }
-	    if (ctex!="F_SKY1" and ctex!="F_SKY" and ctex!="F_SKY001"){
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),cheight,0,0,0,ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,colCeiling,1,1);
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),cheight,0,0,0,ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,colCeiling,1,1);
-	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),cheight,0,0,0,ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,colCeiling,1,1);
-	    }
+	    //if (!DE_textureIsSky(ftex)){
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,colFloor,1,0,DE_textureIsSky(ftex));
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,colFloor,1,0,DE_textureIsSky(ftex));
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),fheight,0,0,0,-ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,colFloor,1,0,DE_textureIsSky(ftex));
+	    //}
+	    //if (!DE_textureIsSky(ctex)){
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 1),ds_list_find_value_fixed(polyY, 1),cheight,0,0,0,ds_list_find_value_fixed(polyX, 1)/64,ds_list_find_value_fixed(polyY, 1)/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 0),ds_list_find_value_fixed(polyY, 0),cheight,0,0,0,ds_list_find_value_fixed(polyX, 0)/64,ds_list_find_value_fixed(polyY, 0)/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	        DE_vertexGLSS(vbuffer,-ds_list_find_value_fixed(polyX, 2),ds_list_find_value_fixed(polyY, 2),cheight,0,0,0,ds_list_find_value_fixed(polyX, 2)/64,ds_list_find_value_fixed(polyY, 2)/64,colCeiling,1,1,DE_textureIsSky(ctex));
+	    //}
 		
 	    //  3. Clean up
 	    ds_list_destroy(polyX);
@@ -196,7 +199,7 @@ function DE_buildGLSSect(argument0) {
 		vertex_freeze(vbuffer);
 		
 	    polygon.vbuffer = vbuffer;
-	}
+	//}
 	trace("Done Building Sector");
 
 

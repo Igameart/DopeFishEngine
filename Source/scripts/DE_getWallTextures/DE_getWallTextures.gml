@@ -264,7 +264,3 @@ function DE_getWallTextures() {
 	ds_list_destroy(offsets2);
 
 }
-
-function DE_textureIsSky(_b){
-	if (_b="F_SKY1" and _b!="F_SKY" and _b!="F_SKY001") return true;
-}
