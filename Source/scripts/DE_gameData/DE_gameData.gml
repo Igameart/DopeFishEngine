@@ -29,36 +29,23 @@ function DE_gameData() {
 
 function DE_getLevelMusic(){
 	
+	if !is_struct(wadGameInfo.maps[? DEMap ]) return -1;
+	
 	var mus;
 	mus = wadGameInfo.maps[? DEMap ].music;
 	
 	if DE_isLookupLabel(mus)
 		mus = DE_fetchMusicByLabel(mus);
-		
-	if string_count("D_",mus) == 0
+	
+	mus = string_upper(mus);
+	
+	if string_count("D_",mus) || string_count("MUS_",mus) == 0
 		mus = "D_"+(mus);
 		
 	trace("Level Music:", (mus) );
 		
-	return string_upper(mus);
+	return (mus);
 	
-	/*
-	switch wadGameInfo.game{
-		case "Doom":
-		case "Chex":
-			return DE_levelMusicDOOM();
-		break;
-		case "Heretic":
-			return DE_levelMusicHeretic();
-		break;
-		case "Hexen":
-			return DE_levelMusicHexen();
-		break;
-		case "Strife":
-			return DE_levelMusicDOOM();
-		break;
-		
-	}*/
 }
 
 function DE_loadFontDefs(){

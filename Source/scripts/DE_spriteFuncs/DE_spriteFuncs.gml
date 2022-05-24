@@ -220,128 +220,6 @@ function DE_buildGraphic( __sprName ){
 	}else return DESprites[? __sprName ];
 }
 
-function DE_drawimage(){//Draw an image into gui space
-	var __sprName = argument[0], xx = argument[1], yy = argument[2];
-	var _iscale = 1;
-	if argument_count>3{
-		_iscale = argument[3];
-	}
-	
-	var spr = DESprites[? __sprName ];
-	
-	if is_undefined(spr){
-		spr = DE_buildGraphic(__sprName);
-	}
-	
-	//Convert gui scale to 320 width so things fill the right space on screen
-	var ww,hh;
-
-	ww = surface_get_width(application_surface);
-	hh = surface_get_height(application_surface);
-
-	var ss = ww / 320;
-	
-	var _scale = [1,1.2];
-	
-	draw_sprite_ext(spr,0,xx*ss,(yy*1.2)*ss,ss*_scale[0]*_iscale,ss*_scale[1]*_iscale,0,c_white,1);
-}
-
-
-function DE_drawimage_stretched(){//Draw an image into gui space
-	var __sprName = argument[0], xx = argument[1], yy = argument[2], ww = argument[3], hh = argument[4];
-	
-	var spr = DESprites[? __sprName ];
-	
-	if is_undefined(spr){
-		spr = DE_buildGraphic(__sprName);
-	}
-		draw_sprite_stretched( spr, 0, xx, yy, ww, hh );
-}
-
-function DE_drawimage_ext(__sprName, xx, yy, xscale, yscale){//Draw an image
-	var spr = DESprites[? __sprName ];
-	
-	if is_undefined(spr){
-		spr = DE_buildGraphic(__sprName);
-	}
-	
-	draw_sprite_ext(spr,0,xx,yy,xscale,yscale,0,c_white,1);
-}
-
-function DE_drawswitchableimage(){//Draw an image into gui space
-	var __key = argument[0], __spr,xx,yy;
-	
-	 
-	if argument_count>5{
-		
-	}
-	
-	var __sprName = "nullimage";
-	
-	if is_string(__key){
-		__spr[0] = argument[2];
-		__spr[1] = argument[1];
-		xx = argument[3];
-		yy = argument[4];
-		
-		switch __key{
-			case "invulnerable":
-				__sprName = __spr[ IDDQD ];
-			break;
-		}
-	}else{
-		if is_real(__key){
-			__spr[0] = argument[2];
-			__spr[1] = argument[1];
-			xx = argument[3];
-			yy = argument[4];
-			__sprName = __spr[ __key ];
-		}else
-		if is_array(__key){
-			
-			xx = argument[5];
-			yy = argument[6];
-			
-			__spr[0] = argument[1];
-			__spr[1] = argument[2];
-			__spr[2] = argument[3];
-			__spr[3] = argument[4];
-			
-			__sprName = __spr[0];
-			if __key[0] and __key[1]{
-				__sprName = __spr[3];
-			}else{
-				if __key[0] __sprName = __spr[1];
-				if __key[1] __sprName = __spr[2];
-			}
-			//trace("Chosen Sprite", __sprName);
-		}
-	}
-	
-	if __sprName == "nullimage" return noone;
-	
-	var spr = DESprites[? __sprName ];
-	if is_undefined(spr){
-		spr = DE_buildGraphic(__sprName);
-	}
-	
-	//Convert gui scale to 320 width so things fill the right space on screen
-	var ww,hh;
-
-	ww = surface_get_width(application_surface);
-	hh = surface_get_height(application_surface);
-
-	//surface_set_target(application_surface);
-
-	var _scale = 1;
-	//if RFXenabled _scale *= RFXscale;
-
-	var ss = ww / 320;
-	
-	draw_sprite_ext(spr,0,xx*ss/_scale,(yy)*ss/_scale*1.2,ss/_scale,ss/_scale*1.2,0,c_white,1);
-	
-}
-
 function DE_getSprites() {
 
 	var readSprites=false;
@@ -443,11 +321,142 @@ function DE_getSprites() {
 
 }
 
+function DE_drawimage(){//Draw an image into gui space
+	var __sprName = argument[0], xx = argument[1], yy = argument[2];
+	var _iscale = 1;
+	if argument_count>3{
+		_iscale = argument[3];
+	}
+	
+	var spr = DESprites[? __sprName ];
+	
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+	
+	//Convert gui scale to 320 width so things fill the right space on screen
+	var ww,hh;
+	
+	var _scale = 1.5;//[1,1.2];
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	//var ss = ww / 320;
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	var yo = hh - (240*ss) / _scale;
+	
+	draw_sprite_ext(spr,0,xx*ss/_scale+xo,(yy)*ss/_scale*1.2+yo,ss/_scale,ss/_scale*1.2,0,c_white,1);
+}
+
+
+function DE_drawimage_stretched(){//Draw an image into gui space
+	var __sprName = argument[0], xx = argument[1], yy = argument[2], ww = argument[3], hh = argument[4];
+	
+	var spr = DESprites[? __sprName ];
+	
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+		draw_sprite_stretched( spr, 0, xx, yy, ww, hh );
+}
+
+function DE_drawimage_ext(__sprName, xx, yy, xscale, yscale){//Draw an image
+	var spr = DESprites[? __sprName ];
+	
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+	
+	draw_sprite_ext(spr,0,xx,yy,xscale,yscale,0,c_white,1);
+}
+
+function DE_drawswitchableimage(){//Draw an image into gui space
+	var __key = argument[0], __spr,xx,yy;
+	
+	 
+	if argument_count>5{
+		
+	}
+	
+	var __sprName = "nullimage";
+	
+	if is_string(__key){
+		__spr[0] = argument[2];
+		__spr[1] = argument[1];
+		xx = argument[3];
+		yy = argument[4];
+		
+		switch __key{
+			case "invulnerable":
+				__sprName = __spr[ IDDQD ];
+			break;
+		}
+	}else{
+		if is_real(__key){
+			__spr[0] = argument[2];
+			__spr[1] = argument[1];
+			xx = argument[3];
+			yy = argument[4];
+			__sprName = __spr[ __key ];
+		}else
+		if is_array(__key){
+			
+			xx = argument[5];
+			yy = argument[6];
+			
+			__spr[0] = argument[1];
+			__spr[1] = argument[2];
+			__spr[2] = argument[3];
+			__spr[3] = argument[4];
+			
+			__sprName = __spr[0];
+			if __key[0] and __key[1]{
+				__sprName = __spr[3];
+			}else{
+				if __key[0] __sprName = __spr[1];
+				if __key[1] __sprName = __spr[2];
+			}
+			//trace("Chosen Sprite", __sprName);
+		}
+	}
+	
+	if __sprName == "nullimage" return noone;
+	
+	var spr = DESprites[? __sprName ];
+	if is_undefined(spr){
+		spr = DE_buildGraphic(__sprName);
+	}
+	
+	//Convert gui scale to 320 width so things fill the right space on screen
+	var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	//surface_set_target(application_surface);
+
+	var _scale = 1.5;
+	//if RFXenabled _scale *= RFXscale;
+
+	//var ss = ww / 320;
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	var yo = hh - (240*ss) / _scale;
+	
+	draw_sprite_ext(spr,0,xx*ss/_scale+xo,(yy)*ss/_scale*1.2+yo,ss/_scale,ss/_scale*1.2,0,c_white,1);
+	
+}
+
 function DE_drawimage_tiledx(){
 	var __sprName = argument[0], xx = argument[1], yy = argument[2];
 	 
-	if argument_count>3{
-		
+	var lCut = 0;
+	var rCut = 320;
+	if argument_count>4{
+		lCut = argument[3];
+		rCut = argument[4];
 	}
 		
 	var spr = DESprites[? __sprName ];
@@ -461,19 +470,93 @@ function DE_drawimage_tiledx(){
 	ww = surface_get_width(application_surface);
 	hh = surface_get_height(application_surface);
 
-	var _scale = 1;
+	var _scale = 1.5;
 
-	var ss = ww / 320;
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	var yo = hh - (240*ss) / _scale;
+	
 	var i;
 	
 	var sw = sprite_get_width(spr);
+	var sh = sprite_get_height(spr)*ss/_scale*1.2;
 	
-	do{
-		xx -= sw;
-	}until xx < 0;
+	var dy = yy*ss/_scale*1.2+yo;
+	var dx = xx*ss/_scale+xo;
+	var sy = sprite_get_yoffset(spr)*ss/_scale*1.2;
 	
-	for (i=xx; i<=320; i+=sw){
-		draw_sprite_ext(spr,0,(i)*ss/_scale,yy*ss/_scale*1.2,ss/_scale,ss/_scale*1.2,0,c_white,1);
+	var left = 0, wide = sw;
+	var stx = xx - ceil( (xx) / sw ) * sw;
+	for (var X = stx; X<rCut; X += sw){
+		var dx = (X)*ss/_scale+xo;
+		
+		if X>lCut left = lCut else{
+			left = (-X);
+		}
+		
+		if X+sw < rCut wide = sw else{
+			wide = sw - ((X+sw)-rCut);
+		}
+		
+		draw_sprite_part_ext(spr,0,left,0, wide-left ,sh,dx + left*ss/_scale,dy,ss/_scale,ss/_scale*1.2,c_white,1);
+	}
+	
+}
+
+
+function DE_drawflat_tiledx(){
+	var __sprName = argument[0], xx = argument[1], yy = argument[2];
+	 
+	var lCut = 0;
+	var rCut = 320;
+	if argument_count>4{
+		lCut = argument[3];
+		rCut = argument[4];
+	}
+	
+	//var flat = 
+	var spr=flats_[? __sprName ];
+		
+	if !is_undefined(spr){
+	    spr=DE_buildSingleFlat(spr,__sprName);
+		flats_[? __sprName ] = spr;
+	}
+	
+	//Convert gui scale to 320 width so things fill the right space on screen
+	var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	var _scale = 1.5;
+
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	var yo = hh - (240*ss) / _scale;
+	
+	var i;
+	
+	var sw = sprite_get_width(spr);
+	var sh = sprite_get_height(spr)*ss/_scale*1.2;
+	
+	var dy = yy*ss/_scale*1.2+yo;
+	var dx = xx*ss/_scale+xo;
+	var sy = sprite_get_yoffset(spr)*ss/_scale*1.2;
+	
+	var left = 0, wide = sw;
+	var stx = xx - ceil( (xx) / sw ) * sw;
+	for (var X = stx; X<rCut; X += sw){
+		var dx = (X)*ss/_scale+xo;
+		
+		if X>lCut left = lCut else{
+			left = (-X);
+		}
+		
+		if X+sw < rCut wide = sw else{
+			wide = sw - ((X+sw)-rCut);
+		}
+		
+		draw_sprite_part_ext(spr,0,left,0, wide-left ,sh,dx + left*ss/_scale,dy,ss/_scale,ss/_scale*1.2,c_white,1);
 	}
 	
 }
@@ -536,10 +619,6 @@ function DE_drawgem(){
 		
 		offset = ( (chainsize - left - right) * (displayvalue / maxrange) );
 		
-		//trace(chainimage, chainsize, offset, displayvalue, maxrange );
-		//show_message("Chain sprite exists");
-		//game_end();
-		
 	}
 	
 	DE_drawimage_tiledx(chainimage, xx + offset, yy);//, flags | DI_ITEM_LEFT_TOP);
@@ -548,6 +627,11 @@ function DE_drawgem(){
 }
 
 function DE_drawshader( width, height, dir, flip, xx, yy){
+	
+	var col1 = c_black;
+	var col2 = c_black;
+	var col3 = c_ltgray; 
+	var col4 = c_ltgray;
 	
 	if dir = "horizontal"{
 		if flip!="reverse"{
@@ -567,44 +651,59 @@ function DE_drawshader( width, height, dir, flip, xx, yy){
 			col2 = c_ltgray; 
 			col3 = c_black;
 			col4 = c_black;
-		}else{
-			col1 = c_black;
-			col2 = c_black;
-			col3 = c_ltgray; 
-			col4 = c_ltgray;
 		}
 	}
 	
-	var ww;
+	var ww,hh;
 
 	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+	
+	var _scale = 1.5;
 
-	var ss = ww / 320;
-
-	var ss = ww / 320;
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	var yo = hh - (240*ss) / _scale;
+	
+	var dy = yy*ss/_scale*1.2+yo;
+	var dx = xx*ss/_scale+xo;
+	
+	var dx2 = (xx+width)*ss/_scale+xo;
+	var dy2 = (yy+height)*ss/_scale*1.2+yo;
 	
 	gpu_set_blendmode(bm_subtract);
-	draw_rectangle_color(xx*ss,yy*ss*1.2,(xx+width)*ss,(yy+height)*ss*1.2, col1, col2, col3, col4, false);
+	draw_rectangle_color(dx,dy,dx2,dy2, col1, col2, col3, col4, false);
 	gpu_set_blendmode(bm_normal);
 	
 }
 
 function DE_drawStatusBar(){
 	
-	switch wadGameInfo.game{
-		case "Doom":
-		case "Chex":
-		DE_drawDoomStatusBar();
+	/*var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	var _scale = 1.5;
+
+	var ss = hh / 200;
+	var xo = ww/2-(320*ss)/2 / _scale;
+	
+	DE_drawflat_tiledx(wadGameInfo.borderflat,0,240-64,-xo,xo+320);*/
+	
+	switch string_lower(wadGameInfo.statusbar){
+		case "sbarinfo/doom.txt":
+			DE_drawDoomStatusBar();
 		break;
-		case "Heretic":
-		DE_drawHereticStatusBar();
+		case "sbarinfo/heretic.txt":
+			DE_drawHereticStatusBar();
 		break;
-		case "Hexen":
-		DE_drawHexenStatusBar();
+		case "sbarinfo/hexen.txt":
+			DE_drawHexenStatusBar();
 		break;
-		case "Strife":
+	}
+	if wadGameInfo.game == "Strife"{
 		DE_drawStrifeStatusBar();
-		break;
 	}
 }
 
@@ -643,10 +742,11 @@ function DE_drawStrifeStatusBar(){
 	hh = surface_get_height(application_surface);
 
 	var ss = ww / 320;
+	//var ss = hh / 200;
 	
 	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
-	var offset = diff;
+	var offset = diff*0;
 	
 	
 	DE_drawimage( "INVBACK", 0, 168 - offset);
@@ -717,10 +817,11 @@ function DE_drawDoomStatusBar(){
 	hh = surface_get_height(application_surface);
 
 	var ss = ww / 320;
+	//var ss = hh / 200;
 	
 	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
-	var offset = diff;
+	var offset = diff*0;
 	
 	if DE_getLumpOfs("STBAR") ==-1 return;
 	
@@ -779,10 +880,11 @@ function DE_drawHereticStatusBar(){
 	hh = surface_get_height(application_surface);
 
 	var ss = ww / 320;
+	//var ss = hh / 200;
 	
 	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
-	var offset = diff;
+	var offset = diff*0;
 	
 	DE_drawimage( "BARBACK", 0, 158 - offset );
 	DE_drawimage( "LTFCTOP", 0, 148 - offset );
@@ -855,10 +957,11 @@ function DE_drawHexenStatusBar(){
 	hh = surface_get_height(application_surface);
 
 	var ss = ww / 320;
+	//var ss = hh / 200;
 	
 	var diff = ( (200*1.2) - (hh / ss) )*.833333;
 	
-	var offset = diff;
+	var offset = diff*0;
 	
 	DE_drawimage( "H2BAR", 0, 134- offset );
 	DE_drawimage( "STATBAR", 38, 162- offset );

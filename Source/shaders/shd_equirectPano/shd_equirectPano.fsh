@@ -54,11 +54,11 @@ void main() {
     vec3 rd = normalize(rotateXY(camDir, camRot.yx));
     
     //radial azmuth polar
-    vec2 texCoord = vec2(atan(rd.z, rd.x) + PI, acos(-rd.y)) / vec2(2.0 * PI, PI) / skyUvs;
+    vec2 texCoord = vec2(atan(rd.z, rd.x) + PI, acos(-rd.y)) / vec2(2.0 * PI, PI) * skyUvs;
 	
-	texCoord.x *= 2.;
-	texCoord.y *= 2.0;
-	texCoord.y -= 0.25;
+	texCoord.x *= floor(1024.0/texRes.x);
+	texCoord.y *= 2.50;
+	texCoord.y -= 0.33;
 	
 	texCoord.y = clamp(texCoord.y, 0.5/texRes.y, 1.0-0.5/texRes.y);
 

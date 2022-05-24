@@ -128,14 +128,12 @@ function DE_getLinedefs(argument0, argument1) {
 			var bside=ds_list_find_value(mapSidedefs,back);
 		    var backsector=bside.sector;
 			
-			trace("Line Back Data",back,"ldef",ldef);
+			//trace("Line Back Data",back,"ldef",ldef);
 			
 		    bside.backsector = backsector;
 		    ldef.backsector = backsector;
 			
-			//ds_list_add(lSides,ldef.left);
 		}
-			//ds_list_add(lSides,ldef.right);
     
 	    ldef.sides = lSides;
 		
@@ -143,7 +141,6 @@ function DE_getLinedefs(argument0, argument1) {
 		DE_isLineDoor(ldef);
 		
 	    ds_list_add(linedefs,ldef);
-	    //show_debug_message("NOTICE: ["+level+'] LINEDEFS '+string( ds_list_size(linedefs) ));
 	}
 
 	wadlevel.linedefs=linedefs;

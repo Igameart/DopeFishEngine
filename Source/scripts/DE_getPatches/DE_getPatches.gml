@@ -12,7 +12,7 @@ function DE_getPatches() {
 
 	for(var p=0;p<pcount;p++){
 	    var str=buffer_read_string(wadbuff,8)
-		trace("NOTICE: Found PNAME "+str);
+		//trace("NOTICE: Found PNAME "+str);
 	    ds_list_add(wadPNames,string_upper(str));
 	}
 

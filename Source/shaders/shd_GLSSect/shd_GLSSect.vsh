@@ -13,6 +13,7 @@ varying vec4 v_vColour;
 varying float v_vTIndex;
 varying vec4 v_vPosition;
 varying float v_isSky;
+varying float v_vDist;
 
 uniform float u_sectBotOff;
 uniform float u_sectTopOff;
@@ -31,6 +32,8 @@ void main()
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * (object_space_pos);
     
     v_vPosition = (gm_Matrices[MATRIX_WORLD_VIEW] * object_space_pos);
+	
+	v_vDist = length(gl_Position.xy);
     
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord * vec2(64.,64.);

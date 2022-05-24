@@ -11,6 +11,9 @@ center_x=display_get_width()/2;
 center_y=display_get_height()/2;
 display_mouse_set(center_x,center_y);
 
+sx = x;
+sy = y;
+
 mouse_free=0;
 
 //Player Specific
@@ -76,24 +79,24 @@ Height = PLAYER_HEIGHT;
 switch wadGameInfo.game{
 	case "Doom":
 	case "Chex":
-		wep_spr = DE_buildSprite( "PISGA0" );
+		wep_spr = ( "PISGA0" );
 		//stbar_spr = DE_buildGraphic( "STBAR" );
 	break;
 	case "Heretic":
-		wep_spr = DE_buildSprite( "GWNDA0" );
+		wep_spr = ( "GWNDA0" );
 		//stbar_spr = [ DE_buildGraphic( "BARBACK" ), DE_buildGraphic( "STATBAR" ) ];
 	break;
 	case "Hexen":
-		wep_spr = DE_buildSprite( "PISGA0" );
+		wep_spr = ( "PISGA0" );
 		//stbar_spr = DE_buildGraphic( "STBAR" );
 	break;
 	case "Strife":
-		wep_spr = DE_buildSprite( "PNCHA0" );
+		wep_spr = ( "PNCHA0" );
 		//stbar_spr = DE_buildGraphic( "STBAR" );
 	break;
 }
 
-//alarm[0] = 1;
+alarm[0] = 1;
 
 bob = 0;
 

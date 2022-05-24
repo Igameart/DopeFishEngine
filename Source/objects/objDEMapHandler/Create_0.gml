@@ -34,55 +34,56 @@ time=0;
 
 time = 0;
 
-globalvar fcol;fcol=__background_get_colour( );
-globalvar f_far;f_far=(2048*2);
-globalvar f_near;f_near=128;
+#macro fcol __background_get_colour( )
+#macro f_far (2048*2)
+#macro f_near 128
 
 //globalvar shd_ctex;shd_ctex=shader_get_sampler_index(shd_GLSSect,"tex_C");
-globalvar shd_ltex;shd_ltex=shader_get_uniform(shd_Sidedef,"tex_L");
-globalvar shd_utex;shd_utex=shader_get_uniform(shd_Sidedef,"tex_U");
-globalvar shd_mtex;shd_mtex=shader_get_uniform(shd_Sidedef,"tex_M");
+#macro shd_ltex shader_get_uniform(shd_Sidedef,"tex_L")
+#macro shd_utex shader_get_uniform(shd_Sidedef,"tex_U")
+#macro shd_mtex shader_get_uniform(shd_Sidedef,"tex_M")
+#macro shd_sMat shader_get_uniform(shd_Sidedef,"u_fMat")
 
 //globalvar shd_uLuv;shd_uLuv=shader_get_uniform(shd_Sidedef,"u_Luv");
 //globalvar shd_uUuv;shd_uUuv=shader_get_uniform(shd_Sidedef,"u_Uuv");
 //globalvar shd_uMuv;shd_uMuv=shader_get_uniform(shd_Sidedef,"u_Muv");
-globalvar u_sideAtlasScale;u_sideAtlasScale=	shader_get_uniform(shd_Sidedef,"u_sectAtlas");
+#macro u_sideAtlasScale 	shader_get_uniform(shd_Sidedef,"u_sectAtlas")
 
-globalvar u_fogColorS;u_fogColorS=shader_get_uniform(shd_Sidedef,"u_fogColor");
-globalvar u_fogMinDistS;u_fogMinDistS=shader_get_uniform(shd_Sidedef,"u_fogMinDist");
-globalvar u_fogMaxDistS;u_fogMaxDistS=shader_get_uniform(shd_Sidedef,"u_fogMaxDist");
+#macro u_fogColorS		shader_get_uniform(shd_Sidedef,"u_fogColor")
+#macro u_fogMinDistS	shader_get_uniform(shd_Sidedef,"u_fogMinDist")
+#macro u_fogMaxDistS	shader_get_uniform(shd_Sidedef,"u_fogMaxDist")
 
-globalvar u_fogColorG;	u_fogColorG=	shader_get_uniform(shd_GLSSect,"u_fogColor");
-globalvar u_fogMinDistG;u_fogMinDistG=	shader_get_uniform(shd_GLSSect,"u_fogMinDist");
-globalvar u_fogMaxDistG;u_fogMaxDistG=	shader_get_uniform(shd_GLSSect,"u_fogMaxDist");
+#macro u_fogColorG 		shader_get_uniform(shd_GLSSect,"u_fogColor")
+#macro u_fogMinDistG 	shader_get_uniform(shd_GLSSect,"u_fogMinDist")
+#macro u_fogMaxDistG 	shader_get_uniform(shd_GLSSect,"u_fogMaxDist")
 
-globalvar u_hightlight; u_hightlight=	shader_get_uniform(shd_GLSSect,"u_hightlight");
+#macro u_hightlight 	shader_get_uniform(shd_GLSSect,"u_hightlight")
 
-globalvar u_sectBotOff;u_sectBotOff=	shader_get_uniform(shd_GLSSect,"u_sectBotOff");
-globalvar u_sectTopOff;u_sectTopOff=	shader_get_uniform(shd_GLSSect,"u_sectTopOff");
+#macro u_sectBotOff 	shader_get_uniform(shd_GLSSect,"u_sectBotOff")
+#macro u_sectTopOff 	shader_get_uniform(shd_GLSSect,"u_sectTopOff")
 
-globalvar u_sectFloorTex;u_sectFloorTex=	shader_get_uniform(shd_GLSSect,"u_sectFloorTex");
-globalvar u_sectCeilTex;u_sectCeilTex  =	shader_get_uniform(shd_GLSSect,"u_sectCeilTex");
+#macro u_sectFloorTex 	shader_get_uniform(shd_GLSSect,"u_sectFloorTex")
+#macro u_sectCeilTex   	shader_get_uniform(shd_GLSSect,"u_sectCeilTex")
 
-globalvar u_sectAtlasScale;u_sectAtlasScale=	shader_get_uniform(shd_GLSSect,"u_sectAtlas");
+#macro u_sectAtlasScale 	shader_get_uniform(shd_GLSSect,"u_sectAtlas")
 
-globalvar SuRes;SuRes=shader_get_uniform(shd_Sidedef,"uRes");
+#macro SuRes shader_get_uniform(shd_Sidedef,"uRes")
 
-globalvar u_lowOff;u_lowOff=shader_get_uniform(shd_Sidedef,"u_lowOff");
-//globalvar u_lowTopOff;u_lowTopOff=shader_get_uniform(shd_Sidedef,"u_lowTopOff");
+#macro u_lowOff shader_get_uniform(shd_Sidedef,"u_lowOff")
+//globalvar u_lowTopOffu_lowTopOff shader_get_uniform(shd_Sidedef,"u_lowTopOff")
 
-globalvar u_upOff;u_upOff=shader_get_uniform(shd_Sidedef,"u_upOff");
-//globalvar u_upTopOff;u_upTopOff=shader_get_uniform(shd_Sidedef,"u_upTopOff");
+#macro u_upOff shader_get_uniform(shd_Sidedef,"u_upOff")
+//globalvar u_upTopOffu_upTopOff shader_get_uniform(shd_Sidedef,"u_upTopOff")
 
-globalvar u_midOff;u_midOff=shader_get_uniform(shd_Sidedef,"u_midOff");
-//globalvar u_midTopOff;u_midTopOff=shader_get_uniform(shd_Sidedef,"u_midTopOff");
+#macro u_midOff shader_get_uniform(shd_Sidedef,"u_midOff")
+//globalvar u_midTopOffu_midTopOff shader_get_uniform(shd_Sidedef,"u_midTopOff")
 
-globalvar u_LowPeg;u_LowPeg=shader_get_uniform(shd_Sidedef,"u_LowPeg");
-globalvar u_UpPeg;u_UpPeg=shader_get_uniform(shd_Sidedef,"u_UpPeg");
+#macro u_LowPeg shader_get_uniform(shd_Sidedef,"u_LowPeg")
+#macro u_UpPeg shader_get_uniform(shd_Sidedef,"u_UpPeg")
 
-globalvar u_TexHU;u_TexHU=shader_get_uniform(shd_Sidedef,"u_TexHU");
-globalvar u_TexHL;u_TexHL=shader_get_uniform(shd_Sidedef,"u_TexHL");
-globalvar u_TexHM;u_TexHM=shader_get_uniform(shd_Sidedef,"u_TexHM");
+#macro u_TexHU shader_get_uniform(shd_Sidedef,"u_TexHU")
+#macro u_TexHL shader_get_uniform(shd_Sidedef,"u_TexHL")
+#macro u_TexHM shader_get_uniform(shd_Sidedef,"u_TexHM")
 
 skyhandler = instance_create_depth(0,0,0,objDESkyHandler);
 rfxcontrol = instance_create_depth(0,0,0,objRFXScreen);

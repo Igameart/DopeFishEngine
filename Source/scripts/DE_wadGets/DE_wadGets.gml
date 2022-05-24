@@ -97,7 +97,7 @@ function DE_getDirectory() {
 		
 			wadDirectoryOfs[? name] = _directory.filepos;
 			
-			trace("NOTICE: Found Lump["+name+"]: ",_directory.filepos,_directory.size);
+			//trace("NOTICE: Found Lump["+name+"]: ",_directory.filepos,_directory.size);
         
 	}
 	
@@ -192,7 +192,7 @@ function DE_getLumpNum(lump) {
 	
 	for ( var l=0;l<ds_list_size(wadDirectory);l+=1 )
 		if ( ds_list_find_value_fixed(wadDirectory,l).name == lump ){
-		trace("NOTICE: Found Lump["+string(l)+"]: "+(ds_list_find_value_fixed(wadDirectory,l).name));
+		//trace("NOTICE: Found Lump["+string(l)+"]: "+(ds_list_find_value_fixed(wadDirectory,l).name));
 		return l;
 	}
 }

@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 954,
+  "bbox_right": 1023,
   "bbox_top": 0,
-  "bbox_bottom": 533,
+  "bbox_bottom": 440,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 955,
-  "height": 534,
+  "width": 1024,
+  "height": 441,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"31e8259d-9418-479d-818d-6128cb26a036","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"imported","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"31e8259d-9418-479d-818d-6128cb26a036","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"LayerId":{"name":"2910ae8a-aa99-4601-9c85-97baffca5009","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_DopeFishLogo","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","name":"31e8259d-9418-479d-818d-6128cb26a036","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"394f0bfb-5994-4708-945c-06a81739f374","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"394f0bfb-5994-4708-945c-06a81739f374","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"LayerId":{"name":"3c0d4154-7d67-4274-9b41-160792efb7e2","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_DopeFishLogo","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","name":"394f0bfb-5994-4708-945c-06a81739f374","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_DopeFishLogo","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},
@@ -41,10 +41,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6842d779-3fd7-4a8e-aebe-70e2c15e035b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"31e8259d-9418-479d-818d-6128cb26a036","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"560fd135-e83a-4308-a8a6-9a9de352d739","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"394f0bfb-5994-4708-945c-06a81739f374","path":"sprites/spr_DopeFishLogo/spr_DopeFishLogo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2910ae8a-aa99-4601-9c85-97baffca5009","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3c0d4154-7d67-4274-9b41-160792efb7e2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

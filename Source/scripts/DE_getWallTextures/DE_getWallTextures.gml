@@ -38,7 +38,7 @@ function DE_readTextures(lump, tcount, offsets){
 				
 			}
             
-		trace("NOTICE: Found "+string(texture.patchcount)+" wadPatches in Texture["+tname+"]");
+		//trace("NOTICE: Found "+string(texture.patchcount)+" wadPatches in Texture["+tname+"]");
 		
 		var patchdat=ds_list_build();
 		

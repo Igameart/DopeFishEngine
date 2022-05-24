@@ -65,7 +65,7 @@ function DE_preloadFlats() {
 		
 	        var spr=flats_[? ftex ];
 		
-	        trace("spr value: '"+string(spr)+"'");
+	        //trace("spr value: '"+string(spr)+"'");
 		
 	        if !is_undefined(spr){
 	            var flat1=DE_buildFlat(spr,ftex);
@@ -82,7 +82,7 @@ function DE_preloadFlats() {
 		
 			var spr=flats_[?ctex];
 		
-	        trace("spr value: '"+string(spr)+"'");
+	        //trace("spr value: '"+string(spr)+"'");
 		
 	        if !is_undefined(spr){
 	            var flat1=DE_buildFlat(spr,ctex);   

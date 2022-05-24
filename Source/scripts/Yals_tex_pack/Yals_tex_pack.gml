@@ -175,7 +175,7 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h, _p) constructor 
 		if (_qe != undefined) {
 			_qs.height = _sh;
 			_qs.width = _sw;
-			trace("Adding Texture To Atlas",_qs.width,_qs.height);
+			//trace("Adding Texture To Atlas",_qs.width,_qs.height);
 			draw_surface_tiled_area_ext(_surf,_qe.left+self.padding,_qe.top+self.padding,_qe.left,_qe.top,_qe.left+_sw-1,_qe.top+_sh-1);
 		}
 		

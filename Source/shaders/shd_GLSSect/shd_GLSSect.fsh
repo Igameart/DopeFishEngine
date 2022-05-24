@@ -7,9 +7,9 @@ precision highp float;
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying float v_vTIndex;
-//varying float v_eyeDist;
 varying vec4 v_vPosition;
 varying float v_isSky;
+varying float v_vDist;
 
 uniform vec4 u_fogColor;
 uniform float u_fogMaxDist;

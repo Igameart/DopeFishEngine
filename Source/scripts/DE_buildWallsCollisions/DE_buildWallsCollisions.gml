@@ -171,10 +171,10 @@ function DE_buildWallsCollisions() {
 	            side.right = back;
             
 	            sect = ds_list_find_value_fixed(sects,sect);
-				
+				var backsector = -1;
 				if (back!=-1){
 					var bside=ds_list_find_value_fixed(sides,back);
-		            var backsector=bside.sector;
+		            backsector=bside.sector;
 		            side.backsector = backsector;
 		            linedef.backsector = backsector;
 		            backsector = ds_list_find_value(sects,backsector);
@@ -218,7 +218,7 @@ function DE_buildWallsCollisions() {
 	                bot = sect.floorz;
 	                top = sect.ceilingz;
                 
-	                if back!=-1{
+	                if back>0 && is_struct(backsector){
 	                    bot = backsector.floorz;
 	                    top = backsector.ceilingz;
 	                }

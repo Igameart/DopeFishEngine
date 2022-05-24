@@ -77,8 +77,10 @@ function DE_getThings(level, lump) {
 		if ( __thing[ DEThingDef.Description ] == "Player 1 start" ){
 			if !instance_exists(DEcam) DEcam = instance_create(X,Z,DEcam);
 			with DEcam{
+				sx = X;
+				sy = Z;
 				x = X;
-				y = Z;
+				y = -Z;
 				yaw = ANGLE;
 				direction = ANGLE;
 				depth = other.depth + 1;

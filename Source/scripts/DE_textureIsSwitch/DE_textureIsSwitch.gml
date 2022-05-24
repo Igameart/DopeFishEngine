@@ -1,4 +1,5 @@
 function DE_textureIsSwitch() {
+	
 	var tex = argument[0];
 
 	if ds_exists(wadSwitchTextures,ds_type_map){

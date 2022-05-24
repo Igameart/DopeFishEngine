@@ -1,2 +1,4 @@
-/// @description 
-//stbar_spr = DE_buildGraphic( "STBAR" );
+/// @description set position in world
+
+x = sx;
+y = sy;

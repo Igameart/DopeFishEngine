@@ -100,11 +100,11 @@ function DopeFishEngineInit( _OBJ ) {
 	
 	math_set_epsilon(0.00001);
 	
-	//gml_release_mode(false);
+	gml_release_mode(true);
 
 	ds_data_init();
 	
-	globalvar DETexInternal; DETexInternal = false;
+	#macro DETexInternal false
 
 	enum BBOX
 	{
@@ -229,14 +229,10 @@ function DopeFishEngineInit( _OBJ ) {
 
 	gc_enable(true);
 
-	globalvar DEcam; DEcam = _OBJ;
-	
+	globalvar DEcam;		 DEcam = _OBJ;
 	globalvar time_taken; time_taken = 0;
-
 	globalvar wadbuff;
-
 	globalvar DEActor;
-	
 	globalvar ideal_time; ideal_time = 1/60 * 1000000 * 5;
 
 	// Some System defines
@@ -327,7 +323,7 @@ function DopeFishEngineInit( _OBJ ) {
 		quitsound : undefined,
 		skyflatname : "F_SKY1",
 		skyTexture : undefined,
-		statusbar : undefined,
+		statusbar : "",
 		telefogheight : undefined,
 		titlemusic : undefined,
 		titlepage : undefined,

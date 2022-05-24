@@ -8,9 +8,9 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying float v_vTIndex;
 varying float v_vMiddle;
-//varying float v_eyeDist;
 varying vec4 v_vPosition;
 varying float v_isSky;
+varying float v_vDist;
 
 varying float v_isTop;
 varying float v_isTopSky;

@@ -1,25 +1,29 @@
 /// @description
 
-var ww,hh;
-
-ww = surface_get_width(application_surface);
-hh = surface_get_height(application_surface);
-
-var ss = ww / 320;
-
-var diff = ( (200*1.2) - (hh / ss) )*.833333;
-
-if !surface_exists(skysurf){
-	skysurf = surface_create(ww,hh);
-}else{
-	ww = surface_get_width(skysurf);
-	hh = surface_get_height(skysurf);
-}
-
-surface_set_target(skysurf);
-draw_clear(c_gray);
-
 if sprite_exists(wadGameInfo.skyTexture){
+
+	skyUvs = sprite_get_uvs(wadGameInfo.skyTexture,0);
+
+	skyUvs = [skyUvs[2], skyUvs[3]];
+	
+	var ww,hh;
+
+	ww = surface_get_width(application_surface);
+	hh = surface_get_height(application_surface);
+
+	var ss = ww / 320;
+
+	var diff = ( (200*1.2) - (hh / ss) )*.833333;
+
+	if !surface_exists(skysurf){
+		skysurf = surface_create(ww,hh);
+	}else{
+		ww = surface_get_width(skysurf);
+		hh = surface_get_height(skysurf);
+	}
+
+	surface_set_target(skysurf);
+	draw_clear(c_gray);
 
 	shader_set(shd_equirectPano);
 
@@ -37,6 +41,6 @@ if sprite_exists(wadGameInfo.skyTexture){
 	draw_sprite_stretched(wadGameInfo.skyTexture,0,0,0,ww,hh);
 
 	shader_reset();
-}
 
-surface_reset_target();
+	surface_reset_target();
+}
