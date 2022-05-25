@@ -1,36 +1,17 @@
-function DE_renderAddSubsector() {
-	var ssectNum = argument[0];
+function DE_renderAddSubsector(ssectNum) {
 
+	//var __ssec = mapGLSSects[| ssectNum ];
+	DE_renderSSect(ssectNum);//__ssec);
 
-	texture_set_repeat(true);
-
-	shader_set(shd_GLSSect);
-	shader_set_uniform_f(u_fogColorG,color_get_red((fcol))/255,color_get_green((fcol))/255,color_get_blue((fcol))/255,1);
-	shader_set_uniform_f(u_fogMaxDistG,f_far*0.9);
-	shader_set_uniform_f(u_fogMinDistG,f_near);
-
-	var ssects;
-
-	ssects = mapGLSSects;
-
-
-	var ssect = ds_list_find_value_fixed(ssects,ssectNum);
-	DE_renderSSect(ssect);
-
-	shader_reset();
-
-
-	//var sub = mapGLSSects[|ssectNum];
-
-	/*
-	var count = sub[?"count"];
-	var line = sub[?"start"];
+	
+	/*var count = __ssec.count;
+	var line = __ssec.start;
 
 	while (count--)
 	{
 		var _seg = mapGLSegs[|line];
 	
-		if (_seg[?"linedef"] >= 0)
+		if (_seg.linedef >= 0)
 		{
 			DE_renderAddLine(line);
 		}

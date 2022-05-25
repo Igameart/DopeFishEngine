@@ -769,6 +769,7 @@
     {"id":{"name":"RW1_1_p_spr","path":"sprites/RW1_1_p_spr/RW1_1_p_spr.yy",},"order":151,},
     {"id":{"name":"SW3S0_p_spr","path":"sprites/SW3S0_p_spr/SW3S0_p_spr.yy",},"order":338,},
     {"id":{"name":"d3d_primitive_end","path":"scripts/d3d_primitive_end/d3d_primitive_end.yy",},"order":17,},
+    {"id":{"name":"objDEHWClipper","path":"objects/objDEHWClipper/objDEHWClipper.yy",},"order":11,},
     {"id":{"name":"spr_missingTitlePage","path":"sprites/spr_missingTitlePage/spr_missingTitlePage.yy",},"order":0,},
     {"id":{"name":"RW21_4_p_spr","path":"sprites/RW21_4_p_spr/RW21_4_p_spr.yy",},"order":206,},
     {"id":{"name":"FMODGMS_Snd_TypeToString","path":"scripts/FMODGMS_Snd_TypeToString/FMODGMS_Snd_TypeToString.yy",},"order":3,},

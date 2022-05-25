@@ -3,6 +3,4 @@ function DE_renderAddLine() {
 
 	ds_list_add(bspLineCache,line);
 
-
-
 }

@@ -1,15 +1,7 @@
-function DE_BSPSafeCheckRange() {
-	//bool SafeCheckRange(angle_t startAngle, angle_t endAngle)
-
-	var startAngle = argument[0];
-	var endAngle = argument[1];
-
+function DE_BSPSafeCheckRange(startAngle, endAngle) {
 	if(startAngle > endAngle)
 	{
-		return ( DE_BSPIsRangeVisible( startAngle, 360) || DE_BSPIsRangeVisible( 0, endAngle));
+		return ( IsRangeVisible( startAngle, ANGLE_MAX) || IsRangeVisible( 0, endAngle));
 	}
-		
-	return DE_BSPIsRangeVisible( startAngle, endAngle);
-
-
+	return IsRangeVisible( startAngle, endAngle);
 }

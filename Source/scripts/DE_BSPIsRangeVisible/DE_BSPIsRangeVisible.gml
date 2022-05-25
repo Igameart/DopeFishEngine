@@ -1,12 +1,9 @@
-function DE_BSPIsRangeVisible() {
+function DE_BSPIsRangeVisible(startAngle, endAngle) {
 	//IsRangeVisible(angle_t startAngle, angle_t endAngle)
-
-	var startAngle = argument[0];
-	var endAngle = argument[1];
 
 	//trace("Checking Angle Visibilities:",startAngle,endAngle);
 
-	var ci = obj_DE_clipHead;
+	var ci = objDEHWClipper;
 
 	with ci{
 
@@ -19,5 +16,6 @@ function DE_BSPIsRangeVisible() {
 		//if check == 0 return true; else return false;
 	}
 
+return true;
 
 }

@@ -2,7 +2,9 @@ function DE_renderSSect( __ssec ) {
 
 	var sects = mapSectors;//ds_map_find_value_fixed(wadlevel,"sectors");
 	
-	var ssect = ds_list_find_value_fixed(mapGLSSects,__ssec);
+	var ssect = ds_list_find_value(mapGLSSects,__ssec);
+	
+	//if !is_struct(ssect) return;
 
 	var vbuffer,ctex,ftex,tex,sect,zadd,crushing;
 	ttex=0;

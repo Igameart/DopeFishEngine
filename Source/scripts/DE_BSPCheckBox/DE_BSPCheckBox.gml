@@ -1,7 +1,5 @@
 ///@description DE_BSPCheckBox( bspcoord );
-function DE_BSPCheckBox() {
-
-	var bspcoord = argument[0];
+function DE_BSPCheckBox(bspcoord) {
 
 	var angle1, angle2;
 

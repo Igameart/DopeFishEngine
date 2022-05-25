@@ -10,9 +10,10 @@ function DE_getGLNodes(argument0, argument1) {
 	//wadGLVersion=buffer_read_string(wadbuff,4);
 
 	var len=pos+size;
+	var glnode;
 
 	while(buffer_tell(wadbuff)<len){
-		var glnode= struct_copy(glnodetype);
+		glnode= struct_copy(glnodetype);
 
 		var C_R,C_L;
 	
@@ -62,6 +63,5 @@ function DE_getGLNodes(argument0, argument1) {
 	numGLNodes = ds_list_size(mapGLNodes);
 
 	show_debug_message("NOTICE: ["+level+"] GL_NODES "+string( ds_list_size(mapGLNodes)));
-
 
 }

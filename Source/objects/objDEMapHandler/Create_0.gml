@@ -87,3 +87,5 @@ time = 0;
 
 skyhandler = instance_create_depth(0,0,0,objDESkyHandler);
 rfxcontrol = instance_create_depth(0,0,0,objRFXScreen);
+
+clipper = instance_create_depth(0,0,0,objDEHWClipper);
